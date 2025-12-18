@@ -1,0 +1,34 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Large model files
+*.gguf
+*.bin
+*.safetensors
+
+# Temporary files
+/tmp/
+*.tmp
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Exploration outputs (large JSON)
+exploration_exam_*.json
+final_autonomous_report.json
+
+# Keep these
+!db/kh.db
+!db/memory.db
+!agent_memory.db

@@ -1,0 +1,97 @@
+{
+  "timestamp": "2025-12-18",
+  "verified_formulas": {
+    "k5": {
+      "formula": "k2 \u00d7 k3",
+      "exact": true
+    },
+    "k6": {
+      "formula": "k3\u00b2",
+      "exact": true
+    },
+    "k7": {
+      "formula": "k2\u00d79 + k6",
+      "calc": "27 + 49 = 76"
+    },
+    "k8": {
+      "formula": "k5\u00d713 - k6",
+      "calc": "273 - 49 = 224"
+    },
+    "k9": {
+      "formula": "k8\u00d72 + 19",
+      "calc": "448 + 19 = 467"
+    },
+    "k10": {
+      "formula": "k3\u00d7k7 - 18",
+      "calc": "532 - 18 = 514"
+    },
+    "k11": {
+      "formula": "k6\u00d719 + k8",
+      "calc": "931 + 224 = 1155"
+    },
+    "k12": {
+      "formula": "k8\u00d712 - 5",
+      "calc": "2688 - 5 = 2683",
+      "note": "UNIQUE formula"
+    },
+    "k13": {
+      "formula": "k10\u00d710 + k7",
+      "calc": "5140 + 76 = 5216"
+    },
+    "k14": {
+      "formula": "k11\u00d79 + 149",
+      "calc": "10395 + 149 = 10544"
+    },
+    "k15": {
+      "formula": "k12\u00d710 + 37",
+      "calc": "26830 + 37 = 26867"
+    },
+    "k16": {
+      "formula": "k11\u00d745 - 465",
+      "calc": "51975 - 465 = 51510"
+    },
+    "k17": {
+      "formula": "k8\u00d7428 - k6",
+      "calc": "95872 - 49 = 95823",
+      "note": "Also 3^4 \u00d7 7 \u00d7 13\u00b2"
+    },
+    "k18": {
+      "formula": "k13\u00d738 + 461",
+      "calc": "198208 + 461 = 198669"
+    },
+    "k19": {
+      "formula": "k14\u00d734 - 31\u00b2",
+      "calc": "358496 - 961 = 357535"
+    },
+    "k20": {
+      "formula": "k17\u00d79 + 910",
+      "calc": "862407 + 910 = 863317"
+    }
+  },
+  "product_patterns": {
+    "k66": {
+      "formula": "k22 \u00d7 k44 + offset",
+      "offset": 16350351670032013,
+      "error": "0.035%"
+    },
+    "k69": {
+      "formula": "k7 \u00d7 k62 + offset",
+      "offset": 238178689781429092,
+      "error": "0.08%"
+    },
+    "note": "i + j = n pattern holds approximately"
+  },
+  "position_anomalies": {
+    "k4": "0% (exactly at minimum)",
+    "k10": "0.39%",
+    "k69": "0.72%"
+  },
+  "key_observations": [
+    "Offsets are often key values (k6=49, k7=76, k8=224)",
+    "Some offsets are primes: 5, 19, 37, 149, 461",
+    "Some offsets are perfect squares: 961=31\u00b2",
+    "k17 = 3^4 \u00d7 7 \u00d7 13\u00b2 (highly factored)",
+    "Product k_i \u00d7 k_j where i+j=n gives close approximations",
+    "Low position keys (k4, k10, k69) may have special generation"
+  ]
+}

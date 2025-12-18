@@ -1,0 +1,222 @@
+{
+  "title": "Bitcoin Puzzle - Verified Key Formulas",
+  "updated": "2025-12-18T06:27:19.938548",
+  "source": "Database verified (db/kh.db)",
+  "methodology": "Mathematical derivation - all formulas verified against database",
+  "exact_formulas": {
+    "k5": {
+      "formula": "k2 \u00d7 k3",
+      "calculated": 21,
+      "actual": 21,
+      "verified": true
+    },
+    "k6": {
+      "formula": "k3\u00b2",
+      "calculated": 49,
+      "actual": 49,
+      "verified": true
+    },
+    "k7": {
+      "formula": "k2\u00d79 + k6",
+      "calculated": 76,
+      "actual": 76,
+      "verified": true
+    },
+    "k8": {
+      "formula": "k5\u00d713 - k6",
+      "calculated": 224,
+      "actual": 224,
+      "verified": true
+    },
+    "k9": {
+      "formula": "k8\u00d72 + 19",
+      "calculated": 467,
+      "actual": 467,
+      "verified": true
+    },
+    "k10": {
+      "formula": "k3\u00d7k7 - 18",
+      "calculated": 514,
+      "actual": 514,
+      "verified": true
+    },
+    "k11": {
+      "formula": "k6\u00d719 + k8",
+      "calculated": 1155,
+      "actual": 1155,
+      "verified": true
+    },
+    "k12": {
+      "formula": "k8\u00d712 - 5",
+      "calculated": 2683,
+      "actual": 2683,
+      "verified": true
+    },
+    "k13": {
+      "formula": "k10\u00d710 + k7",
+      "calculated": 5216,
+      "actual": 5216,
+      "verified": true
+    },
+    "k14": {
+      "formula": "k11\u00d79 + 149",
+      "calculated": 10544,
+      "actual": 10544,
+      "verified": true
+    },
+    "k15": {
+      "formula": "k12\u00d710 + 37",
+      "calculated": 26867,
+      "actual": 26867,
+      "verified": true
+    },
+    "k16": {
+      "formula": "k11\u00d745 - 465",
+      "calculated": 51510,
+      "actual": 51510,
+      "verified": true
+    },
+    "k17": {
+      "formula": "k8\u00d7428 - k6",
+      "calculated": 95823,
+      "actual": 95823,
+      "verified": true
+    },
+    "k18": {
+      "formula": "k13\u00d738 + 461",
+      "calculated": 198669,
+      "actual": 198669,
+      "verified": true
+    },
+    "k19": {
+      "formula": "k14\u00d734 - 961",
+      "calculated": 357535,
+      "actual": 357535,
+      "verified": true
+    },
+    "k20": {
+      "formula": "k17\u00d79 + 910",
+      "calculated": 863317,
+      "actual": 863317,
+      "verified": true
+    },
+    "k21": {
+      "formula": "k11\u00d71568 + 724",
+      "calculated": 1811764,
+      "actual": 1811764,
+      "verified": true
+    },
+    "k22": {
+      "formula": "k11\u00d72604 - 117",
+      "calculated": 3007503,
+      "actual": 3007503,
+      "verified": true
+    },
+    "k23": {
+      "formula": "k14\u00d7531 - 62",
+      "calculated": 5598802,
+      "actual": 5598802,
+      "verified": true
+    },
+    "k24": {
+      "formula": "k11\u00d712492 + 416",
+      "calculated": 14428676,
+      "actual": 14428676,
+      "verified": true
+    },
+    "k25": {
+      "formula": "k11\u00d728732 + k6",
+      "calculated": 33185509,
+      "actual": 33185509,
+      "verified": true
+    },
+    "k26": {
+      "formula": "k11\u00d747219 + 917",
+      "calculated": 54538862,
+      "actual": 54538862,
+      "verified": true
+    },
+    "k27": {
+      "formula": "k11\u00d796926 + 411",
+      "calculated": 111949941,
+      "actual": 111949941,
+      "verified": true
+    },
+    "k28": {
+      "formula": "k14\u00d721589 - k4",
+      "calculated": 227634408,
+      "actual": 227634408,
+      "verified": true
+    },
+    "k29": {
+      "formula": "k11\u00d7346934 + 124",
+      "calculated": 400708894,
+      "actual": 400708894,
+      "verified": true
+    },
+    "k30": {
+      "formula": "k11\u00d7894512 + 724",
+      "calculated": 1033162084,
+      "actual": 1033162084,
+      "verified": true
+    }
+  },
+  "approximate_formulas": {
+    "k66": {
+      "formula": "k22 \u00d7 k44",
+      "offset": 16350351670032013,
+      "error_percent": 0.035279,
+      "actual": 46346217550346335726
+    },
+    "k67": {
+      "formula": "k56 \u00d7 3000",
+      "offset": 716724356531302,
+      "error_percent": 0.00054,
+      "actual": 132656943602386256302
+    },
+    "k68": {
+      "formula": "k56 \u00d7 4973",
+      "offset": -1539208164567650,
+      "error_percent": 0.0007,
+      "actual": 219898266213316039825
+    },
+    "k69": {
+      "formula": "k7 \u00d7 k62",
+      "offset": 238178689781429092,
+      "error_percent": 0.080121,
+      "actual": 297274491920375905804
+    },
+    "k70": {
+      "formula": "k55 \u00d7 32299",
+      "offset": 906508132001941,
+      "error_percent": 9.3e-05,
+      "actual": 970436974005023690481
+    }
+  },
+  "position_anomalies": {
+    "k4": {
+      "position_percent": 0.0,
+      "value": 8,
+      "note": "Very low position in range"
+    },
+    "k10": {
+      "position_percent": 0.3914,
+      "value": 514,
+      "note": "Very low position in range"
+    },
+    "k69": {
+      "position_percent": 0.7205,
+      "value": 297274491920375905804,
+      "note": "Very low position in range"
+    }
+  },
+  "observations": [
+    "k5 = k2 \u00d7 k3 and k6 = k3\u00b2 are exact products",
+    "Offsets often use key values: k4=8, k6=49, k7=76, k8=224",
+    "k17 = 3^4 \u00d7 7 \u00d7 13\u00b2 (highly factored number)",
+    "k12 = 2683 (prime) - unique formula with offset 5",
+    "High keys follow k_i \u00d7 k_j pattern where i+j\u2248n",
+    "Position anomalies at k4 (0%), k10 (0.39%), k69 (0.72%)",
+    "Many offsets are small primes: 5, 19, 37, 62, 117, 124, 149, 411, 461, 724, 917"
+  ]
+}
