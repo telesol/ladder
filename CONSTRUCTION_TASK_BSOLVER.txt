@@ -1,0 +1,83 @@
+# TASK: EC Scalar Construction
+
+## Goal
+BUILD a ladder generator using Elliptic Curve scalar multiplication. The Bitcoin puzzle keys might be EC scalars with a pattern.
+
+## Background
+In EC cryptography, private keys are scalars. The public key is G * scalar where G is the generator point.
+
+## Known Properties
+- k_n = 2 * k_{n-1} + adj_n (recurrence)
+- The keys grow roughly as O(2^n)
+- Position in range varies: some keys are near minimum (k_4 at 0%), some near middle
+
+## EC Construction Hypothesis
+
+### Hypothesis 1: EC Point Addition Ladder
+The keys might be derived from EC point operations:
+- Start with base scalar s_0
+- s_n = 2 * s_{n-1} + f(n) where f(n) involves EC operations
+
+### Hypothesis 2: Scalar Ladder with EC Constraints
+- adj_n might be derived from EC point coordinates
+- m_n could relate to x-coordinates of specific points
+
+### Hypothesis 3: Double-and-Add Pattern
+The recurrence k_n = 2*k_{n-1} + adj_n looks like EC scalar multiplication's double-and-add:
+- Double: 2*k_{n-1}
+- Add: adj_n
+
+Maybe the puzzle creator is implementing a specific EC scalar computation.
+
+## Construction Approach
+```python
+def generate_ec_ladder(G, base_scalar, n_keys):
+    """
+    G: EC generator point
+    base_scalar: starting scalar value
+    """
+    k = [0, base_scalar]
+    
+    for n in range(2, n_keys + 1):
+        # Double previous
+        doubled = 2 * k[n-1]
+        
+        # Compute adjustment from EC
+        # This is the unknown function
+        adj = ec_adjustment(G, k, n)
+        
+        k_n = doubled + adj
+        k.append(k_n)
+    
+    return k
+
+def ec_adjustment(G, k, n):
+    """
+    How to compute adj_n from EC?
+    
+    Options:
+    1. adj_n = hash(n * G) mod 2^n
+    2. adj_n = x-coord(k[d] * G) mod 2^n
+    3. adj_n = f(y-coord of some point)
+    """
+    pass
+```
+
+## secp256k1 Parameters (Bitcoin curve)
+p = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F
+n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+G = (0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798,
+     0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8)
+
+## Key Questions
+1. Is there an EC-based construction that produces the observed recurrence?
+2. How would EC point operations produce the bounded m values?
+3. What role does the curve order n play?
+
+## Your Task
+1. Propose an EC-based ladder generator
+2. Explain how adj_n could derive from EC operations
+3. Write pseudocode for verification
+4. Suggest parameter search strategies
+
+Think deeply. If this is EC-based, cracking it means understanding the creator's EC construction.

@@ -1,0 +1,74 @@
+# TASK: PRNG-Based Ladder Construction
+
+## Goal
+BUILD a ladder generator that produces sequences with the same properties as the Bitcoin puzzle keys. If we can construct it, we can tune parameters to match.
+
+## Known Properties to Match
+1. Recurrence: k_n = 2 * k_{n-1} + adj_n
+2. adj_n = 2^n - m_n * k_{d_n}
+3. m_n / 2^(n-d_n) bounded in [0.72, 2.75], mean ~1.66
+4. d_n in {1,2,3,4,5,6,7,8}, chosen to minimize |m_n|
+
+## Construction Approach: PRNG
+
+The puzzle creator likely used a PRNG to generate the adjustment values.
+
+### Step 1: Identify PRNG Candidates
+Common PRNGs that could produce bounded values:
+- Linear Congruential Generator (LCG): x_{n+1} = (a*x_n + c) mod m
+- Mersenne Twister
+- XORshift
+- Multiplicative hash
+
+### Step 2: Design the Generator
+```python
+def generate_ladder(seed, n_keys):
+    # Initialize PRNG with seed
+    rng = init_prng(seed)
+    
+    k = [0, 1]  # k_0=0, k_1=1 (base case)
+    
+    for n in range(2, n_keys + 1):
+        # Generate normalized m from PRNG
+        # This should produce values in [0.72, 2.75]
+        norm_m = 0.72 + rng.next() * (2.75 - 0.72)
+        
+        # Determine d (1-8) - how?
+        d = choose_d(n, rng)  # Or deterministic based on n?
+        
+        # Compute m from normalized m
+        m = int(norm_m * (2 ** (n - d)))
+        
+        # Compute adj_n
+        adj = 2**n - m * k[d]
+        
+        # Compute k_n
+        k_n = 2 * k[n-1] + adj
+        k.append(k_n)
+    
+    return k
+```
+
+### Step 3: Parameter Search
+Try common seeds:
+- 0, 1, puzzle creation date, transaction IDs
+- Try different PRNG types
+- Match against known k_1 to k_70
+
+## Key Questions to Answer
+1. What PRNG family produces the observed m distribution?
+2. What is the seed?
+3. How is d_n determined - is it derived from the PRNG or computed to minimize |m|?
+
+## Data for Verification
+k_1=1, k_2=3, k_3=7, k_4=8, k_5=21, k_6=49, k_7=76, k_8=224
+m_seq (first 20): [1, 1, 22, 9, 19, 50, 23, 493, 19, 1921, 1241, 8342, 2034, 26989, 8470, 138269, 255121, 564091, 900329, 670674]
+d_seq (first 20): [2, 3, 1, 2, 2, 2, 4, 1, 7, 1, 2, 1, 4, 1, 4, 1, 1, 1, 1, 2]
+
+## Your Task
+1. Propose specific PRNG algorithms that could generate the m-sequence
+2. Write pseudocode for the full ladder generator
+3. Suggest how to search for the seed
+4. Explain how d_n might be determined
+
+Think deeply. Take your time. This is the key to unlocking all unsolved puzzles.
