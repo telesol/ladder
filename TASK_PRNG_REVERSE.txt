@@ -1,0 +1,41 @@
+# TASK: Reverse Engineer the PRNG
+
+## Context
+The Bitcoin puzzle keys follow: k_n = 2*k_{n-1} + adj_n
+where adj_n = 2^n - m_n * k_{d_n}
+
+## Key Insight
+The m values for n=2,3,4 are EXACTLY π convergents (3, 7, 22).
+Then m[5]=9=3² suggests a transition rule.
+
+## Your Task
+If you were designing a PRNG to generate the m sequence, how would you do it?
+
+## Constraints
+- m_n / 2^(n-d_n) must be in [0.72, 2.75]
+- d_n is chosen from 1-8 to minimize |m_n|
+- Early values embed π (3,7,22) and Fibonacci (in k)
+
+## m sequence to reverse-engineer:
+n=2:  m=3      (π seed)
+n=3:  m=7      (π seed)
+n=4:  m=22     (π seed)
+n=5:  m=9      (transition: 3² or digit_sum(333))
+n=6:  m=19     (e convergent)
+n=7:  m=50     (50/19 ≈ e)
+n=8:  m=23
+n=9:  m=493
+n=10: m=19     (repeat of m[6]!)
+n=11: m=1921
+n=12: m=1241
+n=13: m=8342
+n=14: m=2034
+n=15: m=26989
+
+## Questions
+1. What PRNG could produce this sequence given π as seed?
+2. Is there a state machine cycling through constants?
+3. Why does 19 appear twice (n=6 and n=10)?
+4. What formula generates m[8]=23 from previous values?
+
+Propose a complete PRNG algorithm!

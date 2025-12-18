@@ -1,0 +1,40 @@
+# TASK: Build a Working Ladder Generator
+
+## Goal
+Write pseudocode for a ladder generator that reproduces the m sequence.
+
+## Known Construction Rules
+1. m[2]=3, m[3]=7, m[4]=22 (π convergents)
+2. m[5]=9 (either 3² or digit_sum(333))
+3. m[6]=19, m[7]=50 (e-related: 50/19 ≈ e)
+
+## Full m sequence to match:
+3, 7, 22, 9, 19, 50, 23, 493, 19, 1921, 1241, 8342, 2034, 26989, 8470
+
+## Constraint
+norm_m = m / 2^(n-d) must be in [0.72, 2.75]
+
+## Your Task
+Write a generator function:
+
+```
+def generate_m(n, prev_m, prev_k):
+    if n == 2: return 3  # π
+    if n == 3: return 7  # π
+    if n == 4: return 22 # π
+    if n == 5: return 9  # 3² or digit_sum(333)
+    if n == 6: return 19 # e convergent
+    if n == 7: return 50 # e-related
+
+    # What comes next?
+    # YOUR TASK: Figure out the rule for n >= 8
+```
+
+## Hints
+- 19 appears at both n=6 and n=10
+- 23 at n=8 is prime
+- 493 = 17 × 29
+- Look for patterns in prime factorizations
+- Try relating to continued fraction terms
+
+Propose a complete algorithm!

@@ -1,13 +1,34 @@
 # Bitcoin Puzzle Analysis Project
 
 ## Project Status
-**Last Updated**: 2025-12-16
+**Last Updated**: 2025-12-18
 
 ## PRIMARY GOAL
 **Derive the key generation FORMULA** - NOT predict search positions, NOT brute force.
 
 The puzzle creator used SOME method to generate the keys. We want to reverse-engineer that method.
 ALL unsolved puzzles are targets - no single puzzle is prioritized.
+
+## EXPLORATION MINDSET - CRITICAL
+
+### Be Curious, Not Judgmental
+- **DO NOT declare "no pattern found"** - instead say "haven't found it YET"
+- **DO NOT close doors prematurely** - every observation is a clue
+- **DO explore freely** - ask "what if?" and test hypotheses
+- **DO let the models think deeply** - give them time for reasoning
+
+### Construction Over Analysis
+The goal is to **BUILD a ladder generator** that can reproduce the sequence.
+- Think like the puzzle creator: "How would I construct this?"
+- Test construction hypotheses, not just analyze data
+- If we can build it, we can tune it to match
+
+### Key Discovery (2025-12-18)
+Mathematical constants are embedded in early values:
+- m[4]/m[3] = 22/7 ≈ π
+- k[1], k[2], k[4], k[5] are Fibonacci numbers
+- m values connect to π, e, and φ convergents
+See: `DISCOVERY_PI.md` for full details
 
 ## STRICT RULES - READ THIS
 
