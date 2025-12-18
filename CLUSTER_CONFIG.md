@@ -1,14 +1,18 @@
-# Dual-Box Cluster Configuration
+# Dual-Spark Cluster Configuration
 
 ## Network Topology
 ```
 ┌─────────────────┐     200Gbps      ┌─────────────────┐
-│     BOX 1       │◄────────────────►│     BOX 2       │
+│    SPARK 1      │◄────────────────►│    SPARK 2      │
 │   10.0.0.1      │    enP2p1s0f0    │   10.0.0.2      │
 │                 │     <1ms RTT     │                 │
 │  Primary/Coord  │                  │  Secondary/Work │
 └─────────────────┘                  └─────────────────┘
 ```
+
+## GitHub Repository
+**Repo**: https://github.com/telesol/ladder
+**Branch**: main
 
 ## Role Assignment
 
