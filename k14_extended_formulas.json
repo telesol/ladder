@@ -1,0 +1,108 @@
+{
+  "target": "k14",
+  "value": 10544,
+  "formula_count": 15,
+  "formulas": [
+    {
+      "type": "A",
+      "formula": "k8 \u00d7 47 + 16",
+      "calc": "224 \u00d7 47 + 16 = 10544",
+      "multiplier": 47,
+      "constant": 16
+    },
+    {
+      "type": "A",
+      "formula": "k11 \u00d7 9 + 149",
+      "calc": "1155 \u00d7 9 + 149 = 10544",
+      "multiplier": 9,
+      "constant": 149
+    },
+    {
+      "type": "A",
+      "formula": "k12 \u00d7 4 + -188",
+      "calc": "2683 \u00d7 4 + -188 = 10544",
+      "multiplier": 4,
+      "constant": -188
+    },
+    {
+      "type": "A",
+      "formula": "k9 \u00d7 23 + -197",
+      "calc": "467 \u00d7 23 + -197 = 10544",
+      "multiplier": 23,
+      "constant": -197
+    },
+    {
+      "type": "A",
+      "formula": "k8 \u00d7 48 + -208",
+      "calc": "224 \u00d7 48 + -208 = 10544",
+      "multiplier": 48,
+      "constant": -208
+    },
+    {
+      "type": "A",
+      "formula": "k8 \u00d7 46 + 240",
+      "calc": "224 \u00d7 46 + 240 = 10544",
+      "multiplier": 46,
+      "constant": 240
+    },
+    {
+      "type": "A",
+      "formula": "k10 \u00d7 21 + -250",
+      "calc": "514 \u00d7 21 + -250 = 10544",
+      "multiplier": 21,
+      "constant": -250
+    },
+    {
+      "type": "E",
+      "formula": "k5 \u00d7 k10 + -250",
+      "calc": "21 \u00d7 514 + -250 = 10794 + -250 = 10544",
+      "constant": -250
+    },
+    {
+      "type": "E",
+      "formula": "k5 \u00d7 k10 - 250",
+      "calc": "21 \u00d7 514 - 250 = 10794 - 250 = 10544",
+      "constant": 250
+    },
+    {
+      "type": "A",
+      "formula": "k10 \u00d7 20 + 264",
+      "calc": "514 \u00d7 20 + 264 = 10544",
+      "multiplier": 20,
+      "constant": 264
+    },
+    {
+      "type": "A",
+      "formula": "k9 \u00d7 22 + 270",
+      "calc": "467 \u00d7 22 + 270 = 10544",
+      "multiplier": 22,
+      "constant": 270
+    },
+    {
+      "type": "A",
+      "formula": "k8 \u00d7 49 + -432",
+      "calc": "224 \u00d7 49 + -432 = 10544",
+      "multiplier": 49,
+      "constant": -432
+    },
+    {
+      "type": "E",
+      "formula": "k6 \u00d7 k8 + -432",
+      "calc": "49 \u00d7 224 + -432 = 10976 + -432 = 10544",
+      "constant": -432
+    },
+    {
+      "type": "E",
+      "formula": "k6 \u00d7 k8 - 432",
+      "calc": "49 \u00d7 224 - 432 = 10976 - 432 = 10544",
+      "constant": 432
+    },
+    {
+      "type": "A",
+      "formula": "k8 \u00d7 45 + 464",
+      "calc": "224 \u00d7 45 + 464 = 10544",
+      "multiplier": 45,
+      "constant": 464
+    }
+  ]
+}

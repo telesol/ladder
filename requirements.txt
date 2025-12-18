@@ -1,0 +1,32 @@
+# Ladder Agents Requirements
+# ==========================
+
+# Core
+pyyaml>=6.0
+aiohttp>=3.9.0
+asyncio-throttle>=1.0.2
+
+# Web Interface
+flask>=3.0.0
+
+# Claude API
+anthropic>=0.40.0
+
+# RAG / Embeddings
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.4  # Use faiss-gpu if on GPU
+
+# Crypto
+ecdsa>=0.18.0
+base58>=2.1.1
+
+# Database
+# sqlite3 is built-in
+
+# Utilities
+numpy>=1.24.0
+tqdm>=4.65.0
+
+# Optional: For local model fallback
+# torch>=2.0.0
+# transformers>=4.40.0

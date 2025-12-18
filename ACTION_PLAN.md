@@ -1,7 +1,8 @@
 # Action Plan: Finding m_n Generation Rule
 
 **Date**: 2025-12-18
-**Status**: Options 1-7 TESTED, m_n rule NOT found yet
+**Status**: ALL 8 OPTIONS TESTED - m_n rule NOT found
+**Next**: Need new approaches (EC analysis, PRNG reconstruction, external data)
 
 ## Session Results (2025-12-18)
 
@@ -14,7 +15,7 @@
 | 5. Hash Derivation | ✓ DONE | NOT hash-based (no SHA256 correlation) |
 | 6. Key Relationship | ✓ DONE | Formula VERIFIED 100% for all 70 keys |
 | 7. OEIS Search | ✓ DONE | NOT in database |
-| 8. Alt Decomposition | PENDING | Next to try |
+| 8. Alt Decomposition | ✓ DONE | No pattern - see OPTION8_RESULTS.md |
 
 **Key Discovery**: `m_n / 2^(n - d_n)` is bounded in [1.0, 2.75], mean ≈ 1.72
 

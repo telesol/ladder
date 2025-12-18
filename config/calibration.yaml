@@ -1,0 +1,46 @@
+# Calibration Configuration
+# This file contains configuration parameters for the calibration system
+
+database:
+  path: db/kh.db
+
+calibration:
+  # Range of bits to use for calibration
+  range: [29, 70]
+
+  # Lanes used for calibration (subset of all 16 lanes)
+  lanes: [1, 5, 9, 13]
+
+  # Output directory for calibration files
+  output_dir: out
+
+  # Main calibration file name
+  calib_file: ladder_calib_29_70_full.json
+
+  # Temporary file for storing computed drift values
+  temp_file: missing_c0.json
+
+  # Bridge puzzles used for drift computation
+  bridge_puzzles: [75, 80]
+
+logging:
+  level: INFO
+  format: '%(asctime)s - %(levelname)s - %(message)s'
+  file: out/calibration.log
+
+verification:
+  # Expected verification percentage for successful calibration
+  expected_success_rate: 100.0
+
+  # File to store verification mismatches
+  mismatch_log: out/ladder_mismatch_log.csv
+
+performance:
+  # Number of parallel processes to use for drift computation
+  parallel_processes: 4
+
+  # Enable GPU acceleration if available
+  gpu_acceleration: false
+
+  # Cache intermediate results
+  cache_results: true

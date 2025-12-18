@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Puzzle Ladder - Interactive Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎯 Bitcoin Puzzle Ladder</h1>
+            <p class="subtitle">Interactive Training & Exploration Dashboard</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- GPU & System Monitoring -->
+        <section class="card" id="gpu-section">
+            <h2>🎮 GPU & System Monitor</h2>
+            <div id="gpu-stats">
+                <div class="loading">Loading GPU stats...</div>
+            </div>
+        </section>
+
+        <!-- Chat Agent -->
+        <section class="card" id="chat-section">
+            <h2>💬 Chattie - AI Assistant</h2>
+            <!-- Model Selector -->
+            <div class="model-selector" style="margin-bottom: 1rem; padding: 0.75rem; background: var(--light); border-radius: 8px; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <label for="model-select" style="font-weight: bold;">🤖 Model:</label>
+                <select id="model-select" style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; min-width: 200px;">
+                    <option value="">Loading models...</option>
+                </select>
+                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="use-rag" checked>
+                    <span>📚 Use RAG (Memory + Database)</span>
+                </label>
+                <span id="model-status" class="badge" style="background: var(--secondary); color: white;">Connecting...</span>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-message assistant">
+                        <div class="message-content">
+                            <strong>Chattie:</strong> Hello! I'm your Bitcoin Puzzle Ladder AI assistant. I use <strong>deterministic affine mathematics</strong> to calculate private keys. Try: "discover lanes", "calculate puzzle 50", "verify puzzle 30", or "generate calibration 1-70".
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Try: 'calculate puzzle 50', 'discover lanes', 'verify puzzle 30', 'generate calibration 1-70'" />
+                    <button class="btn btn-primary" id="send-btn" onclick="sendChatMessage()">Send</button>
+                    <button class="btn btn-danger" id="stop-btn" onclick="stopGeneration()" style="display: none;">Stop</button>
+                    <button class="btn btn-secondary" id="retry-btn" onclick="retryLastMessage()" style="display: none;" title="Regenerate last response">🔄 Retry</button>
+                </div>
+                <!-- Quick Action Buttons -->
+                <div class="quick-actions" style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="btn btn-sm" onclick="quickAction('discover lanes')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">🔍 Discover Lanes</button>
+                    <button class="btn btn-sm" onclick="quickAction('calculate puzzle 50')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">🧮 Calculate #50</button>
+                    <button class="btn btn-sm" onclick="quickAction('verify puzzle 30')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">✅ Verify #30</button>
+                    <button class="btn btn-sm" onclick="quickAction('generate calibration 1 70')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📐 Gen Calibration</button>
+                    <button class="btn btn-sm" onclick="quickAction('show system status')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📊 System Status</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Health -->
+        <section class="card" id="health-section">
+            <h2>🏥 System Health</h2>
+            <div id="health-content">
+                <div class="loading">Loading system health...</div>
+            </div>
+        </section>
+
+        <!-- Progress & Learning Dashboard -->
+        <section class="card" id="progress-section">
+            <h2>📈 Progress & Learning</h2>
+            <div id="progress-content">
+                <div class="loading">Loading progress data...</div>
+            </div>
+        </section>
+
+        <!-- Status Overview -->
+        <section class="card" id="status-section">
+            <h2>📊 Ladder Status</h2>
+            <div id="status-content">
+                <div class="loading">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Database Visualization -->
+        <section class="card">
+            <h2>🗄️ Database Contents</h2>
+            <div id="database-viz">
+                <div class="puzzle-grid" id="puzzle-grid"></div>
+                <div class="stats" id="db-stats"></div>
+            </div>
+        </section>
+
+        <!-- Calibration Status -->
+        <section class="card">
+            <h2>⚙️ Calibration Status</h2>
+            <div id="calibration-status"></div>
+        </section>
+
+        <!-- Workflow Steps -->
+        <section class="card">
+            <h2>🚀 Training Workflow</h2>
+            <div class="workflow">
+                <!-- Phase 1: Verification -->
+                <div class="phase" id="phase-verify">
+                    <h3>Phase 1: Verify Current State</h3>
+                    <p>Run verification to check if current calibration achieves 100%</p>
+                    <button class="btn btn-primary" onclick="runVerification()">
+                        🔍 Run Verification
+                    </button>
+                    <div id="verify-results" class="results"></div>
+                </div>
+
+                <!-- Phase 2: Compute Drift -->
+                <div class="phase" id="phase-drift">
+                    <h3>Phase 2: Compute Missing Drift</h3>
+                    <p>Compute C[0][ℓ][0] from bridges 75 and 80</p>
+                    <button class="btn btn-secondary" onclick="computeDrift()">
+                        🔬 Compute Drift
+                    </button>
+                    <div id="drift-results" class="results"></div>
+                </div>
+
+                <!-- Phase 3: Patch Calibration -->
+                <div class="phase" id="phase-patch">
+                    <h3>Phase 3: Patch Calibration</h3>
+                    <p>Update calibration file with computed drift</p>
+                    <button class="btn btn-secondary" onclick="patchCalibration()">
+                        🔧 Patch Calibration
+                    </button>
+                    <div id="patch-results" class="results"></div>
+                </div>
+
+                <!-- Phase 4: Re-verify -->
+                <div class="phase" id="phase-reverify">
+                    <h3>Phase 4: Re-verify (Must be 100%)</h3>
+                    <p>Verify that patched calibration achieves 100%</p>
+                    <button class="btn btn-primary" onclick="runVerification()">
+                        ✅ Re-verify
+                    </button>
+                    <div id="reverify-results" class="results"></div>
+                </div>
+
+                <!-- Phase 5: Calculate -->
+                <div class="phase" id="phase-generate">
+                    <h3>Phase 5: Calculate Puzzle 71</h3>
+                    <p>Calculate the first unknown puzzle using affine mathematics</p>
+                    <button class="btn btn-success" onclick="generatePuzzle()">
+                        🧮 Calculate Puzzle 71
+                    </button>
+                    <div id="generate-results" class="results"></div>
+                </div>
+
+                <!-- Phase 6: Validate -->
+                <div class="phase" id="phase-validate">
+                    <h3>Phase 6: Validate Address</h3>
+                    <p>Prove correctness through cryptographic validation</p>
+                    <div class="input-group">
+                        <input type="text" id="privkey-input" placeholder="0x... (generated private key)" />
+                        <input type="number" id="puzzle-num-input" value="71" min="1" max="160" />
+                    </div>
+                    <button class="btn btn-success" onclick="validateAddress()">
+                        🔐 Validate Address
+                    </button>
+                    <div id="validate-results" class="results"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Search & Training -->
+        <section class="card">
+            <h2>🤖 AI Model Search & Training</h2>
+            <div class="input-group">
+                <input type="text" id="model-search-input" placeholder="Search models (qwen, llama, mistral...)" value="qwen" />
+                <button class="btn btn-primary" onclick="searchModels()">🔍 Search</button>
+            </div>
+            <div id="model-results"></div>
+        </section>
+
+        <!-- Documentation -->
+        <section class="card">
+            <h2>📚 Documentation</h2>
+            <div class="doc-links">
+                <button class="btn btn-link" onclick="showDoc('START_HERE')">START_HERE</button>
+                <button class="btn btn-link" onclick="showDoc('AI_TRAINING_GUIDE')">Training Guide</button>
+                <button class="btn btn-link" onclick="showDoc('CURRENT_STATE')">Current State</button>
+                <button class="btn btn-link" onclick="showDoc('THE_LADDER_QUEST')">The Quest</button>
+                <button class="btn btn-link" onclick="showDoc('README')">README</button>
+            </div>
+            <div id="doc-content" class="doc-viewer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Bitcoin Puzzle Ladder - "PURE MATH, no assumptions, just simple math" 🎯</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

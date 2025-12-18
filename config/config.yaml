@@ -1,0 +1,82 @@
+# Ladder Agents Configuration
+# ============================
+
+project:
+  name: "Ladder Agents"
+  version: "1.0.0"
+  description: "24/7 autonomous ladder discovery system"
+
+# Orchestrator (Local Ollama with Cloud Models)
+orchestrator:
+  provider: "ollama"
+  base_url: "http://localhost:11434"
+  model: "mistral-large-3:675b-cloud"
+  api_key_env: "OLLAMA_API_KEY"
+  max_tokens: 16384  # Ollama cloud max output tokens
+  temperature: 0.7
+
+# Worker Agents (Local Ollama)
+agents:
+  provider: "ollama"
+  base_url: "http://localhost:11434"  # Local Ollama endpoint
+  api_key_env: "OLLAMA_API_KEY"
+
+  math_agent:
+    model: "mistral-large-3:675b-cloud"
+    role: "Mathematical computation and affine recurrence analysis"
+    temperature: 0.3
+    max_tokens: 8192
+
+  verification_agent:
+    model: "mistral-large-3:675b-cloud"
+    role: "Bitcoin address verification and cryptographic validation"
+    temperature: 0.1
+    max_tokens: 4096
+
+  discovery_agent:
+    model: "mistral-large-3:675b-cloud"
+    role: "Pattern discovery and hypothesis generation"
+    temperature: 0.8
+    max_tokens: 8192
+
+# Local Databases
+databases:
+  kh_db: "db/kh.db"
+  memory_db: "db/memory.db"
+  discoveries_db: "db/discoveries.db"
+
+# RAG Configuration
+rag:
+  vector_store: "rag/vectors"
+  embedding_model: "all-MiniLM-L6-v2"
+  chunk_size: 512
+  chunk_overlap: 50
+  top_k: 5
+
+# NAS Sync
+sync:
+  enabled: true
+  nas_host: "192.168.111.232"
+  nas_name: "Boyz-NAS"
+  nas_share: "LadderAgents"
+  sync_interval: 300  # seconds
+  sync_paths:
+    - "db/"
+    - "data/"
+    - "logs/"
+    - "models/"
+
+# Daemon Configuration
+daemon:
+  enabled: true
+  run_interval: 60  # seconds between discovery cycles
+  max_concurrent_agents: 3
+  log_level: "INFO"
+
+# Paths
+paths:
+  data: "data/"
+  calibration: "data/calibration/"
+  logs: "logs/"
+  models: "models/"
+  scripts: "scripts/"

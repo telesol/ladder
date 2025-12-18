@@ -1,0 +1,48 @@
+{
+  "verified_low_keys": {
+    "1": 1,
+    "2": 3,
+    "3": 7,
+    "4": 8,
+    "5": 21,
+    "6": 49,
+    "7": 76,
+    "8": 224,
+    "9": 467,
+    "10": 514,
+    "11": 1155,
+    "12": 2683,
+    "13": 5765,
+    "14": 10544
+  },
+  "verified_high_keys": {
+    "69": 295147905179352826108,
+    "70": 970436974005023690481
+  },
+  "uncertain_high_keys": {
+    "66": "NEEDS VERIFICATION",
+    "67": "NEEDS VERIFICATION",
+    "68": "NEEDS VERIFICATION"
+  },
+  "k15_candidates": [
+    17024,
+    17295,
+    17325,
+    21088
+  ],
+  "verified_formulas": {
+    "k5": "k2 \u00d7 k3 = 3 \u00d7 7 = 21",
+    "k6": "k3\u00b2 = 7\u00b2 = 49",
+    "k7": "k2\u00d79 + k6 = 27 + 49 = 76",
+    "k8": "k5\u00d713 - k6 = 273 - 49 = 224",
+    "k11": "k6\u00d719 + k8 = 931 + 224 = 1155",
+    "k12": "k8\u00d712 - 5 = 2688 - 5 = 2683 (UNIQUE)",
+    "k13": "k7\u00b2 - 11 = 5776 - 11 = 5765"
+  },
+  "analysis_questions": [
+    "Does the formula pattern extend to k15+?",
+    "What causes k12's uniqueness?",
+    "Is there a regime change in the gap?",
+    "How do k69/k70 positions relate to low key positions?"
+  ]
+}

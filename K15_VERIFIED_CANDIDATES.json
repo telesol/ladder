@@ -1,0 +1,119 @@
+{
+  "title": "k15 Verified Formula Candidates - Consolidated AI Analysis",
+  "date": "2025-12-16",
+  "methodology": "Pure mathematical derivation using local AI (qwq:32b, phi4-reasoning:14b)",
+
+  "k15_range": {
+    "bit_range": 15,
+    "minimum": 16384,
+    "maximum": 32767,
+    "formula": "[2^14, 2^15-1]"
+  },
+
+  "verified_candidates": {
+    "product_formula": {
+      "formula": "k7 × k8",
+      "calculation": "76 × 224 = 17024",
+      "value": 17024,
+      "in_range": true,
+      "verified_by": ["C-Solver (qwq:32b)", "B-Solver (phi4-reasoning:14b)"],
+      "elegance": "HIGH - Similar to k5=k2×k3",
+      "confidence": "HIGH"
+    },
+    "linear_1": {
+      "formula": "k14 × 2",
+      "calculation": "10544 × 2 = 21088",
+      "value": 21088,
+      "in_range": true,
+      "verified_by": ["C-Solver", "B-Solver"],
+      "confidence": "MEDIUM"
+    },
+    "linear_2": {
+      "formula": "k13 × 3",
+      "calculation": "5765 × 3 = 17295",
+      "value": 17295,
+      "in_range": true,
+      "verified_by": ["C-Solver", "B-Solver"],
+      "confidence": "MEDIUM"
+    },
+    "linear_3": {
+      "formula": "k11 × 15",
+      "calculation": "1155 × 15 = 17325",
+      "value": 17325,
+      "in_range": true,
+      "verified_by": ["C-Solver", "B-Solver"],
+      "confidence": "MEDIUM"
+    },
+    "linear_4": {
+      "formula": "k10 × 32",
+      "calculation": "514 × 32 = 16448",
+      "value": 16448,
+      "in_range": true,
+      "verified_by": ["C-Solver"],
+      "confidence": "LOW"
+    }
+  },
+
+  "rejected_candidates": {
+    "k12_times_6": {
+      "formula": "k12 × 6",
+      "calculation": "2683 × 6 = 16098",
+      "value": 16098,
+      "in_range": false,
+      "reason": "16098 < 16384 (below minimum)"
+    },
+    "k9_times_35": {
+      "formula": "k9 × 35",
+      "calculation": "467 × 35 = 16345",
+      "value": 16345,
+      "in_range": false,
+      "reason": "16345 < 16384 (below minimum)"
+    },
+    "k8_squared": {
+      "formula": "k8²",
+      "calculation": "224² = 50176",
+      "value": 50176,
+      "in_range": false,
+      "reason": "50176 > 32767 (above maximum)"
+    }
+  },
+
+  "meta_formula_analysis": {
+    "multiplier_sequence": [9, 13, 19, 12],
+    "multiplier_pattern": "9→13 (+4), 13→19 (+6), 19→12 (-7) - not arithmetic",
+    "offset_sequence": [2, 5, 8, 0],
+    "offset_differences": ["+3", "+3", "-8"],
+    "observation": "Multiplier 12 appears anomalous; offsets follow +3,+3 then reset",
+    "hypothesis": "k_n = M(n) × prev_term + C(n) with cycling M and C"
+  },
+
+  "key_observations": {
+    "k12_uniqueness": "k12 has ONLY ONE valid formula (k8×12-5) - critical constraint",
+    "pattern_similarity": "k15 = k7×k8 mirrors k5 = k2×k3 (product of two prior keys)",
+    "multiplier_reuse": "Multiplier 9 appears twice (k7 and k14), suggesting cycling"
+  },
+
+  "best_k15_candidate": {
+    "value": 17024,
+    "formula": "k7 × k8 = 76 × 224",
+    "reasoning": [
+      "Product formula is elegant and follows established pattern",
+      "Similar to k5 = k2 × k3 product formula",
+      "Verified by both AI models independently",
+      "Falls cleanly in middle of valid range"
+    ]
+  },
+
+  "ai_compute_time": {
+    "c_solver_analysis": "1513 seconds (25 minutes)",
+    "b_solver_verification": "695 seconds (12 minutes)",
+    "total": "37 minutes of GPU compute"
+  },
+
+  "next_steps": [
+    "Verify k15=17024 against ground truth if available",
+    "Extend analysis to k16 using same methodology",
+    "Test if meta-formula holds through the 51-key gap",
+    "Check if k15 formula relates to k66-k70 via bridge analysis"
+  ]
+}

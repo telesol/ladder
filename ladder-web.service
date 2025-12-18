@@ -1,0 +1,15 @@
+[Unit]
+Description=Ladder Agents Web Interface
+After=network.target
+
+[Service]
+Type=simple
+User=solo
+WorkingDirectory=/home/solo/LA
+Environment="PATH=/home/solo/LA/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/solo/LA/.venv/bin/python /home/solo/LA/web_app.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

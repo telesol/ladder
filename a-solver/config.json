@@ -1,0 +1,56 @@
+{
+  "model": {
+    "name": "qwen3-vl:8b",
+    "provider": "ollama",
+    "endpoint": "http://localhost:11434/api/generate",
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "max_tokens": 4096
+    }
+  },
+  "certification": {
+    "date": "2025-12-09",
+    "score": "10/10",
+    "status": "CERTIFIED",
+    "levels": {
+      "foundation": "3/3",
+      "pattern_recognition": "5/5",
+      "analysis_reasoning": "2/2"
+    }
+  },
+  "hardware": {
+    "platform": "NVIDIA DGX Spark",
+    "gpu": "GB10 Blackwell",
+    "cuda": "13.0",
+    "vram_usage": "~11GB"
+  },
+  "performance": {
+    "inference_time": "20-300s per query",
+    "timeout_default": 300,
+    "timeout_simple": 120
+  },
+  "capabilities": [
+    "key_range_calculation",
+    "prime_factorization",
+    "position_analysis",
+    "relationship_verification",
+    "linear_recurrence_testing",
+    "normalized_delta_computation",
+    "affine_model_analysis",
+    "bridge_ratio_calculation",
+    "anomaly_detection",
+    "constraint_derivation"
+  ],
+  "limitations": [
+    "cannot_predict_unknown_keys",
+    "affine_model_circular_reasoning",
+    "delta_constraints_dont_reduce_search",
+    "pattern_breaks_after_early_keys"
+  ],
+  "known_data": {
+    "solved_puzzles": "1-70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130",
+    "target_puzzle": 71,
+    "search_space": "2^70 (~1.18e21)"
+  }
+}

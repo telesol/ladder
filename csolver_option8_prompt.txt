@@ -1,0 +1,62 @@
+# TASK: Option 8 - Alternative Decomposition Analysis
+
+## Background
+We have verified the recurrence formula for Bitcoin puzzle keys:
+```
+k_n = 2 × k_{n-1} + adj_n
+adj_n = 2^n - m_n × k_{d_n}
+```
+
+This formula is 100% verified for all 70 known keys (k1-k70).
+
+## The Problem
+We know m_n and d_n for n=2..70, but we cannot determine HOW m_n is generated.
+Without knowing the m_n generation rule, we cannot predict k_71 and beyond.
+
+## Your Task
+Find an ALTERNATIVE decomposition of adj_n that might reveal a simpler pattern.
+
+## Data
+First 30 m values (n=2..31):
+[1, 1, 22, 9, 19, 50, 23, 493, 19, 1921, 1241, 8342, 2034, 26989, 8470, 138269, 255121, 564091, 900329, 670674, 1603443, 8804812, 1693268, 29226275, 78941020, 43781837, 264700930, 591430834, 105249691, 2111419265]
+
+First 30 d values (n=2..31):
+[2, 3, 1, 2, 2, 2, 4, 1, 7, 1, 2, 1, 4, 1, 4, 1, 1, 1, 1, 2, 2, 1, 4, 1, 1, 2, 1, 1, 4, 1]
+
+First 30 adj values (n=2..31):
+[1, 1, -6, 9, 17, 14, 104, 5, 883, -1, 523, 102, 4312, 125, 15142, -1061, 5247, 2581, -3305, 76566, 46725, 75620, 553096, -64707, 5106132, 4903887, -14315298, -54096558, 119315449, -55386497]
+
+Base keys:
+k1=1, k2=3, k3=7, k4=8, k5=21, k6=49, k7=76, k8=224
+
+## Alternative Forms to Try
+
+1. **Additive form**: adj_n = a×2^n + b×k_{d1} + c×k_{d2} + offset
+   - Can adj_n be expressed as a LINEAR combination of powers and earlier keys?
+
+2. **Multiplicative form**: adj_n = (a×n + b) × k_d + c×2^n
+   - Is there a pattern where the multiplier depends on n?
+
+3. **Ratio form**: adj_n / 2^n = f(n) for some function f
+   - What is the pattern in adj_n / 2^n?
+
+4. **Continued fraction**: Express m_n as a continued fraction
+   - Does m_n have a continued fraction expansion that's periodic or predictable?
+
+5. **Different reference key**: Instead of k_d minimizing |m|, try:
+   - Always use k_1
+   - Always use k_{n-1}
+   - Use k_{floor(n/2)}
+
+6. **XOR relationship**: Does m_n XOR n reveal a pattern?
+
+7. **Binary digit extraction**: Is m_n derived from binary digits of some master sequence?
+
+## Output Format
+For each alternative form you try, report:
+1. The formula you tested
+2. Whether it fits the data exactly or approximately
+3. If approximate, what is the maximum error?
+4. Any patterns you observe
+
+MOST IMPORTANTLY: If you find a form that predicts m_n from n alone (without knowing k_n), report it immediately.

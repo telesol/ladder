@@ -1,0 +1,709 @@
+{
+  "range": {
+    "min": 16384,
+    "max": 32767
+  },
+  "unique_count": 15812,
+  "top_candidates": [
+    {
+      "formula": "k11 \u00d7 15 + 0",
+      "calc": "1155 \u00d7 15 + 0 = 17325",
+      "value": 17325,
+      "multiplier": 15,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 16 + 0",
+      "calc": "1155 \u00d7 16 + 0 = 18480",
+      "value": 18480,
+      "multiplier": 16,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 17 + 0",
+      "calc": "1155 \u00d7 17 + 0 = 19635",
+      "value": 19635,
+      "multiplier": 17,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 18 + 0",
+      "calc": "1155 \u00d7 18 + 0 = 20790",
+      "value": 20790,
+      "multiplier": 18,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 19 + 0",
+      "calc": "1155 \u00d7 19 + 0 = 21945",
+      "value": 21945,
+      "multiplier": 19,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 20 + 0",
+      "calc": "1155 \u00d7 20 + 0 = 23100",
+      "value": 23100,
+      "multiplier": 20,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 21 + 0",
+      "calc": "1155 \u00d7 21 + 0 = 24255",
+      "value": 24255,
+      "multiplier": 21,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 22 + 0",
+      "calc": "1155 \u00d7 22 + 0 = 25410",
+      "value": 25410,
+      "multiplier": 22,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 23 + 0",
+      "calc": "1155 \u00d7 23 + 0 = 26565",
+      "value": 26565,
+      "multiplier": 23,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 24 + 0",
+      "calc": "1155 \u00d7 24 + 0 = 27720",
+      "value": 27720,
+      "multiplier": 24,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 25 + 0",
+      "calc": "1155 \u00d7 25 + 0 = 28875",
+      "value": 28875,
+      "multiplier": 25,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 26 + 0",
+      "calc": "1155 \u00d7 26 + 0 = 30030",
+      "value": 30030,
+      "multiplier": 26,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 27 + 0",
+      "calc": "1155 \u00d7 27 + 0 = 31185",
+      "value": 31185,
+      "multiplier": 27,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 28 + 0",
+      "calc": "1155 \u00d7 28 + 0 = 32340",
+      "value": 32340,
+      "multiplier": 28,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 7 + 0",
+      "calc": "2683 \u00d7 7 + 0 = 18781",
+      "value": 18781,
+      "multiplier": 7,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 8 + 0",
+      "calc": "2683 \u00d7 8 + 0 = 21464",
+      "value": 21464,
+      "multiplier": 8,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 9 + 0",
+      "calc": "2683 \u00d7 9 + 0 = 24147",
+      "value": 24147,
+      "multiplier": 9,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 10 + 0",
+      "calc": "2683 \u00d7 10 + 0 = 26830",
+      "value": 26830,
+      "multiplier": 10,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 11 + 0",
+      "calc": "2683 \u00d7 11 + 0 = 29513",
+      "value": 29513,
+      "multiplier": 11,
+      "constant": 0
+    },
+    {
+      "formula": "k12 \u00d7 12 + 0",
+      "calc": "2683 \u00d7 12 + 0 = 32196",
+      "value": 32196,
+      "multiplier": 12,
+      "constant": 0
+    },
+    {
+      "formula": "k13 \u00d7 3 + 0",
+      "calc": "5765 \u00d7 3 + 0 = 17295",
+      "value": 17295,
+      "multiplier": 3,
+      "constant": 0
+    },
+    {
+      "formula": "k13 \u00d7 4 + 0",
+      "calc": "5765 \u00d7 4 + 0 = 23060",
+      "value": 23060,
+      "multiplier": 4,
+      "constant": 0
+    },
+    {
+      "formula": "k13 \u00d7 5 + 0",
+      "calc": "5765 \u00d7 5 + 0 = 28825",
+      "value": 28825,
+      "multiplier": 5,
+      "constant": 0
+    },
+    {
+      "formula": "k14 \u00d7 2 + 0",
+      "calc": "10544 \u00d7 2 + 0 = 21088",
+      "value": 21088,
+      "multiplier": 2,
+      "constant": 0
+    },
+    {
+      "formula": "k14 \u00d7 3 + 0",
+      "calc": "10544 \u00d7 3 + 0 = 31632",
+      "value": 31632,
+      "multiplier": 3,
+      "constant": 0
+    },
+    {
+      "formula": "k7 \u00d7 k8 + 0",
+      "calc": "76 \u00d7 224 + 0 = 17024",
+      "value": 17024,
+      "multiplier": null,
+      "constant": 0
+    },
+    {
+      "formula": "k11 \u00d7 15 + -1",
+      "calc": "1155 \u00d7 15 + -1 = 17324",
+      "value": 17324,
+      "multiplier": 15,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 15 + 1",
+      "calc": "1155 \u00d7 15 + 1 = 17326",
+      "value": 17326,
+      "multiplier": 15,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 16 + -1",
+      "calc": "1155 \u00d7 16 + -1 = 18479",
+      "value": 18479,
+      "multiplier": 16,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 16 + 1",
+      "calc": "1155 \u00d7 16 + 1 = 18481",
+      "value": 18481,
+      "multiplier": 16,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 17 + -1",
+      "calc": "1155 \u00d7 17 + -1 = 19634",
+      "value": 19634,
+      "multiplier": 17,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 17 + 1",
+      "calc": "1155 \u00d7 17 + 1 = 19636",
+      "value": 19636,
+      "multiplier": 17,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 18 + -1",
+      "calc": "1155 \u00d7 18 + -1 = 20789",
+      "value": 20789,
+      "multiplier": 18,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 18 + 1",
+      "calc": "1155 \u00d7 18 + 1 = 20791",
+      "value": 20791,
+      "multiplier": 18,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 19 + -1",
+      "calc": "1155 \u00d7 19 + -1 = 21944",
+      "value": 21944,
+      "multiplier": 19,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 19 + 1",
+      "calc": "1155 \u00d7 19 + 1 = 21946",
+      "value": 21946,
+      "multiplier": 19,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 20 + -1",
+      "calc": "1155 \u00d7 20 + -1 = 23099",
+      "value": 23099,
+      "multiplier": 20,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 20 + 1",
+      "calc": "1155 \u00d7 20 + 1 = 23101",
+      "value": 23101,
+      "multiplier": 20,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 21 + -1",
+      "calc": "1155 \u00d7 21 + -1 = 24254",
+      "value": 24254,
+      "multiplier": 21,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 21 + 1",
+      "calc": "1155 \u00d7 21 + 1 = 24256",
+      "value": 24256,
+      "multiplier": 21,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 22 + -1",
+      "calc": "1155 \u00d7 22 + -1 = 25409",
+      "value": 25409,
+      "multiplier": 22,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 22 + 1",
+      "calc": "1155 \u00d7 22 + 1 = 25411",
+      "value": 25411,
+      "multiplier": 22,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 23 + -1",
+      "calc": "1155 \u00d7 23 + -1 = 26564",
+      "value": 26564,
+      "multiplier": 23,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 23 + 1",
+      "calc": "1155 \u00d7 23 + 1 = 26566",
+      "value": 26566,
+      "multiplier": 23,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 24 + -1",
+      "calc": "1155 \u00d7 24 + -1 = 27719",
+      "value": 27719,
+      "multiplier": 24,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 24 + 1",
+      "calc": "1155 \u00d7 24 + 1 = 27721",
+      "value": 27721,
+      "multiplier": 24,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 25 + -1",
+      "calc": "1155 \u00d7 25 + -1 = 28874",
+      "value": 28874,
+      "multiplier": 25,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 25 + 1",
+      "calc": "1155 \u00d7 25 + 1 = 28876",
+      "value": 28876,
+      "multiplier": 25,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 26 + -1",
+      "calc": "1155 \u00d7 26 + -1 = 30029",
+      "value": 30029,
+      "multiplier": 26,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 26 + 1",
+      "calc": "1155 \u00d7 26 + 1 = 30031",
+      "value": 30031,
+      "multiplier": 26,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 27 + -1",
+      "calc": "1155 \u00d7 27 + -1 = 31184",
+      "value": 31184,
+      "multiplier": 27,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 27 + 1",
+      "calc": "1155 \u00d7 27 + 1 = 31186",
+      "value": 31186,
+      "multiplier": 27,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 28 + -1",
+      "calc": "1155 \u00d7 28 + -1 = 32339",
+      "value": 32339,
+      "multiplier": 28,
+      "constant": -1
+    },
+    {
+      "formula": "k11 \u00d7 28 + 1",
+      "calc": "1155 \u00d7 28 + 1 = 32341",
+      "value": 32341,
+      "multiplier": 28,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 7 + -1",
+      "calc": "2683 \u00d7 7 + -1 = 18780",
+      "value": 18780,
+      "multiplier": 7,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 7 + 1",
+      "calc": "2683 \u00d7 7 + 1 = 18782",
+      "value": 18782,
+      "multiplier": 7,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 8 + -1",
+      "calc": "2683 \u00d7 8 + -1 = 21463",
+      "value": 21463,
+      "multiplier": 8,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 8 + 1",
+      "calc": "2683 \u00d7 8 + 1 = 21465",
+      "value": 21465,
+      "multiplier": 8,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 9 + -1",
+      "calc": "2683 \u00d7 9 + -1 = 24146",
+      "value": 24146,
+      "multiplier": 9,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 9 + 1",
+      "calc": "2683 \u00d7 9 + 1 = 24148",
+      "value": 24148,
+      "multiplier": 9,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 10 + -1",
+      "calc": "2683 \u00d7 10 + -1 = 26829",
+      "value": 26829,
+      "multiplier": 10,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 10 + 1",
+      "calc": "2683 \u00d7 10 + 1 = 26831",
+      "value": 26831,
+      "multiplier": 10,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 11 + -1",
+      "calc": "2683 \u00d7 11 + -1 = 29512",
+      "value": 29512,
+      "multiplier": 11,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 11 + 1",
+      "calc": "2683 \u00d7 11 + 1 = 29514",
+      "value": 29514,
+      "multiplier": 11,
+      "constant": 1
+    },
+    {
+      "formula": "k12 \u00d7 12 + -1",
+      "calc": "2683 \u00d7 12 + -1 = 32195",
+      "value": 32195,
+      "multiplier": 12,
+      "constant": -1
+    },
+    {
+      "formula": "k12 \u00d7 12 + 1",
+      "calc": "2683 \u00d7 12 + 1 = 32197",
+      "value": 32197,
+      "multiplier": 12,
+      "constant": 1
+    },
+    {
+      "formula": "k13 \u00d7 3 + -1",
+      "calc": "5765 \u00d7 3 + -1 = 17294",
+      "value": 17294,
+      "multiplier": 3,
+      "constant": -1
+    },
+    {
+      "formula": "k13 \u00d7 3 + 1",
+      "calc": "5765 \u00d7 3 + 1 = 17296",
+      "value": 17296,
+      "multiplier": 3,
+      "constant": 1
+    },
+    {
+      "formula": "k13 \u00d7 4 + -1",
+      "calc": "5765 \u00d7 4 + -1 = 23059",
+      "value": 23059,
+      "multiplier": 4,
+      "constant": -1
+    },
+    {
+      "formula": "k13 \u00d7 4 + 1",
+      "calc": "5765 \u00d7 4 + 1 = 23061",
+      "value": 23061,
+      "multiplier": 4,
+      "constant": 1
+    },
+    {
+      "formula": "k13 \u00d7 5 + -1",
+      "calc": "5765 \u00d7 5 + -1 = 28824",
+      "value": 28824,
+      "multiplier": 5,
+      "constant": -1
+    },
+    {
+      "formula": "k13 \u00d7 5 + 1",
+      "calc": "5765 \u00d7 5 + 1 = 28826",
+      "value": 28826,
+      "multiplier": 5,
+      "constant": 1
+    },
+    {
+      "formula": "k14 \u00d7 2 + -1",
+      "calc": "10544 \u00d7 2 + -1 = 21087",
+      "value": 21087,
+      "multiplier": 2,
+      "constant": -1
+    },
+    {
+      "formula": "k14 \u00d7 2 + 1",
+      "calc": "10544 \u00d7 2 + 1 = 21089",
+      "value": 21089,
+      "multiplier": 2,
+      "constant": 1
+    },
+    {
+      "formula": "k14 \u00d7 3 + -1",
+      "calc": "10544 \u00d7 3 + -1 = 31631",
+      "value": 31631,
+      "multiplier": 3,
+      "constant": -1
+    },
+    {
+      "formula": "k14 \u00d7 3 + 1",
+      "calc": "10544 \u00d7 3 + 1 = 31633",
+      "value": 31633,
+      "multiplier": 3,
+      "constant": 1
+    },
+    {
+      "formula": "k7 \u00d7 k8 + -1",
+      "calc": "76 \u00d7 224 + -1 = 17023",
+      "value": 17023,
+      "multiplier": null,
+      "constant": -1
+    },
+    {
+      "formula": "k7 \u00d7 k8 + 1",
+      "calc": "76 \u00d7 224 + 1 = 17025",
+      "value": 17025,
+      "multiplier": null,
+      "constant": 1
+    },
+    {
+      "formula": "k11 \u00d7 15 + -2",
+      "calc": "1155 \u00d7 15 + -2 = 17323",
+      "value": 17323,
+      "multiplier": 15,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 15 + 2",
+      "calc": "1155 \u00d7 15 + 2 = 17327",
+      "value": 17327,
+      "multiplier": 15,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 16 + -2",
+      "calc": "1155 \u00d7 16 + -2 = 18478",
+      "value": 18478,
+      "multiplier": 16,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 16 + 2",
+      "calc": "1155 \u00d7 16 + 2 = 18482",
+      "value": 18482,
+      "multiplier": 16,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 17 + -2",
+      "calc": "1155 \u00d7 17 + -2 = 19633",
+      "value": 19633,
+      "multiplier": 17,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 17 + 2",
+      "calc": "1155 \u00d7 17 + 2 = 19637",
+      "value": 19637,
+      "multiplier": 17,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 18 + -2",
+      "calc": "1155 \u00d7 18 + -2 = 20788",
+      "value": 20788,
+      "multiplier": 18,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 18 + 2",
+      "calc": "1155 \u00d7 18 + 2 = 20792",
+      "value": 20792,
+      "multiplier": 18,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 19 + -2",
+      "calc": "1155 \u00d7 19 + -2 = 21943",
+      "value": 21943,
+      "multiplier": 19,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 19 + 2",
+      "calc": "1155 \u00d7 19 + 2 = 21947",
+      "value": 21947,
+      "multiplier": 19,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 20 + -2",
+      "calc": "1155 \u00d7 20 + -2 = 23098",
+      "value": 23098,
+      "multiplier": 20,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 20 + 2",
+      "calc": "1155 \u00d7 20 + 2 = 23102",
+      "value": 23102,
+      "multiplier": 20,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 21 + -2",
+      "calc": "1155 \u00d7 21 + -2 = 24253",
+      "value": 24253,
+      "multiplier": 21,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 21 + 2",
+      "calc": "1155 \u00d7 21 + 2 = 24257",
+      "value": 24257,
+      "multiplier": 21,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 22 + -2",
+      "calc": "1155 \u00d7 22 + -2 = 25408",
+      "value": 25408,
+      "multiplier": 22,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 22 + 2",
+      "calc": "1155 \u00d7 22 + 2 = 25412",
+      "value": 25412,
+      "multiplier": 22,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 23 + -2",
+      "calc": "1155 \u00d7 23 + -2 = 26563",
+      "value": 26563,
+      "multiplier": 23,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 23 + 2",
+      "calc": "1155 \u00d7 23 + 2 = 26567",
+      "value": 26567,
+      "multiplier": 23,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 24 + -2",
+      "calc": "1155 \u00d7 24 + -2 = 27718",
+      "value": 27718,
+      "multiplier": 24,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 24 + 2",
+      "calc": "1155 \u00d7 24 + 2 = 27722",
+      "value": 27722,
+      "multiplier": 24,
+      "constant": 2
+    },
+    {
+      "formula": "k11 \u00d7 25 + -2",
+      "calc": "1155 \u00d7 25 + -2 = 28873",
+      "value": 28873,
+      "multiplier": 25,
+      "constant": -2
+    },
+    {
+      "formula": "k11 \u00d7 25 + 2",
+      "calc": "1155 \u00d7 25 + 2 = 28877",
+      "value": 28877,
+      "multiplier": 25,
+      "constant": 2
+    }
+  ]
+}

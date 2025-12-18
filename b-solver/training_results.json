@@ -1,0 +1,150 @@
+{
+  "model": "phi4-reasoning:14b",
+  "timestamp": "2025-12-10T06:31:01.620460",
+  "results": {
+    "1.1": {
+      "found": [
+        "outlier",
+        "sigma",
+        "z-score",
+        "0.092"
+      ],
+      "missing": [],
+      "pct": 100.0,
+      "passed": true
+    },
+    "1.2": {
+      "found": [],
+      "missing": [
+        "0.72",
+        "minimum",
+        "position",
+        "search"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "1.3": {
+      "found": [],
+      "missing": [
+        "3.26",
+        "ratio",
+        "anomal",
+        "deviation"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "2.1": {
+      "found": [
+        "low",
+        "high",
+        "0.092",
+        "1.305",
+        "anomaly"
+      ],
+      "missing": [],
+      "pct": 100.0,
+      "passed": true
+    },
+    "2.2": {
+      "found": [
+        "k4",
+        "k69",
+        "minimum",
+        "pattern",
+        "fast"
+      ],
+      "missing": [],
+      "pct": 100.0,
+      "passed": true
+    },
+    "2.3": {
+      "found": [
+        "transition",
+        "pattern",
+        "break",
+        "early",
+        "later"
+      ],
+      "missing": [],
+      "pct": 100.0,
+      "passed": true
+    },
+    "3.1": {
+      "found": [],
+      "missing": [
+        "trend",
+        "increasing",
+        "variance",
+        "predict"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "3.2": {
+      "found": [
+        "k69",
+        "position",
+        "drift",
+        "k71"
+      ],
+      "missing": [],
+      "pct": 100.0,
+      "passed": true
+    },
+    "4.1": {
+      "found": [],
+      "missing": [
+        "76",
+        "224",
+        "relationship",
+        "exact"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "4.2": {
+      "found": [],
+      "missing": [
+        "divisible",
+        "11",
+        "71",
+        "prime"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "5.1": {
+      "found": [],
+      "missing": [
+        "position",
+        "search",
+        "minimum",
+        "predict"
+      ],
+      "pct": 0.0,
+      "passed": false
+    },
+    "5.2": {
+      "found": [],
+      "missing": [
+        "correlation",
+        "regime",
+        "generation",
+        "algorithm"
+      ],
+      "pct": 0.0,
+      "passed": false
+    }
+  },
+  "summary": {
+    "level1": 1,
+    "level2": 3,
+    "level3": 1,
+    "level4": 0,
+    "level5": 0,
+    "total": 5,
+    "status": "NEEDS WORK"
+  }
+}

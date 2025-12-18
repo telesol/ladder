@@ -1,0 +1,28 @@
+{
+  "explorer": "c-solver",
+  "timestamp": "2025-12-11T07:21:26.323323",
+  "elapsed_seconds": 0.009246349334716797,
+  "results": {
+    "k12": {
+      "value": 2683,
+      "count": 1,
+      "formulas": [
+        {
+          "type": "A",
+          "formula": "k8 \u00d7 12 + -5",
+          "base_key": "k8",
+          "base_value": 224,
+          "multiplier": 12,
+          "constant": -5,
+          "computed": 2683,
+          "is_valid": true
+        }
+      ]
+    },
+    "k14": {
+      "value": 10544,
+      "count": 0,
+      "formulas": []
+    }
+  }
+}

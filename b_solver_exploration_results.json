@@ -1,0 +1,361 @@
+{
+  "explorer": "b-solver",
+  "timestamp": "2025-12-11T07:21:26.313609",
+  "elapsed_seconds": 0.015693187713623047,
+  "results": {
+    "k9": {
+      "value": 467,
+      "count": 17,
+      "formulas": [
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 18 + 89",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 18,
+          "constant": 89,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 19 + 68",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 19,
+          "constant": 68,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 20 + 47",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 20,
+          "constant": 47,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 21 + 26",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 21,
+          "constant": 26,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 22 + 5",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 22,
+          "constant": 5,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 23 + -16",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 23,
+          "constant": -16,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 24 + -37",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 24,
+          "constant": -37,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 8 + 75",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 8,
+          "constant": 75,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 9 + 26",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 9,
+          "constant": 26,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 10 + -23",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 10,
+          "constant": -23,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k7 \u00d7 5 + 87",
+          "base_key": "k7",
+          "base_value": 76,
+          "multiplier": 5,
+          "constant": 87,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k7 \u00d7 6 + 11",
+          "base_key": "k7",
+          "base_value": 76,
+          "multiplier": 6,
+          "constant": 11,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k8 \u00d7 2 + 19",
+          "base_key": "k8",
+          "base_value": 224,
+          "multiplier": 2,
+          "constant": 19,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "D",
+          "formula": "k5\u00b2 - -26",
+          "base_key": "k5",
+          "base_value": 21,
+          "constant": 26,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "D",
+          "formula": "k5\u00b2 + 26",
+          "base_key": "k5",
+          "base_value": 21,
+          "constant": 26,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "E",
+          "formula": "k3 \u00d7 k7 - 65",
+          "base_key": "k3",
+          "base_value": 7,
+          "second_key": "k7",
+          "second_value": 76,
+          "constant": -65,
+          "computed": 467,
+          "is_valid": true
+        },
+        {
+          "type": "E",
+          "formula": "k4 \u00d7 k6 + 75",
+          "base_key": "k4",
+          "base_value": 8,
+          "second_key": "k6",
+          "second_value": 49,
+          "constant": 75,
+          "computed": 467,
+          "is_valid": true
+        }
+      ]
+    },
+    "k10": {
+      "value": 514,
+      "count": 17,
+      "formulas": [
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 20 + 94",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 20,
+          "constant": 94,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 21 + 73",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 21,
+          "constant": 73,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 22 + 52",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 22,
+          "constant": 52,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 23 + 31",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 23,
+          "constant": 31,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 24 + 10",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 24,
+          "constant": 10,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k5 \u00d7 25 + -11",
+          "base_key": "k5",
+          "base_value": 21,
+          "multiplier": 25,
+          "constant": -11,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 9 + 73",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 9,
+          "constant": 73,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 10 + 24",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 10,
+          "constant": 24,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k6 \u00d7 11 + -25",
+          "base_key": "k6",
+          "base_value": 49,
+          "multiplier": 11,
+          "constant": -25,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k7 \u00d7 6 + 58",
+          "base_key": "k7",
+          "base_value": 76,
+          "multiplier": 6,
+          "constant": 58,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k7 \u00d7 7 + -18",
+          "base_key": "k7",
+          "base_value": 76,
+          "multiplier": 7,
+          "constant": -18,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k8 \u00d7 2 + 66",
+          "base_key": "k8",
+          "base_value": 224,
+          "multiplier": 2,
+          "constant": 66,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "A",
+          "formula": "k9 \u00d7 1 + 47",
+          "base_key": "k9",
+          "base_value": 467,
+          "multiplier": 1,
+          "constant": 47,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "D",
+          "formula": "k5\u00b2 + 73",
+          "base_key": "k5",
+          "base_value": 21,
+          "constant": 73,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "E",
+          "formula": "k3 \u00d7 k7 + -18",
+          "base_key": "k3",
+          "base_value": 7,
+          "second_key": "k7",
+          "second_value": 76,
+          "constant": -18,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "E",
+          "formula": "k3 \u00d7 k7 - 18",
+          "base_key": "k3",
+          "base_value": 7,
+          "second_key": "k7",
+          "second_value": 76,
+          "constant": -18,
+          "computed": 514,
+          "is_valid": true
+        },
+        {
+          "type": "E",
+          "formula": "k4 \u00d7 k7 - 94",
+          "base_key": "k4",
+          "base_value": 8,
+          "second_key": "k7",
+          "second_value": 76,
+          "constant": -94,
+          "computed": 514,
+          "is_valid": true
+        }
+      ]
+    }
+  }
+}

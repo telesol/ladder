@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-12-05T14:12:46.101469",
+  "total_tests": 4,
+  "passed_tests": 3,
+  "failed_tests": 1,
+  "total_time": 0.09115886688232422,
+  "detailed_results": [
+    {
+      "test": "large_context_handling",
+      "original_tokens": 1568546,
+      "optimized_tokens": 2,
+      "compression_ratio": 784273.0,
+      "optimization_time": 0.04450035095214844,
+      "success": true
+    },
+    {
+      "test": "analysis_with_large_data",
+      "original_tokens": 284031,
+      "optimized_tokens": 2,
+      "optimization_time": 0.004311323165893555,
+      "success": true
+    },
+    {
+      "test": "ollama_token_limits",
+      "prompt_tokens": 38547,
+      "response_length": 51,
+      "generation_time": 0.004037380218505859,
+      "success": false,
+      "error": "Error: 404 - {\"error\":\"model 'llama3.2' not found\"}"
+    },
+    {
+      "test": "continuous_operation",
+      "iterations": 10,
+      "total_time": 0.0070858001708984375,
+      "errors": 0,
+      "token_issues": 0,
+      "success_rate": 1.0,
+      "success": true
+    }
+  ]
+}

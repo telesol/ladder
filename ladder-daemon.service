@@ -1,0 +1,27 @@
+[Unit]
+Description=Ladder Agents Autonomous Discovery Daemon
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=solo
+WorkingDirectory=/home/solo/LA
+Environment="PATH=/home/solo/LA/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+EnvironmentFile=-/home/solo/LA/.env
+ExecStart=/home/solo/LA/.venv/bin/python /home/solo/LA/final_autonomous_system.py
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+# Resource limits to prevent runaway processes
+MemoryMax=8G
+CPUQuota=80%
+
+# Watchdog - restart if no activity for 30 minutes
+WatchdogSec=1800
+
+[Install]
+WantedBy=multi-user.target

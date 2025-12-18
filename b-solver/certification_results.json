@@ -1,0 +1,34 @@
+{
+  "exercises": {
+    "4.1": {
+      "found": [
+        "76",
+        "224",
+        "relationship"
+      ],
+      "pct": 75.0,
+      "passed": true
+    },
+    "4.2": {
+      "found": [],
+      "pct": 0.0,
+      "passed": false
+    },
+    "5.1": {
+      "found": [],
+      "pct": 0.0,
+      "passed": false
+    },
+    "5.2": {
+      "found": [
+        "regime",
+        "generation",
+        "algorithm"
+      ],
+      "pct": 75.0,
+      "passed": true
+    }
+  },
+  "passed": 2,
+  "total": 7
+}

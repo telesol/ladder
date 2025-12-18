@@ -23,7 +23,7 @@ adj_n = 2^n - m_n × k_{d_n}
 
 ## Session Log
 
-### 2025-12-18: Options 1-7 Tested
+### 2025-12-18: ALL 8 OPTIONS TESTED
 **Tested approaches for m_n derivation:**
 
 | Option | Method | Result |
@@ -35,12 +35,21 @@ adj_n = 2^n - m_n × k_{d_n}
 | 5 | Hash Derivation | NOT SHA256-based |
 | 6 | Key Relationship | Formula VERIFIED |
 | 7 | OEIS Search | NOT in database |
+| 8 | Alt Decomposition | NO pattern found |
 
-**Key Discovery:**
-- `m_n / 2^(n - d_n)` bounded in [1.0, 2.75], mean ≈ 1.72
-- This constrains m_n but doesn't reveal generation rule
+**Key Discoveries:**
+- `m_n / 2^(n - d_n)` bounded in [0.72, 2.75], mean ≈ 1.66
+- d_n is optimization-based (minimizes |m_n|), not predictable from n
+- Normalized m clusters around simple fractions but is not deterministic
+- Prime factorization of m_n shows no common structure
 
-**Next:** Option 8 (Alternative Decomposition)
+**Cluster Setup Completed:**
+- Spark 1 (10.0.0.1): C-Solver (qwq:32b), B-Solver (phi4-reasoning:14b)
+- Spark 2 (10.0.0.2): A-Solver (qwen3-vl:8b)
+- 200Gbps link, 0.5ms latency confirmed
+- Health check script: scripts/cluster_health.sh
+
+**Next Steps:** Need new approaches beyond the original 8 options
 
 ### 2025-12-17: Formula Verification
 - Confirmed recurrence: k_n = 2 × k_{n-1} + adj_n
@@ -109,7 +118,10 @@ git pull origin main
 ---
 
 ## Next Actions
-1. [ ] Setup SSH to Box 2
-2. [ ] Configure Ollama on Box 2
-3. [ ] Test Option 8 (Alt Decomposition)
-4. [ ] Extend m-sequence to n=70
+1. [x] Setup SSH to Box 2 (Spark 2)
+2. [x] Configure Ollama on Box 2 (A-Solver ready)
+3. [x] Test Option 8 (Alt Decomposition) - NO PATTERN FOUND
+4. [x] Extend m-sequence to n=70 - DONE
+5. [ ] Explore EC scalar relationships
+6. [ ] Test PRNG reconstruction with known seed patterns
+7. [ ] Analyze creator's public commitment data (if available)

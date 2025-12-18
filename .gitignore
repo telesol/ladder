@@ -32,3 +32,8 @@ final_autonomous_report.json
 !db/kh.db
 !db/memory.db
 !agent_memory.db
+
+# Large files
+memory.db
+*.deb
+

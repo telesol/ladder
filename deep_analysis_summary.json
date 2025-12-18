@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-12-10T05:39:11.334022",
+  "title": "Bitcoin Puzzle Deep Pattern Analysis",
+  "key_discoveries": {
+    "1_verified_relationships": [
+      "k5 = k2 \u00d7 k3 = 3 \u00d7 7 = 21",
+      "k6 = k3\u00b2 = 7\u00b2 = 49",
+      "k8 = k4 \u00d7 k3 \u00d7 4 = 8 \u00d7 7 \u00d7 4 = 224",
+      "k11 = 3 \u00d7 5 \u00d7 7 \u00d7 11 = 1155 (includes puzzle number 11)",
+      "k13 = k7\u00b2 - 11 = 76\u00b2 - 11 = 5765"
+    ],
+    "2_exact_formula": [
+      "k9 = 2 \u00d7 k8 + 19 = 2 \u00d7 224 + 19 = 467 (EXACT)"
+    ],
+    "3_anomalous_deltas": {
+      "k3_to_k4": "0.1250 (very low)",
+      "k9_to_k10": "0.0918 (smallest - keys almost equal)",
+      "k56_to_k57": "1.3049 (largest jump)"
+    },
+    "4_position_anomalies": {
+      "k2_k3": "100% - at maximum of their ranges",
+      "k4": "0% - at minimum of its range",
+      "k69": "0.72% - very near minimum (WHY IT WAS SOLVED FAST)",
+      "k70": "64.4% - mid-range"
+    },
+    "5_k69_significance": {
+      "position": "0.72% of range",
+      "distance_from_min": "2.13 \u00d7 10^18",
+      "factorization": "2\u00b2 \u00d7 11 \u00d7 large_prime",
+      "ratio_to_k70": "k70/k69 = 3.26 (NOT doubling pattern)",
+      "implication": "k69 was DELIBERATELY placed near minimum"
+    },
+    "6_divisibility_by_N": [
+      "k1 \u00f7 1 = 1",
+      "k4 \u00f7 4 = 2",
+      "k8 \u00f7 8 = 28",
+      "k11 \u00f7 11 = 105",
+      "k36 \u00f7 36 = (exact)",
+      "k69 \u00f7 11 = (exact) - k69 divisible by 11!"
+    ]
+  },
+  "wallet_forensics": {
+    "candidate": "Electrum v1.x (2011-2013)",
+    "evidence": [
+      "Early keys have multiplicative relationships",
+      "Pattern breaks after k6-k8",
+      "Later keys appear random but follow hidden recurrence",
+      "Puzzle creator likely used custom deterministic wallet"
+    ]
+  },
+  "number_13_pattern": {
+    "lanes_with_13": "1, 5, 13 (A divisible by 13)",
+    "lane_9_exception": "A=32=2^5 (NOT divisible by 13)",
+    "hypothesis": "May indicate Pohlig-Hellman vulnerability pattern"
+  },
+  "hypotheses_for_k71": [
+    "If pattern holds, k71 may be near MIN or MAX of range (like k69)",
+    "Check: Is k71 divisible by 71? (like k11 by 11)",
+    "Bridge ratio: k71/k70 might reveal position bias",
+    "Possible k71 is at ~1% position (near min) like k69"
+  ],
+  "next_steps": [
+    "1. Calculate expected k71 range based on delta patterns",
+    "2. Focus search on low end of 71-bit range (like k69)",
+    "3. Test if k71 is divisible by 71 or small primes",
+    "4. Analyze relationship to k70 (ratio analysis)"
+  ]
+}

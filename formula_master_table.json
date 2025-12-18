@@ -1,0 +1,239 @@
+{
+  "verified_formulas": {
+    "5": {
+      "formula": "k2 \u00d7 k3",
+      "calc": "3 \u00d7 7",
+      "type": "product",
+      "status": "\u2713"
+    },
+    "6": {
+      "formula": "k3\u00b2",
+      "calc": "7\u00b2",
+      "type": "square",
+      "status": "\u2713"
+    },
+    "7": {
+      "formula": "k2\u00d79 + k6",
+      "calc": "27 + 49",
+      "type": "linear",
+      "status": "\u2713"
+    },
+    "8": {
+      "formula": "k5\u00d713 - k6",
+      "calc": "273 - 49",
+      "type": "linear",
+      "status": "\u2713"
+    },
+    "11": {
+      "formula": "k6\u00d719 + k8",
+      "calc": "931 + 224",
+      "type": "linear",
+      "status": "\u2713"
+    },
+    "12": {
+      "formula": "k8\u00d712 - 5",
+      "calc": "2688 - 5",
+      "type": "linear",
+      "status": "\u2713 UNIQUE"
+    },
+    "13": {
+      "formula": "k7\u00b2 - 11",
+      "calc": "5776 - 11",
+      "type": "square",
+      "status": "\u2713"
+    }
+  },
+  "candidate_formulas": {
+    "9": [
+      {
+        "formula": "k7\u00d76 + 11",
+        "calc": "456 + 11",
+        "result": 467
+      },
+      {
+        "formula": "k8\u00d72 + 19",
+        "calc": "448 + 19",
+        "result": 467
+      },
+      {
+        "formula": "k5\u00b2 + 26",
+        "calc": "441 + 26",
+        "result": 467
+      },
+      {
+        "formula": "k3\u00d7k7 - 65",
+        "calc": "532 - 65",
+        "result": 467
+      }
+    ],
+    "10": [
+      {
+        "formula": "k3\u00d7k7 - 18",
+        "calc": "532 - 18",
+        "result": 514
+      },
+      {
+        "formula": "k7\u00d77 - 18",
+        "calc": "532 - 18",
+        "result": 514
+      },
+      {
+        "formula": "k5\u00b2 + 73",
+        "calc": "441 + 73",
+        "result": 514
+      }
+    ],
+    "14": [
+      {
+        "formula": "k11\u00d79 + 149",
+        "calc": "10395 + 149",
+        "result": 10544
+      },
+      {
+        "formula": "k8\u00d747 + 16",
+        "calc": "10528 + 16",
+        "result": 10544
+      }
+    ]
+  },
+  "meta_formula": {
+    "multipliers": [9, 13, 19, 12],
+    "multiplier_pattern": "Cycle with anomaly at 12 (breaks prime sequence)",
+    "offsets": [2, 5, 8, 0],
+    "offset_differences": [3, 3, -8],
+    "cycle_length": 4,
+    "k12_uniqueness": "CRITICAL: Only 1 formula works (vs 6-17 for others)",
+    "observations": [
+      "Multipliers 9,13,19 appear to increase, then 12 breaks pattern",
+      "Offset differences are +3,+3,-8",
+      "k14 reuses multiplier 9 (cycling)",
+      "Each key built from prior keys via M*k_a ± C"
+    ]
+  },
+  "k15_calculations": {
+    "range": [16384, 32767],
+    "product_formula": {"formula": "k7×k8", "calc": "76×224", "result": 17024, "in_range": true},
+    "square_formula": {"formula": "k8²", "calc": "224²", "result": 50176, "in_range": false, "note": "Too big"},
+    "linear_candidates": [
+      {"formula": "k14×2+0", "result": 21088, "in_range": true},
+      {"formula": "k13×3+0", "result": 17295, "in_range": true},
+      {"formula": "k11×15+0", "result": 17325, "in_range": true}
+    ],
+    "best_candidates": [17024, 17295, 17325, 21088]
+  },
+  "k15_candidates": [
+    [
+      "k7\u00d7k8",
+      17024
+    ],
+    [
+      "k11\u00d715",
+      17325
+    ],
+    [
+      "k11\u00d716",
+      18480
+    ],
+    [
+      "k11\u00d717",
+      19635
+    ],
+    [
+      "k11\u00d718",
+      20790
+    ],
+    [
+      "k11\u00d719",
+      21945
+    ],
+    [
+      "k11\u00d720",
+      23100
+    ],
+    [
+      "k11\u00d721",
+      24255
+    ],
+    [
+      "k11\u00d722",
+      25410
+    ],
+    [
+      "k11\u00d723",
+      26565
+    ],
+    [
+      "k11\u00d724",
+      27720
+    ],
+    [
+      "k11\u00d725",
+      28875
+    ],
+    [
+      "k11\u00d726",
+      30030
+    ],
+    [
+      "k11\u00d727",
+      31185
+    ],
+    [
+      "k11\u00d728",
+      32340
+    ]
+  ],
+  "gaps": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ]
+}

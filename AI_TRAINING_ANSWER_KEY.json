@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "created": "2025-12-09",
+  "purpose": "Answer key for AI training exercises",
+
+  "level_1": {
+    "exercise_1_1": {
+      "title": "Basic Key Properties",
+      "answers": {
+        "N=5": {"range_low": 16, "range_high": 31, "explanation": "2^4 = 16, 2^5 - 1 = 31"},
+        "N=20": {"range_low": 524288, "range_high": 1048575, "explanation": "2^19 = 524288, 2^20 - 1 = 1048575"},
+        "N=71": {"range_low": "1180591620717411303424", "range_high": "2361183241434822606847", "explanation": "2^70 and 2^71 - 1"}
+      }
+    },
+    "exercise_1_2": {
+      "title": "Key Factorization",
+      "answers": {
+        "k_5=21": {"factors": [3, 7], "special": "k_5 = k_2 × k_3"},
+        "k_6=49": {"factors": [7, 7], "special": "k_6 = k_3² = 7²"},
+        "k_17=95823": {"factors": [3, 3, 3, 3, 7, 13, 13], "special": "k_17 = 3^4 × 7 × 13²"}
+      }
+    },
+    "exercise_1_3": {
+      "title": "Position in Range",
+      "answers": {
+        "k_3=7": {"position_pct": 100.0, "explanation": "7 is max of range [4,7]"},
+        "k_69": {"position_pct": 0.72, "explanation": "Very low - this allowed fast solve"},
+        "k_70": {"position_pct": 64.40, "explanation": "Above midpoint"}
+      }
+    }
+  },
+
+  "level_2": {
+    "exercise_2_1": {
+      "title": "Verify Exact Relationships",
+      "answers": {
+        "claim_1": {"verified": true, "k_6": 49, "k_3_squared": 49},
+        "claim_2": {"verified": true, "k_8": 224, "k_4_times_k_3_times_4": 224},
+        "claim_3": {"verified": false, "k_7": 76, "k_2_times_k_5": 63, "difference": 13}
+      }
+    },
+    "exercise_2_2": {
+      "title": "Linear Recurrence Test",
+      "answers": {
+        "test_1": {"verified": true, "calculation": "-7×7 + 19×3 = -49 + 57 = 8 = k_4"},
+        "test_2": {"verified": true, "calculation": "-14×8 + 19×7 = -112 + 133 = 21 = k_5"},
+        "test_3": {"verified": false, "explanation": "k_7 = a×49 + 19×21 requires a = (76-399)/49 = -6.59... not integer"}
+      }
+    },
+    "exercise_2_3": {
+      "title": "Normalized Delta Calculation",
+      "answers": {
+        "test_1": {"delta": 2, "normalized": 1.0, "explanation": "(3-1)/2^1 = 2/2 = 1.0"},
+        "test_2": {"delta": 47, "normalized": 0.0918, "explanation": "(514-467)/2^9 = 47/512 ≈ 0.0918"},
+        "test_3": {"delta": "673162482084647784677", "normalized": 1.1404, "explanation": "delta/2^69"}
+      }
+    },
+    "exercise_2_4": {
+      "title": "Affine Model Verification",
+      "answers": {
+        "test_1": {"A": 1, "x": 12, "y": 241, "C": 229, "calculation": "(241 - 1×12) mod 256 = 229"},
+        "test_2": {"A": 91, "x": 104, "y": 53, "C": 61, "calculation": "(53 - 91×104) mod 256 = (53 - 9464) mod 256 = 61"},
+        "test_3": {"A": 169, "x": 177, "y": 215, "C": 254, "calculation": "(215 - 169×177) mod 256 = 254"}
+      }
+    },
+    "exercise_2_5": {
+      "title": "Bridge Ratio Analysis",
+      "answers": {
+        "test_1": {"ratio": 23.22, "expected": 32, "deviation": "-27.4%"},
+        "test_2": {"ratio": 49.05, "expected": 32, "deviation": "+53.3%"},
+        "test_3": {"ratio": 19.08, "expected": 32, "deviation": "-40.4%"}
+      }
+    }
+  },
+
+  "level_3": {
+    "exercise_3_1": {
+      "title": "Anomaly Detection",
+      "answers": {
+        "k_69": {
+          "anomaly": "Extremely low position (0.72%)",
+          "implication": "Key was near minimum of valid range, allowing fast brute-force from low end",
+          "context": "Most keys are 30-70% into range, k_69 is an outlier"
+        },
+        "transition_9_10": {
+          "anomaly": "Smallest normalized delta (0.092)",
+          "implication": "k_10 barely grew from k_9 relative to bit size",
+          "context": "Mean normalized delta is 0.76, this is 8× smaller"
+        },
+        "A_lane_9": {
+          "anomaly": "A=32 is not related to 13",
+          "implication": "Other special lanes have A divisible by 13 (91, 169, 182)",
+          "context": "Lane 9 breaks the pattern with A=2^5"
+        }
+      }
+    },
+    "exercise_3_2": {
+      "title": "Constraint Derivation",
+      "expected_answer": {
+        "bit_range": ["1180591620717411303424", "2361183241434822606847"],
+        "delta_constraint_low": "0.09 × 2^70 = 106253245864767017308",
+        "delta_constraint_high": "1.31 × 2^70 = 1546574923939868610946",
+        "k_71_low": "1076690219869790707789",
+        "k_71_high": "2517011897944892301427",
+        "combined_low": "1180591620717411303424",
+        "combined_high": "2361183241434822606847",
+        "reduction": "Delta constraint does not reduce beyond bit range"
+      }
+    },
+    "exercise_3_3": {
+      "title": "Pattern Extension",
+      "expected_findings": {
+        "k_5 = k_2 × k_3": "Only exact product relationship found",
+        "k_6 = k_3²": "Only exact square relationship found",
+        "k_8 = k_4 × k_3 × 4": "Requires extra multiplier",
+        "no_simple_products_after_k_8": "No k_n = k_a × k_b for n > 8 with simple integers"
+      }
+    },
+    "exercise_3_4": {
+      "title": "Hypothesis Generation",
+      "example_good_hypothesis": {
+        "hypothesis": "The number 13 in A multipliers relates to secp256k1 arithmetic",
+        "evidence": "91=7×13, 169=13², 182=14×13",
+        "test": "Check if 13 appears in secp256k1 curve constants or operations",
+        "result": "secp256k1 order n has no factor of 13, but Gx mod small primes should be checked"
+      }
+    }
+  },
+
+  "level_4": {
+    "exercise_4_1": {
+      "title": "Find New Patterns",
+      "hint": "Look at binary representations, sum of digits, or relationships to puzzle number",
+      "grading": "Subjective - pattern must be verifiable and non-trivial"
+    },
+    "exercise_4_2": {
+      "title": "Search Space Reduction",
+      "approaches": [
+        "Use position distribution to weight search",
+        "Use normalized delta bounds with tighter percentiles",
+        "Exploit bridge constraints for intermediate puzzles"
+      ]
+    },
+    "exercise_4_3": {
+      "title": "Predict Bridge Behavior",
+      "actual_k_85": "21090315766411506144426920",
+      "ratio_80_85": 19.08,
+      "grading": "Compare predicted bounds to actual value"
+    }
+  },
+
+  "grading_rubric": {
+    "correct": 100,
+    "correct_method_arithmetic_error": 80,
+    "partial_understanding": 50,
+    "wrong_approach": 0
+  },
+
+  "passing_thresholds": {
+    "level_1": "100% (all exercises)",
+    "level_2": "80% (4 of 5 exercises)",
+    "level_3": "75% (3 of 4 exercises)",
+    "level_4": "bonus"
+  }
+}

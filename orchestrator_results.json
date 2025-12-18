@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-12-10T09:25:38.504260",
+  "results": {
+    "position_analysis": {
+      "response": "TIMEOUT - agent needs Oracle mode for this query",
+      "time": 120.0024824142456
+    },
+    "divisibility": {
+      "response": "TIMEOUT - agent needs Oracle mode for this query",
+      "time": 120.10252118110657
+    },
+    "deep_reasoning": {
+      "response": "TIMEOUT - agent needs Oracle mode for this query",
+      "time": 300.00622725486755
+    }
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "region": "First 1% (like k69)",
+      "start": 1180591620717411303424,
+      "end": 1192397536924585416458,
+      "rationale": "k69 was at 0.72%, k4 at 0%, k10 at 0.39%"
+    },
+    {
+      "priority": 2,
+      "region": "First div-by-11 in range",
+      "start": 1180591620717411303434,
+      "end": 1180591620717422303434,
+      "rationale": "k69 divisible by 11, k11=3\u00d75\u00d77\u00d711"
+    },
+    {
+      "priority": 3,
+      "region": "First div-by-71 in range",
+      "start": 1180591620717411303494,
+      "end": 1180591620717418403494,
+      "rationale": "71 is prime, could follow k11 pattern"
+    }
+  ],
+  "insights_count": 4
+}
