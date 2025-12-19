@@ -1,7 +1,23 @@
 # Bitcoin Puzzle Analysis Project
 
+## ⚠️ CLAUDE: READ THIS FIRST
+**NO PREDICTION. NO ASSUMPTIONS. READ THE RULES. IF LOST, ASK THE USER.**
+
+You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with local AI models.
+- **YOUR JOB:** Coordinate, log findings, update repo, delegate research to local models
+- **NOT YOUR JOB:** Do the research yourself, make assumptions, go off on tangents
+
 ## Project Status
-**Last Updated**: 2025-12-18
+**Last Updated**: 2025-12-19
+
+## SESSION RESUME POINT (2025-12-19)
+- **Progress:** 34 formulas verified (n=2 to n=35)
+- **Next task:** COMPUTE factorizations first, THEN pattern recognition
+- **Key file:** `FORMULA_SUMMARY.md` has all verified formulas
+- **IMPORTANT:** m[2]=1, m[3]=1 (NOT 3,7 as some old task files state)
+- **Data source:** `data_for_csolver.json` has correct m_seq, d_seq
+- **NEW PLAN:** `PLAN_COMPUTE_THEN_REASON.md` - compute with Python, reason with LLMs
+- **COLLABORATION:** User uploading experiment from laptop - check `/home/solo/LA/experiments/`
 
 ## PRIMARY GOAL
 **Derive the key generation FORMULA** - NOT predict search positions, NOT brute force.
