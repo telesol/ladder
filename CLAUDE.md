@@ -10,14 +10,33 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
 ## Project Status
 **Last Updated**: 2025-12-19
 
-## SESSION RESUME POINT (2025-12-19)
-- **Progress:** 34 formulas verified (n=2 to n=35)
-- **Next task:** COMPUTE factorizations first, THEN pattern recognition
-- **Key file:** `FORMULA_SUMMARY.md` has all verified formulas
-- **IMPORTANT:** m[2]=1, m[3]=1 (NOT 3,7 as some old task files state)
+## SESSION RESUME POINT (2025-12-19 Night)
+
+### MAJOR BREAKTHROUGHS - READ THESE!
+
+1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
+   - 100% verified for all 69 values (n=2 to n=70)
+   - See: `check_minimum_m.py`
+
+2. **Sign Pattern**: adj[n] sign follows ++- pattern for n=2-16
+   - adj = k[n] - 2*k[n-1]
+   - 15 CONSECUTIVE MATCHES (n=2 to n=16)
+   - Pattern BREAKS at n=17 (31 exceptions after)
+   - Implication: algorithm changed at n=17
+   - See: `analyze_adj_sequence.py`
+
+3. **m-value formulas found**:
+   - m[8] = m[2] + m[4] = 1 + 22 = 23
+   - m[9] = 2^9 - m[6] = 512 - 19 = 493
+   - m[10] = m[2] × m[6] = 1 × 19 = 19
+   - m[16] = 2^7 + m[13] = 128 + 8342 = 8470
+   - See: `find_m_formulas.py`
+
+### Current Status
+- **Progress:** d-sequence solved, sign pattern discovered
+- **Key insight:** Real mystery is k-sequence generation, not d or m
 - **Data source:** `data_for_csolver.json` has correct m_seq, d_seq
-- **NEW PLAN:** `PLAN_COMPUTE_THEN_REASON.md` - compute with Python, reason with LLMs
-- **COLLABORATION:** User uploading experiment from laptop - check `/home/solo/LA/experiments/`
+- **Important:** m[2]=1, m[3]=1 (NOT 3,7 - those are k values!)
 
 ## PRIMARY GOAL
 **Derive the key generation FORMULA** - NOT predict search positions, NOT brute force.
