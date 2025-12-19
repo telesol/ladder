@@ -141,6 +141,17 @@ m[18] = prime(m[7] x p[87]) = prime(22450) = 255121
 
 ---
 
+## PYSR TRAINING IN PROGRESS (2025-12-19 19:25 UTC)
+
+Training at ~11% with 20 Julia workers. ETA ~35 minutes.
+
+**Early findings:**
+- Core formula: `pow2_n / d_n`
+- Better: `(pow2_n * (1.24/d_n - 0.11)) - prev2_m` (Loss: 7.27e+09)
+- Best so far uses `p7_times_p10`, `prev2_m`, multiple terms (Loss: 2.9e+09)
+
+---
+
 ## SYNC COMMAND
 
 ```bash
