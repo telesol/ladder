@@ -1,0 +1,51 @@
+TASK: Verify Self-Referential Formulas and Extend to n=22-25
+MODEL: nemotron-3-nano:30b
+DATE: 2025-12-19
+
+CONTEXT:
+We discovered that the m-sequence is SELF-REFERENTIAL. Here are the VERIFIED formulas:
+
+NOTATION:
+- p[k] = the k-th prime (p[1]=2, p[2]=3, p[3]=5, p[7]=17, etc.)
+- m[k] = value in m-sequence at index k
+- prime(i) = the i-th prime number
+
+KNOWN M-VALUES (VERIFIED):
+m[2]=3, m[3]=7, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23, m[9]=493, m[10]=19
+m[11]=1921, m[12]=1241, m[13]=8342, m[14]=2034, m[15]=26989, m[16]=8470
+m[17]=138269, m[18]=255121, m[19]=564091, m[20]=900329, m[21]=670674
+m[22]=4810329, m[23]=8804812, m[24]=13546144, m[25]=29226275
+
+VERIFIED FORMULAS (n=2-21):
+n=9:  m[9]  = p[7] × p[10] = 17 × 29 = 493 ✓
+n=11: m[11] = p[7] × p[n+m[6]] = p[7] × p[30] = 17 × 113 = 1921 ✓
+n=12: m[12] = p[7] × p[n+m[5]] = p[7] × p[21] = 17 × 73 = 1241 ✓
+n=13: m[13] = p[1] × p[n+1] × p[2n-1] = 2 × 43 × 97 = 8342 ✓
+n=15: m[15] = p[n+18] × p[3n] = p[33] × p[45] = 137 × 197 = 26989 ✓
+n=17: m[17] = p[n-5]² × p[n+m[5]] = p[12]² × p[26] = 37² × 101 = 138269 ✓
+n=18: m[18] = prime(m[7] × p[m[2] × p[10]]) = prime(50 × 449) = prime(22450) = 255121 ✓
+n=19: m[19] = p[5] × p[8] × p[(n+1)² - m[3]] = 11 × 19 × 2699 = 564091 ✓
+n=20: m[20] = prime(2 × m[7] × p[9] × p[11]) = prime(71300) = 900329 ✓
+n=21: m[21] = p[1] × p[2] × p[(n-1) × m[8]² + m[6]] = 2 × 3 × 111779 = 670674 ✓
+
+YOUR TASKS:
+
+1. FACTORIZE m[22] = 4810329
+   - Is it prime? If not, what are the prime factors?
+   - Find prime indices of each factor
+   - Look for pattern: indices relate to n=22 and m[k] for k<22
+
+2. FACTORIZE m[23] = 8804812
+   - Is it prime? If not, what are the prime factors?
+   - Find prime indices
+   - Check self-reference pattern
+
+3. For each factorization, try these formula patterns:
+   Pattern A: m[n] = p[a] × p[b] where b = n + m[k]
+   Pattern B: m[n] = p[a] × p[b] × p[c] where indices relate to n
+   Pattern C: m[n] = prime(f(n, m[k])) for some function f
+   Pattern D: m[n] = p[a]² × p[b] (squared pattern)
+
+4. ANALYSIS: Why do some n use convergents and others use prime-index formulas?
+
+Show your work step by step. Verify any formula you propose.

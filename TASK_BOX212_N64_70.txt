@@ -1,0 +1,24 @@
+TASK: Find self-referential formulas for m[64] through m[70]
+
+CONTEXT:
+The m-sequence uses PRIME INDICES and SELF-REFERENCES.
+Example: m[18] = prime(m[7] × p[87])
+
+KEY BUILDING BLOCKS:
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23
+
+YOUR ASSIGNMENT:
+m[64] = 6211178871726751508
+m[65] = 1996402169071970173
+m[66] = 395435327538483377
+m[67] = 35869814695994276026
+m[68] = 340563526170809298635
+m[69] = 34896088136426753598
+m[70] = 268234543517713141517
+
+These are VERY LARGE. Focus on:
+1. Primality check first
+2. Find small factors if composite
+3. Pattern analysis
+
+OUTPUT: Best effort factorization and any patterns found.

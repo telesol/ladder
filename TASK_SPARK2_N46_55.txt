@@ -1,0 +1,31 @@
+TASK: Find self-referential formulas for m[46] through m[55]
+
+CONTEXT:
+We discovered that m-values are computed using PRIME INDICES and SELF-REFERENCES.
+Earlier m-values use formulas like:
+- m[9] = p[7] × p[10] = 17 × 29 = 493
+- m[11] = p[7] × p[n+m[6]] = p[7] × p[30] = 17 × 113 = 1921
+- m[18] = prime(m[7] × p[87]) = prime(50 × 449) = 255121
+
+KEY BUILDING BLOCKS:
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23
+
+YOUR ASSIGNMENT - Factor and find formulas for:
+m[46] = 8421857143178
+m[47] = 123888169938382
+m[48] = 329601320238553
+m[49] = 536244997789673
+m[50] = 1332997220739910
+m[51] = 202187327266700
+m[52] = 4404643018077548
+m[53] = 10676506562464268
+m[54] = 21567311207941525
+m[55] = 25932317016087922
+
+METHODOLOGY:
+1. Factor each m[n] into primes
+2. Find the prime INDEX of each factor
+3. Look for patterns relating to n or earlier m-values
+4. Express as formula
+
+OUTPUT: For each n provide factorization, prime indices, and formula.

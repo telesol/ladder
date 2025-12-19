@@ -1,0 +1,57 @@
+TASK FOR QWQ:32B - PRIME INDEX PATTERN DISCOVERY
+
+You are analyzing the Bitcoin puzzle m-sequence to find the generation formula.
+
+## Key Data
+
+m-sequence (n=2 to n=20):
+n=2: m=1
+n=3: m=1
+n=4: m=22 = 2 × 11 = p[1] × p[5]
+n=5: m=9 = 3² = p[2]²
+n=6: m=19 = p[8] (PRIME)
+n=7: m=50 = 2 × 5² = p[1] × p[3]²
+n=8: m=23 = p[9] (PRIME)
+n=9: m=493 = 17 × 29 = p[7] × p[10]
+n=10: m=19 = p[8] (PRIME, same as m[6]!)
+n=11: m=1921 = 17 × 113 = p[7] × p[30]
+n=12: m=1241 = 17 × 73 = p[7] × p[21]
+n=13: m=8342 = 2 × 43 × 97 = p[1] × p[14] × p[25]
+n=14: m=2034 = 2 × 3² × 113 = p[1] × p[2]² × p[30]
+n=15: m=26989 = 137 × 197 = p[33] × p[45]
+n=16: m=8470 = 2 × 5 × 7 × 11² = p[1] × p[3] × p[4] × p[5]²
+n=17: m=138269 = 37² × 101 = p[12]² × p[26]
+n=18: m=255121 = p[22450] (PRIME)
+n=19: m=564091 = 11 × 19 × 2699 = p[5] × p[8] × p[393]
+n=20: m=900329 = p[71300] (PRIME)
+
+d-sequence (determines which previous k to use):
+d[2]=2, d[3]=3, d[4]=1, d[5]=2, d[6]=2, d[7]=2, d[8]=4
+d[9]=1, d[10]=7, d[11]=7, d[12]=5, d[13]=7, d[14]=8, d[15]=7
+
+## Critical Observations
+
+1. p[7]=17 appears at n=9,11,12 with second indices 10, 30, 21
+   - 10 = 9 + 1 = n + 1
+   - 30 = 11 + 19 = n + m[6]
+   - 21 = 12 + 9 = n + m[5]
+
+2. m[6] = m[10] = 19 (same value at different n!)
+
+3. When m_n is prime (n=18,20), the prime index is very large
+
+## Your Task
+
+Think step by step:
+
+1. For n=9,11,12, verify my observation that the second prime index = n + m[earlier]
+
+2. Find the pattern: which "earlier m" is used? Is it m[d_n]? m[n-something]?
+
+3. Predict: if n=13 follows same pattern, what should m[13] be? Compare to actual m[13]=8342
+
+4. Explain why m[6] = m[10] = 19. What's special about n=6 and n=10?
+
+5. For the primes at n=18,20: can you find a formula for their prime indices (22450 and 71300)?
+
+Take your time. Show all reasoning.

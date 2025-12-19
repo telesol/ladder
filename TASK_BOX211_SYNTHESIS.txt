@@ -1,0 +1,61 @@
+TASK FOR DEEPSEEK-R1:70B - FORMULA SYNTHESIS
+
+You are the deep reasoning engine for the Bitcoin puzzle analysis.
+
+## The Problem
+
+We need to find a formula to generate the m-sequence:
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23, m[9]=493, m[10]=19, m[11]=1921, m[12]=1241, ...
+
+## What We Know
+
+### 1. Master Formula (verified 100%)
+k_n = 2 × k_{n-1} + (2^n - m_n × k_{d_n})
+
+### 2. Prime Index Patterns
+- m[9] = p[7] × p[10] where 10 = n+1 = 9+1
+- m[11] = p[7] × p[30] where 30 = n+m[6] = 11+19
+- m[12] = p[7] × p[21] where 21 = n+m[5] = 12+9
+
+So for these cases: m[n] = p[7] × p[n + m[offset]]
+
+### 3. Special Cases
+- m[6] = m[10] = 19 (same value!)
+- m[18], m[20] are large primes
+
+### 4. d-sequence
+d[n] determines which k value to use. Values: 1,2,3,4,5,7,8,15,17,18,23...
+
+## Your Task
+
+Synthesize everything into a unified theory:
+
+1. **Bootstrap Phase (n=2 to n=8)**
+   - These are "base cases"
+   - m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23
+   - Find any pattern here
+
+2. **p[7] Phase (n=9, 11, 12)**
+   - m[n] = 17 × p[n + m[offset]]
+   - What determines "offset"? Is it d_n? Is it a fixed earlier m?
+
+3. **Prime Phase (n=18, 20)**
+   - m[n] is a very large prime
+   - Prime indices are 22450 and 71300
+   - Are these related to products of earlier m values?
+
+4. **General Formula**
+   Propose a formula of the form:
+   m[n] = f(n, m[n-1], m[n-2], ..., d[n], p[·])
+
+   Where:
+   - f might involve conditions based on n mod something
+   - p[·] is the prime function
+
+5. **Test Your Formula**
+   Check if it produces:
+   - m[9] = 493
+   - m[11] = 1921
+   - m[13] = 8342
+
+Think deeply. Take your time. This is the core problem.

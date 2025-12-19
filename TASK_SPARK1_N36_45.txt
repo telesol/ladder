@@ -1,0 +1,40 @@
+TASK: Find self-referential formulas for m[36] through m[45]
+
+CONTEXT:
+We discovered that m-values are computed using PRIME INDICES and SELF-REFERENCES.
+Earlier m-values use formulas like:
+- m[9] = p[7] × p[10] = 17 × 29 = 493
+- m[11] = p[7] × p[n+m[6]] = p[7] × p[30] = 17 × 113 = 1921
+- m[18] = prime(m[7] × p[87]) = prime(50 × 449) = 255121
+- m[21] = p[1] × p[2] × p[(n-1)×m[8]² + m[6]] = 2 × 3 × 111779 = 670674
+
+KEY BUILDING BLOCKS (use these in formulas):
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23
+
+YOUR ASSIGNMENT - Factor and find formulas for:
+m[36] = 22185816780
+m[37] = 121962932837
+m[38] = 109469830514
+m[39] = 10611712615
+m[40] = 247770050900
+m[41] = 916024625435
+m[42] = 1473058789645
+m[43] = 341763384729
+m[44] = 17007046382995
+m[45] = 15332477505459
+
+METHODOLOGY:
+1. Factor each m[n] into primes
+2. Find the prime INDEX of each factor (p[i] = ith prime)
+3. Look for patterns: does index relate to n, or to earlier m-values?
+4. Express as formula using n, m[k], p[i]
+
+OUTPUT FORMAT:
+For each n, provide:
+- m[n] = [factorization]
+- Prime indices: p[a] × p[b] × ...
+- Formula: m[n] = [expression using n, m[k], p[i]]
+- Verification: [show calculation matches]
+
+Use sympy for factorization:
+from sympy import factorint, prime, primepi

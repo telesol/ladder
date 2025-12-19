@@ -1,0 +1,50 @@
+TASK: Bitwise and Modular Pattern Analysis
+MODEL: yi-coder:9b or phi4:14b
+TIMEOUT: 1 hour
+DATE: 2025-12-19
+
+CONTEXT:
+Looking for non-mathematical patterns in m[15], m[17], m[18], m[20].
+
+TARGET VALUES (in different bases):
+m[15] = 26989  = 0x6970    = 0b110100101110000
+m[17] = 138269 = 0x21C1D   = 0b100001110000011101
+m[18] = 255121 = 0x3E491   = 0b111110010010010001
+m[20] = 900329 = 0xDBCE9   = 0b11011011110011101001
+
+INVESTIGATE:
+
+1. BIT PATTERNS:
+   - Count of 1s in binary: 26989 has ? ones
+   - Hamming weight patterns
+   - Are these related to n?
+
+2. HEX PATTERNS:
+   - 0x6970 - any ASCII meaning?
+   - 0x21C1D - pattern?
+   - 0x3E491 - pattern?
+   - 0xDBCE9 - pattern?
+
+3. MODULAR ARITHMETIC:
+   - m[n] mod (n-1)
+   - m[n] mod (n+1)
+   - m[n] mod 2^k for various k
+   - m[n] mod previous m values
+
+4. XOR RELATIONSHIPS:
+   - m[15] XOR m[17] = ?
+   - m[17] XOR m[18] = ?
+   - Any pattern with consecutive m values?
+
+5. DIGIT SUMS (various bases):
+   - Base 10 digit sum
+   - Base 16 digit sum
+   - Base 2 digit sum (popcount)
+
+6. SEQUENCE DIFFERENCES:
+   - m[n] - m[n-1] pattern
+   - m[n] - 2^n pattern
+   - m[n] / 2^(n-d[n]) pattern (the normalization)
+
+OUTPUT:
+Compute ALL of the above. Report any patterns found.
