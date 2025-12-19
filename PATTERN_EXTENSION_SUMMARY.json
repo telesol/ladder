@@ -1,0 +1,43 @@
+{
+  "prime_17_positions": [
+    9,
+    11,
+    12,
+    24,
+    48,
+    67
+  ],
+  "max_n_available": 70,
+  "key_patterns": {
+    "small_primes": [
+      "p[m[8]-m[4]]",
+      "p[m[4]-m[6]]",
+      "p[m[2]+m[3]]"
+    ],
+    "self_referential": [
+      "p[n-m[7]]",
+      "p[n-m[8]]",
+      "p[n+m[5]]"
+    ],
+    "direct_m_ref": [
+      "p[m[7]]",
+      "p[m[5]]"
+    ],
+    "linear_n": [
+      "p[2n+c]",
+      "p[3n+c]",
+      "p[4n+c]"
+    ]
+  },
+  "prime_17_prediction": {
+    "next_expected": 96,
+    "doubling_sequence": [
+      12,
+      24,
+      48,
+      96,
+      192,
+      384
+    ]
+  }
+}
