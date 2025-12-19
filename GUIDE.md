@@ -80,11 +80,11 @@ m[4] = 22  ← π convergent numerator (22/7)
 ```
 **Source:** π = [3; 7, 15, 1, 292, ...]
 
-### 2. Transition Rule at n=5 (VERIFIED)
+### 2. Transition Rule at n=5 (UPDATED)
 ```
-m[5] = 9 = digit_sum(333) = 3 + 3 + 3
+m[5] = 9 = ln(2) convergent numerator (9/13)
 ```
-Where 333 is the numerator of π's third convergent (333/106).
+**Also:** 9 = digit_sum(333) where 333 is π convergent - dual meaning?
 
 ### 3. e Convergent Integration (VERIFIED)
 ```
@@ -120,6 +120,20 @@ k[5] = 21  (F_8)
 ### 7. Product Relationship (VERIFIED)
 ```
 m[2] × m[3] = 3 × 7 = 21 = k[5]
+```
+
+### 8. Convergent Coverage Analysis (2025-12-19)
+```
+Computed convergents for: π, e, sqrt(2), sqrt(3), φ, ln(2)
+Cross-referenced all 30 m-values (n=2..31)
+
+RESULT: Only 6/30 are direct convergents!
+- m[2]=3, m[3]=7: Multiple constants
+- m[4]=22: π only
+- m[5]=9: ln(2) convergent
+- m[6]=19, m[10]=19: e and sqrt(3)
+
+UNKNOWN SOURCE: m[7..31] (24 values) - NOT direct convergents
 ```
 
 ---
@@ -184,11 +198,14 @@ m[2] × m[3] = 3 × 7 = 21 = k[5]
 | mixtral:8x22b | Bitwise XOR | 27 lines | No - only suggestions |
 | deepseek-r1:70b | Constants | 538+ lines | **YES** - found sqrt(3) link |
 
-### Recommendations
+### Recommendations (Updated 2025-12-19)
+
+**STOP USING:**
+- mixtral:8x22b - 79GB VRAM wasted, said "I can't compute", only 27 lines output
 
 **For Deep Mathematical Analysis:**
 - Use deepseek-r1:70b - best at convergent calculations
-- Give 2-6 hour timeouts
+- Give 1-2 hour timeouts (not 6 hours - diminishing returns)
 - Provide full context data
 
 **For Algorithm Construction:**
@@ -201,9 +218,10 @@ m[2] × m[3] = 3 × 7 = 21 = k[5]
 - Good for generating hypotheses to test
 - May need guidance to avoid loops
 
-**For Quick Verification:**
-- Use Python scripts directly
-- Faster than LLM for numerical checks
+**For ALL Verification:**
+- Use Python scripts directly (convergent_database.py)
+- NEVER trust LLM mathematical claims without code verification
+- Computation-first, philosophy second
 
 ---
 
