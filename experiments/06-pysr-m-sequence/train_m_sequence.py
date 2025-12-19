@@ -61,7 +61,7 @@ def main():
         niterations=100,  # Number of iterations
         binary_operators=["+", "*", "-", "/"],
         unary_operators=["square", "cube"],
-        populations=30,
+        populations=40,  # More populations for diversity
         population_size=50,
         ncycles_per_iteration=500,
         maxsize=15,  # Max formula complexity
@@ -70,6 +70,9 @@ def main():
         verbosity=1,  # Print progress
         progress=True,
         temp_equation_file=True,
+        # PARALLELIZATION: Use all 20 cores
+        parallelism='multiprocessing',  # or 'multithreading'
+        procs=20,  # Use all CPU cores
     )
 
     print("   Configuration:")
@@ -147,8 +150,10 @@ def main():
         with open('training_results.json', 'w') as f:
             json.dump(results, f, indent=2)
 
-        # Save the model
-        model.save('m_sequence_model.pkl')
+        # Save the model using pickle (model.save() doesn't exist)
+        import pickle
+        with open('m_sequence_model.pkl', 'wb') as f:
+            pickle.dump(model, f)
 
         # Update status
         with open('STATUS.txt', 'w') as f:
