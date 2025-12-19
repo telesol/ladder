@@ -1,0 +1,22 @@
+{
+  "error_statistics": {
+    "mean_ratio": 0.6608033444512514,
+    "median_ratio": 0.6569258546278061,
+    "std_dev_ratio": 0.0715546823085858,
+    "min_ratio": 0.5763753737465306,
+    "max_ratio": 0.7823380046844539
+  },
+  "correction_factors": {
+    "global": 1.5133095320975205,
+    "by_d_n": {
+      "1": 1.566481296920889,
+      "2": 1.2782198921850119,
+      "4": 1.5898543370424656
+    }
+  },
+  "accuracy": {
+    "baseline": 0.0,
+    "with_global_correction": 0.0,
+    "with_d_specific_correction": 33.33333333333333
+  }
+}

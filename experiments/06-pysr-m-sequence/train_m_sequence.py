@@ -58,28 +58,31 @@ def main():
     print("\n3. Configuring PySR...")
 
     model = PySRRegressor(
+        procs=4,  # CPU multiprocessing (4 parallel processes)
+        multithreading=True,  # Enable Julia multithreading
         niterations=100,  # Number of iterations
         binary_operators=["+", "*", "-", "/"],
         unary_operators=["square", "cube"],
-        populations=30,
+        populations=20,  # 4 procs × 5 populations each
         population_size=50,
-        ncyclesperiteration=500,
+        ncycles_per_iteration=500,  # Fixed for PySR 1.5.9
         maxsize=15,  # Max formula complexity
         parsimony=0.001,  # Simplicity bias
-        loss="L2DistLoss()",
-        elementwise_loss=True,
         verbosity=1,  # Print progress
         progress=True,
         temp_equation_file=True,
-        equation_file="pysr_equations.csv",
     )
 
     print("   Configuration:")
+    print(f"     - CPU multiprocessing: procs=4")
+    print(f"     - Multithreading: enabled")
     print(f"     - Iterations: 100")
     print(f"     - Binary operators: +, *, -, /")
     print(f"     - Unary operators: square, cube")
     print(f"     - Max formula size: 15")
-    print(f"     - Populations: 30 × 50")
+    print(f"     - Populations: 20 (4 procs × 5 each)")
+    print(f"     - Population size: 50")
+    print(f"     - Expected runtime: 1-2 hours (2-3x speedup vs sequential)")
 
     # Step 4: Train PySR
     print("\n4. Training PySR (this will take 2-4 hours)...")
@@ -149,8 +152,10 @@ def main():
         with open('training_results.json', 'w') as f:
             json.dump(results, f, indent=2)
 
-        # Save the model
-        model.save('m_sequence_model.pkl')
+        # Save the model (pickle manually for PySR 1.5.9)
+        import pickle
+        with open('m_sequence_model.pkl', 'wb') as f:
+            pickle.dump(model, f)
 
         # Update status
         with open('STATUS.txt', 'w') as f:
