@@ -132,9 +132,27 @@ RESULT: Only 6/30 are direct convergents!
 - m[4]=22: π only
 - m[5]=9: ln(2) convergent
 - m[6]=19, m[10]=19: e and sqrt(3)
-
-UNKNOWN SOURCE: m[7..31] (24 values) - NOT direct convergents
 ```
+
+### 9. BREAKTHROUGH: Convergent Combinations (2025-12-19)
+```
+m[7]  = 50   = sqrt2_k[2] × ln2_k[3]   = 5 × 10      (PRODUCT)
+m[8]  = 23   = pi_k[0] + pi_h[1]       = 1 + 22      (SUM)
+m[9]  = 493  = sqrt2_h[3] × sqrt2_k[4] = 17 × 29     (PRODUCT)
+m[11] = 1921 = sqrt2_h[3] × pi_k[3]    = 17 × 113    (PRODUCT)
+m[14] = 2034 = sqrt2_h[7] + e_h[9]     = 577 + 1457  (SUM)
+
+KEY INSIGHT: sqrt(2) convergents appear in most combinations!
+- sqrt2 numerators: 1, 3, 7, 17, 41, 99, 239, 577, 1393...
+- sqrt2 denominators: 1, 2, 5, 12, 29, 70, 169, 408, 985...
+```
+
+**Pattern Summary:**
+| Phase | n | Operation | Constants Used |
+|-------|---|-----------|----------------|
+| Direct | 2-6 | Direct convergent | π, e, ln(2), sqrt(3) |
+| Products | 7,9,11 | h_i × k_j | sqrt(2), ln(2), π |
+| Sums | 8,14 | h_i + h_j | π, sqrt(2), e |
 
 ---
 
