@@ -1,0 +1,41 @@
+{
+  "hypothesis": "H3: PRNG (Pseudo-Random Generator)",
+  "theory": "drift = PRNG(seed).next() mod 256",
+  "results": {
+    "python_random": {
+      "best_seed": 12345,
+      "accuracy": 0.009057971014492754,
+      "method": "python_random"
+    },
+    "numpy_random": {
+      "best_seed": 0,
+      "accuracy": 0.007246376811594203,
+      "method": "numpy_random"
+    },
+    "lcg": {
+      "name": "MINSTD",
+      "seed": 0,
+      "accuracy": 0.6920289855072463,
+      "params": {
+        "a": 48271,
+        "c": 0,
+        "m": 2147483647
+      }
+    },
+    "brute_force": {
+      "seed": 15425,
+      "sample_accuracy": 0.15,
+      "full_accuracy": 0.0,
+      "method": "brute_force"
+    },
+    "custom_patterns": {
+      "counter": 0.0036231884057971015,
+      "fibonacci": 0.0009057971014492754
+    }
+  },
+  "best_approach": {
+    "name": "LCG",
+    "accuracy": 0.6920289855072463
+  },
+  "conclusion": "FAILED"
+}
