@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-19T18:44:06.458624",
+    "training_samples": 24,
+    "validation_samples": 6,
+    "features": 245
+  },
+  "validation": {
+    "exact_matches": 0,
+    "total": 6,
+    "accuracy_percent": 0.0,
+    "predictions": [
+      {
+        "n": 26,
+        "predicted": 80204575,
+        "actual": 78941020,
+        "match": false
+      },
+      {
+        "n": 27,
+        "predicted": 50738580,
+        "actual": 43781837,
+        "match": false
+      },
+      {
+        "n": 28,
+        "predicted": 259938955,
+        "actual": 264700930,
+        "match": false
+      },
+      {
+        "n": 29,
+        "predicted": 667354922,
+        "actual": 591430834,
+        "match": false
+      },
+      {
+        "n": 30,
+        "predicted": 102781344,
+        "actual": 105249691,
+        "match": false
+      },
+      {
+        "n": 31,
+        "predicted": 1875530804,
+        "actual": 2111419265,
+        "match": false
+      }
+    ]
+  },
+  "best_equation": "(power_of_2 + prev_m)/(d_n**2 + 0.20111775)",
+  "best_score": 0.9807570508394754
+}
