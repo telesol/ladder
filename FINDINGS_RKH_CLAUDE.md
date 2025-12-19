@@ -187,12 +187,41 @@ The m-sequence and d-sequence are **co-designed** - neither can be generated ind
 
 ---
 
+## EXTENDED SELF-REFERENCE ANALYSIS (ALL 70 VALUES)
+
+### Results:
+- **Successes**: 4 (n = 2, 3, 5, 6)
+- **Failures**: 4 (n = 4, 7, 8, 10)
+- **Out of bounds**: 61 (most target indices exceed n=70)
+
+### Self-reference quotients:
+| n | m[n] | target | m[target] | quotient | factors |
+|---|------|--------|-----------|----------|---------|
+| 2 | 1 | 3 | 1 | 1 | 1 |
+| 3 | 1 | 4 | 22 | 22 | 2 × 11 |
+| 5 | 9 | 14 | 2034 | 226 | **2 × 113** |
+| 6 | 19 | 25 | 29226275 | 1538225 | 5² × 13 × 4733 |
+
+**Note**: 113 appears in quotient m[14]/m[5], and 113 is also a factor of m[11] = 17 × 113!
+
+### Generalized divisibility chains:
+**m[4] = 22 divides**: m[16], m[38], m[50], m[55], m[61]
+**m[6] = 19 divides**: m[10], m[19], m[25], m[57], m[58], m[69]
+**m[5] = 9 divides**: m[14] only
+
+### Pattern: m[6]=19 is prolific!
+- Divides 6 later values
+- Index differences: 4, 13, 19, 51, 52, 63
+- Note: 19 = m[6] itself!
+
+---
+
 ## NEXT ACTIONS
 
-1. Test self-reference on ALL 70 m-values
-2. Look for patterns in m[n+m[n]]/m[n] quotients
-3. Investigate the offset = 2^n - m[n] × d[n] more deeply
-4. Check if offsets relate to earlier m or k values
+1. ~~Test self-reference on ALL 70 m-values~~ (DONE)
+2. Investigate why m[6]=19 is so prolific
+3. Look for 17-network in extended range (n > 31)
+4. Check if quotients relate to other m-values
 
 ---
 
