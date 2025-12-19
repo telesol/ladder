@@ -391,6 +391,17 @@ The real mystery is the k-sequence generation, not d.
 - Confirmed: m[18] and m[20] are PRIMES (p[22450] and p[71300])
 - **NEW INSIGHT**: Only m=1 and m=19 appear twice in the sequence
 
+### Session: 2025-12-19 (Night) - SIGN PATTERN DISCOVERY!
+- **NEW FINDING**: adj[n] sign follows ++- pattern for n=2-16!
+  - adj = k[n] - 2*k[n-1]
+  - Sign pattern: +, +, -, +, +, -, +, +, -, ... (period 3)
+  - **15 CONSECUTIVE MATCHES** from n=2 to n=16!
+  - Pattern breaks down after n=16
+- **IMPLICATION**: Early keys (n≤16) follow deterministic algorithm
+- **IMPLICATION**: Later keys may use different/random method
+- Fibonacci connection: k[1]=1, k[2]=3, k[4]=8, k[5]=21 are Fibonacci
+- k[n] divisible by n at: n=1, 4, 8, 11, 36
+
 ---
 
 ## Next Steps
