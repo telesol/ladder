@@ -1,0 +1,155 @@
+TASK 6: NUMERATOR DIVISIBILITY ANALYSIS - Bridge Pattern Discovery
+=========================================================================
+
+CONTEXT:
+We validated 12 Bitcoin puzzle bridges (k75-k130) and discovered:
+- Master formula: k_n = 2×k_{n-1} + (2^n - m×k_d) is 100% accurate
+- Minimum-m rule: System ALWAYS chooses d that minimizes m
+- Pattern changed after k90: predictions failed (33.3% accuracy)
+
+ACTUAL BRIDGE D-PATTERN (k75-k130):
+[1, 2, 4, 2, 1, 2, 1, 1, 1, 2, 1, 1]
+
+OBSERVATIONS:
+- d=1 dominates (8/12 = 66.7%)
+- d=2 appears at even multiples of 10 (k80, k90, k100, k120)
+- d=4 appears ONLY at k85 (1/12 = 8.3%)
+- d ∈ {1, 2, 4} restriction proven (prime factorization)
+
+BRIDGE DATA (ALL FROM DATABASE):
+================================
+
+k75 = 0x4c5ce114686a1336e07
+k80 = 0xea1a5c66dcc11b5ad180
+k85 = 0x11720c4f018d51b8cebba8
+k90 = 0x2ce00bb2136a445c71e85bf
+k95 = 0x527a792b183c7f64a0e8b1f4
+k100 = 0xaf55fc59c335c8ec67ed24826
+k105 = 0x16f14fc2054cd87ee6396b33df3
+k110 = 0x35c0d7234df7deb0f20cf7062444
+k115 = 0x60f4d11574f5deee49961d9609ac6
+k120 = 0xb10f22572c497a836ea187f2e1fc23
+k125 = 0x1c533b6bb7f0804e09960225e44877ac
+k130 = 0x33e7665705359f04f28b88cf897c603c9
+
+K_D VALUES (from database):
+k1 = 1
+k2 = 3
+k4 = 8
+
+ACTUAL D-SELECTIONS (validated):
+================================
+k75:  d=1, k_d=1, m=17181482569977385267163
+k80:  d=2, k_d=3, m=49494145169124778137818
+k85:  d=4, k_d=8, m=2475793815304387052756203
+k90:  d=2, k_d=3, m=137369493466825628156143067
+k95:  d=1, k_d=1, m=15824273681323507985197324682
+k100: d=2, k_d=3, m=? (please compute)
+k105: d=1, k_d=1, m=? (please compute)
+k110: d=1, k_d=1, m=? (please compute)
+k115: d=1, k_d=1, m=? (please compute)
+k120: d=2, k_d=3, m=? (please compute)
+k125: d=1, k_d=1, m=? (please compute)
+k130: d=1, k_d=1, m=? (please compute)
+
+YOUR MISSION:
+=============
+
+For EACH bridge k95, k100, k105, k110, k115, k120, k125, k130:
+
+1. COMPUTE NUMERATOR:
+   numerator = 2^n - (k_n - 2×k_{n-1})
+
+2. TEST ALL THREE D-VALUES:
+   For d ∈ {1, 2, 4}:
+   - k_d: Use k1=1, k2=3, k4=8 from database
+   - Check if numerator % k_d == 0
+   - If divisible: m = numerator / k_d
+   - If not divisible: mark as "not divisible"
+
+3. IDENTIFY MINIMUM-M WINNER:
+   - Among divisible options, which d gives smallest m?
+   - Does it match the ACTUAL d-selection?
+   - If yes: ✅ Minimum-m rule confirmed
+   - If no: ⚠️ Flag for investigation
+
+4. ANALYZE DIVISIBILITY PATTERN:
+   For each numerator, report:
+   - Is it divisible by 1? (always yes)
+   - Is it divisible by 3? (yes/no)
+   - Is it divisible by 8? (yes/no)
+   - Which divisor gives smallest m?
+
+5. DISCOVER PATTERN:
+   Based on all 12 bridges, answer:
+   - When does d=2 win? (what property of numerator?)
+   - When does d=4 win? (only k85 - what's special?)
+   - When does d=1 win? (dominates - why?)
+   - Can we predict d-selection from n alone?
+
+OUTPUT FORMAT:
+==============
+
+For each bridge, provide:
+
+```
+Bridge kXX:
+  n = XX
+  k_n = 0x...
+  k_{n-5} = 0x...
+
+  Numerator = 2^n - (k_n - 2×k_{n-5})
+            = [exact value]
+
+  Testing d-values:
+    d=1 (k_d=1): numerator % 1 = 0 → m = [value]
+    d=2 (k_d=3): numerator % 3 = [0 or not 0] → m = [value or "not divisible"]
+    d=4 (k_d=8): numerator % 8 = [0 or not 0] → m = [value or "not divisible"]
+
+  Minimum-m winner: d=[X], m=[value]
+  Actual d-selection: d=[Y]
+  Match: [✅ or ❌]
+
+  Divisibility summary:
+    ÷1: yes (always)
+    ÷3: [yes/no]
+    ÷8: [yes/no]
+```
+
+FINAL ANALYSIS:
+===============
+
+After computing all 8 bridges (k95-k130), provide:
+
+1. DIVISIBILITY PATTERN TABLE:
+   | Bridge | n | ÷3 | ÷8 | Winner d | Actual d | Match |
+   |--------|---|----|----|----------|----------|-------|
+   | k95    | 95 | ? | ? | ? | 1 | ? |
+   | k100   | 100 | ? | ? | ? | 2 | ? |
+   | ... | ... | ... | ... | ... | ... | ... |
+
+2. PATTERN DISCOVERY:
+   - When is numerator divisible by 3?
+   - When is numerator divisible by 8?
+   - When does d=2 give smaller m than d=1?
+   - When does d=4 give smaller m than d=1,2?
+   - Why does d=1 dominate after k90?
+
+3. PREDICTION RULES:
+   Based on your analysis, state rules for predicting d:
+   - Rule 1: [condition] → d=1
+   - Rule 2: [condition] → d=2
+   - Rule 3: [condition] → d=4
+
+4. k85 ANALYSIS:
+   Why is k85 the ONLY bridge with d=4?
+   What makes its numerator special?
+
+MATHEMATICAL TOOLS:
+===================
+Use Python-like computations (you can write code blocks).
+All arithmetic is modulo-free (exact integer math).
+Use hex conversion where needed: int('0x...', 16)
+
+BEGIN ANALYSIS:
+===============
