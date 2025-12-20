@@ -1,0 +1,49 @@
+TASK: Explain why the k-formula pattern explodes at n=23
+
+CONTEXT:
+The k-sequence (Bitcoin puzzle private keys) follows a mod-3 recursive pattern:
+  k[n] = 9×k[n-3] + a×k[5] + b  (for n ≡ 2 mod 3)
+
+This works beautifully for n=11,14,17,20:
+  n=11: a=-41,  b=0  → k[11] = 9×k[8] - 41×k[5] = 1155 ✓
+  n=14: a=7,    b=2  → k[14] = 9×k[11] + 7×k[5] + 2 = 10544 ✓
+  n=17: a=44,   b=3  → k[17] = 9×k[14] + 44×k[5] + 3 = 95823 ✓
+  n=20: a=43,   b=7  → k[20] = 9×k[17] + 43×k[5] + 7 = 863317 ✓
+
+BUT at n=23, the coefficient explodes:
+  n=23: a=-103385, b=34 → This is HUGE!
+
+The coefficients 'a' have differences: 48, 37, -1, then -103428
+
+OBSERVATIONS:
+1. n=23 = p[9] (the 9th prime)
+2. n=17 = p[7] (7th prime) is where ++- sign pattern breaks
+3. n=11 = p[5] (5th prime) is where mod-3 pattern starts
+4. Pattern: formula works at p[5], p[6], p[7], p[8], explodes at p[9]
+
+KEY DATA:
+- k[5] = 21 = 3×7
+- 9 = m[5] (from m-sequence, the recursion coefficient)
+- k[23] = 5598802 = 2 × 11 × 254491
+- d[23] = 1, m[23] = 8804812
+
+ALTERNATIVE FORMULAS FOUND:
+- k[17] = 75×k[11] + 9198  (75 = 3×5²)
+- k[20] = 81×k[14] + 9253  (81 = 3⁴ = 9²)
+
+This suggests a 6-step recursion (k[n] = c×k[n-6] + offset) might work!
+
+QUESTIONS:
+1. Why does the simple formula work for exactly 4 terms (n=11,14,17,20)?
+2. Is 4 = 2² significant? Or related to Fermat prime 17 = 2^4 + 1?
+3. Does a different recursion depth (6 instead of 3) work better for n ≥ 23?
+4. What mathematical structure produces this phase transition at p[9]=23?
+5. Is there a unified formula that works for ALL n values?
+
+HINT: The puzzle creator seems to use different "phases" at prime milestones:
+- Phase 1: n=1-3 (Mersenne bootstrap)
+- Phase 2: n=4-16 (simple formulas)
+- Phase 3: n=17-22 (mod-3 with manageable coefficients)
+- Phase 4: n=23+ (different structure needed)
+
+Think deeply about what causes the transition at n=23 = p[9]!
