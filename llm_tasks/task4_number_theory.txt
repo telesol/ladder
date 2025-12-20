@@ -1,0 +1,55 @@
+TASK 4: Number Theory Deep Analysis
+
+QUESTION: What fundamental number theory explains the bridge structure?
+
+CONTEXT:
+Master formula: k_n = 2*k_{n-1} + (2^n - m*k_d)
+
+Key observations:
+1. Formula involves powers of 2 (2^n, 2*k_{n-1})
+2. Small primes work: k1=1, k2=3, k4=13
+3. Gaps of 5 puzzles between bridges
+4. Minimum-m constraint drives selection
+
+MATHEMATICAL STRUCTURES TO CONSIDER:
+
+A. Modular Arithmetic:
+   - 2^n mod k_d relationships
+   - Why does 2^75 mod 3 vs 2^75 mod 7 differ?
+   - Can we use Fermat's Little Theorem?
+
+B. Prime Factorization:
+   - k2 = 3 (prime)
+   - k4 = 13 (prime, also a Fermat prime)
+   - k3 = 7 (prime, but doesn't work for bridges!)
+   - Why do some primes work and others don't?
+
+C. Binary Representation:
+   - All k-values are related to 2^n
+   - Binary structure of k_d values:
+     - k1 = 1 = 0b1
+     - k2 = 3 = 0b11
+     - k4 = 13 = 0b1101
+   - Pattern in binary?
+
+D. Diophantine Equations:
+   - We need integer solutions for (d, m)
+   - Constraint: (2^n - adj) ≡ 0 (mod k_d)
+   - Multiple constraints when searching all d
+
+E. Chinese Remainder Theorem:
+   - Could CRT explain why certain combinations work?
+
+SPECIFIC QUESTIONS:
+1. Why does k4=13 work but k3=7 doesn't for bridges?
+2. Is there a formula using 2^n mod k_d to predict valid d-values?
+3. Does Fermat's Little Theorem apply? (13 is Fermat prime F_2 = 2^4 + 1)
+4. Can we use quadratic residues or other number theory tools?
+
+GOAL:
+Find a mathematical rule that predicts, for any bridge n:
+- Which d-values will satisfy divisibility
+- Which d-value will minimize m
+- No brute-force search needed
+
+Please provide deep mathematical analysis and testable predictions.

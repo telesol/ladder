@@ -1,0 +1,47 @@
+TASK 3: D-Selection Meta-Pattern
+
+QUESTION: What rule determines which d-value is chosen when multiple options exist?
+
+CONTEXT:
+Bridge d-value choices:
+- k75: d=1 (ONLY option, no choice)
+- k80: d=2 chosen (d=1 also valid, but d=2 has smaller m)
+- k85: d=4 chosen (d=1 also valid, but d=4 has smaller m)
+- k90: d=2 chosen (d=1 also valid, but d=2 has smaller m)
+
+Detailed comparison:
+k80 options:
+  - d=1, m=148,482,435,507,374,334,413,454
+  - d=2, m=49,494,145,169,124,778,137,818 ← CHOSEN (minimum m)
+
+k85 options:
+  - d=1, m=19,806,350,522,435,096,422,049,624
+  - d=4, m=2,475,793,815,304,387,052,756,203 ← CHOSEN (minimum m)
+
+k90 options:
+  - d=1, m=412,108,480,400,476,884,468,429,201
+  - d=2, m=137,369,493,466,825,628,156,143,067 ← CHOSEN (minimum m)
+
+PATTERN OBSERVED:
+- When choice exists, minimum-m is chosen
+- Sequence: [1, 2, 4, 2]
+
+QUESTIONS TO ANALYZE:
+1. Is minimum-m rule 100% consistent for bridges?
+2. Why doesn't d=3 ever work? (k3=7 is prime)
+3. Is there a pattern in [1, 2, 4, 2]?
+   - Powers of 2? (1=2^0, 2=2^1, 4=2^2)
+   - Then why 2 again (not 8=2^3)?
+4. Can you predict d-value for k95?
+   - Which d-values will be valid?
+   - Which will have minimum m?
+
+ADDITIONAL CONTEXT:
+- Normal sequence (k2-k70): Minimum-m rule is 97.1% accurate
+- Bridges: Minimum-m rule appears 100% when choice exists
+- But: choice is VERY limited (only 1-2 options instead of dozens)
+
+Please provide:
+1. Confirmation of minimum-m rule for bridges
+2. Explanation of [1, 2, 4, 2] pattern
+3. Prediction for k95

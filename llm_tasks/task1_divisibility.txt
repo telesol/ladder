@@ -1,0 +1,41 @@
+TASK 1: Divisibility Pattern Analysis
+
+QUESTION: Why do only d ∈ {1, 2, 4} work for Bitcoin puzzle bridges?
+
+CONTEXT:
+We have a master formula: k_n = 2*k_{n-1} + (2^n - m*k_d)
+
+For a valid (d, m) pair, we need:
+- m must be a positive integer
+- This means: (2^n - (k_n - 2*k_{n-1})) must be divisible by k_d
+
+Known k-values:
+- k1 = 1
+- k2 = 3
+- k3 = 7
+- k4 = 13
+- k5 = 21
+- ... (up to k70)
+
+Bridge Analysis Results:
+- k75 (from k70): Only d=1 works (k_d = 1)
+- k80 (from k75): d=1,2 work (k_d = 1, 3)
+- k85 (from k80): d=1,4 work (k_d = 1, 13)
+- k90 (from k85): d=1,2 work (k_d = 1, 3)
+
+OBSERVATIONS:
+1. d=1 ALWAYS works (k1 = 1 divides everything)
+2. d=2 works sometimes (k2 = 3, a small prime)
+3. d=4 works sometimes (k4 = 13, a small prime)
+4. Larger d-values (5-70) NEVER work for bridges
+
+QUESTION TO ANALYZE:
+Why don't larger d-values work? What is special about k1=1, k2=3, k4=13?
+
+Specifically:
+1. What is the prime factorization pattern?
+2. Why does (2^n - adjustment) fail to be divisible by larger k_d values?
+3. Is there a modular arithmetic explanation?
+4. Can you predict which d-values will work for future bridges (k95, k100, etc.)?
+
+Please provide mathematical reasoning and, if possible, a formula or rule.
