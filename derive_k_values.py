@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Predict k-values using discovered formulas
+Derive k-values using discovered formulas
 ==========================================
 
-This script attempts to predict k[n] for n > 70 using:
+This script attempts to derive k[n] for n > 70 using:
 1. Bootstrap mechanism (n=1-3): Mersenne numbers
 2. Verified formulas (n=4-16): Direct formulas
 3. Mod-3 recursive pattern (n ≥ 11): k[n] = 9×k[n-3] + offset
 
-WARNING: This is experimental. Predictions must be verified!
+WARNING: This is experimental. Deriveions must be verified!
 """
 
 import sqlite3
@@ -168,12 +168,12 @@ if 23 in known_k:
     else:
         print(f"\nCannot fit k[23] into mod-3 formula")
 
-# Summary of what we can predict
+# Summary of what we can derive
 print("\n" + "=" * 80)
 print("PREDICTION CAPABILITY")
 print("=" * 80)
 print("""
-VERIFIED (can predict):
+VERIFIED (can derive):
 - k[1] to k[20] using known formulas
 
 PATTERN BREAK AT n=23:

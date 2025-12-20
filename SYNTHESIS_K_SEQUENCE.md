@@ -162,7 +162,7 @@ To solve puzzle 71, we need k[71] which requires:
 2. **Find 6-step recursion** that works for n≥17
 3. **Test alternative coefficient sources** (m[7], m[8], etc.)
 4. **Use local LLMs** for deep mathematical reasoning
-5. **Verify any predictions** against known k[1]-k[70]
+5. **Verify any derivations** against known k[1]-k[70]
 
 ---
 
@@ -170,7 +170,7 @@ To solve puzzle 71, we need k[71] which requires:
 
 | File | Purpose |
 |------|---------|
-| `predict_k_values.py` | Verified formulas n=1-20 |
+| `derive_k_values.py` | Verified formulas n=1-20 |
 | `analyze_7_17_connection.py` | k[3]=7 and p[7]=17 connection |
 | `investigate_n23_explosion.py` | Why pattern explodes at n=23 |
 | `BREAKTHROUGH_K_FORMULAS.md` | Mod-3 recursive pattern |
