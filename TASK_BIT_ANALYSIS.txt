@@ -1,0 +1,22 @@
+TASK: Analyze bit patterns in m[n] sequence
+
+m-values (n=2..20):
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23, m[9]=493
+m[10]=19, m[11]=2045, m[12]=8342, m[13]=3469, m[14]=2034, m[15]=32845
+
+In binary:
+m[2] = 1
+m[3] = 1  
+m[4] = 10110
+m[5] = 1001
+m[6] = 10011
+m[7] = 110010
+m[8] = 10111
+m[9] = 111101101
+
+QUESTIONS:
+1. Is there a pattern in bit lengths?
+2. Is m[n] related to m[n-1] via XOR, AND, OR, shift?
+3. Does the binary representation reveal structure?
+
+Test: m[n] XOR m[n-1], m[n] AND 2^k, popcount(m[n])
