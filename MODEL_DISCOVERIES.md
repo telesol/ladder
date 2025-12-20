@@ -21,6 +21,9 @@ Track which models made which discoveries to evaluate performance.
 | Claude Opus 4.5 | n mod 9 pattern for d-selection | PARTIAL | n=62 and n=71 both ≡ 8 (mod 9) |
 | Nemotron 30B | m-values have ~(k-2) bits | YES | Observation confirmed |
 | Nemotron 30B | m-values are products of small primes × large prime | PARTIAL | Pattern observed but not universal |
+| DeepSeek v3.1 | 1861/1153 not exact Fibonacci but close to 21/13≈1.615 | YES | Verified: 21/13=1.6154, 1861/1153=1.6140 |
+| DeepSeek v3.1 | Suggested Pell-type recurrence k_n = 6k_{n-1} - k_{n-2} | TESTING | Need to verify |
+| DeepSeek v3.1 | m[n] may be CF denominators with Fibonacci-related partial quotients | HYPOTHESIS | Plausible but unverified |
 
 ---
 
@@ -30,6 +33,7 @@ Track which models made which discoveries to evaluate performance.
 |-------|-------------|----------|--------------|
 | Claude Opus 4.5 | 4 | 4 | 100% |
 | Nemotron 30B | 2 | 1.5 | 75% |
+| DeepSeek v3.1 671B | 3 | 2 | 67% |
 
 ---
 
@@ -86,3 +90,16 @@ The three m-values are **coprime** (GCD = 1). This suggests they are independent
 5. **PREDICTION for m[71]**:
    - If pattern holds: m[71] should be divisible by p_69 = **347**
    - Note: Pattern only matches 3/67 cases, so this is a weak constraint
+
+6. **MAJOR DISCOVERY: Generalized Fibonacci Pairs in m-values** (Claude Opus 4.5):
+
+   **m[62]**: 281 = G_2(189, 92), 373 = G_3(189, 92)
+   - Sequence: 189, 92, **281**, **373**, 654, 1027, ...
+   - Initial: 189 = 3³×7, 92 = 2²×23
+   - Note: 281 is also the 60th prime (p_{n-2} pattern)
+
+   **m[68]**: 1153 = G_6(101, 81), 1861 = G_7(101, 81)
+   - Sequence: 101, 81, 182, 263, 445, 708, **1153**, **1861**, 3014, ...
+   - Initial: 101 (prime), 81 = 3⁴
+
+   **PATTERN**: m[n] contains consecutive G_k, G_{k+1} from specific initial pairs!
