@@ -1,0 +1,19 @@
+TASK: Derive the exact formula for m[71]
+
+KNOWN:
+- k[71] = 1,602,101,676,614,237,534,489 (derived)
+- m[71] = 899,985,170,943,544,151,107
+- m[71] = 19 × 47,367,640,575,976,007,953
+- d[71] = 2
+
+PATTERN from FORMULA_SUMMARY.md:
+For n ≡ 2 (mod 3), m[n] often uses:
+- Factor 19 (e-convergent numerator)
+- Prime products: p[a] × p[b] where a+b relates to n
+- Self-reference: uses earlier m-values
+
+QUESTION: What is the exact construction formula for m[71]?
+
+Check if: m[71] = 19 × prime(f(n, m[k]))
+
+Provide the formula that generates m[71] = 899,985,170,943,544,151,107

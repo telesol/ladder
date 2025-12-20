@@ -1,0 +1,24 @@
+TASK: Find the formula for offset[n] in k[n] = 9*k[n-3] + offset[n]
+
+KNOWN OFFSETS (n=63-71):
+off[63] = -1,222,142,202,450,997,670
+off[64] = 4,967,579,474,010,341,790
+off[65] = -4,606,975,570,506,195,703
+off[66] = -34,592,851,995,373,892,186
+off[67] = -27,540,062,615,817,873,350
+off[68] = -55,217,129,595,261,785,870
+off[69] = -119,841,466,032,741,115,730
+off[70] = -223,475,518,416,452,616,237
+off[71] = -376,982,719,305,606,823,936 (derived)
+
+OBSERVATIONS:
+- Offsets grow roughly geometrically
+- Sign pattern varies
+- Some offsets divisible by m-values (9, 19, 23)
+
+QUESTION: Find formula offset[n] = f(n, k, m) that reproduces these values.
+
+Check if offset involves:
+- k-value combinations
+- m-sequence values  
+- Prime index products

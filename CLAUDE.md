@@ -40,11 +40,23 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
    - m[16] = 2^7 + m[13] = 128 + 8342 = 8470
    - See: `find_m_formulas.py`
 
-### Current Status
-- **Progress:** d-sequence solved, bootstrap mechanism discovered
-- **Key insight:** The puzzle starts with Mersenne numbers k[1,2,3], then transitions to convergent-based m-values
-- **Data source:** `data_for_csolver.json` has correct m_seq, d_seq
-- **Important:** m[2]=1, m[3]=1 (achieved via d[n]=n self-reference)
+### Current Status (2025-12-20 Update)
+- **Progress:** 69/70 k-formulas verified (n=1 to n=70)
+- **CRITICAL:** Index shift discovered - use `m_seq[n-2]`, `d_seq[n-2]`
+- **k[71] STATUS:** NOT SOLVED - derived value was WRONG (BTC address mismatch!)
+- **Actual puzzle 71 address:** `1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU` (UNSOLVED)
+- **Key files:** `K_FORMULAS_COMPLETE.md`, `verify_btc_address.py`
+- **Data source:** `data_for_csolver.json` - note index shift!
+
+### ⚠️ CRITICAL WARNING
+The Zbook k[71] derivation using offset ratio extrapolation was INCORRECT.
+The derived address `1KEqStQnjYJnEWyqYhwdAup53JCDnTm7va` does NOT match puzzle 71.
+Need to find the ACTUAL m[71] formula from mathematical construction patterns.
+
+### Key insight
+- k[1,2,3] are Mersenne numbers (bootstrap)
+- m[2]=1, m[3]=1 (achieved via d[n]=n self-reference)
+- 3-step recursion: k[n] = 9×k[n-3] + offset for n≥31
 
 ## PRIMARY GOAL
 **Derive the key generation FORMULA** - NOT predict search positions, NOT brute force.

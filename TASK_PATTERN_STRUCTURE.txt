@@ -1,0 +1,19 @@
+TASK: Find the pattern/rule for generating k-value formulas
+
+PATTERN OBSERVED:
+n=4-6:   k[n] expressed using k[1], k[2], k[3] only
+n=7-11:  k[n] = a×k[small] + b×k[medium]
+n=12-17: k[n] = c×k[11] + offset (k[11] is anchor)
+n=18-23: k[n] uses k[17] or earlier anchors
+n=24+:   k[n] uses k[23] heavily
+
+ANCHOR POINTS: k[11]=1155, k[17]=95823, k[23]=5598802
+
+QUESTION: What determines which earlier k-values are used as "anchors"?
+
+HYPOTHESIS TO TEST:
+1. Anchors at prime n? (11=p[5], 17=p[7], 23=p[9])
+2. Anchors at n≡2 (mod 3)?
+3. Anchors where k[n] has special factorization?
+
+Please derive the anchor selection rule and formula structure.

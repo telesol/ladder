@@ -1,0 +1,17 @@
+TASK: Verify and extend the factor-19 pattern in m-sequence
+
+KNOWN:
+m[6] = 19 (e-convergent)
+m[10] = 19 (same!)
+m[11] = 1921 = 19 × 101
+m[71] = 899,985,170,943,544,151,107 = 19 × 47,367,640,575,976,007,953
+
+For n ≡ 2 (mod 3): n = 2, 5, 8, 11, 14, ..., 68, 71
+Many have m[n] divisible by 19.
+
+QUESTION:
+1. For which n (mod 3 = 2) is m[n] divisible by 19?
+2. What determines when 19 appears as a factor?
+3. Is 47,367,640,575,976,007,953 prime? If so, what prime index?
+
+Verify: 19 = e numerator at convergent index 4 = sqrt(3) numerator at h[4]

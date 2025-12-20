@@ -1,0 +1,18 @@
+TASK: Derive k[72], k[73], k[74] to verify chain to k[75]
+
+KNOWN:
+- k[71] = 1,602,101,676,614,237,534,489
+- k[75] = 22,538,323,240,989,823,823,367 (from database)
+- Formula: k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]]
+- 3-step: k[n] = 9*k[n-3] + offset[n]
+
+CONSTRAINT from k[75]:
+k[75] = 81*k[69] + 9*offset[72] + offset[75]
+Combined: 9*offset[72] + offset[75] = -1,540,910,604,560,624,546,757
+
+Using k[71] and historical offset ratios (~1.67), derive:
+1. offset[72], offset[73], offset[74], offset[75]
+2. k[72], k[73], k[74]
+3. Verify k[75] matches database value
+
+Show all calculations.

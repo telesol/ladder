@@ -1,0 +1,27 @@
+TASK: Analyze WHY these specific coefficients appear in k-value formulas
+
+VERIFIED FORMULAS (subset):
+k[7]  = k[6] + 9×k[2]           coefficient: 9
+k[11] = k[8] + 19×k[6]          coefficient: 19
+k[16] = 45×k[11] - 465          coefficient: 45
+k[17] = 83×k[11] - 42           coefficient: 83
+k[20] = 81×k[14] + 9253         coefficient: 81
+k[21] = 19×(k[17] - k[9])       coefficient: 19
+
+KEY COEFFICIENTS: 9, 19, 45, 81, 83
+
+KNOWN FACTS:
+- 9 = m[5] (ln(2) convergent)
+- 19 = m[6] = m[10] (e/√3 convergent)
+- 45 = 9 × 5 = m[5] × 5
+- 81 = 9² = m[5]²
+- 83 = 81 + 2 = 9² + 2
+
+QUESTION: What is the mathematical rule that determines WHICH coefficient to use for each n?
+
+CONSTRAINTS:
+- Must be deterministic (not random)
+- Should relate to m-sequence values
+- Should explain why 9, 19, 81 appear multiple times
+
+Please derive the coefficient selection rule.
