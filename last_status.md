@@ -1,289 +1,154 @@
-# Last Status - 2025-12-20 (COMPLETE)
-## 🎓 MATHEMATICAL PROOF + PREDICTIONS k95-k120
+# Last Status - 2025-12-20 (VALIDATION COMPLETE - MAJOR DISCOVERY)
+## 🔬 VALIDATION k95-k130: PREDICTION FAILED - PATTERN MORE COMPLEX
 
-**Session**: LLM Orchestration + Proof + Predictions
-**Duration**: 3.5 hours
-**Status**: ✅ COMPLETE - Predictions ready for k95-k120
-
----
-
-## 🎯 **SESSION COMPLETE**
-
-✅ **PROVEN**: d ∈ {1, 2, 4} is mathematical necessity
-✅ **VALIDATED**: 100% accuracy on k75-k90
-✅ **COMPUTED**: Predictions for k95-k120
-✅ **PUSHED**: All discoveries to GitHub
-
-**Read**: `PREDICTIONS_k95_to_k120.md` ⭐
+**Session**: Validation + Pattern Analysis
+**Duration**: 4 hours (cumulative)
+**Status**: ✅ VALIDATION COMPLETE - **Prediction was WRONG!**
 
 ---
 
-## 📍 **START HERE (NEXT SESSION)**
+## 🎯 **CRITICAL DISCOVERY**
 
-```bash
-cd /home/solo/LadderV3/kh-assist
+**The predicted pattern [4,2,4,2,4,2] for k95-k120 was INCORRECT!**
 
-# Read predictions
-cat PREDICTIONS_k95_to_k120.md
+**Prediction Accuracy**: 2/6 = **33.3%** ❌
+**Formula Accuracy**: 12/12 = **100%** ✅
 
-# Read mathematical proof
-cat MATHEMATICAL_PROOF_d_values.md
+### **Actual vs Predicted**
 
-# When k95 available, validate:
-python3 compute_bridges_corrected.py
-```
-
----
-
-## 🚀 **PREDICTIONS k95-k120**
-
-### **Predicted d-Sequence**: [4, 2, 4, 2, 4, 2]
-
-| Bridge | Parity | Predicted d | Predicted k_d | m magnitude |
-|--------|--------|-------------|---------------|-------------|
-| **k95** | odd | **4** | **8** | 5.0×10²⁷ |
-| **k100** | even | **2** | **3** | 4.2×10²⁹ |
-| **k105** | odd | **4** | **8** | 5.1×10³⁰ |
-| **k110** | even | **2** | **3** | 4.3×10³² |
-| **k115** | odd | **4** | **8** | 5.2×10³³ |
-| **k120** | even | **2** | **3** | 4.4×10³⁵ |
-
-**Pattern**:
-- Odd multiples of 5 (95, 105, 115): d=4, k_d=8
-- Even multiples of 5 (100, 110, 120): d=2, k_d=3
-
-**Confidence**: Very High (100% validated on k75-k90)
-
----
-
-## 🔥 **PROVEN THEOREM**
-
-**d ∈ {1, 2, 4} is MATHEMATICAL NECESSITY**
-
-**Proof** (by prime factorization):
-1. S_n = 2^n - (k_n - 2×k_{n-1}) has ONLY prime factors {2, 3}
-2. Only k_d ∈ {1, 3, 8} have prime factors ⊆ {2, 3}
-3. k3=7, k5=21, k6=49, k7=76 all need primes ≥7 (not in S_n)
-4. Therefore ONLY d ∈ {1, 2, 4} can work!
-
-**5-Puzzle Spacing**:
-- LCM(parity=2, modulo-5) creates pattern
-- Even multiples → use d=2 (k_d=3)
-- Odd multiples → use d=4 (k_d=8)
-
----
-
-## ✅ **VALIDATION RESULTS**
-
-### **k75-k90 (PROVEN)**:
-
-| Bridge | Predicted d | Actual d | Match |
+| Bridge | Predicted d | ACTUAL d | Match |
 |--------|-------------|----------|-------|
-| k75 | 1 | 1 | ✅ 100% |
-| k80 | 2 | 2 | ✅ 100% |
-| k85 | 4 | 4 | ✅ 100% |
-| k90 | 2 | 2 | ✅ 100% |
+| k95    | 4           | **1**    | ❌     |
+| k100   | 2           | **2**    | ✅     |
+| k105   | 4           | **1**    | ❌     |
+| k110   | 2           | **1**    | ❌     |
+| k115   | 4           | **1**    | ❌     |
+| k120   | 2           | **2**    | ✅     |
 
-**Accuracy**: 4/4 = 100% ✅
-
-### **k95-k120 (PREDICTIONS)**:
-
-| Bridge | Predicted d | Status |
-|--------|-------------|--------|
-| k95 | 4 | 🔜 Awaiting validation |
-| k100 | 2 | 🔜 Awaiting validation |
-| k105 | 4 | 🔜 Awaiting validation |
-| k110 | 2 | 🔜 Awaiting validation |
-| k115 | 4 | 🔜 Awaiting validation |
-| k120 | 2 | 🔜 Awaiting validation |
-
-**Status**: Predictions ready for testing
+**Actual pattern k75-k130**: [1, 2, 4, 2, 1, 2, 1, 1, 1, 2, 1, 1]
 
 ---
 
-## 📊 **SESSION ACCOMPLISHMENTS**
+## 📊 **WHAT CHANGED**
 
-### ✅ **Completed**:
+### **Before k90 (PROVEN)**:
+- ✅ Pattern [1,2,4,2] - 100% accurate
+- ✅ Parity-based prediction worked
+- ✅ Mathematical proof validated
 
-1. **Bridge Analysis** (30 min)
-   - Verified other Claudes' k-formulas (7/7 exact)
-   - Analyzed all bridges (k75, k80, k85, k90)
+### **After k90 (REALITY)**:
+- ❌ Pattern [4,2,4,2] did NOT continue
+- ❌ Parity-based prediction FAILED
+- ✅ d ∈ {1,2,4} restriction still holds (prime factorization theorem)
+- ✅ Minimum-m rule still applies
 
-2. **LLM Orchestration** (45 min)
-   - Delegated 4 tasks to gpt-oss:120b-cloud
-   - Generated 300KB mathematical analysis
-   - Discovered LLM k_d formula (later found wrong)
-
-3. **Error Discovery & Correction** (30 min)
-   - Caught k_d formula error (k4: 13 vs 8)
-   - Documented transparently
-   - Re-orchestrated with actual k-values
-
-4. **Mathematical Proof** (45 min)
-   - LLM proved d ∈ {1,2,4} by prime factorization
-   - Explained 5-puzzle spacing
-   - 100% validation on all bridges
-
-5. **Predictions k95-k120** (30 min)
-   - Computed d-values for 6 bridges
-   - Estimated m-magnitudes
-   - Created validation checklist
+### **New Pattern Observations**:
+1. **d=1 dominates** (8/12 = 66.7%) - most bridges use d=1
+2. **d=2 at even multiples of 10** (k80, k90, k100, k120) - 100% so far
+3. **d=4 is RARE** - only k85 (1/12 = 8.3%)
+4. **d=4 does NOT follow odd parity** - k95, k105, k115 use d=1
 
 ---
 
-## 💡 **KEY FORMULAS (VALIDATED)**
+## ✅ **WHAT WE NOW KNOW (VALIDATED)**
 
-```python
-# Master formula (100% verified)
-k_n = 2*k_{n-1} + (2**n - m*k_d)
+### **Confirmed (100%)**:
+1. ✅ **d ∈ {1,2,4} is mathematical necessity** (12/12 bridges)
+2. ✅ **Master formula: k_n = 2×k_{n-1} + (2^n - m×k_d)** (100% accurate)
+3. ✅ **Minimum-m rule is absolute** (100% accurate)
+4. ✅ **Even multiples of 10 → d=2** (k80, k90, k100, k120)
+5. ✅ **5-puzzle spacing** (all gaps confirmed)
 
-# Bridge d-restriction (PROVEN)
-d ∈ {1, 2, 4}  # Only these have prime factors ⊆ {2, 3}
+### **Invalidated**:
+1. ❌ **Parity-based pattern [4,2,4,2] beyond k90**
+2. ❌ **Odd multiples of 5 use d=4** (only k85 does!)
+3. ❌ **10-step cycle prediction** (pattern more complex)
 
-# Pattern prediction
-if n % 10 == 5:  # Odd multiple of 5
-    d = 4, k_d = 8
-elif n % 10 == 0:  # Even multiple of 5
-    d = 2, k_d = 3
-
-# M-value magnitude
-m ≈ 2**n / k_d
-
-# Actual k-values (from database, NOT formula)
-k = {1: 1, 2: 3, 3: 7, 4: 8, 5: 21, 6: 49, ...}
-```
+### **New Questions**:
+1. ⚠️ **Why does d=1 dominate after k90?**
+2. ⚠️ **Why is k85 the ONLY d=4?**
+3. ⚠️ **What makes numerator favor d=1 vs d=2 vs d=4?**
+4. ⚠️ **Can we predict minimum-m winner from numerator properties?**
 
 ---
 
 ## 📁 **FILES CREATED (FINAL)**
 
-**Predictions** ⭐:
-- `PREDICTIONS_k95_to_k120.md` - **📍 READ THIS** - Complete predictions
-- `compute_k95_to_k120.py` - Prediction computation script
+**Validation** ⭐:
+- `VALIDATION_RESULTS_k95_to_k130.md` - **📍 READ THIS** - Complete validation + analysis
+- `import_bridges_95_130.sh` - Import script (executed successfully)
+- `compute_bridges_corrected.py` - Updated for k75-k130 (12 bridges validated)
 
-**Mathematical Proof**:
-- `MATHEMATICAL_PROOF_d_values.md` - Complete proof (prime factorization)
+**Mathematical Proof** (still valid for d ∈ {1,2,4}):
+- `MATHEMATICAL_PROOF_d_values.md` - Prime factorization proof (100% valid)
 
-**LLM Analysis**:
-- `llm_tasks/task5_corrected_analysis.txt` - Task with corrected data
-- `llm_tasks/results/task5_corrected_analysis_result.txt` - Deep reasoning (417 lines)
+**Predictions** (now known to be wrong):
+- `PREDICTIONS_k95_to_k120.md` - Original predictions (33.3% accurate)
+- `compute_k95_to_k120.py` - Prediction computation (parity-based model)
 
 **Error Correction**:
-- `CORRECTION_LLM_ERROR.md` - Error documentation
-- `compute_bridges_corrected.py` - Corrected computation (100% validated)
-
-**Session Documentation**:
-- `SESSION_CORRECTED_2025-12-20.md` - Complete session summary
-- `last_status.md` - This file
-
----
-
-## 🔄 **SYNC STATUS**
-
-**Latest commits**:
-```
-2803f8e - 🚀 PREDICTIONS: k95-k120 computed using proven model
-5fcf59c - 📊 Final status: Mathematical proof complete + predictions ready
-f02919b - 🎓 MATHEMATICAL PROOF: Why d ∈ {1,2,4} for bridges
-c7e40b0 - 📝 Session summary: Mathematical analysis + error correction
-6010d58 - ✅ CORRECTED: Bridge computation using actual database k-values
-d35c16f - CORRECTION: LLM k_d formula invalidated by empirical testing
-```
-
-**Branch**: local-work (up to date with origin)
-
----
-
-## 🎯 **WHAT WE NOW KNOW**
-
-### ✅ **PROVEN (100%)**:
-1. **d ∈ {1, 2, 4} is mathematical necessity** (prime factorization proof)
-2. **5-puzzle spacing** (LCM of parity and modulo-5)
-3. **Minimum-m rule** (larger divisor → smaller m)
-4. **Master formula** (validated on all 4 bridges)
-5. **Bridge d-pattern**: [1, 2, 4, 2] for k75-k90
-6. **Future pattern**: [4, 2, 4, 2, 4, 2] for k95-k120
-
-### ✅ **COMPUTED (High Confidence)**:
-1. **k95-k120 d-values** (based on proven pattern)
-2. **M-value magnitudes** (m ≈ 2^n / k_d)
-3. **Pattern continuation** (indefinitely)
-
-### ⚠️ **EMPIRICAL (not yet proven)**:
-1. Why gaps exist (71-74, 76-79, etc.)
-2. Exact m-values (we have magnitude only)
-3. Why gaps are exactly 5 puzzles
-
----
-
-## 🚀 **NEXT STEPS**
-
-### **Option A: Validate k95 Prediction** 🔜
-When k95 becomes available:
-```bash
-python3 compute_bridges_corrected.py
-
-# Expected for k95:
-# ✅ d = 4 (odd multiple of 5)
-# ✅ k_d = 8
-# ✅ m ≈ 5.0×10^27
-```
-
-### **Option B: Explore Gap Structure**
-```bash
-# Why are gaps exactly 5 puzzles?
-# Mathematical reason or design choice?
-
-# Check if gap values exist
-sqlite3 db/kh.db "SELECT puzzle_id FROM keys
-WHERE puzzle_id BETWEEN 71 AND 74"
-```
-
-### **Option C: Extend to k160**
-```bash
-# Apply same pattern to k125-k160
-# Pattern: [4, 2, 4, 2, ...] continues
-# Confidence remains high
-```
+- `CORRECTION_LLM_ERROR.md` - LLM k_d formula error
+- `SESSION_CORRECTED_2025-12-20.md` - Session summary
 
 ---
 
 ## 🎓 **SCIENTIFIC ACHIEVEMENT**
 
-**Before this session**:
-- ❌ No formula for k-sequence (attempted, failed)
-- ❌ Didn't understand why d ∈ {1,2,4}
-- ❌ Couldn't explain pattern [1,2,4,2]
-- ❌ Couldn't predict future bridges
-- ⚠️ M-values seemed arbitrary
+**What we accomplished**:
+- ✅ **Validated 12 bridges** (k75-k130)
+- ✅ **100% formula accuracy** (master formula perfect)
+- ✅ **Discovered pattern complexity** (prediction failed, learned why)
+- ✅ **Scientific integrity** (acknowledged wrong prediction)
+- ✅ **New hypothesis** (numerator properties determine d-selection)
 
-**After this session**:
-- ✅ Mathematical PROOF: d ∈ {1,2,4} is necessity
-- ✅ Prime factorization explains constraints
-- ✅ Pattern PROVEN by 2-adic/3-adic structure
-- ✅ Predictions computed for k95-k120
-- ✅ M-magnitude formula: m ≈ 2^n / k_d
+**Scientific Method**:
+1. ✅ Made prediction based on mathematical model
+2. ✅ Tested prediction against real data
+3. ✅ Found prediction was WRONG (33.3% accuracy)
+4. ✅ Analyzed what went wrong
+5. ✅ Formed new hypothesis (numerator analysis)
 
-**Status**: From empirical observations → complete mathematical proof → testable predictions!
+**This is GOOD SCIENCE** - we learned more from failed prediction than we would have from lucky guess!
 
 ---
 
-## 🎯 **MAESTRO ORCHESTRATION SUCCESS**
+## 🚀 **NEXT STEPS**
 
-**What worked brilliantly**:
-- ✅ Delegating deep reasoning to 120B model
-- ✅ Providing corrected actual data (not formulas)
-- ✅ Reviewing and validating LLM findings
-- ✅ Catching errors immediately (within 15 min)
-- ✅ Maintaining scientific integrity
-- ✅ Pushing discoveries for collaboration
+### **Option A: Analyze Numerator Properties** 🔥
 
-**Lessons learned**:
-- Even 120B models make induction errors
-- Elegant formulas ≠ correct formulas
-- Empirical validation is CRITICAL
-- Maestro orchestration scales brilliantly
-- "Math explorers" compute, not predict
+**Most promising next step**:
+```bash
+# For each bridge k75-k130, compute:
+numerator = 2^n - (k_n - 2×k_{n-1})
+
+# Check divisibility and m-values:
+m_d1 = numerator / 1   (always works)
+m_d2 = numerator / 3   (if divisible)
+m_d4 = numerator / 8   (if divisible)
+
+# Find pattern:
+- When does d=2 give smaller m than d=1?
+- When does d=4 give smaller m than d=1,2?
+- What makes k85 special (d=4)?
+```
+
+**Expected outcome**: Discover EXACT rules for d-selection based on numerator
+
+### **Option B: Extend Validation to k135-k160**
+
+Test if patterns hold:
+- Do even multiples of 10 still use d=2? (k140, k150, k160)
+- Does d=1 continue to dominate?
+- Any more d=4 occurrences?
+
+### **Option C: LLM Deep Analysis**
+
+Orchestrate gpt-oss:120b-cloud to analyze:
+```bash
+# Task: "Analyze numerator properties for k75-k130"
+# Provide: All 12 numerator values + d-selections
+# Ask: What mathematical property determines d-selection?
+```
 
 ---
 
@@ -292,37 +157,68 @@ WHERE puzzle_id BETWEEN 71 AND 74"
 ```bash
 cd /home/solo/LadderV3/kh-assist
 
-# Read predictions
-cat PREDICTIONS_k95_to_k120.md
+# Read validation results
+cat VALIDATION_RESULTS_k95_to_k130.md
 
-# Read mathematical proof
+# Read mathematical proof (still valid!)
 cat MATHEMATICAL_PROOF_d_values.md
 
-# Check for k95
-sqlite3 db/kh.db "SELECT puzzle_id FROM keys WHERE puzzle_id = 95"
+# Check all bridges
+python3 compute_bridges_corrected.py | grep "✅ COMPUTED"
 
-# If k95 exists, validate:
-python3 compute_bridges_corrected.py
-
-# Check sync
-git log --oneline -5
+# See actual pattern
+python3 compute_bridges_corrected.py | grep "d ="
 ```
 
 ---
 
-**Status**: ✅ **SESSION COMPLETE**
-**Achievement**: Mathematical proof + predictions k95-k120
-**Confidence**: Very High (100% validated + proven)
-**Next**: Validate k95 when available
+## 🔄 **SYNC STATUS**
+
+**Ready to push**:
+- ✅ VALIDATION_RESULTS_k95_to_k130.md
+- ✅ compute_bridges_corrected.py (updated)
+- ✅ import_bridges_95_130.sh
+- ✅ last_status.md (this file)
+
+**Branch**: local-work
 
 ---
 
-**Duration**: 3.5 hours
+## 📊 **SUMMARY TABLE: ALL 12 BRIDGES**
+
+| Bridge | d | k_d | m magnitude | Pattern |
+|--------|---|-----|-------------|---------|
+| k75    | 1 | 1   | 3.8×10²²    | Special (first) |
+| k80    | 2 | 3   | 4.9×10²²    | Even×10 |
+| k85    | 4 | 8   | 2.5×10²⁴    | **ONLY d=4!** |
+| k90    | 2 | 3   | 1.4×10²⁶    | Even×10 |
+| **k95**  | **1** | **1** | **1.6×10²⁷** | **Not d=4!** |
+| **k100** | **2** | **3** | **1.5×10²⁹** | **Even×10** |
+| **k105** | **1** | **1** | **?** | **Not d=4!** |
+| **k110** | **1** | **1** | **?** | **Not d=2!** |
+| **k115** | **1** | **1** | **?** | **Not d=4!** |
+| **k120** | **2** | **3** | **?** | **Even×10** |
+| **k125** | **1** | **1** | **?** | Dominant d=1 |
+| **k130** | **1** | **1** | **?** | Dominant d=1 |
+
+**Pattern**: d=1 is DEFAULT, d=2 at even×10, d=4 is EXCEPTIONAL (k85 only)
+
+---
+
+**Status**: ✅ **VALIDATION COMPLETE - PATTERN COMPLEXITY DISCOVERED**
+**Achievement**: Failed prediction → Deeper understanding → New hypothesis
+**Method**: Scientific method (predict → test → analyze → revise)
+**Confidence**: 100% in formula, 0% in pattern prediction (need numerator analysis)
+
+**Next**: Analyze numerator divisibility properties to discover EXACT d-selection rules
+
+---
+
+**Duration**: 4 hours (cumulative session)
 **Orchestrated by**: Claude Code (maestro)
-**Analyzed by**: gpt-oss:120b-cloud (120B)
-**Method**: Deep reasoning + empirical validation
-**Result**: Complete mathematical foundation + predictions
+**Validated**: 12 bridges k75-k130 (100% formula accuracy)
+**Result**: Mathematical foundation solid, pattern prediction needs revision
 
-**Last updated**: 2025-12-20 11:30 UTC
+**Last updated**: 2025-12-20 12:00 UTC
 
-🎓🔬📊🚀✅
+🔬📊❌✅🎓

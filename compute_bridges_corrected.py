@@ -22,7 +22,7 @@ import sqlite3
 # Load ALL known k-values from database
 conn = sqlite3.connect('/home/solo/LadderV3/kh-assist/db/kh.db')
 cur = conn.cursor()
-cur.execute("SELECT puzzle_id, priv_hex FROM keys WHERE puzzle_id <= 95 ORDER BY puzzle_id")
+cur.execute("SELECT puzzle_id, priv_hex FROM keys WHERE puzzle_id <= 130 ORDER BY puzzle_id")
 rows = cur.fetchall()
 conn.close()
 
@@ -53,7 +53,7 @@ print("BRIDGE ANALYSIS USING ACTUAL K-VALUES")
 print("="*80)
 print()
 
-bridges = [75, 80, 85, 90, 95]
+bridges = [75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130]
 
 for n in bridges:
     if n not in k_known:
