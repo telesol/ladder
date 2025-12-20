@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "n_range": [
+      36,
+      40
+    ],
+    "timestamp": "2025-12-19T18:52:21.373291",
+    "total_values": 5,
+    "factored_count": 5
+  },
+  "results": [
+    {
+      "n": 36,
+      "m": 22185816780,
+      "bits": 35,
+      "is_prime": false,
+      "factors": {
+        "2": 2,
+        "3": 1,
+        "5": 1,
+        "131": 1,
+        "2822623": 1
+      },
+      "prime_indices": [
+        

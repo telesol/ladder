@@ -1,0 +1,26 @@
+TASK: Brute-force verification of k[71] candidates
+
+EQUATION:
+k[71] = 4,302,057,189,444,869,987,810 - m[71]*k[d[71]]
+
+FOR EACH CANDIDATE d ∈ {1,2,3,4,5,6,7,8}:
+  k[d] values: k[1]=1, k[2]=3, k[3]=7, k[4]=8, k[5]=21, k[6]=49, k[7]=76, k[8]=224
+
+COMPUTE m[71] range for each d:
+d=1: m[71] ∈ [1.94e21, 3.12e21]  → too large, skip
+d=2: m[71] ∈ [6.47e20, 1.04e21]  → very large
+d=3: m[71] ∈ [2.77e20, 4.46e20]
+d=4: m[71] ∈ [2.43e20, 3.90e20]
+d=5: m[71] ∈ [9.24e19, 1.49e20]
+d=6: m[71] ∈ [3.96e19, 6.37e19]
+d=7: m[71] ∈ [2.55e19, 4.11e19]
+d=8: m[71] ∈ [8.66e18, 1.39e19]
+
+VERIFICATION PROTOCOL:
+For promising (m[71], d[71]) pairs:
+1. Compute k[71] = 4,302,057,189,444,869,987,810 - m[71]*k[d[71]]
+2. Derive BTC address from k[71]
+3. Compare to 1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU
+4. If MATCH → SOLVED!
+
+Can we reduce search space using m[n] patterns from n=60..70?

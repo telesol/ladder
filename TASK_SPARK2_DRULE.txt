@@ -1,0 +1,23 @@
+TASK: Derive the d[n] selection algorithm
+
+VERIFIED FACT:
+d[n] is ALWAYS the value that MINIMIZES m[n] for n=4..70 (67/69 cases).
+Exceptions: n=2,3 use self-reference d[n]=n.
+
+KNOWN d-sequence (n=2..20):
+d = [2, 3, 2, 2, 2, 2, 2, 3, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2, 5]
+
+QUESTION 1: Is there a pattern that predicts d[n] WITHOUT computing all candidates?
+- d[n] often = 2 or 3
+- d[n] = 5 at n=20 - why?
+
+QUESTION 2: For n=71, how do we know d[71]?
+Given: adj[71] = 2^71 - m[71]*k[d[71]]
+For each d, we can compute what m[71] would need to be.
+d[71] = the d that gives the SMALLEST m[71]?
+
+COMPUTE:
+For each candidate d ∈ {1,2,3,...,70}:
+  m_candidate = (4,302,057,189,444,869,987,810 - k[71]) / k[d]
+  
+If d[71] is predictable, we can reduce the search space!

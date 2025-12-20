@@ -1,0 +1,419 @@
+{
+  "metadata": {
+    "n_range": [
+      56,
+      63
+    ],
+    "timestamp": "2025-12-19T20:04:21.561562",
+    "total_values": 8,
+    "factored_count": 8
+  },
+  "results": [
+    {
+      "n": 56,
+      "m": 87929632728990281,
+      "bits": 57,
+      "is_prime": false,
+      "factors": {
+        "89": 1,
+        "987973401449329": 1
+      },
+      "prime_indices": [
+        24,
+        29496304007714
+      ],
+      "factored": true,
+      "time_seconds": 3830.161202430725,
+      "factor_details": [
+        {
+          "prime": 89,
+          "exponent": 1,
+          "index": 24
+        },
+        {
+          "prime": 987973401449329,
+          "exponent": 1,
+          "index": 29496304007714
+        }
+      ]
+    },
+    {
+      "n": 57,
+      "m": 4490805416683930,
+      "bits": 52,
+      "is_prime": false,
+      "factors": {
+        "2": 1,
+        "5": 1,
+        "19": 1,
+        "113": 1,
+        "1487": 1,
+        "5953": 1,
+        "23629": 1
+      },
+      "prime_indices": [
+        1,
+        3,
+        8,
+        30,
+        236,
+        781,
+        2630
+      ],
+      "factored": true,
+      "time_seconds": 0.0012121200561523438,
+      "factor_details": [
+        {
+          "prime": 2,
+          "exponent": 1,
+          "index": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1,
+          "index": 3
+        },
+        {
+          "prime": 19,
+          "exponent": 1,
+          "index": 8
+        },
+        {
+          "prime": 113,
+          "exponent": 1,
+          "index": 30
+        },
+        {
+          "prime": 1487,
+          "exponent": 1,
+          "index": 236
+        },
+        {
+          "prime": 5953,
+          "exponent": 1,
+          "index": 781
+        },
+        {
+          "prime": 23629,
+          "exponent": 1,
+          "index": 2630
+        }
+      ]
+    },
+    {
+      "n": 58,
+      "m": 121581741999020893,
+      "bits": 57,
+      "is_prime": false,
+      "factors": {
+        "19": 1,
+        "191": 1,
+        "10069": 1,
+        "16979": 1,
+        "195967": 1
+      },
+      "prime_indices": [
+        8,
+        43,
+        1236,
+        1957,
+        17653
+      ],
+      "factored": true,
+      "time_seconds": 0.0011630058288574219,
+      "factor_details": [
+        {
+          "prime": 19,
+          "exponent": 1,
+          "index": 8
+        },
+        {
+          "prime": 191,
+          "exponent": 1,
+          "index": 43
+        },
+        {
+          "prime": 10069,
+          "exponent": 1,
+          "index": 1236
+        },
+        {
+          "prime": 16979,
+          "exponent": 1,
+          "index": 1957
+        },
+        {
+          "prime": 195967,
+          "exponent": 1,
+          "index": 17653
+        }
+      ]
+    },
+    {
+      "n": 59,
+      "m": 451343703997841395,
+      "bits": 59,
+      "is_prime": false,
+      "factors": {
+        "5": 1,
+        "13": 2,
+        "41": 1,
+        "2399": 1,
+        "5430459449": 1
+      },
+      "prime_indices": [
+        3,
+        6,
+        13,
+        357,
+        254193003
+      ],
+      "factored": true,
+      "time_seconds": 0.2979602813720703,
+      "factor_details": [
+        {
+          "prime": 5,
+          "exponent": 1,
+          "index": 3
+        },
+        {
+          "prime": 13,
+          "exponent": 2,
+          "index": 6
+        },
+        {
+          "prime": 41,
+          "exponent": 1,
+          "index": 13
+        },
+        {
+          "prime": 2399,
+          "exponent": 1,
+          "index": 357
+        },
+        {
+          "prime": 5430459449,
+          "exponent": 1,
+          "index": 254193003
+        }
+      ]
+    },
+    {
+      "n": 60,
+      "m": 4767950548678049,
+      "bits": 53,
+      "is_prime": false,
+      "factors": {
+        "53": 1,
+        "151": 1,
+        "1361": 1,
+        "1657": 1,
+        "264179": 1
+      },
+      "prime_indices": [
+        16,
+        36,
+        218,
+        260,
+        23168
+      ],
+      "factored": true,
+      "time_seconds": 0.0005946159362792969,
+      "factor_details": [
+        {
+          "prime": 53,
+          "exponent": 1,
+          "index": 16
+        },
+        {
+          "prime": 151,
+          "exponent": 1,
+          "index": 36
+        },
+        {
+          "prime": 1361,
+          "exponent": 1,
+          "index": 218
+        },
+        {
+          "prime": 1657,
+          "exponent": 1,
+          "index": 260
+        },
+        {
+          "prime": 264179,
+          "exponent": 1,
+          "index": 23168
+        }
+      ]
+    },
+    {
+      "n": 61,
+      "m": 1050046055678010578,
+      "bits": 60,
+      "is_prime": false,
+      "factors": {
+        "2": 1,
+        "11": 1,
+        "233": 1,
+        "349": 1,
+        "967": 1,
+        "606984841": 1
+      },
+      "prime_indices": [
+        1,
+        5,
+        51,
+        70,
+        163,
+        31670458
+      ],
+      "factored": true,
+      "time_seconds": 0.0583648681640625,
+      "factor_details": [
+        {
+          "prime": 2,
+          "exponent": 1,
+          "index": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1,
+          "index": 5
+        },
+        {
+          "prime": 233,
+          "exponent": 1,
+          "index": 51
+        },
+        {
+          "prime": 349,
+          "exponent": 1,
+          "index": 70
+        },
+        {
+          "prime": 967,
+          "exponent": 1,
+          "index": 163
+        },
+        {
+          "prime": 606984841,
+          "exponent": 1,
+          "index": 31670458
+        }
+      ]
+    },
+    {
+      "n": 62,
+      "m": 1184962853718958602,
+      "bits": 61,
+      "is_prime": false,
+      "factors": {
+        "2": 1,
+        "3": 1,
+        "281": 1,
+        "373": 1,
+        "2843": 1,
+        "10487": 1,
+        "63199": 1
+      },
+      "prime_indices": [
+        1,
+        2,
+        60,
+        74,
+        413,
+        1283,
+        6335
+      ],
+      "factored": true,
+      "time_seconds": 0.001222848892211914,
+      "factor_details": [
+        {
+          "prime": 2,
+          "exponent": 1,
+          "index": 1
+        },
+        {
+          "prime": 3,
+          "exponent": 1,
+          "index": 2
+        },
+        {
+          "prime": 281,
+          "exponent": 1,
+          "index": 60
+        },
+        {
+          "prime": 373,
+          "exponent": 1,
+          "index": 74
+        },
+        {
+          "prime": 2843,
+          "exponent": 1,
+          "index": 413
+        },
+        {
+          "prime": 10487,
+          "exponent": 1,
+          "index": 1283
+        },
+        {
+          "prime": 63199,
+          "exponent": 1,
+          "index": 6335
+        }
+      ]
+    },
+    {
+      "n": 63,
+      "m": 8046887172345950164,
+      "bits": 63,
+      "is_prime": false,
+      "factors": {
+        "2": 2,
+        "29": 1,
+        "10039": 1,
+        "12583": 1,
+        "549155417": 1
+      },
+      "prime_indices": [
+        1,
+        10,
+        1233,
+        1503,
+        28803304
+      ],
+      "factored": true,
+      "time_seconds": 0.05502486228942871,
+      "factor_details": [
+        {
+          "prime": 2,
+          "exponent": 2,
+          "index": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1,
+          "index": 10
+        },
+        {
+          "prime": 10039,
+          "exponent": 1,
+          "index": 1233
+        },
+        {
+          "prime": 12583,
+          "exponent": 1,
+          "index": 1503
+        },
+        {
+          "prime": 549155417,
+          "exponent": 1,
+          "index": 28803304
+        }
+      ]
+    }
+  ]
+}

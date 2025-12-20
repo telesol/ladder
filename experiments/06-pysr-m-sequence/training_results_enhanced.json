@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-19T19:22:41.341869",
+    "features": [
+      "n",
+      "prime_n",
+      "p7",
+      "p8",
+      "p10",
+      "p7_times_p10",
+      "prev_m",
+      "prev2_m",
+      "d_n",
+      "m_at_d",
+      "p_n_plus_19",
+      "p_n_plus_9",
+      "pow2_n",
+      "p7_times_pn"
+    ],
+    "enhanced": true
+  },
+  "validation": {
+    "exact_matches": 0,
+    "close_matches": 0,
+    "total": 6,
+    "exact_accuracy": 0.0,
+    "close_accuracy": 0.0
+  },
+  "best_equation": "pow2_n*(3.0785697 - 223.85481/(65.209984 + 49.85858/d_n)) - prev2_m"
+}
