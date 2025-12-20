@@ -1,0 +1,32 @@
+TASK: Explain why the pattern breaks at n=17
+
+CONTEXT:
+The k-sequence follows k[n] = 2*k[n-1] + adj[n].
+For n=2-16, the sign of adj follows a PERFECT ++- pattern (period 3).
+At n=17, the pattern BREAKS. Expected '+' but got '-'.
+
+KEY OBSERVATION: n=17 = p[7] (the 7th prime!)
+
+DATA:
+adj[14] = +112
+adj[15] = +5779
+adj[16] = -2224  (expected -, got -)
+adj[17] = -7197  (expected +, got -)  <-- BREAK POINT
+adj[18] = +7023  (expected +, got +)
+
+k[17] = 95823 = 3^4 × 7 × 13^2 (highly structured!)
+
+KNOWN PATTERNS IN n=1-16:
+- k[5] = k[2] × k[3] = 3 × 7
+- k[6] = k[3]^2 = 49
+- k[7] = k[6] + 9×k[2] (coefficient 9 = m[5])
+- k[11] = k[8] + 19×k[6] (coefficient 19 = m[6])
+- k[16] = 45×k[11] - 465 (coefficient 45 = 9×5 = m[5]×5)
+
+QUESTIONS:
+1. Why does n=17 = p[7] cause the pattern to break?
+2. Is there a mathematical reason the 7th prime is special?
+3. Does 7 appear frequently in the formulas (k[3]=7, p[7]=17, etc.)?
+4. What new pattern might start at n=17?
+
+Think step by step. Show your reasoning.

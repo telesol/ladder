@@ -1,0 +1,44 @@
+TASK: Find formulas for k[17] through k[25]
+
+CONTEXT:
+We found that k[1-16] can ALL be expressed as linear combinations of earlier k values.
+The coefficients use m-sequence values, powers of 2, and sometimes n itself.
+
+VERIFIED FORMULAS (n=1-16):
+k[1] = 1, k[2] = 3, k[3] = 7 (base values)
+k[4] = k[1] + k[3] = 1 + 7 = 8
+k[5] = k[2] × k[3] = 3 × 7 = 21
+k[6] = k[3]^2 = 49
+k[7] = k[6] + 9×k[2] = 49 + 27 = 76
+k[8] = k[3] × 32 = 7 × 32 = 224
+k[9] = 2×k[7] + 15×k[5] = 152 + 315 = 467
+k[10] = 3×k[4] + 10×k[6] = 24 + 490 = 514
+k[11] = k[8] + 19×k[6] = 224 + 931 = 1155
+k[12] = 12×k[8] - 5×k[1] = 2688 - 5 = 2683
+k[13] = k[7] + 10×k[10] = 76 + 5140 = 5216
+k[14] = 2×k[13] + 16×k[3] = 10432 + 112 = 10544
+k[15] = 10×k[12] + 37×k[1] = 26830 + 37 = 26867
+k[16] = 45×k[11] - 465 = 51975 - 465 = 51510
+
+K VALUES TO ANALYZE:
+k[17] = 95823
+k[18] = 198669
+k[19] = 357535
+k[20] = 863317
+k[21] = 1811764
+k[22] = 3007503
+k[23] = 5598802
+k[24] = 14428676
+k[25] = 33185509
+
+M-SEQUENCE VALUES:
+m[2]=1, m[3]=1, m[4]=22, m[5]=9, m[6]=19, m[7]=50, m[8]=23, m[9]=493, m[10]=19
+
+TASK:
+For each k[n] from 17 to 25, find a formula of the form:
+k[n] = a×k[i] + b×k[j] + c
+
+Where a, b are coefficients and c is a small offset.
+Look for patterns in the coefficients (m-values, powers of 2, n).
+
+Show your work step by step.

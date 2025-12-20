@@ -1,0 +1,33 @@
+TASK: Find the pattern in k-formula coefficients
+
+CONTEXT:
+The k-values are built from linear combinations k[n] = a×k[i] + b×k[j] + c.
+The coefficients a, b come from specific sources.
+
+OBSERVED COEFFICIENT PATTERNS:
+n=7:  coefficient 9 = m[5] (m-sequence value!)
+n=8:  coefficient 32 = 2^5 (power of 2!)
+n=11: coefficient 19 = m[6] = m[10] (m-sequence value!)
+n=12: coefficient 12 = n itself!
+n=14: coefficient 16 = 2^4 (power of 2!)
+n=15: coefficient 37 = prime
+n=16: coefficient 45 = 9×5 = m[5]×5 (m-value × 5!)
+
+QUESTIONS:
+1. What determines when to use an m-sequence value as coefficient?
+2. What determines when to use a power of 2?
+3. What determines when to use n itself?
+4. Is there a meta-rule that tells us which source to use?
+
+ADDITIONAL DATA:
+- n=7: uses m[5]=9 (and n-2 = 5)
+- n=11: uses m[6]=19 (and n-5 = 6)
+- n=12: uses n=12 itself
+- n=16: uses m[5]×5 = 45
+
+HYPOTHESIS TO TEST:
+- When n ≡ 0 (mod 3), use m[n/something]?
+- When n is prime, use power of 2?
+- When d[n] = 4, use power of 2?
+
+Think step by step and find the pattern!
