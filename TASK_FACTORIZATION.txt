@@ -1,0 +1,22 @@
+TASK: Analyze prime factorization patterns of m-values
+
+KNOWN FACTORIZATIONS:
+m[11] = 2045 = 5 × 409
+m[12] = 8342 = 2 × 11 × 379
+m[13] = 3469 = prime
+m[14] = 3499 = prime
+m[15] = 32845 = 5 × 6569
+m[16] = 8470 = 2 × 5 × 7 × 121
+m[17] = 95823 = 3⁴ × 7 × 169 = 81 × 7 × 169
+
+OBSERVATION:
+m[17] has structure: m[17] = 3⁴ × 7 × 13²
+These are small primes in specific powers!
+
+QUESTION:
+Can m[n] be expressed as products of small primes with n-dependent exponents?
+
+m[n] = 2^a(n) × 3^b(n) × 5^c(n) × 7^d(n) × ...?
+
+If so, find the functions a(n), b(n), c(n), d(n).
+This would give us m[71] directly!

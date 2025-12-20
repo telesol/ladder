@@ -1,0 +1,34 @@
+TASK: Find elliptic curve structure in the k-sequence
+
+HYPOTHESIS: Keys are derived from EC point operations on secp256k1.
+
+KNOWN:
+- Bitcoin uses secp256k1: y² = x³ + 7 (mod p)
+- Generator point G has order n ≈ 2²⁵⁶
+- Private key k → Public key kG
+
+OBSERVATION 1: k-values follow recurrence
+k[n] = 2*k[n-1] + adj[n]
+
+This is similar to point doubling!
+- Point doubling: 2P = P + P
+- Our recurrence: k[n] ≈ 2*k[n-1] + correction
+
+OBSERVATION 2: Clean EC-style formulas exist
+k7 = 4*k5 - k4   (like aP + bQ)
+k8 = 5*k6 - k5
+k11 = 5*k3 + 5*k8
+
+OBSERVATION 3: Powers of 2 appear
+k4 = 2³ × k1 = 8
+k8 = 2⁵ × k3 = 224
+
+QUESTION:
+Are the k-values derived from EC scalar operations?
+
+Test:
+- k[n] = scalar(n) × G for some scalar function
+- k[n] = k[n-1] + k[f(n)] (point addition analog)
+- The m-values are corrections for "carrying" in EC operations
+
+Find the EC interpretation that generates k[71].

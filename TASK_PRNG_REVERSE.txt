@@ -1,41 +1,31 @@
-# TASK: Reverse Engineer the PRNG
+TASK: Reverse-engineer the PRNG that generates the m-sequence
 
-## Context
-The Bitcoin puzzle keys follow: k_n = 2*k_{n-1} + adj_n
-where adj_n = 2^n - m_n * k_{d_n}
+HYPOTHESIS: The puzzle creator used a PRNG seeded with a secret to generate the keys.
 
-## Key Insight
-The m values for n=2,3,4 are EXACTLY π convergents (3, 7, 22).
-Then m[5]=9=3² suggests a transition rule.
+KNOWN DATA (first 20 m-values):
+m = [1, 1, 22, 9, 19, 50, 23, 493, 19, 2045, 8342, 3469, 3499, 32845, 8470, 95823, 198669, ...]
 
-## Your Task
-If you were designing a PRNG to generate the m sequence, how would you do it?
+OBSERVATION 1: Early values contain mathematical constants
+- m[4] = 22 (π ≈ 22/7)
+- m[6] = 19 (sqrt(3) convergent h[4])
+- m[10] = 19 (same as m[6]!)
 
-## Constraints
-- m_n / 2^(n-d_n) must be in [0.72, 2.75]
-- d_n is chosen from 1-8 to minimize |m_n|
-- Early values embed π (3,7,22) and Fibonacci (in k)
+OBSERVATION 2: Some m-values are composite of earlier ones
+- m[8] = m[2] + m[4] = 1 + 22 = 23
+- m[10] = m[2] * m[6] = 1 * 19 = 19
 
-## m sequence to reverse-engineer:
-n=2:  m=3      (π seed)
-n=3:  m=7      (π seed)
-n=4:  m=22     (π seed)
-n=5:  m=9      (transition: 3² or digit_sum(333))
-n=6:  m=19     (e convergent)
-n=7:  m=50     (50/19 ≈ e)
-n=8:  m=23
-n=9:  m=493
-n=10: m=19     (repeat of m[6]!)
-n=11: m=1921
-n=12: m=1241
-n=13: m=8342
-n=14: m=2034
-n=15: m=26989
+OBSERVATION 3: Factor 19 appears repeatedly
+- m[6] = 19
+- m[10] = 19
+- m[11] = 1921 = 19 × 101
+- m[71] = 19 × 47,367,640,575,976,007,953
 
-## Questions
-1. What PRNG could produce this sequence given π as seed?
-2. Is there a state machine cycling through constants?
-3. Why does 19 appear twice (n=6 and n=10)?
-4. What formula generates m[8]=23 from previous values?
+QUESTION:
+Is there a PRNG (LCG, LFSR, Mersenne Twister variant) that produces this sequence?
 
-Propose a complete PRNG algorithm!
+Test:
+1. LCG: m[n] = (a*m[n-1] + c) mod M
+2. LFSR: m[n] = XOR of selected previous bits
+3. Custom: m[n] = f(m[n-1], m[n-2], m[n-3], n)
+
+Find parameters a, c, M or the recurrence that reproduces m[2..70].

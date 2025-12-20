@@ -1,0 +1,21 @@
+TASK: Find modular arithmetic patterns in the m-sequence
+
+KNOWN:
+k[n] = 4,302,057,189,444,869,987,810 - m[71]*k[d[71]]
+
+MODULAR ANALYSIS:
+For each prime p ∈ {2, 3, 5, 7, 11, 13, 17, 19, 23}:
+Compute m[n] mod p for n=2..70
+
+QUESTIONS:
+1. Does m[n] mod 3 follow a pattern?
+2. Does m[n] mod 19 predict when 19 divides m[n]?
+3. Is there a Chinese Remainder Theorem decomposition?
+
+DATA (m mod 3):
+m[2..20] mod 3 = [1, 1, 1, 0, 1, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 0, 0, ...]
+
+If we can predict m[71] mod p for several primes, 
+we can use CRT to narrow down m[71]!
+
+COMPUTE and VERIFY against known m-values.
