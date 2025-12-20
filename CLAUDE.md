@@ -50,7 +50,12 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
 
 ### ⚠️ CRITICAL WARNING
 The Zbook k[71] derivation using offset ratio extrapolation was INCORRECT.
-The derived address `1KEqStQnjYJnEWyqYhwdAup53JCDnTm7va` does NOT match puzzle 71.
+- **Derived k[71]:** 1,602,101,676,614,237,534,489 (0x56d9a08a95095fb919)
+- **Derived address:** `1KEqStQnjYJnEWyqYhwdAup53JCDnTm7va`
+- **ACTUAL puzzle 71:** `1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU` (UNSOLVED!)
+
+**Root cause:** Offset ratio extrapolation assumption was wrong.
+**Verification tool:** Run `python verify_btc_address.py` to check any derivation.
 Need to find the ACTUAL m[71] formula from mathematical construction patterns.
 
 ### Key insight
