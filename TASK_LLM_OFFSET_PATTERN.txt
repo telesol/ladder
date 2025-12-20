@@ -1,0 +1,38 @@
+TASK: Find the pattern in k-formula offsets
+
+BREAKTHROUGH DISCOVERY:
+For n ≡ 2 (mod 3), the k-sequence follows:
+  k[n] = 9×k[n-3] + a×k[5] + b
+
+where k[5] = 21 = 3×7 and the coefficients (a, b) are:
+
+n=11: a=-41, b=0   → k[11] = 9×k[8] - 41×k[5]
+n=14: a=7,   b=2   → k[14] = 9×k[11] + 7×k[5] + 2
+n=17: a=44,  b=3   → k[17] = 9×k[14] + 44×k[5] + 3
+n=20: a=43,  b=7   → k[20] = 9×k[17] + 43×k[5] + 7
+
+ALL VERIFIED: These formulas give exact k-values!
+
+OBSERVATIONS:
+1. The coefficient 'a' differences are: 48, 37, -1
+2. The coefficient 'b' values are: 0, 2, 3, 7 (Fibonacci-like?)
+3. At n=23, the pattern EXPLODES (a = -103383)
+
+QUESTIONS FOR THE LLM:
+1. What mathematical pattern produces a = (-41, 7, 44, 43)?
+2. Is there a recurrence for a[n] in terms of earlier values?
+3. Why does the pattern explode at n=23?
+4. Does this relate to the ++- sign pattern breaking at n=17?
+
+ADDITIONAL CONTEXT:
+- 9 = m[5] (from m-sequence)
+- k[5] = 21 = k[2]×k[3] = 3×7
+- 41 is prime (p[13])
+- The pattern holds for n=11,14,17,20 (all ≡ 2 mod 3)
+
+HINT: The differences 48, 37, -1 might encode something.
+48 = 3×16 = 3×2^4
+37 = prime (p[12])
+-1 = ...
+
+Think deeply about what mathematical structure produces these coefficients!
