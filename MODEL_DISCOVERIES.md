@@ -103,3 +103,10 @@ The three m-values are **coprime** (GCD = 1). This suggests they are independent
    - Initial: 101 (prime), 81 = 3⁴
 
    **PATTERN**: m[n] contains consecutive G_k, G_{k+1} from specific initial pairs!
+
+7. **INDEX FORMULA** (DeepSeek v3.1 671B):
+   - k = 2(n - 59) / 3
+   - For n=62: k=2 ✓
+   - For n=68: k=6 ✓
+   - For n=71: k=8 (prediction)
+   - **CAVEAT**: Pattern only verified for d ∈ {1, 2}; n=65 (d=5) breaks it
