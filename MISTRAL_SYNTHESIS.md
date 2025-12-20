@@ -59,27 +59,31 @@ Where:
 
 ### Agent C: Unified Formula Derivation
 
-**PROPOSED FORMULA (NOT VERIFIED):**
+**PROPOSED FORMULA:** `k[n] = 2^n + 2k[n-1] - m[n] × k[d[n]]`
+
+**INITIAL RESULT: FAILED (0/68 matches)** - but root cause found!
+
+**ROOT CAUSE: Index shift in data_for_csolver.json**
+
+The data file has an index offset of +1:
+- `m_seq[n-1]` actually stores `m[n+1]` from FORMULA_PATTERNS.md notation
+- `d_seq[n-1]` actually stores `d[n+1]` from FORMULA_PATTERNS.md notation
+
+**CORRECTED FORMULA (VERIFIED 67/67):**
 ```
-k[n] = 2^n + 2k[n-1] - m[n] × k[d[n]]
+For puzzle n (n ≥ 4):
+  m_formula = m_seq[n-2]    # Corrected indexing!
+  d_formula = d_seq[n-2]    # Corrected indexing!
+
+  m_formula = (2^n - adj[n]) / k[d_formula]   ← VERIFIED 67/67
 ```
 
-**VERIFICATION RESULT: FAILED (0/68 matches)**
+**Reconstruction formula:**
+```
+k[n] = 2*k[n-1] + 2^n - m_seq[n-2] * k[d_seq[n-2]]
+```
 
-The formula Mistral proposed does NOT match our data. Testing showed:
-- For n=4: formula gives 3, actual k[4]=8
-- For n=5: formula gives -9, actual k[5]=21
-- ALL 68 tests failed
-
-**Root Cause:**
-The m_seq and d_seq in data_for_csolver.json have a DIFFERENT meaning than what Mistral assumed:
-- m-values are convergents/products of mathematical constants (π, e, √2, φ, ln2)
-- d-values select which earlier value to reference for constructing m
-- The formula `adj[n] = 2^n - m[n] × k[d[n]]` is NOT correct for our data
-
-**What we actually know:**
-- adj[n] = k[n] - 2*k[n-1] (definition)
-- The mod-3 recursion: k[n] = 9 × k[n-3] + offset (verified for n=10-70)
+See: `M_D_RELATIONSHIP_SOLVED.md` for full verification details
 
 ---
 
@@ -182,14 +186,14 @@ n≥10:       Mod-3 structure overlays (k[n] = 9 × k[n-3] + offset)
 
 ---
 
-## Formula Summary (Corrected)
+## Formula Summary (Final)
 
 | Formula | Validity | Status |
 |---------|----------|--------|
 | k[n] = 2^n - 1 | n=1,2,3 only | ✅ VERIFIED (Mersenne bootstrap) |
 | k[n] = 2k[n-1] + adj[n] | All n | ✅ VERIFIED (by definition) |
-| adj[n] = 2^n - m[n] × k[d[n]] | All n | ❌ FAILED (m/d semantics differ) |
-| k[n] = 2^n + 2k[n-1] - m[n] × k[d[n]] | All n | ❌ FAILED (0/68 matches) |
+| m = (2^n - adj) / k[d] | n≥4, index-corrected | ✅ VERIFIED (67/67 matches) |
+| k[n] = 2k[n-1] + 2^n - m*k[d] | n≥4, index-corrected | ✅ VERIFIED (reconstruction) |
 | k[n] = 9 × k[n-3] + offset | n≥10, verified ≤70 | ✅ VERIFIED |
 | offset = ±2^f × 5^g × (17 or 19) | Proposed | ❌ FAILED (17/19 appear rarely)
 
