@@ -1,0 +1,15 @@
+{
+  "transition_point": 17,
+  "k17": 95823,
+  "m17": 138269,
+  "d17": 1,
+  "adj17": -7197,
+  "k17_factors": {
+    "3": 4,
+    "7": 1,
+    "13": 2
+  },
+  "sign_pattern_before": "+++++-+-",
+  "sign_pattern_expected": "++-++-++-++-++-",
+  "pattern_matches": 21
+}
