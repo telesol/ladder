@@ -1,4 +1,4 @@
-# Next Level Strategy: From Foundations to Predictions
+# Next Level Strategy: From Foundations to Derivations
 
 **Date**: 2025-12-20
 **Status**: Ready for Deep Exploration
@@ -98,14 +98,14 @@ Complex:
 
 5. **Is there a closed-form for d[n]?**
    - Beyond "minimizes m[n]"
-   - Predictive formula
+   - Derivation formula
 
 6. **Constant selection rule for m[n]?**
    - Which constant for which n?
    - Deterministic or table-based?
 
-### Level 3: Prediction
-7. **Can we predict k[71] to k[160]?**
+### Level 3: Derivation
+7. **Can we derive k[71] to k[160]?**
    - Using discovered patterns
    - Extrapolating formulas
 
@@ -165,8 +165,8 @@ Test forms:
 Find α, β, γ, δ as functions of n, m, d
 ```
 
-### Task E: Prediction Validation
-**Goal**: Test if formulas predict known k[71-90]
+### Task E: Derivation Validation
+**Goal**: Test if formulas derive known k[71-90]
 ```
 Known: k[75], k[80], k[85], k[90]
 
@@ -207,7 +207,7 @@ Test:
 ### Medium-term
 - [ ] Derive unified formula for n=1-70
 - [ ] Validate against k[75], k[80], k[85], k[90]
-- [ ] Predict at least one unknown key
+- [ ] Derive at least one unknown key
 
 ### Long-term
 - [ ] Complete formula for all puzzles
@@ -223,7 +223,7 @@ Test:
 | A | Mistral-Large 675B | Offset Analysis | Find offset formula |
 | B | Mistral-Large 675B | n=17 Transition | Explain pattern break |
 | C | Mistral-Large 675B | Unified Formula | Derive master equation |
-| D | Mistral-Large 675B | Prediction Test | Validate on k[75,80,85,90] |
+| D | Mistral-Large 675B | Derivation Test | Validate on k[75,80,85,90] |
 
 ---
 

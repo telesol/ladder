@@ -87,9 +87,9 @@ See: `M_D_RELATIONSHIP_SOLVED.md` for full verification details
 
 ---
 
-### Agent D: Prediction Test on Jump Puzzles
+### Agent D: Derivation Test on Jump Puzzles
 
-**CRITICAL FINDING: Cannot predict k[75], k[80], k[85], k[90] directly**
+**CRITICAL FINDING: Cannot derive k[75], k[80], k[85], k[90] directly**
 
 **Why:**
 1. Missing intermediate keys: k[71], k[72], k[73], k[74]

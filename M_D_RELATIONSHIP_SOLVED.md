@@ -63,9 +63,9 @@ This means:
 3. Find all k[j] that divide numerator evenly
 4. Choose j that gives the smallest quotient → that's d[n]
 
-## Implications for Prediction
+## Implications for Derivation
 
-To predict k[n+1] from k[1..n]:
+To derive k[n+1] from k[1..n]:
 1. We would need to know m[n+1] and d[n+1]
 2. d[n+1] minimizes m[n+1], but we don't know m[n+1] in advance
 3. m[n+1] is constructed from mathematical constants (π, e, √2, etc.)
