@@ -248,14 +248,61 @@ This suggests:
 
 ---
 
+## CLAUDE SPARK1 FINDINGS (2025-12-21)
+
+### M-Values Are Convergents of Mathematical Constants
+```
+m[2] = 3 = π convergent numerator #1 = e convergent numerator #2
+m[3] = 7 = π convergent denominator #2 = sqrt(2) convergent numerator #3
+m[4] = 22 = π convergent numerator #2 (22/7 ≈ π)
+m[5] = 9 = ln(2) convergent numerator #5
+m[6] = m[10] = 19 = e convergent numerator #5 = sqrt(3) convergent numerator #5
+```
+
+### Building Block Propagation
+After n=10, m-values are DIVISIBLE by building blocks:
+```
+m[16] = 22 × 385
+m[19] = 19 × 29689
+m[25] = 19 × 1538225
+m[38] = 22 × 4975901387
+m[40] = 50 × 4955401018
+m[47] = 23 × 5386442171234
+m[50] = 22 × 60590782760905
+m[51] = 50 × 4043746545334
+m[55] = 22 × 1178741682549451
+m[57] = 19 × 236358179825470
+m[58] = 19 × 6399039052580047
+m[61] = 22 × 47729366167182299
+m[69] = 19 × 1836636217706671242
+```
+
+### 17 Is Special
+m[n] divisible by 17 at n = 9, 11, 12, 24, 48, 67
+
+### d-Transition Analysis (n=50-70)
+After d=2: {d=1: 60%, d=2: 20%, d=5: 20%}
+d[70] = 2 → d[71] likely 1, 2, or 5
+
+### n=71 Constraints
+71 ≡ 3 (mod 4): m[71] likely divisible by 22, 19, 50, or 23
+d[71]=1: m[71] ∈ [1.94e21, 3.12e21], ~10^20 candidates
+d[71]=2: m[71] ∈ [6.47e20, 1.04e21], ~10^19 candidates
+d[71]=5: m[71] ∈ [9.24e19, 1.49e20], ~10^18 candidates
+d[71]=8: m[71] ∈ [8.66e18, 1.39e19], ~10^17 candidates
+
+**BARRIER**: No deterministic formula found. Need construction rule.
+
+---
+
 ## NEXT TASKS (For Models)
 
 1. **PRNG Analysis**: Reverse engineer possible PRNG from k[1..70]
 2. **Binary Deep Dive**: Analyze bit patterns, find structure
 3. **Block Connection**: Find relationship to Bitcoin blockchain
 4. **m-Sequence Structure**: What generates m[n]? (not greedy)
-5. **M[71] Prediction**: Use self-ref + self-index patterns to narrow m[71]
-6. **d[71] Prediction**: Analyze consecutive d-value transitions
+5. **Convergent Selection Rule**: WHY is m[6]=m[10]=19? What picks the constant?
+6. **d[71] Formula**: Find what determines d[n] beyond statistics
 
 ---
 
