@@ -1,127 +1,101 @@
 #!/usr/bin/env python3
 """
-Analyze d-value pattern to predict d[71].
-d[n] is the value that minimizes m[n].
+Deep analysis of d-sequence to find the generation rule.
+d[n] determines which previous k is used in the formula.
 """
+
+import sqlite3
 import json
-
-with open('data_for_csolver.json', 'r') as f:
-    data = json.load(f)
-
-d_seq = data['d_seq']
-m_seq = data['m_seq']
-
-print("=" * 70)
-print("D-VALUE PATTERN ANALYSIS FOR d[71] PREDICTION")
-print("=" * 70)
-print()
-
-# d-values for high n
-print("### Recent d-values ###")
-for n in range(55, 71):
-    d = d_seq[n-2]
-    m = m_seq[n-2]
-    print(f"n={n}: d={d}")
-
-print()
-
-# Look for patterns in d for n≡2, n≡5, n≡8 (mod 9) - the cases with k = 2(n-59)/3 valid
-print("### d-values for n where k = 2(n-59)/3 is integer ###")
-print("k is integer when (n-59) is divisible by 3, i.e., n ≡ 59 ≡ 2 (mod 3)")
-print()
-for n in range(35, 71):
-    if (n - 59) % 3 == 0:
-        d = d_seq[n-2]
-        k = 2 * (n - 59) // 3
-        print(f"n={n}: k={k}, d={d}")
-
-print()
-
-# n=71: k = 2(71-59)/3 = 2*12/3 = 8
-print("### n=71 prediction ###")
-print("n=71: k = 2(71-59)/3 = 8")
-print()
-
-# Look at d-pattern for recent values where k-formula applies
-print("### d-values for n=62, 65, 68 (recent k-formula cases) ###")
-for n in [62, 65, 68, 71]:
-    if n < 71:
-        d = d_seq[n-2]
-        k = 2 * (n - 59) // 3
-        print(f"n={n}: k={k}, d={d}")
-    else:
-        k = 2 * (n - 59) // 3
-        print(f"n=71: k={k}, d=??? (to find)")
-
-print()
-
-# Pattern analysis
-print("### Pattern observation ###")
-print("n=62: d=2, k=2")
-print("n=65: d=5, k=4")
-print("n=68: d=1, k=6")
-print()
-print("Observation: d cycles or varies")
-
-# Check d-sequence for periodicity
-print("### d-sequence recent values ###")
-recent_d = [d_seq[n-2] for n in range(50, 71)]
-print(f"d[50:70] = {recent_d}")
-print()
-
-# Count d values in recent range
 from collections import Counter
-d_counts = Counter(recent_d)
-print(f"d-value counts for n=50-70: {dict(d_counts)}")
 
-# Most common d
-most_common_d = d_counts.most_common(1)[0][0]
-print(f"Most common d: {most_common_d}")
+# Load data
+conn = sqlite3.connect('/home/solo/LA/db/kh.db')
+cursor = conn.cursor()
+cursor.execute("SELECT puzzle_id, priv_hex FROM keys ORDER BY puzzle_id")
+K = {row[0]: int(row[1], 16) for row in cursor.fetchall()}
+conn.close()
 
-print()
+with open('/home/solo/LA/data_for_csolver.json', 'r') as f:
+    data = json.load(f)
+m_seq = data['m_seq']  # Index 0 = n=2
+d_seq = data['d_seq']
 
-# Alternative: Look at d mod 3 pattern
-print("### d mod 3 pattern ###")
-for n in range(62, 71):
-    d = d_seq[n-2]
-    print(f"n={n}: d={d}, n mod 3 = {n%3}, d mod 3 = {d%3}")
+print("=" * 100)
+print("D-SEQUENCE DEEP ANALYSIS")
+print("=" * 100)
 
-print()
+# Basic distribution
+d_counter = Counter(d_seq)
+print("\n1. D-VALUE DISTRIBUTION:")
+for d, count in sorted(d_counter.items()):
+    print(f"   d={d}: {count} times ({100*count/len(d_seq):.1f}%)")
 
-# Check for d = n mod something
-print("### Check if d relates to n ###")
-for n in range(50, 71):
-    d = d_seq[n-2]
-    # Check various relationships
-    if d == n % 8:
-        print(f"n={n}: d={d} = n mod 8")
-    elif d == n % 7:
-        print(f"n={n}: d={d} = n mod 7")
-    elif d == n % 6:
-        print(f"n={n}: d={d} = n mod 6")
-    elif d == n % 5:
-        print(f"n={n}: d={d} = n mod 5")
+# Look at which n uses which d
+print("\n2. WHICH N USES WHICH D:")
+for d in sorted(set(d_seq)):
+    ns = [i+2 for i, x in enumerate(d_seq) if x == d]
+    print(f"   d={d}: n = {ns[:20]}{'...' if len(ns) > 20 else ''}")
 
-print()
+# Check relationship between d[n] and n
+print("\n3. D[N] VS N RELATIONSHIP:")
+for i, n in enumerate(range(2, 15)):
+    d = d_seq[i]
+    m = m_seq[i]
+    power_2n = 2**n
+    k_d = K[d]
+    ratio = power_2n / k_d
+    adj = power_2n - m * k_d
+    print(f"   n={n:2d}: d={d}, m={m:6d}, 2^n={power_2n:6d}, k[d]={k_d:5d}, 2^n/k[d]={ratio:10.2f}, adj={adj:6d}")
 
-# What are the possible d values for n=71?
-print("### Possible d[71] candidates ###")
-print("Based on patterns observed:")
-print("  - d ∈ {1, 2, 5} appear most often for high n")
-print("  - n=71 ≡ 2 (mod 3), similar to n=62,65,68")
-print()
+# Check if d relates to binary representation of n
+print("\n4. D[N] VS BINARY OF N:")
+for i, n in enumerate(range(2, 25)):
+    d = d_seq[i]
+    print(f"   n={n:2d} ({bin(n):>8s}): d={d} ({bin(d):>8s})")
 
-# The key insight: d[n] minimizes m[n]
-# We can't know m[71] until we solve the puzzle
-# But we can try each candidate d and see which gives valid construction
+# Check if d relates to factors of n
+print("\n5. D[N] VS FACTORS/PROPERTIES OF N:")
+def factors(n):
+    return [i for i in range(1, n+1) if n % i == 0]
 
-print("### Approach for d[71] ###")
-print("Since d[n] minimizes m[n], we need to:")
-print("  1. Try d ∈ {1, 2, 5} as primary candidates")
-print("  2. For each d, check if gen Fib pattern gives valid m")
-print("  3. The correct d will produce m that solves k[71]")
+for i, n in enumerate(range(2, 25)):
+    d = d_seq[i]
+    f = factors(n)
+    is_prime = len(f) == 2
+    print(f"   n={n:2d}: d={d}, prime={is_prime}, factors={f}")
 
-print()
-print("=" * 70)
-print("NEXT STEP: Try each candidate d and verify")
-print("=" * 70)
+# Check if there's a pattern with n mod something
+print("\n6. D[N] VS N MOD K:")
+for mod in [2, 3, 4, 5, 6, 7, 8]:
+    print(f"\n   n mod {mod}:")
+    for r in range(mod):
+        ns = [n for n in range(2, 71) if n % mod == r]
+        ds = [d_seq[n-2] for n in ns if n-2 < len(d_seq)]
+        d_dist = Counter(ds)
+        print(f"      r={r}: d_distribution = {dict(d_dist)}")
+
+# Check if d[n] = n - some_offset
+print("\n7. D[N] AS N - OFFSET:")
+for i, n in enumerate(range(2, 25)):
+    d = d_seq[i]
+    offset = n - d
+    print(f"   n={n:2d}: d={d}, n-d={offset}")
+
+# Look for recurrence in d itself
+print("\n8. D-SEQUENCE DIFFERENCES:")
+print(f"   d: {d_seq[:20]}")
+d_diff = [d_seq[i+1] - d_seq[i] for i in range(len(d_seq)-1)]
+print(f"   Δd: {d_diff[:20]}")
+
+# Check if d relates to position of highest set bit
+print("\n9. D[N] VS BIT POSITION:")
+def highest_bit_pos(x):
+    return x.bit_length() - 1 if x > 0 else 0
+
+for i, n in enumerate(range(2, 25)):
+    d = d_seq[i]
+    m = m_seq[i]
+    hb_n = highest_bit_pos(n)
+    hb_m = highest_bit_pos(m)
+    hb_d = highest_bit_pos(d)
+    print(f"   n={n:2d}: d={d}, m={m:6d}, hb(n)={hb_n}, hb(m)={hb_m}, hb(d)={hb_d}")

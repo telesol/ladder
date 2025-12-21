@@ -132,9 +132,109 @@ NEED: Verify this with REAL k values from database.
 
 ---
 
+## SELF-REFERENTIAL M-PATTERNS (2025-12-21)
+
+### Building Blocks
+```
+m[4] = 22, m[5] = 9, m[6] = 19, m[7] = 50, m[8] = 23
+```
+
+### Verified Self-Referential Formulas (n=36-70)
+```
+m[38] = m[4] × 4,975,901,387    (prime quotient)
+m[40] = m[7] × 4,955,401,018
+m[47] = m[8] × 5,386,442,171,234
+m[50] = m[4] × 60,590,782,760,905
+m[51] = m[7] × 4,043,746,545,334
+m[55] = m[4] × 1,178,741,682,549,451
+m[57] = m[6] × 236,358,179,825,470
+m[58] = m[6] × 6,399,039,052,580,047
+m[61] = m[4] × 47,729,366,167,182,299
+m[69] = m[6] × 1,836,636,217,706,671,242
+```
+
+### Self-Index Pattern
+When n is prime: m[n] = n × Q
+```
+m[19] = 19 × 29,689
+m[41] = 41 × 22,342,064,035
+=> m[71] might = 71 × Q (71 is prime!)
+```
+
+### d-Value Distribution (n=36-70)
+```
+d=1: 14 times (40%)
+d=2: 12 times (34%)
+d=3: 2 times
+d=5: 4 times
+d=6: 1 time
+d=8: 2 times
+```
+
+### M[71] Prediction Constraints
+```
+If d[71]=1: m[71] ∈ [1.94×10^21, 3.12×10^21]
+If d[71]=2: m[71] ∈ [6.47×10^20, 1.04×10^21]
+If d[71]=8: m[71] ∈ [8.66×10^18, 1.39×10^19] (smallest range)
+
+If 71 is prime self-index pattern applies:
+  m[71] = 71 × Q where Q ∈ [27.3×10^18, 44.0×10^18]
+```
+
+### Key Approximation (2025-12-21)
+```
+m[n] ≈ 2^n / k[d[n]] with 1-60% error
+Error comes from adj[n] = k[n] - 2*k[n-1]
+
+Predicted m[71] centers:
+  d=1: m ≈ 2^71 / 1   = 2.36×10^21
+  d=2: m ≈ 2^71 / 3   = 7.87×10^20
+  d=5: m ≈ 2^71 / 21  = 1.12×10^20
+  d=8: m ≈ 2^71 / 224 = 1.05×10^19
+
+d[71] most likely = 1 (40%) or 2 (30%) based on n=51-70 distribution
+
+LOW-POSITION KEYS: k[4], k[10], k[69] all at <1% position
+If k[71] = 2^70 (exactly at minimum like these):
+  d[71] = 1
+  m[71] = 3,121,465,568,727,458,684,386 (exact integer)
+  adj[71] = -760,282,327,292,636,077,538
+```
+
+---
+
+## SESSION 2025-12-21 KEY FINDINGS
+
+### Self-Referential Patterns (n=36-70)
+10 m-values are divisible by building blocks m[4-8]:
+- m[38] = m[4]×prime, m[40] = m[7]×composite
+- m[47] = m[8]×composite, m[50,55,61] = m[4]×...
+- m[51] = m[7]×..., m[57,58,69] = m[6]×...
+
+### Approximation Formula
+m[n] ≈ 2^n / k[d[n]] with 1-60% error
+- d=1: ratio ~1.0
+- d=2: ratio ~0.32 (≈1/3)
+- d=5: ratio ~0.048 (≈1/21)
+- d=8: ratio ~0.005 (≈1/224)
+
+### Low-Position Keys (n ≡ 1 mod 3)
+k[1], k[4], k[10], k[69] all at <1% position in range
+71 ≡ 2 (mod 3), so k[71] likely NOT at minimum
+
+### d-Value Prediction for n=71
+Based on n=51-70 distribution:
+- d=1: 40% likely → m[71] ≈ 2^71
+- d=2: 30% likely → m[71] ≈ 2^71/3
+After d[70]=2, historically d[n+1]=1 (60%), d=2 (20%), d=5 (20%)
+
+---
+
 ## NEXT TASKS (For Models)
 
 1. **PRNG Analysis**: Reverse engineer possible PRNG from k[1..70]
 2. **Binary Deep Dive**: Analyze bit patterns, find structure
 3. **Block Connection**: Find relationship to Bitcoin blockchain
 4. **m-Sequence Structure**: What generates m[n]? (not greedy)
+5. **M[71] Prediction**: Use self-ref + self-index patterns to narrow m[71]
+6. **d[71] Prediction**: Analyze consecutive d-value transitions
