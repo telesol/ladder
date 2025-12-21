@@ -1,0 +1,142 @@
+================================================================================
+COMBINED TASKS 10 & 12: RATIO ANALYSIS AND MAGNITUDE GROWTH - EXECUTIVE SUMMARY
+================================================================================
+
+TASK 10: RATIO ANALYSIS (k[n]/k[n-1])
+--------------------------------------------------------------------------------
+
+10.1 RATIO VALUES (n=2 to n=70)
+  ✓ Computed 69 consecutive ratios
+  ✓ Sample: k[2]/k[1] = 3.00, k[3]/k[2] = 2.33, k[4]/k[3] = 1.14
+  ✓ Range: [1.10, 3.37]
+
+10.2 CONTINUED FRACTIONS
+  ✓ Generated CF representations for n=2 to n=21
+  ✓ Notable: k[5]/k[4] = [2,1,1,1,2] → convergents include 21/8 (Fibonacci!)
+  ✓ Pattern: Most ratios have compact CF representations
+
+10.3 CONVERGENCE TO 2.0
+  ✓ Mean ratio: 2.0838 (deviation from 2.0: 0.0838)
+  ✓ Median ratio: 2.0527
+  ✓ Standard deviation: 0.5416
+  ✓ CONCLUSION: Ratios cluster around 2.0, confirming near-doubling behavior
+
+  Window Analysis (10-value windows):
+  - n=2-11:   mean=2.1365, dev=0.1365
+  - n=12-21:  mean=2.1000, dev=0.1000
+  - n=22-31:  mean=2.0502, dev=0.0502
+  - n=32-41:  mean=1.9876, dev=0.0124 ← CLOSEST TO 2.0
+  - n=42-51:  mean=2.1420, dev=0.1420
+  - n=52-61:  mean=2.0227, dev=0.0227
+
+10.4 CORRELATION WITH 2^n GROWTH
+  ✓ Linear regression: log2(k[n]) ≈ 1.0025*n - 0.5212
+  ✓ Slope: 1.0025 (theoretical: 1.0000)
+  ✓ Deviation from theoretical: 0.0025 (0.25%)
+  ✓ CONCLUSION: k[n] grows almost exactly as 2^n
+
+  Interpretation:
+  - k[n] ≈ 2^(1.0025*n) / 2^0.5212
+  - k[n] ≈ 0.70 * 2^n * 1.0017^n
+  - Growth rate is 2^1.0025 ≈ 2.0017 per step
+
+
+TASK 12: MAGNITUDE GROWTH ANALYSIS (|adj[n]|)
+--------------------------------------------------------------------------------
+
+12.1 MAGNITUDE DATA (n=4 to n=31)
+  ✓ Analyzed 28 adj values (only up to n=31 available in data)
+  ✓ Sample: |adj[4]|=6, |adj[10]|=420, |adj[20]|=148247
+  ✓ Sign pattern: alternates with some irregularity
+
+12.2 LINEAR REGRESSION
+  ✓ Formula: log2(|adj[n]|) ≈ 0.9486*n - 2.8196
+  ✓ Slope: 0.9486 (theoretical: 1.0000)
+  ✓ Intercept: -2.8196
+  ✓ R² fit quality: 0.9655 (excellent)
+  ✓ Deviation from theoretical: 0.0514 (5.1%)
+
+12.3 COMPARISON WITH THEORETICAL O(2^n)
+  ✓ Actual growth: |adj[n]| ≈ 2^(0.9486*n)
+  ✓ This is O(1.93^n), slightly slower than O(2^n)
+  ✓ R² = 0.9655 confirms strong exponential fit
+
+12.4 DEVIATION PATTERNS
+  ✓ Mean absolute deviation: 1.22 log2-units
+  ✓ Max absolute deviation: 3.65 log2-units (at n=14)
+
+  Significant Deviations (|dev| > 0.5):
+  - Above expected (12 values): [4,7,8,10,15,20,22,24,25,26,29,30]
+  - Below expected (10 values): [9,11,13,14,16,18,21,27,28,31]
+
+  Top 5 Largest Deviations:
+  1. n=14: -3.65 (way below expected) ← adj[14]=112 is unusually small
+  2. n=13: -2.28 (below expected)
+  3. n=30: +2.15 (above expected)
+  4. n=10: +2.05 (above expected)
+  5. n=28: -1.91 (below expected)
+
+
+COMBINED INSIGHTS
+--------------------------------------------------------------------------------
+
+KEY FINDINGS:
+
+1. k-value Growth:
+   - Average ratio: 2.0838
+   - Exponential base: 2^1.0025 ≈ 2.0017
+   - Near-perfect 2^n growth (0.25% deviation)
+
+2. adj-value Growth:
+   - Exponential base: 2^0.9486 ≈ 1.9298
+   - Slightly sub-exponential (5.1% slower than 2^n)
+   - Excellent fit (R²=0.9655)
+
+3. Relationship:
+   - k-slope / adj-slope = 1.0568
+   - Both grow at similar exponential rates
+   - adj is a SIGNIFICANT component of k-value jumps
+
+FORMULA CONTEXT:
+
+  k[n] = 2*k[n-1] + adj[n]
+  adj[n] = 2^n - m[n] * k[d[n]]
+
+Analysis shows:
+  - 2*k[n-1] term dominates (base ~2^1.002)
+  - adj[n] term provides adjustments (base ~2^0.949)
+  - Deviations reveal where m[n] selection creates unusual corrections
+
+CRITICAL OBSERVATIONS:
+
+1. The recurrence k[n] = 2*k[n-1] + adj[n] naturally leads to ~2x growth
+   because the 2*k[n-1] term compounds exponentially
+
+2. adj[n] grows slightly slower than 2^n, acting as a "brake" on growth,
+   preventing k[n] from growing faster than 2^n
+
+3. Puzzle n=14 shows the largest negative deviation (adj[14]=112 is tiny),
+   suggesting a special construction or constraint at this position
+
+4. Window n=32-41 has the most stable doubling (mean ratio = 1.9876),
+   suggesting algorithm stabilization in mid-range puzzles
+
+5. Continued fractions reveal connections to classical constants:
+   - k[5]/k[4] convergent is 21/8 (Fibonacci ratio)
+   - Some ratios have simple CF forms [2,1,18], [2,3], etc.
+
+
+VERIFICATION STATUS:
+  ✓ All k-values loaded from database (n=1 to n=70): 70 values
+  ✓ All adj-values loaded from data_for_csolver.json (n=2 to n=31): 30 values
+  ✓ All ratios computed from verified database values: 69 ratios
+  ✓ All statistical analysis based on actual data (no predictions)
+
+OUTPUT FILES:
+  - Full analysis: /home/rkh/ladder/ratio_magnitude_analysis.md (7.8 KB)
+  - Python script: /home/rkh/ladder/ratio_magnitude_analysis.py
+  - This summary: /home/rkh/ladder/ratio_magnitude_summary.txt
+
+================================================================================
+ANALYSIS COMPLETE - ALL TASKS COMPLETED SUCCESSFULLY
+================================================================================

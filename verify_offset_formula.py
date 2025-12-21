@@ -1,217 +1,364 @@
 #!/usr/bin/env python3
 """
-Verify the relationship between the main formula and the 3-step recursion.
+TASK 2: Offset Formula Verification
 
-Main formula: k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]]
-3-step recursion: k[n] = 9*k[n-3] + offset[n]
+Objective: Verify and extend Mistral's offset formula:
+offset[n] = (-1)^(n+1) × 2^f(n) × 5^g(n) × h(n)
 
-Goal: Understand what offset[n] actually represents.
+Sub-tasks:
+2.1. Compute offset[n] = k[n] - 9*k[n-3] for n=10 to n=70
+2.2. Factorize each offset completely
+2.3. Verify Mistral's f(n) = floor(n/3) - 2 hypothesis
+2.4. Verify prime selection: 17 for n ≡ 0,3,4 (mod 6), 19 for n ≡ 2 (mod 6)
+2.5. Find exceptions and patterns for n ≥ 40
+
+NO ASSUMPTIONS. ALL DATA DERIVED FROM DATABASE.
 """
 
+import sqlite3
+from collections import defaultdict
 import json
 
-# Load data
-with open('data_for_csolver.json', 'r') as f:
-    data = json.load(f)
+# Database path
+DB_PATH = "/home/rkh/ladder/db/kh.db"
 
-m_seq = data['m_seq']
-d_seq = data['d_seq']
-k_base = {int(k): v for k, v in data['k_base'].items()}
+def get_k_values(n_min=1, n_max=90):
+    """Query all k values from database for puzzle range."""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
 
-# Known offsets from K_FORMULAS_COMPLETE.md (for n=31-70)
-known_offsets = {
-    31: 53678879, 32: -512907232, 33: -2161020844, 34: -4788424802,
-    35: -7728383534, 36: -21849171228, 37: -26946088818, 38: -34044309536,
-    39: -57764960883, 40: 101387367595, 41: 135508375819, 42: -18150167970,
-    43: -1623051668725, 44: 2280491910748, 45: -6061907885570,
-    46: -15279629081813, 47: -18976196699469, 48: 11238806921070,
-    49: -53559128104983, 50: -465859435859766, 51: 337906742849889,
-    52: 534425494307975, 53: 1263419505968248, 54: -8554470391888177,
-    55: -7903070264536840, 56: -16654413450626541, 57: 48475661710376129,
-    58: -70431846450483091, 59: 127101703624177016, 60: -109170479978122046,
-    61: -374002469168423459, 62: -817260915816573657, 63: -1222142202450997670,
-    64: 4967579474010341790, 65: -4606975570506195703, 66: -34592851995373892186,
-    67: -27540062615817873350, 68: -55217129595261785870,
-    69: -119841466032741115730, 70: -223475518416452616237
-}
+    k_values = {}
 
-# First, compute all k values up to 70 using the main formula
-k = k_base.copy()
+    # Query all keys in range
+    cursor.execute("""
+        SELECT puzzle_id, priv_hex
+        FROM keys
+        WHERE puzzle_id >= ? AND puzzle_id <= ?
+        ORDER BY puzzle_id
+    """, (n_min, n_max))
 
-def get_m(n):
-    """Get m[n] with proper index shift."""
-    return m_seq[n - 2]
+    for puzzle_id, priv_hex in cursor.fetchall():
+        # Convert hex to decimal
+        k_values[puzzle_id] = int(priv_hex, 16)
 
-def get_d(n):
-    """Get d[n] with proper index shift."""
-    return d_seq[n - 2]
+    conn.close()
+    return k_values
 
-def get_k(n):
-    """Get k[n], computing if needed."""
-    if n in k:
-        return k[n]
-    # Compute using main formula
-    k_prev = get_k(n - 1)
-    m_n = get_m(n)
-    d_n = get_d(n)
-    k_d = get_k(d_n)
-    k[n] = 2 * k_prev + (2**n) - m_n * k_d
-    return k[n]
+def prime_factorization(n):
+    """
+    Complete prime factorization of n.
+    Returns dict {prime: power}.
+    """
+    if n == 0:
+        return {0: 1}
 
-# Compute k[1] to k[70]
-print("=" * 80)
-print("COMPUTING K-VALUES AND VERIFYING OFFSETS")
-print("=" * 80)
+    # Handle sign
+    sign = 1 if n >= 0 else -1
+    n = abs(n)
 
-for n in range(1, 71):
-    get_k(n)
+    factors = {}
 
-# Verify the 3-step recursion offsets
-print("\n### Verifying 3-step offsets: k[n] = 9*k[n-3] + offset[n] ###\n")
-print("n  |  Computed offset         |  Known offset            |  Match?")
-print("-" * 75)
+    # Factor out 2s
+    count = 0
+    while n % 2 == 0:
+        count += 1
+        n //= 2
+    if count > 0:
+        factors[2] = count
 
-matches = 0
-mismatches = 0
+    # Try odd primes
+    p = 3
+    while p * p <= n:
+        count = 0
+        while n % p == 0:
+            count += 1
+            n //= p
+        if count > 0:
+            factors[p] = count
+        p += 2
 
-for n in range(31, 71):
-    # Compute offset from 3-step formula
-    computed_offset = k[n] - 9 * k[n - 3]
-    known = known_offsets.get(n)
+    # Remaining n is prime (if > 1)
+    if n > 1:
+        factors[n] = 1
 
-    if known is not None:
-        match = "✓" if computed_offset == known else "✗"
-        if computed_offset == known:
-            matches += 1
+    # Add sign as special marker
+    if sign == -1:
+        factors[-1] = 1
+
+    return factors
+
+def format_factorization(factors):
+    """Format factorization dict as readable string."""
+    if not factors:
+        return "1"
+
+    # Handle sign
+    sign_str = ""
+    if -1 in factors:
+        sign_str = "-"
+        factors = {k: v for k, v in factors.items() if k != -1}
+
+    # Handle zero
+    if 0 in factors:
+        return "0"
+
+    # Format as p1^e1 × p2^e2 × ...
+    parts = []
+    for prime in sorted(factors.keys()):
+        power = factors[prime]
+        if power == 1:
+            parts.append(str(prime))
         else:
-            mismatches += 1
-        print(f"{n} | {computed_offset:25} | {known:25} | {match}")
+            parts.append(f"{prime}^{power}")
 
-print(f"\nMatches: {matches}, Mismatches: {mismatches}")
+    return sign_str + " × ".join(parts) if parts else "1"
 
-# Now analyze the adj values (from main formula)
-print("\n" + "=" * 80)
-print("ANALYZING ADJ VALUES: adj[n] = 2^n - m[n]*k[d[n]]")
-print("=" * 80)
+def get_power_of_prime(factors, p):
+    """Get the power of prime p in factorization."""
+    return factors.get(p, 0)
 
-print("\nn  |  adj[n]                  |  m[n]                  |  d[n] |  k[d[n]]")
-print("-" * 90)
+def compute_offsets_and_verify():
+    """
+    Main computation and verification function.
+    """
+    print("=" * 80)
+    print("OFFSET FORMULA VERIFICATION")
+    print("=" * 80)
+    print()
 
-for n in range(31, 41):
-    m_n = get_m(n)
-    d_n = get_d(n)
-    k_d = get_k(d_n)
-    adj_n = (2**n) - m_n * k_d
-    print(f"{n} | {adj_n:24} | {m_n:22} | {d_n:5} | {k_d}")
+    # Get all k values from database
+    print("Loading k values from database...")
+    k_values = get_k_values(1, 90)
+    print(f"Loaded {len(k_values)} k values")
+    print(f"Available puzzles: {sorted(k_values.keys())}")
+    print()
 
-# Relationship between adj and offset
-print("\n" + "=" * 80)
-print("RELATIONSHIP BETWEEN ADJ AND OFFSET")
-print("=" * 80)
+    # Compute offsets for n=10 to n=70
+    offsets = {}
+    offset_factors = {}
 
-print("\nFor a single step: k[n] = 2*k[n-1] + adj[n]")
-print("For 3 steps: k[n] = 9*k[n-3] + offset[n]")
-print("\nExpanding 3 steps:")
-print("  k[n-1] = 2*k[n-2] + adj[n-1]")
-print("  k[n-2] = 2*k[n-3] + adj[n-2]")
-print("  k[n] = 2*k[n-1] + adj[n]")
-print("\nSubstituting:")
-print("  k[n] = 2*(2*(2*k[n-3] + adj[n-2]) + adj[n-1]) + adj[n]")
-print("       = 8*k[n-3] + 4*adj[n-2] + 2*adj[n-1] + adj[n]")
-print("\nBUT we see k[n] = 9*k[n-3] + offset...")
-print("So: 9*k[n-3] + offset = 8*k[n-3] + 4*adj[n-2] + 2*adj[n-1] + adj[n]")
-print("    offset = k[n-3] + 4*adj[n-2] + 2*adj[n-1] + adj[n]")
+    print("Computing offsets: offset[n] = k[n] - 9*k[n-3]")
+    print("-" * 80)
 
-print("\n### Verifying this relationship ###\n")
+    for n in range(10, 71):
+        if n in k_values and (n-3) in k_values:
+            offset = k_values[n] - 9 * k_values[n-3]
+            offsets[n] = offset
 
-for n in range(34, 41):
-    adj_n = (2**n) - get_m(n) * get_k(get_d(n))
-    adj_n1 = (2**(n-1)) - get_m(n-1) * get_k(get_d(n-1))
-    adj_n2 = (2**(n-2)) - get_m(n-2) * get_k(get_d(n-2))
+            # Factorize
+            factors = prime_factorization(offset)
+            offset_factors[n] = factors
 
-    derived_offset = k[n-3] + 4*adj_n2 + 2*adj_n1 + adj_n
-    actual_offset = k[n] - 9*k[n-3]
+            # Print
+            print(f"n={n:2d}: offset = {offset:20d}")
+            print(f"       factorization = {format_factorization(factors)}")
+            print()
 
-    match = "✓" if derived_offset == actual_offset else "✗"
-    print(f"n={n}: derived={derived_offset}, actual={actual_offset} {match}")
+    print(f"\nTotal offsets computed: {len(offsets)}")
+    print("=" * 80)
+    print()
 
-# Key insight: the offset relationship
-print("\n" + "=" * 80)
-print("KEY INSIGHT: OFFSET DECOMPOSITION")
-print("=" * 80)
+    # === VERIFICATION SECTION ===
+    print("=" * 80)
+    print("FORMULA VERIFICATION")
+    print("=" * 80)
+    print()
 
-print("""
-offset[n] = k[n-3] + 4*adj[n-2] + 2*adj[n-1] + adj[n]
-          = k[n-3] + 4*(2^(n-2) - m[n-2]*k[d[n-2]])
-                   + 2*(2^(n-1) - m[n-1]*k[d[n-1]])
-                   + (2^n - m[n]*k[d[n]])
+    # 2.3. Verify f(n) = floor(n/3) - 2 for power of 2
+    print("2.3. POWER OF 2: Verify f(n) = floor(n/3) - 2")
+    print("-" * 80)
 
-          = k[n-3] + 4*2^(n-2) + 2*2^(n-1) + 2^n
-                   - 4*m[n-2]*k[d[n-2]] - 2*m[n-1]*k[d[n-1]] - m[n]*k[d[n]]
+    f_matches = 0
+    f_total = 0
+    f_exceptions = []
 
-          = k[n-3] + 2^n + 2^n + 2^n
-                   - 4*m[n-2]*k[d[n-2]] - 2*m[n-1]*k[d[n-1]] - m[n]*k[d[n]]
+    for n in sorted(offsets.keys()):
+        factors = offset_factors[n]
+        power_of_2 = get_power_of_prime(factors, 2)
+        expected_f = n // 3 - 2
 
-          = k[n-3] + 3*2^n - (4*m[n-2]*k[d[n-2]] + 2*m[n-1]*k[d[n-1]] + m[n]*k[d[n]])
-""")
+        match = power_of_2 == expected_f
+        f_total += 1
+        if match:
+            f_matches += 1
+        else:
+            f_exceptions.append((n, power_of_2, expected_f))
 
-# Verify this final formula
-print("\n### Final formula verification ###\n")
+        marker = "✓" if match else "✗"
+        print(f"n={n:2d}: 2^{power_of_2} | expected: 2^{expected_f} | {marker}")
 
-for n in range(34, 41):
-    m_n = get_m(n)
-    m_n1 = get_m(n-1)
-    m_n2 = get_m(n-2)
-    k_dn = get_k(get_d(n))
-    k_dn1 = get_k(get_d(n-1))
-    k_dn2 = get_k(get_d(n-2))
+    print()
+    print(f"RESULT: {f_matches}/{f_total} matches ({100*f_matches/f_total:.1f}%)")
+    if f_exceptions:
+        print(f"Exceptions: {len(f_exceptions)}")
+        for n, actual, expected in f_exceptions[:10]:
+            print(f"  n={n}: actual f={actual}, expected f={expected}, diff={actual-expected}")
+    print()
 
-    derived = k[n-3] + 3*(2**n) - (4*m_n2*k_dn2 + 2*m_n1*k_dn1 + m_n*k_dn)
-    actual = k[n] - 9*k[n-3]
+    # 2.4. Verify prime selection hypothesis
+    print("2.4. PRIME SELECTION: 17 for n ≡ 0,3,4 (mod 6), 19 for n ≡ 2 (mod 6)")
+    print("-" * 80)
 
-    match = "✓" if derived == actual else "✗"
-    print(f"n={n}: {match}")
-    if derived != actual:
-        print(f"  derived={derived}, actual={actual}")
+    prime_17_count = 0
+    prime_19_count = 0
+    prime_17_correct = 0
+    prime_19_correct = 0
 
-# Now the key question: what determines offset[71]?
-print("\n" + "=" * 80)
-print("TO FIND OFFSET[71], WE NEED:")
-print("=" * 80)
+    for n in sorted(offsets.keys()):
+        factors = offset_factors[n]
+        has_17 = 17 in factors
+        has_19 = 19 in factors
 
-print("""
-offset[71] = k[68] + 3*2^71 - (4*m[69]*k[d[69]] + 2*m[70]*k[d[70]] + m[71]*k[d[71]])
+        n_mod_6 = n % 6
+        expected_17 = n_mod_6 in [0, 3, 4]
+        expected_19 = n_mod_6 == 2
 
-We KNOW:
-- k[68] = k[68] (computed)
-- 2^71 = known
-- m[69], d[69], m[70], d[70] from data
+        if has_17:
+            prime_17_count += 1
+            if expected_17:
+                prime_17_correct += 1
+            print(f"n={n:2d} (mod 6 = {n_mod_6}): has 17 | expected: {expected_17} | {'✓' if expected_17 else '✗'}")
 
-We DON'T KNOW:
-- m[71], d[71]
+        if has_19:
+            prime_19_count += 1
+            if expected_19:
+                prime_19_correct += 1
+            print(f"n={n:2d} (mod 6 = {n_mod_6}): has 19 | expected: {expected_19} | {'✓' if expected_19 else '✗'}")
 
-So the question becomes: WHAT IS m[71] and d[71]?
-""")
+    print()
+    print(f"Prime 17: appears in {prime_17_count}/61 offsets ({100*prime_17_count/61:.1f}%)")
+    print(f"  Matches hypothesis: {prime_17_correct}/{prime_17_count} ({100*prime_17_correct/prime_17_count:.1f}% if > 0 else 0)")
+    print(f"Prime 19: appears in {prime_19_count}/61 offsets ({100*prime_19_count/61:.1f}%)")
+    print(f"  Matches hypothesis: {prime_19_correct}/{prime_19_count} ({100*prime_19_correct/prime_19_count:.1f}% if > 0 else 0)")
+    print()
 
-# Print the known values for n=68,69,70
-print("\nKnown values:")
-print(f"k[68] = {k[68]}")
-print(f"m[69] = {get_m(69)}, d[69] = {get_d(69)}, k[d[69]] = {get_k(get_d(69))}")
-print(f"m[70] = {get_m(70)}, d[70] = {get_d(70)}, k[d[70]] = {get_k(get_d(70))}")
+    # 2.5. Analyze patterns for n ≥ 40
+    print("2.5. PATTERNS FOR n ≥ 40")
+    print("-" * 80)
 
-# The bridge constraint from k[80]
-print("\n" + "=" * 80)
-print("BRIDGE CONSTRAINT FROM K[80]")
-print("=" * 80)
+    large_n_offsets = {n: offset_factors[n] for n in offsets.keys() if n >= 40}
 
-k_80 = 1105520030589234487939456
+    # Count prime appearances in n >= 40
+    prime_counts_large = defaultdict(int)
+    for n, factors in large_n_offsets.items():
+        for prime in factors.keys():
+            if prime > 0:  # Skip sign marker
+                prime_counts_large[prime] += 1
 
-# k[80] = 9^4 * k[68] + 9^3*off[71] + 9^2*off[74] + 9*off[77] + off[80]
-rhs_from_k68 = (9**4) * k[68]
-remainder = k_80 - rhs_from_k68
+    print(f"Prime distribution for n ≥ 40 ({len(large_n_offsets)} offsets):")
+    for prime in sorted(prime_counts_large.keys())[:20]:  # Top 20 primes
+        count = prime_counts_large[prime]
+        print(f"  {prime:6d}: appears in {count:2d}/31 offsets ({100*count/31:.1f}%)")
+    print()
 
-print(f"k[80] = {k_80}")
-print(f"9^4 * k[68] = {rhs_from_k68}")
-print(f"k[80] - 9^4*k[68] = {remainder}")
-print(f"\nThis equals: 9^3*off[71] + 9^2*off[74] + 9*off[77] + off[80]")
-print(f"           = 729*off[71] + 81*off[74] + 9*off[77] + off[80]")
+    # Sign pattern verification
+    print("SIGN PATTERN: (-1)^(n+1)")
+    print("-" * 80)
+
+    sign_matches = 0
+    sign_total = 0
+
+    for n in sorted(offsets.keys()):
+        factors = offset_factors[n]
+        is_negative = -1 in factors
+        expected_negative = ((n + 1) % 2 == 1)  # (-1)^(n+1) is negative when n+1 is odd
+
+        match = is_negative == expected_negative
+        sign_total += 1
+        if match:
+            sign_matches += 1
+
+        marker = "✓" if match else "✗"
+        actual_sign = "-" if is_negative else "+"
+        expected_sign = "-" if expected_negative else "+"
+        print(f"n={n:2d}: actual={actual_sign} | expected={expected_sign} | {marker}")
+
+    print()
+    print(f"RESULT: {sign_matches}/{sign_total} matches ({100*sign_matches/sign_total:.1f}%)")
+    print()
+
+    # Additional analysis: Power of 5
+    print("POWER OF 5 ANALYSIS")
+    print("-" * 80)
+
+    power_5_dist = defaultdict(int)
+    for n, factors in offset_factors.items():
+        power = get_power_of_prime(factors, 5)
+        power_5_dist[power] += 1
+
+    for power in sorted(power_5_dist.keys()):
+        count = power_5_dist[power]
+        print(f"5^{power}: {count}/61 offsets ({100*count/61:.1f}%)")
+
+    # Find cases where g(n) != 1
+    power_5_exceptions = []
+    for n, factors in offset_factors.items():
+        power = get_power_of_prime(factors, 5)
+        if power != 1:
+            power_5_exceptions.append((n, power))
+
+    print()
+    print(f"Cases where 5^g(n) with g(n) != 1: {len(power_5_exceptions)}")
+    for n, power in power_5_exceptions[:10]:
+        print(f"  n={n}: 5^{power}")
+    print()
+
+    # Overall prime distribution
+    print("OVERALL PRIME DISTRIBUTION (all n=10-70)")
+    print("-" * 80)
+
+    prime_counts_all = defaultdict(int)
+    for n, factors in offset_factors.items():
+        for prime in factors.keys():
+            if prime > 0:  # Skip sign marker
+                prime_counts_all[prime] += 1
+
+    # Top 30 primes
+    top_primes = sorted(prime_counts_all.items(), key=lambda x: x[1], reverse=True)[:30]
+    for prime, count in top_primes:
+        print(f"  {prime:10d}: appears in {count:2d}/61 offsets ({100*count/61:.1f}%)")
+    print()
+
+    # Save results to JSON
+    results = {
+        "offsets": {str(n): offset for n, offset in offsets.items()},
+        "factorizations": {str(n): format_factorization(f) for n, f in offset_factors.items()},
+        "verification": {
+            "f(n)_floor(n/3)-2": {
+                "matches": f_matches,
+                "total": f_total,
+                "percentage": 100 * f_matches / f_total,
+                "exceptions": [{"n": n, "actual": a, "expected": e} for n, a, e in f_exceptions]
+            },
+            "sign_pattern_(-1)^(n+1)": {
+                "matches": sign_matches,
+                "total": sign_total,
+                "percentage": 100 * sign_matches / sign_total
+            },
+            "prime_17_hypothesis": {
+                "appearances": prime_17_count,
+                "correct_predictions": prime_17_correct,
+                "total_offsets": 61,
+                "percentage": 100 * prime_17_count / 61
+            },
+            "prime_19_hypothesis": {
+                "appearances": prime_19_count,
+                "correct_predictions": prime_19_correct,
+                "total_offsets": 61,
+                "percentage": 100 * prime_19_count / 61
+            }
+        },
+        "prime_distribution": {str(p): c for p, c in top_primes}
+    }
+
+    with open("/home/rkh/ladder/offset_verification_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    print("=" * 80)
+    print("Results saved to: offset_verification_results.json")
+    print("=" * 80)
+
+    return offsets, offset_factors, results
+
+if __name__ == "__main__":
+    compute_offsets_and_verify()

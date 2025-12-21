@@ -1,0 +1,115 @@
+FERMAT AND FERMAT-RELATED NUMBERS
+================================================================================
+
+n = 3 = 2^1 + 1 (Fermat F_0)
+  k[3] = 7
+  Factorization: 7
+  Distinct primes: 1
+  Has high powers (≥3): False
+  adj[3] = +1
+
+n = 5 = 2^2 + 1 (Fermat F_1)
+  k[5] = 21
+  Factorization: 3 × 7
+  Distinct primes: 2
+  Has high powers (≥3): False
+  adj[5] = +5
+
+n = 17 = 2^4 + 1 (Fermat F_2)
+  k[17] = 95823
+  Factorization: 3^4 × 7 × 13^2
+  Distinct primes: 3
+  Has high powers (≥3): True
+  adj[17] = -7197
+
+n = 33 = 2^5 + 1 (NOT Fermat (2^(2^k)+1 form))
+  k[33] = 7137437912
+  Factorization: 2^3 × 11 × 751 × 107999
+  Distinct primes: 4
+  Has high powers (≥3): True
+
+n = 65 = 2^6 + 1 (NOT Fermat (2^(2^k)+1 form))
+  k[65] = 30568377312064202855
+  Factorization: 5 × 67 × 5639 × 16181749866767
+  Distinct primes: 4
+  Has high powers (≥3): False
+
+================================================================================
+POWER OF 2 THRESHOLD CROSSINGS
+================================================================================
+
+2^16 = 65536
+  First k[n] > 2^16: n=17
+    k[17] = 95823
+    ⚠️  n=17 is Fermat-related!
+
+2^24 = 16777216
+  First k[n] > 2^24: n=25
+    k[25] = 33185509
+
+2^32 = 4294967296
+  First k[n] > 2^32: n=33
+    k[33] = 7137437912
+    ⚠️  n=33 is Fermat-related!
+
+2^40 = 1099511627776
+  First k[n] > 2^40: n=50
+    k[50] = 611140496167764
+
+2^48 = 281474976710656
+  First k[n] > 2^48: n=50
+    k[50] = 611140496167764
+
+2^64 = 18446744073709551616
+  First k[n] > 2^64: n=65
+    k[65] = 30568377312064202855
+    ⚠️  n=65 is Fermat-related!
+
+================================================================================
+EXTENDED SIGN PATTERN CHECK
+================================================================================
+
+Checking 19 values with consecutive k[n-1], k[n]
+
+n= 2: exp=+, act=+, ✓, adj=             +1
+n= 3: exp=+, act=+, ✓, adj=             +1
+n= 4: exp=-, act=-, ✓, adj=             -6
+n= 5: exp=+, act=+, ✓, adj=             +5
+n= 6: exp=+, act=+, ✓, adj=             +7
+n= 7: exp=-, act=-, ✓, adj=            -22
+n= 8: exp=+, act=+, ✓, adj=            +72
+n= 9: exp=+, act=+, ✓, adj=            +19
+n=10: exp=-, act=-, ✓, adj=           -420
+n=11: exp=+, act=+, ✓, adj=           +127
+n=12: exp=+, act=+, ✓, adj=           +373
+n=13: exp=-, act=-, ✓, adj=           -150
+n=14: exp=+, act=+, ✓, adj=           +112
+n=15: exp=+, act=+, ✓, adj=          +5779
+n=16: exp=-, act=-, ✓, adj=          -2224
+n=17: exp=+, act=-, ✗, adj=          -7197
+n=18: exp=+, act=+, ✓, adj=          +7023
+n=19: exp=-, act=-, ✓, adj=         -39803
+n=20: exp=+, act=+, ✓, adj=        +148247
+
+Total: 19, Matches: 18, Breaks: 1
+Match rate: 94.7%
+
+Longest consecutive match sequence: 15
+
+All match sequences (≥3):
+  n=2 to n=16: 15 consecutive matches
+  n=18 to n=20: 3 consecutive matches
+
+================================================================================
+D[N] PATTERN IN EXTENDED RANGE
+================================================================================
+
+D-value distribution:
+  d=1: 12 occurrences (48.0%)
+  d=2: 6 occurrences (24.0%)
+  d=4: 4 occurrences (16.0%)
+  d=5: 2 occurrences (8.0%)
+  d=7: 1 occurrences (4.0%)
+
+Before n=17: d=1 in 5/13 = 38.5%
+At/After n=17: d=1 in 7/12 = 58.3%

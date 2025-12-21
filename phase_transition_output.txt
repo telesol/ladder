@@ -1,0 +1,210 @@
+================================================================================
+PHASE TRANSITION ANALYSIS AT n=17
+================================================================================
+
+4.1. K-VALUE FACTORIZATION COMPARISON
+--------------------------------------------------------------------------------
+
+n=14: k[14] = 10544
+  Decimal: 10544
+  Factorization: 2^4 × 659
+  Prime? False
+  Distinct primes: 2
+  Total prime factors: 5
+
+n=15: k[15] = 26867
+  Decimal: 26867
+  Factorization: 67 × 401
+  Prime? False
+  Distinct primes: 2
+  Total prime factors: 2
+
+n=16: k[16] = 51510
+  Decimal: 51510
+  Factorization: 2 × 3 × 5 × 17 × 101
+  Prime? False
+  Distinct primes: 5
+  Total prime factors: 5
+  Special structure: 3^1 × 17^1
+
+n=17: k[17] = 95823
+  Decimal: 95823
+  Factorization: 3^4 × 7 × 13^2
+  Prime? False
+  Distinct primes: 3
+  Total prime factors: 7
+  Special structure: 3^4 × 7^1 × 13^2
+
+n=18: k[18] = 198669
+  Decimal: 198669
+  Factorization: 3 × 47 × 1409
+  Prime? False
+  Distinct primes: 3
+  Total prime factors: 3
+  Special structure: 3^1
+
+n=19: k[19] = 357535
+  Decimal: 357535
+  Factorization: 5 × 23 × 3109
+  Prime? False
+  Distinct primes: 3
+  Total prime factors: 3
+
+================================================================================
+
+4.2. ADJ[N] PROPERTIES BEFORE/AFTER N=17
+--------------------------------------------------------------------------------
+
+n=14:
+  adj[14] = +112
+  m[14] = 2034
+  d[14] = 4
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+n=15:
+  adj[15] = +5779
+  m[15] = 26989
+  d[15] = 1
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+n=16:
+  adj[16] = -2224
+  m[16] = 8470
+  d[16] = 4
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+n=17:
+  adj[17] = -7197
+  m[17] = 138269
+  d[17] = 1
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+n=18:
+  adj[18] = +7023
+  m[18] = 255121
+  d[18] = 1
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+n=19:
+  adj[19] = -39803
+  m[19] = 564091
+  d[19] = 1
+  Formula check: m[n] = (2^n - adj) / k[d] → True
+
+================================================================================
+
+4.2.1. SIGN PATTERN ANALYSIS (++- pattern)
+--------------------------------------------------------------------------------
+n= 2: expected=+, actual=+, match=True, adj=    +1
+n= 3: expected=+, actual=+, match=True, adj=    +1
+n= 4: expected=-, actual=-, match=True, adj=    -6
+n= 5: expected=+, actual=+, match=True, adj=    +5
+n= 6: expected=+, actual=+, match=True, adj=    +7
+n= 7: expected=-, actual=-, match=True, adj=   -22
+n= 8: expected=+, actual=+, match=True, adj=   +72
+n= 9: expected=+, actual=+, match=True, adj=   +19
+n=10: expected=-, actual=-, match=True, adj=  -420
+n=11: expected=+, actual=+, match=True, adj=  +127
+n=12: expected=+, actual=+, match=True, adj=  +373
+n=13: expected=-, actual=-, match=True, adj=  -150
+n=14: expected=+, actual=+, match=True, adj=  +112
+n=15: expected=+, actual=+, match=True, adj= +5779
+n=16: expected=-, actual=-, match=True, adj= -2224
+n=17: expected=+, actual=-, match=False, adj= -7197
+n=18: expected=+, actual=+, match=True, adj= +7023
+n=19: expected=-, actual=-, match=True, adj=-39803
+
+Max consecutive matches: 15
+Pattern breaks at: n=17
+
+================================================================================
+
+4.3. 2^16 = 65536 THRESHOLD ANALYSIS
+--------------------------------------------------------------------------------
+n=14: k[14] =   10544, k/2^16 = 0.160889, below? True
+n=15: k[15] =   26867, k/2^16 = 0.409958, below? True
+n=16: k[16] =   51510, k/2^16 = 0.785980, below? True
+n=17: k[17] =   95823, k/2^16 = 1.462143, below? False
+n=18: k[18] =  198669, k/2^16 = 3.031448, below? False
+n=19: k[19] =  357535, k/2^16 = 5.455551, below? False
+
+Transition: k[16] = 51510 < 2^16 = 65536
+           k[17] = 95823 > 2^16 = 65536
+
+n=17 is the FIRST puzzle where k[n] > 2^16
+
+================================================================================
+
+4.4. M[N] FORMULA CHANGES AT N=17
+--------------------------------------------------------------------------------
+
+BEFORE n=17:
+n= 4: m[4] =       22 = 2 × 11, has_17=False, d[4]=1
+n= 5: m[5] =        9 = 3^2, has_17=False, d[5]=2
+n= 6: m[6] =       19 = 19, has_17=False, d[6]=2
+n= 7: m[7] =       50 = 2 × 5^2, has_17=False, d[7]=2
+n= 8: m[8] =       23 = 23, has_17=False, d[8]=4
+n= 9: m[9] =      493 = 17 × 29, has_17=True, d[9]=1
+n=10: m[10] =       19 = 19, has_17=False, d[10]=7
+n=11: m[11] =     1921 = 17 × 113, has_17=True, d[11]=1
+n=12: m[12] =     1241 = 17 × 73, has_17=True, d[12]=2
+n=13: m[13] =     8342 = 2 × 43 × 97, has_17=False, d[13]=1
+n=14: m[14] =     2034 = 2 × 3^2 × 113, has_17=False, d[14]=4
+n=15: m[15] =    26989 = 137 × 197, has_17=False, d[15]=1
+n=16: m[16] =     8470 = 2 × 5 × 7 × 11^2, has_17=False, d[16]=4
+
+AT n=17:
+n=17: m[17] =   138269 = 37^2 × 101, has_17=False, d[17]=1
+
+AFTER n=17:
+n=18: m[18] =   255121 = 255121, has_17=False, d[18]=1
+n=19: m[19] =   564091 = 11 × 19 × 2699, has_17=False, d[19]=1
+
+================================================================================
+
+4.5. GROWTH RATE ANALYSIS
+--------------------------------------------------------------------------------
+
+BEFORE n=17:
+n= 3: k[3]/k[2] = 2.333333, bits_added = 1.222392
+n= 4: k[4]/k[3] = 1.142857, bits_added = 0.192645
+n= 5: k[5]/k[4] = 2.625000, bits_added = 1.392317
+n= 6: k[6]/k[5] = 2.333333, bits_added = 1.222392
+n= 7: k[7]/k[6] = 1.551020, bits_added = 0.633218
+n= 8: k[8]/k[7] = 2.947368, bits_added = 1.559427
+n= 9: k[9]/k[8] = 2.084821, bits_added = 1.059924
+n=10: k[10]/k[9] = 1.100642, bits_added = 0.138346
+n=11: k[11]/k[10] = 2.247082, bits_added = 1.168053
+n=12: k[12]/k[11] = 2.322944, bits_added = 1.215954
+n=13: k[13]/k[12] = 1.944092, bits_added = 0.959097
+n=14: k[14]/k[13] = 2.021472, bits_added = 1.015407
+n=15: k[15]/k[14] = 2.548084, bits_added = 1.349413
+n=16: k[16]/k[15] = 1.917222, bits_added = 0.939017
+
+AT n=17:
+n=17: k[17]/k[16] = 1.860280, bits_added = 0.895519
+
+AFTER n=17:
+n=18: k[18]/k[17] = 2.073291, bits_added = 1.051923
+n=19: k[19]/k[18] = 1.799652, bits_added = 0.847718
+
+Average growth ratio before n=17: 2.079948
+Growth ratio at n=17: 1.860280
+Average growth ratio after n=17: 1.936472
+
+================================================================================
+
+SPECIAL ANALYSIS: k[17] = 95823
+--------------------------------------------------------------------------------
+k[17] = 95823 = 3^4 × 7 × 13^2
+       = 81 × 7 × 169
+       = 567 × 169
+
+HIGHLY STRUCTURED:
+  - Powers: 3^4, 13^2
+  - Prime 7 (single)
+  - 17 = F_2 (Fermat prime 2^4 + 1)
+  - NO prime 17 in k[17] itself!
+  - Suggests: possibly hardcoded or special construction
+
+================================================================================
