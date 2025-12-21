@@ -1,0 +1,46 @@
+TASK: Deep Binary/Hex Structure Analysis
+MODEL: qwen3:32b or phi4:14b
+TIME: Deep analysis
+
+## CONTEXT
+The Bitcoin puzzle keys have specific binary structure we need to understand.
+
+## KEY VALUES (Binary)
+k[1] = 1 = 0b1
+k[2] = 3 = 0b11
+k[3] = 7 = 0b111
+k[4] = 8 = 0b1000 (exactly 2^3, SPARSE - only 1 bit)
+k[5] = 21 = 0b10101 (alternating pattern)
+k[6] = 49 = 0b110001
+k[7] = 76 = 0b1001100
+k[8] = 224 = 0b11100000
+k[9] = 467 = 0b111010011
+k[10] = 514 = 0b1000000010 (SPARSE - only 2 bits)
+
+## OBSERVATIONS
+- k[1,2,3] = 2^n - 1 (all bits set, Mersenne-like)
+- k[4] = exactly 2^3 (power of 2)
+- k[10] = 2^9 + 2 (only 2 bits set)
+- These sparse keys are at MINIMUM position in their range
+
+## YOUR TASK
+1. Analyze the bit patterns for ALL k[1..70]
+2. Find:
+   - What determines sparseness vs density?
+   - Is there a bit manipulation rule?
+   - How does popcount (bits set) relate to n?
+   - XOR relationships between consecutive keys
+
+3. Look for:
+   - Cyclic patterns
+   - Bit rotation/shifting
+   - Carry propagation patterns
+   - Connection to the binary representation of n itself
+
+## CONSTRAINTS
+- NO BRUTE FORCE
+- Show mathematical derivations
+- Build a BIT GENERATOR that can reconstruct the keys
+
+## OUTPUT
+A bit-level construction rule for k[n] that reproduces all values.

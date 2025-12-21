@@ -1,0 +1,47 @@
+TASK: Bitcoin Block/Transaction Connection Analysis
+MODEL: Any reasoning model
+TIME: Research + Analysis
+
+## CONTEXT
+The Bitcoin Puzzle was created in 2015 by a user who sent BTC to addresses
+with private keys in specific bit ranges. The keys are NOT random - they
+follow a pattern we've verified but haven't reconstructed.
+
+## HYPOTHESIS
+The puzzle creator used predetermined keys derived from Bitcoin blockchain data:
+- Block hashes
+- Transaction IDs
+- Timestamps
+- Merkle roots
+- Or a combination
+
+## KEY INSIGHT FROM USER
+"The maker used predetermined keys to get the exact bit range for each puzzle"
+
+This means: k[n] was CHOSEN to fall in range [2^(n-1), 2^n)
+
+## YOUR TASK
+1. Research when Bitcoin Puzzle was created (block height, date)
+2. Find if k[n] values relate to:
+   - Hash of block at height n
+   - First n bytes of genesis block
+   - Cumulative hash of blocks 1..n
+   - Timestamp-derived values
+
+3. Check specific connections:
+   - Is k[n] mod 2^32 related to any block data?
+   - Do the low bits of k[n] match any transaction IDs?
+   - Is there a seed derivation from early Bitcoin data?
+
+## KNOWN FACTS
+- k[4] = 8 = exactly 2^3 (suspiciously round)
+- k[10] = 514 = 2^9 + 2 (suspiciously sparse)
+- These "clean" values suggest intentional construction, not randomness
+
+## CONSTRAINTS
+- NO BRUTE FORCE
+- Focus on mathematical derivation from blockchain data
+- Show explicit formulas
+
+## OUTPUT
+The derivation formula: k[n] = f(blockchain_data, n)
