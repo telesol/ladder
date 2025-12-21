@@ -1,0 +1,61 @@
+TASK 20: PYSR RECONSTRUCTION k95-k130
+============================================================
+
+k95:
+  k90 = 0x0000000000000000...
+  Calculated:  0x0000000004b8009941184099b184193f
+  Actual:      527a792b183c7f64a0e8b1f4
+  Match: ❌
+
+k100:
+  k95 = 527a792b183c7f64a0...
+  Calculated:  0x000000004428003940c07f1000406140
+  Actual:      af55fc59c335c8ec67ed24826
+  Match: ❌
+
+k105:
+  k100 = af55fc59c335c8ec67...
+  Calculated:  0x00000064791f001029c0b82404444058
+  Actual:      16f14fc2054cd87ee6396b33df3
+  Match: ❌
+
+k110:
+  k105 = 16f14fc2054cd87ee6...
+  Calculated:  0x0000012190c0009029d73849e429896b
+  Actual:      35c0d7234df7deb0f20cf7062444
+  Match: ❌
+
+k115:
+  k110 = 35c0d7234df7deb0f2...
+  Calculated:  0x00008d00917b00518400489051241040
+  Actual:      60f4d11574f5deee49961d9609ac6
+  Match: ❌
+
+k120:
+  k115 = 60f4d11574f5deee49...
+  Calculated:  0x00242f29214700c9444089c1f100a4d8
+  Actual:      b10f22572c497a836ea187f2e1fc23
+  Match: ❌
+
+k125:
+  k120 = b10f22572c497a836e...
+  Calculated:  0x00612f8491c000240938e131c4c1107b
+  Actual:      1c533b6bb7f0804e09960225e44877ac
+  Match: ❌
+
+k130:
+  k125 = 1c533b6bb7f0804e09...
+  Calculated:  0xc0e943b9d10000c451980859104051c0
+  Actual:      33e7665705359f04f28b88cf897c603c9
+  Match: ❌
+
+============================================================
+RECONSTRUCTION ACCURACY: 0/8 = 0.0%
+
+❌ PYSR RECONSTRUCTION: FAILED (0.0%)
+Status: Calculations NOT 100% accurate
+Failures: [95, 100, 105, 110, 115, 120, 125, 130]
+
+VERDICT:
+  PySR formula INCOMPLETE
+  Cannot trust extrapolation to k135-k160

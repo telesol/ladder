@@ -1,0 +1,29 @@
+TASK 16: D-PATTERN STATISTICAL ANALYSIS
+
+KNOWN D-PATTERN (k75-k130):
+n:   [75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130]
+d:   [1,  2,  4,  2,  1,  2,   1,   2,   1,   2,   1,   2  ]
+
+YOUR MISSION:
+1. Statistical breakdown
+2. Pattern rules identification
+3. Extrapolation to k135-k160
+
+ANALYSIS:
+- d=1: 6/12 = 50% (which n values?)
+- d=2: 5/12 = 41.7% (which n values? Pattern?)
+- d=4: 1/12 = 8.3% (only k85)
+
+PATTERN RULES (verify):
+1. d=4: Only k85 (LSB congruence)
+2. d=2: Even multiples of 10 from k80 onward
+3. d=1: All others (default)
+
+EXTRAPOLATION k135-k160:
+Using rules above, what d-values for k135, k140, k145, k150, k155, k160?
+
+OUTPUT:
+Predicted d-pattern k135-k160: [d135, d140, d145, d150, d155, d160]
+Reasoning: [mathematical justification using verified rules]
+
+This is MATH (applying verified rules), not prediction.

@@ -1,0 +1,31 @@
+TASK 17: M-VALUE GROWTH ANALYSIS
+
+KNOWN M-VALUES (from verified data):
+These grow exponentially with n.
+
+YOUR MISSION:
+Analyze growth rate of m-values mathematically.
+
+For bridges where d=1:
+- m grows by factor ~2^5 = 32 per bridge (spacing of 5 bits)
+- Verify this approximation
+- Identify any deviations
+
+For bridges where d=2:
+- k_d = 3, so numerator/3 = m
+- Larger m values expected
+- Analyze growth pattern
+
+For k85 (d=4):
+- k_d = 8
+- Largest m value
+- Special case
+
+MATHEMATICAL BOUNDS:
+For given n and k_{n-5}:
+- numerator = 2^n - (k_n - 2×k_{n-5})
+- m = numerator / k_d
+- What are theoretical bounds on m?
+
+OUTPUT:
+Growth analysis, bounds, mathematical patterns (no prediction).

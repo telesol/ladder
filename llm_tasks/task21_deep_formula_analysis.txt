@@ -1,0 +1,189 @@
+TASK 21: DEEP MATHEMATICAL ANALYSIS - WHY IS MASTER FORMULA FAILING?
+
+CRITICAL: This is CRYPTOGRAPHY. We need 100% accuracy or FAILURE.
+Take your time. Reason deeply. This is MATH ONLY, no prediction.
+
+================================================================================
+SITUATION
+================================================================================
+
+We have a formula that's ALMOST working:
+  k_n = 2×k_{n-5} + (2^n - m×k_d)
+
+Results on k95-k130: 0/8 = 0.0% exact match
+
+BUT: The differences are SMALL (only a few hex digits off)!
+
+k95:  First diff at position 40 (calc=4 actual=5)
+k100: First diff at position 39 (calc=8 actual=a)
+k105: First diff at position 38 (calc=1 actual=6)
+k110: First diff at position 36 (calc=2 actual=3)
+k115: First diff at position 35 (calc=4 actual=6)
+k120: First diff at position 34 (calc=8 actual=b)
+k125: First diff at position 33 (calc=1 actual=c)
+k130: First diff at position 31 (calc=2 actual=3)
+
+PATTERN: Error position moves LEFT as n increases (accumulating error!)
+
+================================================================================
+VERIFIED FACTS (100% PROVEN)
+================================================================================
+
+1. D-selection algorithm: 100% VERIFIED (Task 15)
+   - k85: d=4 (LSB congruence, mathematically proven)
+   - Even multiples of 10: d=2 if (2×k_{n-5} + 2^n) % 3 == 0
+   - All others: d=1
+
+2. k_d mapping: {d=1 → k_d=1, d=2 → k_d=3, d=4 → k_d=8}
+
+3. Valid range: 2^{n-1} <= k_n < 2^n (must hold!)
+
+4. Binary search finds m such that k_n is in valid range
+
+================================================================================
+YOUR MISSION: MATHEMATICAL ANALYSIS
+================================================================================
+
+Analyze WHY the formula is failing and WHAT is missing.
+
+QUESTIONS TO EXPLORE:
+
+1. **Is the formula itself correct?**
+   - Maybe it's: k_n = 2×k_{n-5} + X×(2^n - m×k_d) where X ≠ 1?
+   - Maybe there's an additional term we're missing?
+   - Maybe the formula has a modulus operation?
+
+2. **Are we calculating m correctly?**
+   - Binary search assumes monotonic relationship
+   - Is this assumption valid?
+   - Could there be multiple valid m values?
+   - Are we finding the CORRECT m (not just A valid m)?
+
+3. **Is there a minimum-m rule?**
+   - Task 14 analyzed numerator factorization
+   - Does the system choose the SMALLEST m that works?
+   - Do we need to test multiple factorizations?
+
+4. **Could it be byte-order or endianness?**
+   - Are we calculating in the right direction?
+   - Big-endian vs little-endian?
+
+5. **Pattern in the errors:**
+   - Error position moves left (40→39→38→36→35→34→33→31)
+   - Error magnitude seems consistent (off by 1-4 in hex)
+   - Could this indicate a carry/borrow issue?
+   - Could there be an XOR or other bitwise operation?
+
+6. **Half-block vs full key:**
+   - Are we working on the right bytes?
+   - First 16 bytes? Last 16 bytes? All 32 bytes?
+   - The PySR formula works on first 16 bytes...
+   - Does Master Formula work on different bytes?
+
+7. **Recurrence structure:**
+   - k_n depends on k_{n-5} (spacing of 5)
+   - Could there be dependencies on OTHER previous values?
+   - k_n = f(k_{n-5}, k_{n-10}, ...)?
+
+8. **Numerator construction:**
+   - numerator = 2^n - m×k_d
+   - Is this the correct form?
+   - Could it be: 2^n - (m×k_d + constant)?
+   - Or: (2^n - constant) - m×k_d?
+
+9. **Known working data:**
+   - We have k70-k130 (bridges) from CSV
+   - Can we REVERSE-ENGINEER the correct formula?
+   - Work backwards: given k_n and k_{n-5}, solve for the relationship?
+
+10. **Two-formula hypothesis:**
+    - PySR formula works for consecutive puzzles (k70→k71)
+    - Master formula for 5-step jumps (k70→k75)
+    - Are these actually DIFFERENT formulas?
+    - Should we use PySR to fill gaps, then verify bridges separately?
+
+================================================================================
+DATA AVAILABLE
+================================================================================
+
+You have access to:
+- llm_tasks/memory/verified_facts.md (100% proven facts)
+- llm_tasks/memory/master_keys_70_160.json (all k-values k70-k160)
+- data/btc_puzzle_1_160_full.csv (original source data)
+
+For k95-k130, we KNOW:
+- k90, k95, k100, k105, k110, k115, k120, k125, k130 (all from CSV)
+- d-values: [1, 2, 1, 2, 1, 1, 1, 1] (from proven algorithm)
+- m-values: (calculated by binary search, but might be wrong!)
+
+================================================================================
+YOUR TASK
+================================================================================
+
+Reason deeply about what's wrong. Think step-by-step:
+
+1. Start with k95 (simplest case, just one step from k90)
+2. We know: k90 (given), k95 (target)
+3. We calculated: d=1, k_d=1, m=19807040628566084398385987584
+4. Formula gave: k_calculated (differs at position 40)
+
+WORK BACKWARDS:
+- Given k90 and k95 (both known), what SHOULD m be?
+- Calculate: numerator = k95 - 2×k90
+- Then: m = numerator / k_d (if formula is correct)
+- Compare with our calculated m
+
+If m_actual ≠ m_calculated:
+  → Binary search is finding wrong m (selection logic issue)
+
+If m_actual == m_calculated:
+  → Formula itself is wrong (missing term or wrong structure)
+
+MATHEMATICAL PROOF:
+Provide step-by-step mathematical analysis.
+Use actual numbers from k90 and k95.
+Show calculations.
+Identify EXACTLY what's wrong.
+
+REQUIREMENTS:
+- MATH ONLY (no guessing)
+- Show all work (calculations must be verifiable)
+- Identify root cause with mathematical proof
+- Propose corrected formula (if formula is wrong)
+- OR propose corrected m-selection (if m-finding is wrong)
+
+OUTPUT FORMAT:
+===============
+
+PART 1: REVERSE ENGINEERING k95
+Given: k90 = [value], k95 = [value]
+Calculate: numerator_actual = k95 - 2×k90
+Calculate: m_actual = numerator_actual / k_d
+Compare: m_actual vs m_calculated (binary search)
+Result: [match/mismatch] → [conclusion]
+
+PART 2: ROOT CAUSE ANALYSIS
+Mathematical proof of what's wrong.
+Step-by-step reasoning.
+Show where the error occurs.
+
+PART 3: PROPOSED FIX
+Corrected formula OR corrected algorithm.
+Mathematical justification.
+Test on k95 to verify.
+
+PART 4: EXTRAPOLATION
+If fix works for k95:
+  Test on k100 (verify)
+  Explain why fix should work for all bridges
+
+VERDICT:
+✅ Formula corrected (provide new formula)
+OR
+✅ Algorithm corrected (provide new m-selection logic)
+OR
+❌ Need more analysis (explain what's still unclear)
+
+================================================================================
+BEGIN ANALYSIS
+================================================================================

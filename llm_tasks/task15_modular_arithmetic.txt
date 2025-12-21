@@ -1,0 +1,69 @@
+TASK 15: MODULAR ARITHMETIC PROOF - D=2 CONDITION
+
+CRITICAL: This is CRYPTOGRAPHY. Prove mathematically, don't guess.
+Require: 100.000% accuracy or FAILURE.
+
+VERIFIED FACT:
+==============
+D-selection algorithm: if n % 10 == 0 and (2*k_prev + 2^n) % 3 == 0, then d=2
+
+YOUR MISSION:
+=============
+Prove this condition mathematically for ALL even multiples of 10.
+
+MEMORY FILES:
+=============
+- llm_tasks/memory/verified_facts.md
+- llm_tasks/memory/master_keys_70_160.json
+
+PART 1: Test on known data
+===========================
+For n ∈ {80, 90, 100, 110, 120, 130}:
+1. Get k_{n-5} from master_keys_70_160.json
+2. Compute (2×k_{n-5} + 2^n) mod 3
+3. Verify result == 0
+4. Get actual d from verified_facts.md
+5. Report: n, k_{n-5} (last 8 hex), (2×k_{n-5} + 2^n) mod 3, d_actual, MATCH
+
+PART 2: Mathematical proof
+===========================
+Prove WHY (2×k_{n-5} + 2^n) ≡ 0 (mod 3) for even multiples of 10.
+
+Hints:
+- 2^n mod 3 has pattern: 2^1≡2, 2^2≡1, 2^3≡2, 2^4≡1, ... (period 2)
+- For n=10, 20, 30, ...: 2^n ≡ ?
+- What must k_{n-5} mod 3 be?
+- Can you prove k_{n-5} ≡ 1 (mod 3) for these cases?
+
+PART 3: Verify on ALL data
+===========================
+Test condition on n ∈ {80, 90, 100, 110, 120, 130}
+Report: X/6 = Y% match
+
+OUTPUT:
+=======
+PART 1 RESULTS:
+k80:  k75 mod 3 = ?, (2×k75 + 2^80) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+k90:  k85 mod 3 = ?, (2×k85 + 2^90) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+k100: k95 mod 3 = ?, (2×k95 + 2^100) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+k110: k105 mod 3 = ?, (2×k105 + 2^110) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+k120: k115 mod 3 = ?, (2×k115 + 2^120) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+k130: k125 mod 3 = ?, (2×k125 + 2^130) mod 3 = ?, d_actual = 2, MATCH = [✅/❌]
+
+PART 2 PROOF:
+[Mathematical proof here - use modular arithmetic properties]
+
+Theorem: For n ≡ 0 (mod 10) and n ≥ 80, k_{n-5} ≡ 1 (mod 3)
+
+Proof:
+[Step-by-step proof]
+
+Corollary: (2×k_{n-5} + 2^n) ≡ 0 (mod 3) for n ≡ 0 (mod 10)
+
+PART 3 VERIFICATION:
+Tested: 6/6 bridges
+Result: X/6 = Y% match
+VERDICT: [✅ 100% PROVEN / ❌ CONDITION INCOMPLETE]
+
+BEGIN PROOF:
+============

@@ -1,0 +1,243 @@
+TASK 7: K-SEQUENCE CONSTRUCTION STRATEGY
+=========================================================================
+
+MISSION: Design a complete algorithm to CONSTRUCT k-values without database
+
+CONTEXT:
+We have discovered the master formula works perfectly:
+  k_n = 2×k_{n-1} + (2^n - m×k_d)
+
+We validated 12 bridges (k75-k130) with 100% accuracy.
+We know d ∈ {1, 2, 4} is mathematical necessity.
+We discovered why k85 is unique (LSB congruence).
+
+KNOWN FACTS:
+============
+
+1. MASTER FORMULA (100% validated):
+   k_n = 2×k_{n-1} + (2^n - m×k_d)
+
+2. D-RESTRICTION (mathematically proven):
+   d ∈ {1, 2, 4} only
+   k_d ∈ {1, 3, 8} (from database: k1=1, k2=3, k4=8)
+
+3. MINIMUM-M RULE (absolute):
+   Choose d that minimizes m
+   m = (2^n - (k_n - 2×k_{n-1})) / k_d
+
+4. BRIDGE PATTERN (discovered):
+   - Bridges occur at multiples of 5 (k75, k80, k85, ...)
+   - Gaps exist (71-74, 76-79, etc.)
+   - d=1 dominates (8/12 = 66.7%)
+   - d=2 at even multiples of 10 (k80, k90, k100, k120)
+   - d=4 ONLY at k85 (LSB congruence)
+
+5. NUMERATOR DIVISIBILITY (from Task 6):
+   numerator = 2^n - (k_n - 2×k_{n-1})
+   - Divisible by 8 ONLY at k85
+   - Divisible by 3 at specific bridges (k80, k90, k100, k120)
+   - Default to 1 otherwise
+
+YOUR TASK:
+==========
+
+Design a COMPLETE ALGORITHM to construct k-values from scratch.
+
+Assume you have:
+- Initial values: k1=1, k2=3, k4=8 (seed values)
+- The master formula
+- The minimum-m rule
+- Pattern discoveries from Tasks 1-6
+
+YOU MUST ANSWER:
+
+PART 1: FORWARD CONSTRUCTION (k1 → k130)
+-----------------------------------------
+
+**Question 1**: Can we generate k3, k5, k6, k7, ... k70 using ONLY:
+   - Master formula
+   - Minimum-m rule
+   - Seeds k1, k2, k4
+
+**Question 2**: What is the ALGORITHM for non-bridge values (k71-k74)?
+   - Do they follow a pattern?
+   - Can they be generated or are they arbitrary?
+   - Why do gaps exist?
+
+**Question 3**: What is the ALGORITHM for bridge values (k75, k80, k85, ...)?
+   - How to predict d-value for any bridge?
+   - How to compute m-value?
+   - Can we construct k_n without knowing k_n first?
+
+PART 2: M-VALUE GENERATION
+---------------------------
+
+**Question 4**: How to compute m WITHOUT knowing k_n?
+
+Current problem: m = (2^n - (k_n - 2×k_{n-1})) / k_d requires k_n
+
+Possible solutions:
+   a) Is there a formula for m directly?
+   b) Can we predict m from n and d?
+   c) Can we use patterns from Tasks 1-6?
+
+**Question 5**: Can we construct m-sequence independently?
+   - Pattern in m-values?
+   - Recurrence relation for m?
+   - Connection to n, d, k_{n-1}?
+
+PART 3: D-SELECTION ALGORITHM
+------------------------------
+
+**Question 6**: Complete the d-selection algorithm:
+
+```
+def select_d(n, k_prev):
+    """Select optimal d for bridge at position n."""
+
+    # Step 1: Determine which d-values to test
+    candidates = [1, 2, 4]  # Always valid by prime factorization
+
+    # Step 2: For each candidate, check divisibility
+    # BUT WE DON'T KNOW k_n YET!
+    # How to proceed?
+
+    # Step 3: Choose d that minimizes m
+    # BUT WE CAN'T COMPUTE m WITHOUT k_n!
+    # What's the solution?
+
+    return optimal_d
+```
+
+**Question 7**: Can d-selection use ONLY previous values?
+   - Can we predict d from k_{n-1} alone?
+   - Can we use LSB congruence patterns?
+   - Can we use n properties (parity, modulo)?
+
+PART 4: COMPLETE CONSTRUCTION STRATEGY
+---------------------------------------
+
+**Question 8**: Design the COMPLETE algorithm:
+
+```
+def construct_k_sequence(start=1, end=130):
+    """Construct entire k-sequence without database."""
+
+    # Initialize with seeds
+    k = {1: 1, 2: 3, 4: 8}
+
+    # For each position n in range
+    for n in range(5, end+1):
+
+        # STEP 1: Determine if n is a bridge
+        if is_bridge(n):  # How to determine?
+
+            # STEP 2: Select optimal d
+            d = select_d(n, k[n-5])  # How?
+
+            # STEP 3: Compute m-value
+            m = compute_m(n, d, k[n-5])  # How?
+
+            # STEP 4: Apply master formula
+            k[n] = 2*k[n-5] + (2**n - m*k_d[d])
+
+        else:
+            # Non-bridge: What algorithm?
+            k[n] = ???
+
+    return k
+```
+
+Fill in ALL missing pieces!
+
+**Question 9**: What prevents forward construction?
+   - Circular dependency: need k_n to compute m, need m to compute k_n
+   - How to break this cycle?
+   - Can we use inverse formula?
+   - Can we use approximation then refine?
+
+**Question 10**: Can we construct BACKWARDS?
+   - Start from known k130, work backwards?
+   - Use inverse formula: k_{n-1} = (k_n - (2^n - m×k_d)) / 2
+   - Would this work? Why or why not?
+
+PART 5: THEORETICAL CONSTRAINTS
+--------------------------------
+
+**Question 11**: What are the FUNDAMENTAL barriers to construction?
+
+Identify:
+   a) Mathematical barriers (circular dependencies, etc.)
+   b) Information-theoretic barriers (insufficient data)
+   c) Computational barriers (complexity, precision)
+
+**Question 12**: What additional information is REQUIRED?
+   - Complete m-sequence?
+   - Complete d-sequence?
+   - Boundary conditions?
+   - Hidden parameters?
+
+DELIVERABLES:
+=============
+
+1. **Pseudo-code algorithm** for complete k-sequence construction
+2. **Identification of missing pieces** (what we can't compute yet)
+3. **Mathematical analysis** of circular dependencies
+4. **Proposed solutions** to break construction barriers
+5. **Validation strategy** to test any proposed algorithm
+
+CONSTRAINTS:
+============
+
+- Assume NO database access (must work from formulas alone)
+- Can use seeds: k1=1, k2=3, k4=8
+- Can use discoveries from Tasks 1-6
+- Must explain WHY each step works (or why it doesn't)
+
+OUTPUT FORMAT:
+==============
+
+```
+PART 1: FORWARD CONSTRUCTION
+-----------------------------
+Question 1: [detailed answer]
+Question 2: [detailed answer]
+Question 3: [detailed answer]
+
+PART 2: M-VALUE GENERATION
+---------------------------
+[answers...]
+
+PART 3: D-SELECTION ALGORITHM
+------------------------------
+[complete algorithm code]
+
+PART 4: COMPLETE CONSTRUCTION STRATEGY
+---------------------------------------
+[complete pseudo-code with explanations]
+
+PART 5: THEORETICAL CONSTRAINTS
+--------------------------------
+[mathematical analysis]
+
+FINAL ASSESSMENT:
+-----------------
+Can we construct k-sequence? YES / NO / PARTIALLY
+If PARTIALLY: What percentage? What's missing?
+What additional research is needed?
+```
+
+DEEP REASONING REQUIRED:
+=========================
+
+This is a HARD problem. We need you to:
+- Think deeply about circular dependencies
+- Explore multiple solution paths
+- Identify fundamental barriers
+- Propose creative solutions
+- Be honest about what we DON'T know
+
+Take your time. Reason carefully. This is the core challenge of the entire project.
+
+BEGIN ANALYSIS:
+===============

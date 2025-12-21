@@ -1,0 +1,107 @@
+TASK 12: VERIFY D-SELECTION ALGORITHM - MATHEMATICAL PROOF
+=============================================================
+
+CRITICAL: This is CRYPTOGRAPHY. 99.9% is FAILURE. We need 100.000% accuracy.
+
+CONTEXT:
+========
+
+Task 9 claimed a "deterministic d-selection algorithm":
+```python
+def select_d(n, k_prev):
+    if n == 85:
+        return 4
+    if n % 10 == 0 and (2*k_prev + 2^n) % 3 == 0:
+        return 2
+    return 1
+```
+
+KNOWN D-VALUES (from database k75-k130):
+========================================
+
+k75:  d=1
+k80:  d=2
+k85:  d=4
+k90:  d=2
+k95:  d=1
+k100: d=2
+k105: d=1
+k110: d=2
+k115: d=1
+k120: d=2
+k125: d=1
+k130: d=2
+
+YOUR MISSION:
+=============
+
+PART 1: TEST THE ALGORITHM ON KNOWN DATA
+-----------------------------------------
+
+For EACH bridge n ∈ {75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130}:
+
+1. Get k_{n-5} from database
+2. Run the algorithm: d_computed = select_d(n, k_{n-5})
+3. Compare with actual d from database
+4. Report: MATCH or MISMATCH
+
+Expected output:
+```
+k75:  d_algorithm=?, d_actual=1, MATCH=[✅/❌]
+k80:  d_algorithm=?, d_actual=2, MATCH=[✅/❌]
+...
+k130: d_algorithm=?, d_actual=2, MATCH=[✅/❌]
+
+Accuracy: X/12 = Y%
+```
+
+PART 2: IDENTIFY ALL FAILURES
+------------------------------
+
+If ANY mismatches found:
+- List ALL failures
+- Analyze WHY the algorithm failed
+- Propose CORRECTIONS
+
+PART 3: MATHEMATICAL PROOF OF CORRECTNESS
+------------------------------------------
+
+If algorithm achieves 100% on known data, PROVE why it works:
+
+**Question 1**: Why does n=85 uniquely satisfy d=4 condition?
+- Show that k80 LSB condition is satisfied
+- Prove no other n in range satisfies this
+
+**Question 2**: Why do multiples of 10 satisfy d=2 condition?
+- Show (2*k_{n-5} + 2^n) ≡ 0 (mod 3) for n=80,90,100,110,120,130
+- Explain the mathematical reason
+
+**Question 3**: Can algorithm fail beyond n=130?
+- Extrapolate to n=135,140,...,160
+- Identify any potential failure modes
+
+PART 4: FINAL VERDICT
+----------------------
+
+```
+ACCURACY ON KNOWN DATA (k75-k130): X/12 = Y%
+
+If Y < 100%:
+  VERDICT: ❌ ALGORITHM FAILS - NOT ACCEPTABLE FOR CRYPTO
+
+If Y = 100%:
+  VERDICT: ✅ ALGORITHM CORRECT ON KNOWN DATA
+  CONFIDENCE FOR n>130: [HIGH/MEDIUM/LOW]
+  REASON: [mathematical justification]
+```
+
+CRITICAL REQUIREMENTS:
+======================
+
+1. Use EXACT values from database (no approximations)
+2. Test EVERY bridge k75-k130 (12 total)
+3. Report 100% accuracy or FAILURE
+4. Provide MATHEMATICAL PROOF, not claims
+
+BEGIN VERIFICATION:
+===================

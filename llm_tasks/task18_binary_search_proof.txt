@@ -1,0 +1,32 @@
+TASK 18: BINARY SEARCH CONVERGENCE PROOF
+
+ALGORITHM (from Task 10):
+```python
+def construct_bridge(n, k_prev):
+    d = select_d(n, k_prev)
+    k_d = {1:1, 2:3, 4:8}[d]
+
+    lo, hi = 1, 2**n // k_d
+    while lo <= hi:
+        m_mid = (lo + hi) // 2
+        k_candidate = 2*k_prev + (2**n - m_mid*k_d)
+
+        if valid_range(k_candidate, n):
+            return k_candidate, d, m_mid
+        # Adjust bounds...
+```
+
+YOUR MISSION:
+Prove mathematically:
+1. Binary search ALWAYS converges (finds m)
+2. Solution is UNIQUE
+3. No failure modes for any n
+
+PROOF STRUCTURE:
+Theorem 1: Search space is well-defined
+Theorem 2: Monotonicity (increasing m → decreasing k)
+Theorem 3: Unique solution exists
+Theorem 4: Algorithm terminates in O(log n) steps
+
+OUTPUT:
+Formal mathematical proof (step by step).

@@ -1,0 +1,291 @@
+TASK 9: D-SELECTION ALGORITHM
+=========================================================================
+
+MISSION: Create predictive algorithm for d-selection at any bridge
+
+CONTEXT:
+We know d ∈ {1, 2, 4} is proven (prime factorization).
+We discovered pattern from Task 6 (nemotron):
+- d=1 dominates (8/12 = 66.7%)
+- d=2 at even multiples of 10 (k80, k90, k100, k120)
+- d=4 ONLY at k85 (LSB congruence)
+
+GOAL: Predictive algorithm that works WITHOUT knowing k_n
+
+ACTUAL D-SEQUENCE (k75-k130):
+==============================
+[1, 2, 4, 2, 1, 2, 1, 1, 1, 2, 1, 1]
+
+k75:  d=1
+k80:  d=2 ← even multiple of 10
+k85:  d=4 ← UNIQUE (LSB congruence with k80)
+k90:  d=2 ← even multiple of 10
+k95:  d=1
+k100: d=2 ← even multiple of 10
+k105: d=1
+k110: d=1
+k115: d=1
+k120: d=2 ← even multiple of 10
+k125: d=1
+k130: d=1
+
+YOUR MISSION:
+=============
+
+PART 1: PATTERN RULES FROM TASK 6
+----------------------------------
+
+**Question 1**: Formalize nemotron's discovery
+
+From Task 6 TL;DR:
+```
+1. Is n a multiple of 10 with odd quotient? → test divisibility by 3
+2. Does LSB congruence 2·LSB_{prev} ≡ LSB_{cur} (mod 8) hold? → test div by 8
+3. Otherwise → default to d=1
+```
+
+Convert to executable algorithm:
+```python
+def predict_d(n, k_prev):
+    """Predict d-value for bridge at position n."""
+
+    # Rule 1: Check for d=4 (k85-style LSB congruence)
+    # [YOUR CODE]
+
+    # Rule 2: Check for d=2 (even multiple of 10)
+    # [YOUR CODE]
+
+    # Rule 3: Default to d=1
+    return 1
+```
+
+**Question 2**: Test on all 12 bridges
+
+Run your algorithm on k75-k130. Expected accuracy: 12/12 = 100%
+
+PART 2: LSB CONGRUENCE ANALYSIS
+--------------------------------
+
+**Question 3**: What exactly is the LSB congruence rule?
+
+k85 is unique because:
+- k80 ends in ...180 (hex)
+- LSB(k80) = 0x0
+- 2 × LSB(k80) = 0x0
+- LSB(k85) = 0x8
+- Congruence: 2×0 ≡ 8 (mod 8)? NO!
+
+Wait, that doesn't work. What's the ACTUAL rule?
+
+Reanalyze:
+- Extract last byte (LSB) of k80, k85
+- Check modular arithmetic
+- Find actual congruence
+
+**Question 4**: Can we predict LSB without knowing k_n?
+
+If LSB congruence determines d=4, we need to:
+- Predict LSB(k_n) from LSB(k_{n-5})
+- Check congruence
+- Select d=4 if holds
+
+Is this possible? How?
+
+PART 3: DIVISIBILITY PREDICTION
+--------------------------------
+
+**Question 5**: Can we predict numerator divisibility?
+
+Numerator = 2^n - (k_n - 2×k_{n-1})
+
+For d=2 (k_d=3):
+- Need: numerator % 3 == 0
+- Equivalent: (2^n - k_n + 2×k_{n-1}) % 3 == 0
+- Rearrange: k_n % 3 == (2^n + 2×k_{n-1}) % 3
+
+Can we compute RHS without k_n? YES!
+- 2^n % 3 is predictable (alternates 1,2,1,2,...)
+- k_{n-1} is known
+
+So: k_n % 3 must equal (2^n + 2×k_{n-1}) % 3
+
+Test this on k80, k90, k100, k120 (all d=2)
+
+**Question 6**: Same analysis for d=4
+
+For d=4 (k_d=8):
+- Need: numerator % 8 == 0
+- Equivalent: k_n % 8 == (2^n + 2×k_{n-1}) % 8
+
+Test on k85 (the ONLY d=4)
+
+PART 4: COMPLETE ALGORITHM
+---------------------------
+
+**Question 7**: Implement complete d-selection
+
+```python
+def select_d_predictive(n, k_prev):
+    """
+    Predict d without knowing k_n.
+
+    Args:
+        n: Bridge position (75, 80, 85, 90, ...)
+        k_prev: Previous bridge value (k_{n-5})
+
+    Returns:
+        d: Predicted divisor (1, 2, or 4)
+    """
+
+    # Step 1: Check for d=4 (LSB congruence or modular arithmetic)
+    if check_d4_condition(n, k_prev):
+        return 4
+
+    # Step 2: Check for d=2 (even multiple of 10 + divisibility)
+    if check_d2_condition(n, k_prev):
+        return 2
+
+    # Step 3: Default to d=1
+    return 1
+
+def check_d4_condition(n, k_prev):
+    """Check if d=4 should be selected."""
+    # [IMPLEMENT USING LSB CONGRUENCE OR MODULAR ARITHMETIC]
+    pass
+
+def check_d2_condition(n, k_prev):
+    """Check if d=2 should be selected."""
+    # [IMPLEMENT USING DIVISIBILITY PREDICTION]
+    pass
+```
+
+Fill in ALL functions!
+
+**Question 8**: Validate on test data
+
+Test cases:
+| n   | k_prev (if known)          | Expected d | Your prediction |
+|-----|----------------------------|------------|-----------------|
+| 75  | k70                        | 1          | ?               |
+| 80  | k75                        | 2          | ?               |
+| 85  | k80                        | 4          | ?               |
+| 90  | k85                        | 2          | ?               |
+| 95  | k90                        | 1          | ?               |
+| 100 | k95                        | 2          | ?               |
+| 105 | k100                       | 1          | ?               |
+| 110 | k105                       | 1          | ?               |
+| 115 | k110                       | 1          | ?               |
+| 120 | k115                       | 2          | ?               |
+| 125 | k120                       | 1          | ?               |
+| 130 | k125                       | 1          | ?               |
+
+Accuracy goal: 12/12 = 100%
+
+PART 5: FUTURE PREDICTION
+--------------------------
+
+**Question 9**: Predict d for k135-k160
+
+Using your algorithm, predict:
+- k135: d=?
+- k140: d=?
+- k145: d=?
+- k150: d=?
+- k155: d=?
+- k160: d=?
+
+**Question 10**: Identify pattern boundaries
+
+When does the algorithm break down?
+- At what n does LSB congruence fail?
+- At what n does divisibility pattern change?
+- Are there fundamental limits?
+
+PART 6: THEORETICAL FOUNDATION
+-------------------------------
+
+**Question 11**: Why does the algorithm work?
+
+Mathematical justification:
+- Why even multiples of 10 → d=2?
+- Why LSB congruence → d=4?
+- Why d=1 is default?
+
+Connect to:
+- Number theory (2-adic, 3-adic structure)
+- Modular arithmetic
+- Prime factorization theorem
+
+**Question 12**: What information is actually used?
+
+Minimal requirements:
+- Value of n
+- Value of k_{n-5} (previous bridge)
+- Modular arithmetic rules
+
+Is this sufficient? What's missing?
+
+DELIVERABLES:
+=============
+
+1. **Complete executable algorithm** (Python code)
+2. **Validation results** (12/12 test cases)
+3. **Future predictions** (k135-k160)
+4. **Mathematical proof** of correctness
+5. **Failure analysis** (when/why it breaks)
+
+OUTPUT FORMAT:
+==============
+
+```python
+# COMPLETE ALGORITHM
+def select_d_predictive(n, k_prev):
+    [YOUR IMPLEMENTATION]
+
+def check_d4_condition(n, k_prev):
+    [YOUR IMPLEMENTATION]
+
+def check_d2_condition(n, k_prev):
+    [YOUR IMPLEMENTATION]
+
+# VALIDATION
+print("Testing on k75-k130:")
+for bridge in bridges:
+    predicted = select_d_predictive(bridge.n, bridge.k_prev)
+    actual = bridge.d
+    match = "✅" if predicted == actual else "❌"
+    print(f"k{bridge.n}: predicted={predicted}, actual={actual} {match}")
+
+# ACCURACY
+accuracy = matches / total
+print(f"\nAccuracy: {matches}/{total} = {accuracy:.1%}")
+
+# FUTURE PREDICTIONS
+print("\nFuture predictions:")
+for n in [135, 140, 145, 150, 155, 160]:
+    d = select_d_predictive(n, ???)  # Need k_{n-5}
+    print(f"k{n}: predicted d={d}")
+```
+
+MATHEMATICAL ANALYSIS:
+```
+WHY IT WORKS:
+[detailed explanation]
+
+THEORETICAL FOUNDATION:
+[number theory justification]
+
+LIMITATIONS:
+[when it fails and why]
+```
+
+DEEP REASONING REQUIRED:
+=========================
+
+This algorithm is KEY to k-sequence construction. If we can predict d
+without knowing k_n, we break one circular dependency!
+
+Test thoroughly. Prove rigorously. Predict confidently.
+
+BEGIN ANALYSIS:
+===============

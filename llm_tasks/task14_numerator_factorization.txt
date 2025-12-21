@@ -1,0 +1,100 @@
+TASK 14: NUMERATOR FACTORIZATION ANALYSIS - MATHEMATICAL VERIFICATION
+
+CRITICAL: This is CRYPTOGRAPHY. Use CALCULATION (math), NOT prediction.
+Require: 100.000% accuracy or FAILURE.
+
+CONTEXT:
+========
+You have access to verified facts and k-values k70-k160.
+Master formula: k_n = 2×k_{n-5} + (2^n - m×k_d)
+Rearranged: numerator = 2^n - (k_n - 2×k_{n-5}) = m×k_d
+
+MEMORY FILES (read these first):
+=================================
+- llm_tasks/memory/verified_facts.md
+- llm_tasks/memory/master_keys_70_160.json
+- llm_tasks/memory/data_inventory.json
+
+YOUR MISSION:
+=============
+
+For EACH bridge n ∈ {95, 100, 105, 110, 115, 120, 125, 130}:
+
+STEP 1: Extract k-values
+-------------------------
+Get k_{n-5} and k_n from master_keys_70_160.json
+
+STEP 2: Calculate numerator
+----------------------------
+numerator = 2^n - (k_n - 2×k_{n-5})
+
+Use exact integer arithmetic (Python's int is arbitrary precision).
+
+STEP 3: Factor by divisors
+---------------------------
+For each k_d ∈ {1, 3, 8}:
+  - Test divisibility: numerator % k_d == 0?
+  - If divisible: m = numerator / k_d
+  - Record (d, m) pair
+
+STEP 4: Identify minimum m
+---------------------------
+Among all valid (d, m) pairs, which d yields MINIMUM m?
+
+Compare with actual d from verified_facts.md.
+
+OUTPUT FORMAT:
+==============
+
+k95:
+  k90 = 0x... (from JSON)
+  k95 = 0x... (from JSON)
+  numerator = 2^95 - (k95 - 2×k90) = ... (decimal)
+
+  Factorization tests:
+    d=1 (k_d=1): numerator % 1 = 0, m = ... ✅
+    d=2 (k_d=3): numerator % 3 = ..., m = ... [✅ divisible / ❌ not divisible]
+    d=4 (k_d=8): numerator % 8 = ..., m = ... [✅ divisible / ❌ not divisible]
+
+  Minimum m: d=..., m=...
+  Actual d (from verified_facts.md): d=...
+  MATCH: [✅ / ❌]
+
+[Repeat for k100, k105, k110, k115, k120, k125, k130]
+
+SUMMARY:
+========
+Minimum-m rule verified: X/8 bridges
+Accuracy: X/8 = Y%
+
+Pattern observations:
+- d=1 appears in: [list n values]
+- d=2 appears in: [list n values]
+- d=4 appears in: [list n values]
+
+Statistical breakdown:
+- d=1: X/8 = Y%
+- d=2: X/8 = Y%
+- d=4: X/8 = Y%
+
+FINAL VERDICT:
+==============
+IF accuracy = 100% (8/8):
+  ✅ MINIMUM-M RULE VERIFIED ON ALL BRIDGES
+  CONFIDENCE: HIGH
+
+IF accuracy < 100%:
+  ❌ MINIMUM-M RULE INCOMPLETE
+  FAILURES: [list which bridges failed]
+  REASON: [analyze why]
+
+CRITICAL REQUIREMENTS:
+======================
+1. Use EXACT integer arithmetic (no floating point)
+2. Read k-values from JSON (don't hardcode)
+3. Test ALL three divisors for each bridge
+4. Report 100% accuracy or identify ALL failures
+5. This is MATH (calculation), NOT prediction
+
+BEGIN ANALYSIS:
+===============

@@ -1,0 +1,154 @@
+TASK 13: VERIFY COMPLETE K-SEQUENCE CONSTRUCTION - MATHEMATICAL PROOF
+========================================================================
+
+CRITICAL: This is CRYPTOGRAPHY. We need 100.000% accuracy or it's WORTHLESS.
+
+CONTEXT:
+========
+
+Task 10 claimed "complete construction algorithm" using binary search:
+```python
+def construct_bridge(n, k_prev):
+    d = select_d(n, k_prev)  # From Task 9
+    k_d = {1: 1, 2: 3, 4: 8}[d]
+
+    # Binary search for m
+    lo, hi = 1, 2**n // k_d
+    while lo <= hi:
+        m_mid = (lo + hi) // 2
+        k_candidate = 2*k_prev + (2**n - m_mid*k_d)
+
+        if valid_range(k_candidate, n):
+            return k_candidate, d, m_mid
+        # Adjust bounds...
+
+    raise ValueError("No solution")
+```
+
+Claim: Can reconstruct k_n from k_{n-5} with 100% accuracy.
+
+YOUR MISSION:
+=============
+
+PART 1: RECONSTRUCT ALL KNOWN BRIDGES
+--------------------------------------
+
+For EACH bridge n ∈ {75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130}:
+
+1. Get k_{n-5} from database (known value)
+2. Run construction algorithm: k_computed = construct_bridge(n, k_{n-5})
+3. Get k_n from database (ground truth)
+4. Compare: k_computed vs k_n
+
+Expected output:
+```
+k75:  k_computed=0x..., k_actual=0x..., MATCH=[✅/❌]
+k80:  k_computed=0x..., k_actual=0x..., MATCH=[✅/❌]
+...
+k130: k_computed=0x..., k_actual=0x..., MATCH=[✅/❌]
+
+Reconstruction Accuracy: X/12 = Y%
+```
+
+PART 2: VERIFY MASTER FORMULA
+------------------------------
+
+For EACH successful reconstruction, verify master formula:
+
+k_n = 2×k_{n-5} + (2^n - m×k_d)
+
+Compute:
+- LHS = k_n (from database)
+- RHS = 2×k_{n-5} + (2^n - m×k_d) (using computed m and d)
+- Check: LHS == RHS (exact equality)
+
+Report any discrepancies.
+
+PART 3: IDENTIFY ALL FAILURES
+------------------------------
+
+If ANY bridge fails reconstruction:
+- List ALL failures
+- Analyze root cause (d-selection error? m-search error? formula error?)
+- Provide detailed error analysis
+
+PART 4: CROSS-VALIDATION ON k130
+---------------------------------
+
+Special test: Reconstruct k130 from k125 (hidden validation)
+
+Database has:
+- k125 = 0x33e76657053... (known)
+- k130 = 0x... (known from import)
+
+Test:
+1. Run: k130_computed = construct_bridge(130, k125)
+2. Compare with database k130
+3. Report: BYTE-FOR-BYTE MATCH or FAILURE
+
+This tests if algorithm works on "unseen" data.
+
+PART 5: COMPUTE k135-k160
+--------------------------
+
+If (and ONLY if) reconstruction achieves 100% on k75-k130:
+
+For EACH n ∈ {135, 140, 145, 150, 155, 160}:
+1. Use k_{n-5} from previous computation
+2. Compute k_n, d, m
+3. Output hex value
+
+Output format:
+```
+k135: d=?, m=?, k_n=0x... (32 hex digits)
+k140: d=?, m=?, k_n=0x...
+...
+k160: d=?, m=?, k_n=0x...
+```
+
+PART 6: MATHEMATICAL PROOF
+---------------------------
+
+If algorithm achieves 100%:
+
+**Prove**:
+1. Binary search ALWAYS finds unique m
+2. Master formula is MATHEMATICALLY SOUND
+3. No edge cases or failure modes
+
+**Show**:
+- Why binary search converges
+- Why solution is unique
+- Range of validity (can it work for n>160?)
+
+PART 7: FINAL VERDICT
+----------------------
+
+```
+RECONSTRUCTION ACCURACY (k75-k130): X/12 = Y%
+FORMULA VERIFICATION: X/12 = Y%
+k130 CROSS-VALIDATION: [✅ MATCH / ❌ FAIL]
+
+If ANY Y < 100% OR k130 fails:
+  VERDICT: ❌ ALGORITHM INCOMPLETE - NOT SOLVED
+  REASON: [specific failures]
+
+If ALL = 100% AND k130 matches:
+  VERDICT: ✅ CONSTRUCTION ALGORITHM VERIFIED
+  k135-k160 COMPUTATIONS: [provided above]
+  CONFIDENCE: [HIGH/MEDIUM/LOW with justification]
+```
+
+CRITICAL REQUIREMENTS:
+======================
+
+1. Test on ALL 12 bridges k75-k130 (no shortcuts)
+2. Exact byte-for-byte comparison (no "close enough")
+3. Cross-validate on k130 independently
+4. Only compute k135-k160 if 100% accuracy achieved
+5. Provide RIGOROUS MATHEMATICAL PROOF
+
+This is CRYPTOGRAPHY. 99.9% = FAILURE.
+
+BEGIN VERIFICATION:
+===================
