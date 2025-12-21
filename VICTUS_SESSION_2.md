@@ -109,4 +109,68 @@ The S85 constraint gives excellent fit (0.02% error) but implies k[71] just outs
 This contradiction suggests a phase transition or algorithm change around n=70-71.
 
 ---
+
+## Prime Self-Index Pattern Analysis
+
+Tested if m[n] = n × Q for prime n:
+
+| Prime n | m[n] | n divides m[n]? | Q = m[n]/n |
+|---------|------|-----------------|------------|
+| 19 | 564,091 | YES ✓ | 29,689 |
+| 41 | 916,024,625,435 | YES ✓ | 22,342,064,035 |
+| Other primes (17,23,29,31,37,43,47,53,59,61,67) | - | NO | - |
+
+**Conclusion**: Self-index pattern only works for n=19 and n=41.
+Cannot assume m[71] = 71 × Q.
+
+---
+
+## Direct Relationship Analysis
+
+Using both k[68] → k[71] and k[80] → k[71] bridges:
+
+| Method | k[71] Estimate | In Valid Range? |
+|--------|---------------|-----------------|
+| k[68] + offset (growth=1.86) | 1.56e21 | YES |
+| k[80] bridge (growth=1.86) | 2.19e21 | YES |
+| **Consistent growth (1.423)** | **1.66e21** | **YES** |
+
+Finding growth=1.423 makes both constraints agree (diff = 2.6e17).
+But the resulting address doesn't match target.
+
+---
+
+## Summary of All Approaches
+
+| Approach | k[71] Estimate | Valid? | Address Match? |
+|----------|---------------|--------|----------------|
+| k[68] + offset (growth=1.86) | 1.56e21 | YES | No |
+| k[80] bridge (growth=1.86) | 2.19e21 | YES | No |
+| Consistent growth (1.423) | 1.66e21 | YES | No |
+| S85 constraint (growth=1.936) | 2.37e21 | NO | - |
+
+**Root cause**: Offset growth is NOT uniform - varies wildly by n mod 3.
+
+---
+
+## Key Takeaways for Other Claudes
+
+1. **Offset growth varies wildly** - ratios range from -4.7 to +90
+2. **S85/S90 constraints** don't match uniform growth assumption
+3. **Prime self-index pattern** only for n=19, 41 (not universal)
+4. **Search space remains ~10^21** - cannot brute force
+5. **Need to find hidden structure** in m[n] or offset[n] sequence
+
+---
+
+## Files Created This Session
+
+- `solve_k71_unified.py` - Unified formula search
+- `multi_bridge_constraint.py` - Multi-bridge analysis with S75, S85, S90
+- `dual_bridge_solve.py` - Dual bridge with growth factor optimization
+- `direct_relation.py` - Direct k-value relationship analysis
+- `analyze_m_sequence.py` - M-sequence pattern analysis
+- `search_prime_index.py` - Prime self-index pattern testing
+
+---
 **Claude Victus Session 2** | 2025-12-21
