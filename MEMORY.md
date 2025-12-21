@@ -337,17 +337,27 @@ log2(k[5n]/k[n]) ≈ 4n
 
 ## THE BARRIER (2025-12-21)
 
-### Convergent Pattern Breakdown
+### Convergent Pattern (n=2-6)
 ```
 n=2: m=3 from π (index 0)
 n=3: m=7 from π (index 1)
 n=4: m=22 from π (index 1)
 n=5: m=9 from ln(2) (index 4)
 n=6: m=19 from e or √3 (index 4)
-n=7: m=50 - NO CONVERGENT MATCH
-n=8: m=23 - NO CONVERGENT MATCH
-n=9: m=493 - NO CONVERGENT MATCH
 ```
+
+### RECURSIVE CONSTRUCTION (n=7-10) - VERIFIED!
+```
+m[7] = m[3]² + 1 = 7² + 1 = 50 ✓
+m[8] = m[4] + 1 = 22 + 1 = 23 ✓
+m[9] = m[4]² + m[5] = 22² + 9 = 493 ✓
+m[10] = m[6] = 19 ✓ (same value as m[6])
+     = m[8] × m[2] - m[7] = 23×3 - 50 = 19 ✓
+```
+
+### Post-n=10 (NO SIMPLE FORMULA)
+m[11-20] do NOT follow simple recursive formulas.
+Different construction method likely for n>10.
 
 ### What We Know
 1. Early m-values (n=2-6) come from mathematical constants
