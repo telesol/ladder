@@ -1,0 +1,15 @@
+SWARM TASK S7: Generate Python Test Code
+
+Create Python code to test various m-formula candidates:
+1. Polynomial variants (degree 1-5)
+2. Sine wave variants (different frequencies/phases)
+3. Exponential/logarithmic terms
+4. Combinations of above
+
+Code should:
+- Load 8 verified bridges
+- Test each formula variant
+- Report accuracy on each bridge
+- Rank formulas by accuracy
+
+Output: Complete Python script ready to run.

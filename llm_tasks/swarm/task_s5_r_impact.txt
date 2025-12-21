@@ -1,0 +1,9 @@
+SWARM TASK S5: How R Affects M-Value
+
+When r≠0, how does it change m?
+Compare k110 (r=2) vs others (r=0)
+
+Does m_actual = m_base - correction(r)?
+Or is r just a byproduct of m calculation?
+
+Find mathematical relationship between m and r.

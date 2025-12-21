@@ -1,0 +1,11 @@
+SWARM TASK S8: Numerical Coefficient Optimization
+
+Previous formula: m ≈ 2^n/2^d × (0.43 + 0.04·sin(πn/5))
+Coefficients: [0.43, 0.04]
+
+Use gradient descent or similar to find optimal coefficients.
+Try variations:
+- (a + b·sin(c·n + d))
+- (a + b·sin(πn/e) + f·n)
+
+Find coefficients that minimize error on 8 bridges.

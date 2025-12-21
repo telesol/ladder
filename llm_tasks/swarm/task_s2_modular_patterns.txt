@@ -1,0 +1,10 @@
+SWARM TASK S2: Modular Arithmetic Patterns in M-Values
+
+Analyze m-values modulo various bases to find patterns:
+- m mod 2^k for k=1,2,3,...,10
+- m mod 3, 5, 7, 11, 13 (small primes)
+- m mod k_d (should be related to remainder r)
+
+DATA: Same 8 bridges as S1
+
+Find deterministic modular relationships. Can we predict m mod N for any N?

@@ -1,0 +1,11 @@
+SWARM TASK S6: D=2 Cases Deep Analysis
+
+D=2 cases: k100 (r=0), k110 (r=2)
+Why does k110 have r=2 but k100 has r=0?
+
+Difference:
+- k100: n=100
+- k110: n=110
+
+Is it related to n mod 10? Or n mod k_d=3?
+Find pattern for when r≠0 in d=2 cases.

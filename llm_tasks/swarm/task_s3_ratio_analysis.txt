@@ -1,0 +1,10 @@
+SWARM TASK S3: M-Value Ratio Analysis
+
+Analyze ratios between consecutive m-values:
+- m(k+5) / m(k) = ?
+- m(k+5) - m(k) = ?
+- Does ratio depend on d transition?
+
+Also analyze: m / 2^n ratio (should be ~0.43 from previous formula)
+
+Find recursive relationship if exists.

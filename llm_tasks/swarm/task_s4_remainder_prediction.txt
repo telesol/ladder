@@ -1,0 +1,13 @@
+SWARM TASK S4: Remainder r Prediction
+
+Given: r = (2^n - (k_n - 2×k_{n-5})) mod k_d
+
+Key observation: Only k110 has r=2 (all others r=0)
+k110: n=110, d=2, k_d=3, r=2
+
+Question: Can we predict r from (n, d) alone?
+- Is r related to n mod k_d?
+- Is r related to 2^n mod k_d?
+- Pattern in r-values?
+
+Develop formula to predict r without knowing k_n.
