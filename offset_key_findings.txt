@@ -1,0 +1,200 @@
+================================================================================
+TASK 2: OFFSET FORMULA VERIFICATION - KEY FINDINGS
+================================================================================
+
+DATE: 2025-12-21
+TASK: Verify Mistral's offset formula hypothesis
+DATA: 61 offsets computed from database (n=10 to n=70)
+
+================================================================================
+VERDICT: MISTRAL'S FORMULA REJECTED
+================================================================================
+
+Proposed formula:
+  offset[n] = (-1)^(n+1) × 2^f(n) × 5^g(n) × h(n)
+  where f(n) = floor(n/3) - 2
+        h(n) = 17 if n ≡ 0,3,4 (mod 6)
+        h(n) = 19 if n ≡ 2 (mod 6)
+
+Verification Results:
+  ❌ f(n) = floor(n/3) - 2:     1.6% match (1/61)
+  ❌ Sign pattern (-1)^(n+1):  52.5% match (random)
+  ❌ Prime 17 hypothesis:       4.9% coverage (too rare)
+  ❌ Prime 19 hypothesis:       0.0% accuracy (WRONG)
+
+================================================================================
+WHAT WE ACTUALLY FOUND
+================================================================================
+
+1. PRIME DISTRIBUTION (Top 10)
+   ┌───────┬──────────────┬────────────┐
+   │ Prime │ Appearances  │ Percentage │
+   ├───────┼──────────────┼────────────┤
+   │   2   │    34/61     │   55.7%    │
+   │   5   │    20/61     │   32.8%    │
+   │   3   │    20/61     │   32.8%    │
+   │   7   │    11/61     │   18.0%    │
+   │  11   │     8/61     │   13.1%    │
+   │  13   │     7/61     │   11.5%    │
+   │  19   │     5/61     │    8.2%    │ ← Mistral claimed dominant!
+   │  17   │     3/61     │    4.9%    │ ← Mistral claimed dominant!
+   │  23   │     3/61     │    4.9%    │
+   │ 103   │     2/61     │    3.3%    │
+   └───────┴──────────────┴────────────┘
+
+   FINDING: Primes 2, 3, 5, 7 dominate - NOT 17 and 19!
+
+2. POWER OF 5 DISTRIBUTION
+   ┌─────┬───────┬────────────┐
+   │ 5^g │ Count │ Percentage │
+   ├─────┼───────┼────────────┤
+   │ 5^0 │ 41/61 │   67.2%    │ ← Most common!
+   │ 5^1 │ 16/61 │   26.2%    │
+   │ 5^2 │  4/61 │    6.6%    │
+   └─────┴───────┴────────────┘
+
+   FINDING: g(n) is usually 0, NOT 1 as Mistral claimed!
+
+3. POWER OF 2 DISTRIBUTION (sample)
+   ┌────┬──────┬──────────────┬────────┐
+   │ n  │ 2^f  │ Expected 2^f │ Match? │
+   ├────┼──────┼──────────────┼────────┤
+   │ 10 │ 2^1  │     2^1      │   ✓    │
+   │ 12 │ 2^4  │     2^2      │   ✗    │
+   │ 15 │ 2^5  │     2^3      │   ✗    │
+   │ 24 │ 2^4  │     2^6      │   ✗    │
+   │ 29 │ 2^6  │     2^7      │   ✗    │
+   │ 32 │ 2^5  │     2^8      │   ✗    │
+   │ 38 │ 2^5  │    2^10      │   ✗    │
+   └────┴──────┴──────────────┴────────┘
+
+   FINDING: NO pattern detected for power of 2!
+
+4. PRIME OFFSETS (offsets that are prime themselves)
+   n=14: offset = 149 (prime)
+   n=21: offset = 23743 (prime)
+   n=46: offset = 15279629081813 (prime)
+
+   FINDING: Offsets are sometimes prime - cannot be factored!
+
+5. PRIME 19 APPEARANCES (testing n mod 6 hypothesis)
+   ┌────┬─────────┬───────────────┬────────┐
+   │ n  │ n mod 6 │ Expected 19?  │ Actual │
+   ├────┼─────────┼───────────────┼────────┤
+   │ 12 │    0    │      No       │  Has   │ ✗
+   │ 24 │    0    │      No       │  Has   │ ✗
+   │ 29 │    5    │      No       │  Has   │ ✗
+   │ 34 │    4    │      No       │  Has   │ ✗
+   │ 60 │    0    │      No       │  Has   │ ✗
+   └────┴─────────┴───────────────┴────────┘
+
+   FINDING: 0/5 correct - hypothesis completely wrong!
+
+================================================================================
+INTERESTING PATTERNS DISCOVERED
+================================================================================
+
+A. DIVISIBILITY BY EARLY k VALUES
+   k[3] = 7 divides: offset[11,18,20,30,34,39,58,59,61,64,70]
+   k[5] = 21 divides: offset[11,18,39,64,70]
+   k[7] = 76 divides: offset[12,24,29]
+
+   → Offsets share factors with early k values
+
+B. GROWTH RATE IS CHAOTIC
+   Average: 5.43x per step
+   Range: 0.009x to 46.5x
+   Huge spikes at n=18,23,45
+
+   → No smooth exponential growth
+
+C. SIGN CHANGES
+   22 sign changes out of 60 transitions
+   No pattern - appears random
+
+D. OFFSET MAGNITUDE BY n mod 3
+   n ≡ 0 (mod 3): avg = 7.79 × 10^18
+   n ≡ 1 (mod 3): avg = 1.22 × 10^19
+   n ≡ 2 (mod 3): avg = 3.04 × 10^18
+
+   → Slight variation, but not significant
+
+================================================================================
+IMPLICATIONS
+================================================================================
+
+1. Offsets are NOT independently generated from n
+   → They must be derived from k[n-1], k[n-3], adj[n]
+
+2. The mod-3 recurrence is fundamental
+   → k[n] = 9k[n-3] + offset[n] is verified
+   → offset[n] is a correction term, not a primary sequence
+
+3. Mistral's approach was fundamentally wrong
+   → Looking for patterns in n alone won't work
+   → Must look at relationships between k, adj, offset
+
+4. Prime offsets prove complexity
+   → offset[14]=149, offset[21]=23743, offset[46]=15279629081813
+   → Cannot all be products of small prime powers
+
+================================================================================
+RECOMMENDED NEXT STEPS
+================================================================================
+
+HIGH PRIORITY:
+  1. Derive offset[n] from adj sequence
+     Test: offset[n] = f(adj[n], adj[n-1], adj[n-3])
+
+  2. Test secondary recurrence for offsets
+     Try: offset[n] = a×offset[n-1] + b×offset[n-2] + c×offset[n-3]
+
+  3. Investigate divisibility by k[3], k[5], k[7]
+     Why do these frequently divide offsets?
+
+MEDIUM PRIORITY:
+  4. Cross-reference with d[n] sequence
+     Group offsets by d[n] value
+
+  5. Study the 3 prime offset cases
+     What makes n=14,21,46 special?
+
+================================================================================
+DATA FILES GENERATED
+================================================================================
+
+1. verify_offset_formula.py         - Main verification script
+2. analyze_offset_patterns.py       - Extended pattern analysis
+3. offset_formula_verified.md       - Full verification report (12KB)
+4. offset_verification_results.json - Complete offset data + factorizations
+5. offset_pattern_analysis.json     - Pattern statistics
+6. TASK2_SUMMARY.md                 - Executive summary (7.5KB)
+7. offset_key_findings.txt          - This file
+
+All data derived from: /home/rkh/ladder/db/kh.db (74 known k values)
+Total offsets analyzed: 61 (n=10 to n=70)
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Mistral's offset formula is EMPIRICALLY DISPROVEN.
+
+The offset sequence does NOT follow:
+  offset[n] = (-1)^(n+1) × 2^f(n) × 5^g(n) × h(n)
+
+Instead, offsets appear to be EMERGENT from the recurrence:
+  k[n] = 2k[n-1] + adj[n]
+
+Combined with the mod-3 structure:
+  k[n] = 9k[n-3] + offset[n]
+
+This gives:
+  offset[n] = 2k[n-1] + adj[n] - 9k[n-3]
+
+Future research should focus on this DERIVED relationship,
+not on finding independent formulas based on n alone.
+
+NO ASSUMPTIONS. DATA-DRIVEN ANALYSIS. MISSION ACCOMPLISHED.
+
+================================================================================

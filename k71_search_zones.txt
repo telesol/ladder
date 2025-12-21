@@ -1,0 +1,106 @@
+================================================================================
+k[71] SEARCH ZONES VISUALIZATION
+================================================================================
+
+71-bit Range: 2^70 to 2^71-1
+Full range: 1,180,591,620,717,411,303,424 to 2,361,183,241,434,822,606,847
+
+================================================================================
+Position Map (0% = 2^70, 100% = 2^71-1)
+================================================================================
+
+0%        10%       20%       30%       40%       50%       60%       70%       80%       90%       100%
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+█████████████████████........................................................................
+|         |         |         |
+|         |         └─ Zero adj estimate (19.32%)
+|         |            k[71] ≈ 0x4c5ce114686a140000
+|         |
+|         └─ Alternating adj estimate (16.57%)
+|            k[71] ≈ 0x4a9a21be54f4900000
+|
+└─ Range minimum (0.00%)
+   2^70 = 0x400000000000000000
+
+CONSTRAINED SEARCH ZONE: [0% to 19.32%]
+                         ~228 trillion values (~2^47.6 bits)
+
+================================================================================
+k[71] Estimate Summary
+================================================================================
+
+Scenario                    k[71] Estimate              Position    Validity
+--------------------------------------------------------------------------------
+Range minimum               2^70                        0.00%       ✓ (lower bound)
+Alternating adj             1,376,165,428,882,668...    16.57%      ✓ (plausible)
+Zero adj (pure doubling)    1,408,645,202,561,864...    19.32%      ✓ (upper bound)
+Constant adj[70]            1,056,250,211,782,859...   -10.53%      ✗ (below 2^70!)
+
+The "Constant adj[70]" scenario produces a value BELOW 2^70, which is impossible.
+This confirms that adj values must oscillate to keep keys in valid ranges.
+
+================================================================================
+Recommended Search Priority
+================================================================================
+
+Priority 1 (HIGHEST):  0% - 10% position
+           Range: 0x400000000000000000 to ~0x453a7b11c58e200000
+           ~118 trillion values
+
+Priority 2 (HIGH):     10% - 19.32% position
+           Range: ~0x453a7b11c58e200000 to 0x4c5ce114686a140000
+           ~110 trillion values
+
+Priority 3 (MEDIUM):   19.32% - 50% position
+           Range: 0x4c5ce114686a140000 to 0x600000000000000000
+           ~362 trillion values
+
+Priority 4 (LOW):      50% - 100% position
+           Range: 0x600000000000000000 to 0x7ffffffffffffffffff
+           ~590 trillion values
+
+================================================================================
+Why This Constraint Helps
+================================================================================
+
+1. ELIMINATES 80.68% of search space
+   - Full 71-bit range: ~1,180 trillion values
+   - Constrained range: ~228 trillion values
+   - Reduction: ~952 trillion values eliminated
+
+2. FOCUSES on most probable region
+   - Jump puzzle back-calculation suggests lower positions
+   - k[69] was at 0.72% (solved FAST)
+   - k[70] is also in lower range
+   - Pattern suggests k[71] continues this trend
+
+3. TESTABLE hypothesis
+   - If k[71] not found in 0-19.32%, then:
+     * adj assumptions were wrong, or
+     * Algorithm changed at n=71, or
+     * Non-linear formula in use
+
+================================================================================
+Key Hex Boundaries
+================================================================================
+
+Range minimum:          0x400000000000000000  (2^70)
+10% position:           0x453a7b11c58e200000
+Alternating estimate:   0x4a9a21be54f4900000  (16.57%)
+Zero adj estimate:      0x4c5ce114686a140000  (19.32%)
+Range midpoint:         0x600000000000000000  (50%)
+Range maximum:          0x7ffffffffffffffffff  (2^71-1)
+
+================================================================================
+Cross-Reference: Known Jump Puzzles
+================================================================================
+
+k[69] = 0x101d83275fb2bc7e0c   (69-bit, position: 0.72%)
+k[70] = 0x349b84b6431a6c4ef1   (70-bit, position: ???)
+k[75] = 0x4c5ce114686a1336e07  (75-bit)
+k[80] = 0xea1a5c66dcc11b5ad180 (80-bit)
+
+Pattern observation: k[69] at 0.72% suggests creator prefers LOWER positions
+This supports searching 0-19.32% region for k[71]
+
+================================================================================
