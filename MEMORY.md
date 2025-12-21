@@ -375,9 +375,27 @@ m[12] = 17 × (m[7] + m[8]) = 17 × 73 = 1241 ✓
 2. The rule that determines WHICH formula to use for each n
 3. How to extend this to n=71
 
-### Implication
-We now have verified formulas for n=2-12. But we need the complete construction
-algorithm to derive m[71] and k[71].
+### CRITICAL INSIGHT (2025-12-21)
+
+**The recursive formula is DERIVED, not the SOURCE!**
+
+The creator revealed k[75], k[80], k[85], k[90] WITHOUT k[71-74].
+This PROVES the creator has a DIRECT formula: k[n] = f(n)
+
+The formula k[n] = 2*k[n-1] + adj[n] is a CONSEQUENCE, not the source.
+
+### Source Generation Methods (One of These)
+1. **Direct formula**: k[n] = f(n) for some mathematical f
+2. **PRNG with seed**: k[n] = PRNG(secret_seed, n)
+3. **Pre-computed table**: All 160 keys generated upfront
+
+### Evidence
+- Positions are roughly uniform (avg 0.51)
+- No simple mathematical constant fits
+- XOR patterns show no obvious structure
+
+### Next Step
+Find the DIRECT formula, not more recursive relationships!
 
 ---
 
