@@ -1,0 +1,40 @@
+{
+  "timestamp": "$(date -Iseconds)",
+  "instance": "$(hostname)",
+  "priority_tasks": [
+    {
+      "id": "M1",
+      "priority": 1,
+      "title": "Fix m-selection implementation",
+      "status": "pending",
+      "assigned_to": "ZBook",
+      "file": "llm_tasks/task20_master_formula_FINAL_FIX.py",
+      "estimated_time": "2-4 hours"
+    },
+    {
+      "id": "P1",
+      "priority": 2,
+      "title": "PRNG hypothesis for m-values",
+      "status": "pending",
+      "assigned_to": "Spark",
+      "estimated_time": "3-5 hours"
+    },
+    {
+      "id": "T1",
+      "priority": 3,
+      "title": "Number theory analysis of m",
+      "status": "pending",
+      "assigned_to": "Dell",
+      "estimated_time": "2-3 hours"
+    },
+    {
+      "id": "V1",
+      "priority": 4,
+      "title": "Validate k135-k160 with fixed formula",
+      "status": "blocked_by": ["M1"],
+      "assigned_to": "ZBook",
+      "estimated_time": "1-2 hours"
+    }
+  ],
+  "coordination_notes": "All instances should sync before starting new tasks"
+}
