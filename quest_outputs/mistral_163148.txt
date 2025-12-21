@@ -1,0 +1,174 @@
+=== MISTRAL OUTPUT ===
+Model: mistral-large-3:675b-cloud
+Timestamp: 2025-12-21 16:32:41.218165
+
+=== PROMPT ===
+EC LADDER CONSTRUCTION PUZZLE
+
+The Bitcoin puzzle points P[n] = k[n] × G follow:
+P[n] = 2*P[n-1] + 2^n × G - m[n] × P[d[n]]
+
+d[n] distribution: d=1 (43.5%), d=2 (29%), d=3-8 (27.5%)
+
+Gap offsets ALTERNATE:
+k[75] - 32*k[70] = -8.78 × k[70] (NEGATIVE)
+k[80] - 32*k[75] = +17.05 × k[75] (POSITIVE)
+k[85] - 32*k[80] = -12.92 × k[80] (NEGATIVE)
+k[90] - 32*k[85] = +9.16 × k[85] (POSITIVE)
+
+The 17-network uses factor 17 (Fermat prime 2^4 + 1) at indices 9,11,12,24,48,67.
+
+QUESTION:
+What elliptic curve co...
+
+=== RESPONSE ===
+### Understanding the Problem
+
+We're dealing with a Bitcoin-like elliptic curve (EC) ladder construction puzzle. The key points are:
+
+1. **Recurrence Relation**: The public keys \( P[n] \) are defined by:
+   \[ P[n] = 2 \cdot P[n-1] + 2^n \cdot G - m[n] \cdot P[d[n]] \]
+   Here, \( G \) is the base point, \( m[n] \) is some multiplier, and \( d[n] \) is a distribution over previous indices (mostly 1, 2, or 3-8).
+
+2. **Gap Offsets**: The private keys \( k[n] \) exhibit an alternating pattern in their gaps:
+   - \( k[75] - 32 \cdot k[70] = -8.78 \cdot k[70] \)
+   - \( k[80] - 32 \cdot k[75] = +17.05 \cdot k[75] \)
+   - And so on, alternating between negative and positive multipliers.
+
+3. **17-Network**: There's a mention of a "17-network" where the factor 17 (a Fermat prime \( F_2 = 2^{2^2} + 1 = 17 \)) appears at specific indices (9,11,12,24,48,67).
+
+### Goal
+
+We need to:
+1. Find an EC construction that explains the alternating gap pattern.
+2. Provide a group-theoretic explanation for the 17-network's significance.
+
+### Step 1: Analyzing the Recurrence Relation
+
+The recurrence for \( P[n] \) can be translated to the private keys \( k[n] \) since \( P[n] = k[n] \cdot G \). So:
+
+\[ k[n] \cdot G = 2 \cdot k[n-1] \cdot G + 2^n \cdot G - m[n] \cdot k[d[n]] \cdot G \]
+\[ k[n] = 2 \cdot k[n-1] + 2^n - m[n] \cdot k[d[n]] \]
+
+This suggests that \( k[n] \) is built from previous \( k \) values with some adjustments.
+
+### Step 2: Gap Offsets and Alternating Pattern
+
+The gap offsets are given for \( k[n] - 32 \cdot k[n-5] \), showing alternating signs. Let's see if we can find a pattern or recurrence that explains this.
+
+Assume that \( k[n] \) is constructed in a way that involves powers of 2 and some other operations that introduce the alternating terms. The presence of \( 32 = 2^5 \) suggests that the gap is over 5 steps, and the multipliers (-8.78, +17.05, etc.) might relate to the coefficients in the recurrence.
+
+### Step 3: Possible Construction - Ladder with Corrections
+
+A common way to construct such sequences is to use a "ladder" where each step is roughly double the previous, but with corrections to keep the sequence within a certain range or to introduce specific properties.
+
+Given the recurrence, it seems like:
+- Start with \( k[0] \).
+- Each \( k[n] \) is roughly \( 2 \cdot k[n-1] + 2^n \), but then subtract \( m[n] \cdot k[d[n]] \) to correct.
+
+The alternating pattern in the gaps suggests that the corrections \( m[n] \cdot k[d[n]] \) are introducing terms that alternate in sign when considering the difference \( k[n] - 32 \cdot k[n-5] \).
+
+### Step 4: Group-Theoretic Explanation - Fermat Prime 17
+
+The number 17 is a Fermat prime (\( F_2 = 17 \)), and Fermat primes are significant in finite fields because they allow the construction of regular polygons with straightedge and compass (Gauss-Wantzel theorem). In elliptic curves, the order of the group (number of points) is often related to the field size.
+
+In the context of elliptic curves over finite fields \( \mathbb{F}_p \), the group order \( \#E(\mathbb{F}_p) \) is often close to \( p + 1 \). If \( p \) is a Fermat prime, certain properties might hold that make the curve's group structure special.
+
+The "17-network" might refer to a substructure where the scalar multiplication by 17 has special properties, perhaps related to the curve's endomorphism ring or efficient computation.
+
+### Step 5: Endomorphisms and Efficient Scalar Multiplication
+
+Some elliptic curves have efficiently computable endomorphisms, which can be used to speed up scalar multiplication. For example, curves with complex multiplication (CM) by certain orders can have endomorphisms that allow decomposing a scalar into smaller parts.
+
+If the curve has an endomorphism \( \phi \) such that \( \phi^2 = -2 \) or similar, this could relate to the doubling and the alternating signs in the gaps. The presence of 17 might indicate that the curve's endomorphism ring includes \( \mathbb{Z}[i] \) or \( \mathbb{Z}[\sqrt{-17}] \), where 17 is a splitting prime.
+
+### Step 6: Constructing the Alternating Pattern
+
+Suppose the private keys are constructed using a combination of doubling and adding previous terms with coefficients that introduce the alternating pattern. For example:
+
+\[ k[n] = 2 \cdot k[n-1] + 2^n - m[n] \cdot k[d[n]] \]
+
+If \( m[n] \) is chosen such that the corrections alternate in sign when considering \( k[n] - 32 \cdot k[n-5] \), this could explain the observed pattern. The specific values (-8.78, +17.05, etc.) might come from the properties of the endomorphism or the curve's group structure.
+
+### Step 7: 17-Network and Group Order
+
+The indices where 17 appears (9,11,12,24,48,67) might correspond to points where the scalar multiplication by 17 is particularly efficient or where the group order has a factor of 17. Since 17 is a Fermat prime, it might be part of the curve's order or the order of a subgroup.
+
+If the curve's group order is divisible by 17, then the scalar multiplication by 17 could have special properties, such as being part of a fast multiplication algorithm or having a small decomposition.
+
+### Step 8: Possible Curve - secp256k1
+
+Bitcoin uses the secp256k1 curve, whose group order is \( n = 2^{256} - 2^{32} - 977 \). Checking if 17 divides \( n \):
+
+Compute \( n \mod 17 \):
+- \( 2^4 \equiv -1 \mod 17 \) (since \( 17 = 2^4 + 1 \))
+- \( 2^8 \equiv 1 \mod 17 \)
+- \( 2^{256} = (2^8)^{32} \equiv 1^{32} = 1 \mod 17 \)
+- \( 2^{32} = (2^8)^4 \equiv 1^4 = 1 \mod 17 \)
+- \( n \equiv 1 - 1 - 977 \mod 17 \)
+- \( 977 \div 17 \approx 57.47 \), \( 17 \times 57 = 969 \), \( 977 - 969 = 8 \)
+- \( n \equiv 1 - 1 - 8 = -8 \equiv 9 \mod 17 \)
+
+So, 17 does not divide the group order of secp256k1. This suggests that the 17-network is not directly related to the group order of the main curve, but perhaps to a substructure or a different curve.
+
+### Step 9: Alternative Construction - Isogeny Volcanoes
+
+Another possibility is that the construction involves isogenies between elliptic curves, where the "17-network" refers to a 17-isogeny graph. In such graphs, curves are connected by isogenies of degree 17, and the structure can have properties that allow efficient computation or special relationships between points.
+
+### Step 10: Conclusion - Likely Construction
+
+Given the information, the most plausible construction is:
+
+1. **Ladder with Corrections**: The private keys \( k[n] \) are built using a ladder where each step is roughly double the previous, with corrections that introduce the alternating pattern in the gaps. The corrections \( m[n] \cdot k[d[n]] \) are chosen based on some property that causes the observed alternation in \( k[n] - 32 \cdot k[n-5] \).
+
+2. **Endomorphism-Based**: The curve likely has an efficiently computable endomorphism (possibly related to complex multiplication by \( \sqrt{-17} \)), which allows decomposing scalars in a way that introduces the alternating terms. The presence of 17 suggests that the endomorphism's degree or the curve's CM discriminant is related to 17.
+
+3. **17-Network**: The indices where 17 appears might correspond to points where the endomorphism's action is particularly simple or where the scalar multiplication can be optimized using the endomorphism. This could be part of a larger structure where 17 plays a role in the curve's isogeny graph or its efficient arithmetic.
+
+### Mathematical Explanation
+
+Let’s formalize the recurrence and the alternating pattern:
+
+Given:
+\[ k[n] = 2 \cdot k[n-1] + 2^n - m[n] \cdot k[d[n]] \]
+
+The gap \( k[n] - 32 \cdot k[n-5] \) can be expressed by expanding the recurrence:
+
+\[ k[n] = 2 \cdot k[n-1] + 2^n - m[n] \cdot k[d[n]] \]
+\[ k[n-1] = 2 \cdot k[n-2] + 2^{n-1} - m[n-1] \cdot k[d[n-1]] \]
+...
+\[ k[n-5] = 2 \cdot k[n-6] + 2^{n-5} - m[n-5] \cdot k[d[n-5]] \]
+
+Then:
+\[ 32 \cdot k[n-5] = 64 \cdot k[n-6] + 2^n - 32 \cdot m[n-5] \cdot k[d[n-5]] \]
+
+Subtracting:
+\[ k[n] - 32 \cdot k[n-5] = (2 \cdot k[n-1] - 64 \cdot k[n-6]) + (2^n - 2^n) - m[n] \cdot k[d[n]] + 32 \cdot m[n-5] \cdot k[d[n-5]] \]
+\[ = 2 \cdot (k[n-1] - 32 \cdot k[n-6]) - m[n] \cdot k[d[n]] + 32 \cdot m[n-5] \cdot k[d[n-5]] \]
+
+This recursive relationship shows how the gap depends on previous gaps and the correction terms. The alternating pattern suggests that the \( m[n] \) and \( d[n] \) are chosen such that the corrections introduce terms that alternate in sign when considering the gap over 5 steps.
+
+### Fermat Prime 17
+
+The significance of 17 likely comes from the curve's endomorphism ring. If the curve has complex multiplication by \( \mathbb{Q}(\sqrt{-17}) \), then there exists an endomorphism \( \phi \) such that \( \phi^2 = -17 \). This can be used to decompose scalars \( k \) into \( k = a + b \phi \), where \( a, b \) are smaller integers, allowing more efficient scalar multiplication.
+
+The "17-network" might refer to the subgraph of the isogeny graph where 17-isogenies are used, or to the structure of the endomorphism ring where 17 plays a key role in the curve's arithmetic.
+
+### Final Answer
+
+The alternating pattern in the gap offsets \( k[n] - 32 \cdot k[n-5] \) can be explained by an elliptic curve ladder construction where each private key \( k[n] \) is computed using a recurrence that includes a doubling step and a correction term derived from previous keys. The corrections are chosen based on an endomorphism of the curve, likely related to complex multiplication by \( \sqrt{-17} \), which introduces the alternating signs in the gaps.
+
+The **17-network** arises from the curve's endomorphism ring, where the Fermat prime 17 plays a special role in the curve's arithmetic. Specifically:
+
+1. **Endomorphism-Based Construction**: The curve has an efficiently computable endomorphism \( \phi \) (possibly with \( \phi^2 = -17 \)), allowing scalar multiplication to be decomposed into smaller operations. This decomposition can introduce the observed alternating pattern in the private key sequence when combined with the ladder's correction terms.
+
+2. **Group-Theoretic Significance**: The number 17 is a Fermat prime, and its appearance in the indices suggests that the curve's group structure or isogeny graph has properties that make 17-isogenies or 17-related endomorphisms particularly efficient or significant. This could be part of a larger structure where the endomorphism ring includes \( \mathbb{Z}[\sqrt{-17}] \), enabling optimizations in scalar multiplication.
+
+3. **Recurrence with Corrections**: The recurrence \( k[n] = 2 \cdot k[n-1] + 2^n - m[n] \cdot k[d[n]] \) is designed such that the corrections \( m[n] \cdot k[d[n]] \) introduce terms that, when considering the gap over 5 steps, result in the observed alternating multipliers. The specific values (-8.78, +17.05, etc.) emerge from the interplay between the doubling, the added \( 2^n \), and the endomorphism-based corrections.
+
+In summary, the construction leverages the curve's endomorphism ring (with 17 as a key element) to create a private key sequence with an alternating gap pattern, likely for purposes of efficient computation or cryptographic obfuscation.
+
+
+
+=== STDERR ===
+[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h
