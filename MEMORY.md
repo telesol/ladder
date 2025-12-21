@@ -228,6 +228,24 @@ Based on n=51-70 distribution:
 - d=2: 30% likely → m[71] ≈ 2^71/3
 After d[70]=2, historically d[n+1]=1 (60%), d=2 (20%), d=5 (20%)
 
+### Offset Growth by n mod 3 (Victus Finding)
+```
+n mod 3 = 0: ratio ≈ 0 (near-zero or sign flip)
+n mod 3 = 1: ratio ≈ 0.44 (shrinking)
+n mod 3 = 2: ratio ≈ 2.09 (growing)
+
+n=71 mod 3 = 2 → expect offset growth ratio ≈ 2
+```
+
+### S85 Constraint Contradiction (Victus Finding)
+S85 constraint implies growth ≈ 1.936 → k[71] = 2.37×10^21
+But this is OUTSIDE valid range [2^70, 2^71] = [1.18e21, 2.36e21]
+
+This suggests:
+1. Offset growth is NOT uniform
+2. Possible phase transition around n=70-71
+3. Different algorithm for n≥71
+
 ---
 
 ## NEXT TASKS (For Models)
