@@ -295,6 +295,46 @@ d[71]=8: m[71] ∈ [8.66e18, 1.39e19], ~10^17 candidates
 
 ---
 
+## CLAUDE DELL FINDINGS (2025-12-21)
+
+### EC Point Construction
+```
+P[n] = 2*P[n-1] + 2^n × G - m[n] × P[d[n]]
+```
+
+### Gap Offset Oscillation
+| From | To | Offset Sign |
+|------|-----|-------------|
+| k[70] | k[75] | **-** |
+| k[75] | k[80] | **+** |
+| k[80] | k[85] | **-** |
+| k[85] | k[90] | **+** |
+
+Pattern: Alternating +/- !
+
+### Autocorrelation Peaks
+- **Lag 14**: -0.2804 (strongest, negative)
+- **Lag 3**: +0.2516
+- **Lag 31**: +0.2031
+
+Suggests ~14-step quasi-period in positions.
+
+### k[5n]/k[n] Scaling
+log2(k[5n]/k[n]) ≈ 4n
+
+---
+
+## COMBINED INSIGHTS (Multi-Claude Synthesis)
+
+1. **m-values from constants**: π, e, ln(2), sqrt(3) convergents for n=2-6
+2. **Building block propagation**: m[4,6,7,8] divide many m[n] for n>10
+3. **Prime 19 special**: k[7] = 4×19 causes 19 to propagate through N[n]
+4. **Position oscillation**: ~14-step quasi-period, not random
+5. **Gap offsets alternate**: +/- pattern between k[70,75,80,85,90]
+6. **No XOR/hash patterns**: Custom PRNG or mathematical construction
+
+---
+
 ## NEXT TASKS (For Models)
 
 1. **PRNG Analysis**: Reverse engineer possible PRNG from k[1..70]
