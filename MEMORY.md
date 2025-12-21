@@ -429,3 +429,65 @@ k[71] = 2*k[70] + adj[71]
 - k[10] = 514 (only 2 bits set)
 - k[56] has 10 consecutive 1-bits
 
+
+---
+
+## CLAUDE DELL DEEP DIVE (2025-12-21)
+
+### 17-Network Power-of-2 Symmetry Discovery
+```
+n=24: n - 2^4 = 8 = 2^5 - n  (SYMMETRIC!)
+n=48: n - 2^5 = 16 = 2^6 - n (SYMMETRIC!)
+```
+17-network indices 24 and 48 are EXACTLY halfway between powers of 2!
+
+### 17-Network Formula (n=9,11,12)
+```
+m[9]  = 17 × p[9 + m[2]]  = 17 × p[10] = 17 × 29  = 493  ✓
+m[11] = 17 × p[11 + m[6]] = 17 × p[30] = 17 × 113 = 1921 ✓
+m[12] = 17 × p[12 + m[5]] = 17 × p[21] = 17 × 73  = 1241 ✓
+```
+Formula: m[n] = 17 × prime(n + m[earlier])
+
+The "earlier" selection pattern:
+- n=9: earlier=2, diff=7
+- n=11: earlier=6, diff=5
+- n=12: earlier=5, diff=7
+Diffs {5, 7} = {k[5]/something, k[3]}
+
+### Gap Puzzle g[n] Analysis
+```
+g[n] = k[n] - 2^(n-1) (offset from range minimum)
+
+g[70] position = 0.644
+g[75] position = 0.193
+g[80] position = 0.829
+g[85] position = 0.090
+g[90] position = 0.402
+```
+
+g[n] ratios oscillate wildly:
+- g[75]/g[70] = 9.6
+- g[80]/g[75] = 137.3
+- g[85]/g[80] = 3.5
+- g[90]/g[85] = 142.5
+
+### EC Ladder + 17-Network Cross-Validation
+All 17-network indices verify: adj[n] = 2^n - m[n]*k[d[n]] (100%)
+
+### Position in Range for 17-Network
+```
+n=9:  82.75% (high)
+n=11: 12.81% (low)
+n=12: 31.02% (mid-low)
+n=24: 72.00% (high)
+n=48: 35.86% (mid-low)
+n=67: 79.78% (high)
+```
+
+### Autonomous Quest Agents Launched
+- deepseek-v3.1:671b-cloud - Direct formula search
+- qwen2.5-coder:32b - 17-network extension
+- mistral-large-3:675b-cloud - EC group theory
+
+---
