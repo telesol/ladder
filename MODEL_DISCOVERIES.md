@@ -110,3 +110,103 @@ The three m-values are **coprime** (GCD = 1). This suggests they are independent
    - For n=68: k=6 ✓
    - For n=71: k=8 (prediction)
    - **CAVEAT**: Pattern only verified for d ∈ {1, 2}; n=65 (d=5) breaks it
+
+8. **MOD 11 CONSTRAINT** (DeepSeek v3.1 671B, VERIFIED):
+   - (189, 92) ≡ (2, 4) mod 11
+   - (101, 81) ≡ (2, 4) mod 11
+   - **For m[71]: Initial pair (a, b) must satisfy a ≡ 2, b ≡ 4 (mod 11)**
+
+---
+
+## Session Update (2025-12-20 Continued)
+
+### Critical Analysis: m[71] Constraints
+
+**Valid m[71] range for d=1:** [1,940,873,948,010,047,380,963 to 3,121,465,568,727,458,684,386]
+- Bit length: 71-72
+- This is ~10x larger than m[70]
+
+**Pattern Attempts (Claude Opus 4.5):**
+
+| Pattern | m[71] Estimate | In Range? | Address Match? |
+|---------|---------------|-----------|----------------|
+| m/2^n ≈ 1 | 2.36×10^21 | YES | NO |
+| Growth 8x from m[70] | 2.15×10^21 | YES | NO |
+| Factor 7x from m[68] | 2.38×10^21 | YES | NO |
+| Log-linear extrapolation | 3.22×10^21 | NO | - |
+
+**Conclusion:** Simple extrapolation patterns don't find the correct m[71]. The construction likely involves:
+1. A more complex formula
+2. Mathematical constants not yet identified
+3. The generalized Fibonacci pattern with correct parameters
+
+### Key Constraint Discovery
+
+For n=71 with d=1:
+- k[71] = 2*k[70] + 2^71 - m[71]
+- m[71] = base - k[71] where base = 4,302,057,189,444,869,987,810
+
+**Implication:** If we could verify any k[71] candidate against the Bitcoin address, we could derive m[71] exactly.
+
+### Next Research Direction
+
+Need to investigate:
+1. Relationship between m[n] and mathematical constants (π, e, φ convergents)
+2. Whether m[71] contains generalized Fibonacci factors with different (a,b) or Q
+3. Alternative d values (d=2 or d=5) might give different constraints
+
+
+---
+
+## Research Summary (2025-12-20)
+
+### Verified Discoveries (All Models)
+
+| Discovery | Model | Status |
+|-----------|-------|--------|
+| Main recurrence: k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]] | Claude Opus 4.5 | ✓ 67/67 verified |
+| 3-step recursion: k[n] = 9*k[n-3] + offset[n] | Claude Opus 4.5 | ✓ 40/40 verified |
+| Generalized Fibonacci in m[62]: G_2, G_3 from (189, 92) | Claude Opus 4.5 | ✓ Verified |
+| Generalized Fibonacci in m[68]: G_6, G_7 from (101, 81) | Claude Opus 4.5 | ✓ Verified |
+| Index formula: k = 2(n-59)/3 | DeepSeek v3.1 671B | ✓ Verified for n=62, 68 |
+| Mod 11 constraint: (a,b) ≡ (2,4) mod 11 | DeepSeek v3.1 671B | ✓ Verified |
+| k[75] documentation was WRONG | Claude Opus 4.5 | ✓ Corrected from DB |
+| m[50,53,56,59] have NO gen Fib pairs | Nemotron 30B | ✓ Verified |
+
+### For n=71: Constraints Derived
+
+1. **k = 8** (from formula k = 2(n-59)/3)
+2. **d = 1 most likely** (m[71] estimate fits d=1 valid range)
+3. **m[71] ∈ [1.94×10^21, 3.12×10^21]** for d=1
+4. **If (a,b) ≡ (2,4) mod 11**: a ∈ {35, 46, 57, 68, 79}, b ∈ {59, 70, 81, 92}
+
+### What We DON'T Know Yet
+
+1. Exact (a, b) values for n=71 generalized Fibonacci
+2. The Q factor formula (Q grows ~14x from n=62 to n=68)
+3. Whether the gen Fib pattern even applies to n=71
+4. Alternative m[71] construction if gen Fib doesn't apply
+
+### Tested Patterns (No Match Found)
+
+| Pattern | m[71] Estimate | Valid Range? |
+|---------|---------------|--------------|
+| m/2^n ≈ 1 | 2.36×10^21 | YES |
+| Growth 7-11x from m[70] | 1.9-3.0×10^21 | YES |
+| Factor 6-9x from m[68] | 2.0-3.1×10^21 | YES |
+| Gen Fib + Q extrapolation | 4.7-6.4×10^21 | NO (too large!) |
+
+### Key Insight
+
+The generalized Fibonacci pattern with Q extrapolation gives m[71] values **TOO LARGE** to produce valid k[71]. This means either:
+1. Q grows slower than exponential between n=68 and n=71
+2. The (a, b) values are different from mod 11 predictions
+3. A completely different construction applies to n=71
+
+### Next Steps for Future Research
+
+1. Factor more m-values to find additional gen Fib patterns
+2. Look for Q formula based on n, not just interpolation
+3. Investigate mathematical constants in m-value construction
+4. Consider that n=71 might use d=2 or d=5 instead of d=1
+
