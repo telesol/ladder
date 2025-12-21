@@ -335,14 +335,45 @@ log2(k[5n]/k[n]) ≈ 4n
 
 ---
 
+## THE BARRIER (2025-12-21)
+
+### Convergent Pattern Breakdown
+```
+n=2: m=3 from π (index 0)
+n=3: m=7 from π (index 1)
+n=4: m=22 from π (index 1)
+n=5: m=9 from ln(2) (index 4)
+n=6: m=19 from e or √3 (index 4)
+n=7: m=50 - NO CONVERGENT MATCH
+n=8: m=23 - NO CONVERGENT MATCH
+n=9: m=493 - NO CONVERGENT MATCH
+```
+
+### What We Know
+1. Early m-values (n=2-6) come from mathematical constants
+2. After n=6, the pattern breaks or uses unknown rules
+3. Building blocks propagate (22, 19, 50, 23 divide many m[n])
+4. Position oscillates with ~14-step quasi-period
+5. Gap offsets alternate +/-
+
+### What We DON'T Know
+1. **Constant selection rule**: Which constant for which n?
+2. **Index selection rule**: Which convergent index?
+3. **Num/Den selection**: Which part of the convergent?
+4. **Post-n=6 construction**: How are m[7,8,9,...] generated?
+
+### Implication
+Without the "m-generation algorithm", we CANNOT derive m[71] or k[71].
+The formula k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]] is VERIFIED but INCOMPLETE.
+
+---
+
 ## NEXT TASKS (For Models)
 
-1. **PRNG Analysis**: Reverse engineer possible PRNG from k[1..70]
-2. **Binary Deep Dive**: Analyze bit patterns, find structure
-3. **Block Connection**: Find relationship to Bitcoin blockchain
-4. **m-Sequence Structure**: What generates m[n]? (not greedy)
-5. **Convergent Selection Rule**: WHY is m[6]=m[10]=19? What picks the constant?
-6. **d[71] Formula**: Find what determines d[n] beyond statistics
+1. **Crack the m-generation rule for n≥7**
+2. **Find what makes m[7,8,9] special** (50, 23, 493)
+3. **Check if blockchain data provides external input**
+4. **Investigate if m[n] relates to previous m-values recursively**
 
 ---
 
