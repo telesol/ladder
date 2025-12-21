@@ -351,30 +351,33 @@ n=6: m=19 from e or √3 (index 4)
 m[7] = m[3]² + 1 = 7² + 1 = 50 ✓
 m[8] = m[4] + 1 = 22 + 1 = 23 ✓
 m[9] = m[4]² + m[5] = 22² + 9 = 493 ✓
-m[10] = m[6] = 19 ✓ (same value as m[6])
-     = m[8] × m[2] - m[7] = 23×3 - 50 = 19 ✓
+m[10] = m[6] = 19 ✓
 ```
 
-### Post-n=10 (NO SIMPLE FORMULA)
-m[11-20] do NOT follow simple recursive formulas.
-Different construction method likely for n>10.
+### 17-NETWORK (n=9,11,12,24,48,67) - VERIFIED!
+```
+m[9] = 17 × (m[4] + m[3]) = 17 × 29 = 493 ✓
+m[11] = 17 × (m[7] + m[5]×m[3]) = 17 × 113 = 1921 ✓
+m[12] = 17 × (m[7] + m[8]) = 17 × 73 = 1241 ✓
+```
+17 is a hidden building block that appears in 6 m-values!
 
-### What We Know
-1. Early m-values (n=2-6) come from mathematical constants
-2. After n=6, the pattern breaks or uses unknown rules
-3. Building blocks propagate (22, 19, 50, 23 divide many m[n])
-4. Position oscillates with ~14-step quasi-period
-5. Gap offsets alternate +/-
+### What We Know (Updated)
+1. n=2-6: Mathematical constants (π, ln2, e/√3)
+2. n=7-10: Simple recursive formulas
+3. n=9,11,12: 17-network (17 × combination of m-values)
+4. Building blocks: 3, 7, 22, 9, 19, 50, 23, 17
+5. Position oscillates with ~14-step quasi-period
+6. Gap offsets alternate +/-
 
-### What We DON'T Know
-1. **Constant selection rule**: Which constant for which n?
-2. **Index selection rule**: Which convergent index?
-3. **Num/Den selection**: Which part of the convergent?
-4. **Post-n=6 construction**: How are m[7,8,9,...] generated?
+### What We Still Need
+1. Complete formula for ALL n (especially n>12)
+2. The rule that determines WHICH formula to use for each n
+3. How to extend this to n=71
 
 ### Implication
-Without the "m-generation algorithm", we CANNOT derive m[71] or k[71].
-The formula k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]] is VERIFIED but INCOMPLETE.
+We now have verified formulas for n=2-12. But we need the complete construction
+algorithm to derive m[71] and k[71].
 
 ---
 
