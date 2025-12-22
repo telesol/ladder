@@ -1,0 +1,26 @@
+MATHEMATICAL STRUCTURE TASK: Analyze m[n] algebraic properties
+
+m-sequence: m[2]=3, m[3]=7, m[4]=22, m[5]=27, m[6]=57, m[7]=150, m[8]=184
+
+FOCUS: Find algebraic relationships that could generate the sequence.
+
+ANALYSIS TASKS:
+1. FACTORIZATION PATTERNS:
+   m[2]=3, m[3]=7, m[4]=2×11, m[5]=3³, m[6]=3×19, m[7]=2×3×5², m[8]=2³×23
+   - Which primes appear? When?
+   - Is there a pattern in the prime factorizations?
+
+2. RECURRENCE SEARCH:
+   - Does m[n] = a×m[n-1] + b×m[n-2] + c×2^n for some a,b,c?
+   - What about m[n] = f(n)×m[n-1] + g(n) where f,g depend on n?
+
+3. CLOSED FORM:
+   - Can m[n] be expressed as: floor(α×2^n + β×n + γ)?
+   - Try: m[n] = floor(f(n)×2^n) where f(n) oscillates
+
+4. CONSTRUCTION APPROACH:
+   - If you were building this sequence, what algorithm would you use?
+   - Start from m[2]=3, m[3]=7, m[4]=22 (π convergents)
+   - What's the simplest rule that generates m[5]=27, m[6]=57, etc?
+
+Give concrete formulas, not just observations.

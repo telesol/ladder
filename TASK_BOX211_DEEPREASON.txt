@@ -1,0 +1,26 @@
+DEEP REASONING TASK: Construct the m[n] generation rule
+
+You have 70 consecutive keys from Bitcoin puzzles. The m-sequence is derived from:
+k[n] = 2*k[n-1] + 2^n - m[n]  (100% verified for all 74 known keys)
+
+m[2]=3, m[3]=7, m[4]=22, m[5]=27, m[6]=57, m[7]=150, m[8]=184, m[9]=493
+m[10]=1444, m[11]=1921, m[12]=3723, m[13]=8342, m[14]=16272, m[15]=26989
+m[16]=67760, m[17]=138269, m[18]=255121, m[19]=564091, m[20]=900329
+
+BREAKTHROUGH FACTS:
+- m[2]=3, m[3]=7, m[4]=22 are π convergent sequence (3/1, 22/7)
+- m[11]=1921 = 17×113, and 113 is a π convergent denominator
+- m[16]=67760 = 2^4×5×7×11^2, contains 7 (π convergent)
+- k[n]/2^n matches mathematical constants at "anchor" points
+
+THE CONSTRUCTION QUESTION:
+The puzzle creator had some algorithm to generate each m[n].
+Think like the creator: "How would I construct this sequence?"
+
+ANALYZE:
+1. m[2,3,4] come from π continued fraction. Does this pattern extend?
+2. After n=4, what rule determines m[n]?
+3. Is there a "base" sequence modified by n-dependent corrections?
+4. Could m[n] = f(π convergents) + g(e convergents) + h(n)?
+
+Think step by step. Use extensive reasoning. Find the construction rule.

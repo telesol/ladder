@@ -1,0 +1,17 @@
+MATHEMATICAL CONSTRUCTION TASK: Find modular patterns in m[n]
+
+m-sequence from Bitcoin puzzles:
+m[2]=3, m[3]=7, m[4]=22, m[5]=27, m[6]=57, m[7]=150, m[8]=184, m[9]=493, m[10]=1444, m[11]=1921, m[12]=3723, m[13]=8342, m[14]=16272, m[15]=26989, m[16]=67760, m[17]=138269, m[18]=255121, m[19]=564091, m[20]=900329
+
+CRITICAL FACT: m[4]/m[3] = 22/7 = π exactly
+CRITICAL FACT: m[2]=3, m[3]=7, m[4]=22 are ALL π convergent components
+
+YOUR TASK:
+1. Compute m[n] mod 7 for all n. Since 7 is in π convergent denominator, there may be a pattern.
+2. Compute m[n] mod 22 for all n. Since 22 is in π convergent numerator, check for patterns.
+3. For each n, decompose m[n] = 7*q[n] + r[n]. Find pattern in q[n] and r[n].
+4. Check if m[n] mod p has periodicity for p = 3, 7, 11, 13, 19, 22, 113 (all π-related).
+5. Use Chinese Remainder Theorem: Can m[n] be uniquely determined by its residues?
+
+GOAL: Find a formula that CONSTRUCTS m[n] using modular arithmetic.
+Output your findings in structured format.
