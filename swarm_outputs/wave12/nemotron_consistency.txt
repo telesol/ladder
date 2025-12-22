@@ -1,0 +1,15 @@
+=== NEMOTRON_CONSISTENCY ===
+Model: nemotron-mini:4b
+Time: 42.1s
+
+ 1. For backward propagation from k[75] to k[71], we have:
+   - Forward: Start with k[75], propagate forward until you reach a known puzzle (let's say it reaches k[k[d[76]]]). You now know both the value of k[n-1] and m[n+1].
+   - Backward: Now start from that known value, propagate backward to find the value of k[n]. The goal is finding a value for k[71], so you need to backtrack through all the previously computed values (let's say it reaches k[k[d[75]]]).
+2. To compute consistent results both ways, we need at least one path in forward propagation and at least one path in backward propagation that reach a common known value of k[n]. Let's call this common value k[common] = [known value]. For example:
+   - Path 1 (forward): Start from k[70], propagate forward until you find the first value m[n+1] and d[n-1] that matches with the known value of adj[common]. Let's call this step as (f,c), where f is the found value for m[n+1] and c is the corresponding values for k[d[76]] in forward direction.
+   - Path 2 (backward): Start from [known value], propagate backward to find a matching pair of known values that match with the previously computed adj[common]. Let's call this step as (b,c), where b is the found value for m[n+1] and c is the corresponding values for k[d[75]] in backward direction.
+3. The c-oscillation constraint implies that c[75] < c[70]. This means that if you find a consistent result (f,c) with [known value], then you should have another consistent result (b,c') for the previous path where d[common] = common - 1.
+   For example: If k[71] is computed as f(m[n+1], c), and if c' is found in the backward propagation with [known value] from m[n-2], then you have a consistent result for previous path (b,c'). In this case b should be equal to k[d[common]-1].
+4. If there are multiple valid solutions, they might differ by the choice of starting points in forward/backward propagation or d[common] choices during backward propagation when finding c'. The question is then how do we choose between them?
+5. Given that all paths to find k[71], including their intermediate results, should be consistent with each other and the overall constraints (f<c, b>c'). To pick a solution among multiple valid ones, it would require solving the entire system of equations simultaneously for all puzzles in forward/backward propagation, considering both paths' c-oscillation constraint. This is an NP problem which seems to be computationally expensive but not impossible with current technology and algorithms available. In practice we can try different starting points or d[common] choices until a consistent solution emerges (which usually takes less computational time than solving the entire system simultaneously).
+

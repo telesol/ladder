@@ -1,0 +1,3 @@
+=== QWQ_CIRCULAR ===
+Model: qwq:32b
+TIMEOUT after 900s

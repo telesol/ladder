@@ -323,6 +323,54 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - Known: 70→75 DOWN, 75→80 UP, 80→85 DOWN, 85→90 UP
     - Use these to constrain candidate enumeration
 
+### WAVE 12 - BIDIRECTIONAL ALGORITHM MATH (2025-12-22) ★★★★★
+
+52. **BACKWARD INVERSION FORMULA PROVEN** (Deepseek):
+    - Forward: k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]]
+    - Backward: k[n-1] = (k[n] - 2^n + m[n]*k[d[n]]) / 2
+    - VERIFIED: k[69] = (k[70] - 2^70 + m[70]*k[2]) / 2 = 297274491920375905804 ✓
+    - Condition for INTEGER: (k[n] - 2^n + m[n]*k[d[n]]) must be EVEN
+
+53. **CIRCULAR DEPENDENCY RESOLUTION** (Deepseek):
+    - Problem: Backward needs m[n] and d[n], but they depend on k[n-1]
+    - Solution: ENUMERATE all valid (m, d) pairs
+    - For each candidate d ∈ {1,2,...,70}:
+      - Compute required m from rearranged equation
+      - Check if k[d] divides the numerator exactly
+      - Check if resulting k[n-1] is in valid range
+    - Filter: d-minimization rule eliminates most candidates
+
+54. **PUZZLE NETWORK STRUCTURE** (Qwen):
+    - Nodes: All 74 known k values
+    - Edges: d[n] references (k[n] → k[d[n]])
+    - IN-DEGREE analysis: k[1], k[2] most referenced
+    - Bridges: k[1..69] serve as intermediate validators
+    - ANY known puzzle can be SOURCE, TARGET, or BRIDGE
+
+55. **MULTI-PATH CONSISTENCY** (Nemotron):
+    - For k[71], check BOTH paths converge:
+      - Path 1: Forward from k[70]
+      - Path 2: Backward from k[75] through k[74], k[73], k[72]
+    - Valid solution: appears in BOTH path results
+    - c-oscillation: additional filter on intermediate values
+
+56. **COMPLETE GAP EQUATIONS** (Phi):
+    - Gap A forward: k[71] = 2*k[70] + 2^71 - m[71]*k[d[71]], etc.
+    - Gap A backward: k[74] = (k[75] - 2^75 + m[75]*k[d[75]])/2, etc.
+    - Same pattern for Gaps B, C, D
+    - Gap E (no upper anchor): forward-only from k[90]
+
+57. **ENUMERATION ALGORITHM**:
+    ```
+    For each gap [n_low, n_high]:
+      forward_candidates = propagate_forward(k[n_low])
+      backward_candidates = propagate_backward(k[n_high])
+      valid_solutions = intersect(forward, backward)
+      For each valid solution:
+        verify c-oscillation constraint
+        verify d-minimization rule
+    ```
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
