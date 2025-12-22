@@ -460,6 +460,60 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - For n>70, we need the SEED or generation method, not just the formula
     - The formula is NECESSARY but NOT SUFFICIENT
 
+### WAVE 16 - CONSTRUCTION THINKING (2025-12-22) ★★★★★
+
+70. **PARADIGM SHIFT: BUILD, DON'T REVERSE-ENGINEER**:
+    - Key insight: Think like the puzzle CREATOR in 2015
+    - Question: "What ALGORITHM would you use to BUILD this?"
+    - The recurrence is a CONSTRAINT, not a GENERATOR
+    - We need to discover the actual construction method
+
+71. **MULTIPLICATIVE STRUCTURE DISCOVERED** ★★★★★:
+    - k[5] = k[2] * k[3] = 3 × 7 = 21 (product of two earlier keys!)
+    - k[6] = k[3]² = 7² = 49 (square of earlier key!)
+    - k[8] = 2⁵ * k[3] = 32 × 7 = 224 (power-of-2 times earlier key!)
+    - k[11] = 3 × 5 × 7 × 11 = 1155 (product of first 4 odd primes!)
+    - This suggests keys are BUILT multiplicatively from "primes" in the sequence
+
+72. **LLM CONSTRUCTION ALGORITHM PROPOSALS**:
+    - **Nemotron "DetMersenneWalk"**: Hash(seed||n) for deterministic randomness
+      ```
+      STATE = hash(seed || n-1) mod 2^32
+      m[n] = getMinimizer(STATE, n)
+      d[n] = getD(STATE, n)
+      k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]]
+      ```
+    - **QWQ**: Iterative with d-selection to minimize m (Euclidean-like)
+    - **Deepseek**: Continued fractions - d[n] is best approximation term
+    - **Phi**: EC point walking with variable offsets
+
+73. **CONSTRUCTION HYPOTHESIS: MERSENNE-SEEDED MULTIPLICATIVE BUILD**:
+    - SEED: k[1] = 1, k[2] = 3, k[3] = 7 (Mersenne numbers 2^n-1)
+    - TRANSITION: k[4] = 8 = 2³ (marks switch from Mersenne to iteration)
+    - MAIN LOOP: For n ≥ 5, build k[n] from previous values
+    - The d-minimization rule emerges naturally when choosing "best" d
+    - Pattern break at n=17: Fermat prime causes algorithm threshold change
+    - Pattern break at n=71: Gap puzzles use different seed/method?
+
+74. **WHY N=17 AND N=71 ARE SPECIAL**:
+    - n=17 is Fermat prime (2^4 + 1) - causes Diophantine threshold crossing
+    - This breaks the ++- adj pattern that held for n=2-16
+    - n=71 may be where puzzle creator switched generation methods
+    - Gap puzzles (71+) could use: different seed, hash-based, or independent generation
+
+75. **TESTABLE CONSTRUCTION APPROACHES**:
+    a) **Hash-based**: k[n] = SHA256(seed || n) mod N
+    b) **PRNG-based**: k[n] = PRNG.next(seed, n)
+    c) **Multiplicative**: k[n] built from products/powers of earlier k-values
+    d) **Continued fraction**: k[n] related to convergents of irrational constant
+    e) **EC trajectory**: k[n] from scalar multiplication pattern on secp256k1
+
+76. **CRITICAL OPEN QUESTION**:
+    - What is the SEED that generates k[1..70]?
+    - Is it: a fixed string, a timestamp, a hash, a mathematical constant?
+    - The same seed for k[71..160], or different seeds per puzzle tier?
+    - Construction algorithm may be SIMPLE but seed is HIDDEN
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
