@@ -619,11 +619,27 @@ k75:     In database (SOLVED)
 k80:     In database (SOLVED)
 k85:     In database (SOLVED)
 k90:     In database (SOLVED)
+k95:     In database (SOLVED)
+k100:    In database (SOLVED)
+k105:    In database (SOLVED)
+k110:    In database (SOLVED)
+k115:    In database (SOLVED)
+k120:    In database (SOLVED)
+k125:    In database (SOLVED)
+k130:    In database (SOLVED)
 k71-k74: NOT in database (UNSOLVED)
 k76-k79: NOT in database (UNSOLVED)
 k81-k84: NOT in database (UNSOLVED)
 k86-k89: NOT in database (UNSOLVED)
-k91-k160: NOT in database (UNSOLVED)
+k91-k94: NOT in database (UNSOLVED)
+k96-k99: NOT in database (UNSOLVED)
+k101-k104: NOT in database (UNSOLVED)
+k106-k109: NOT in database (UNSOLVED)
+k111-k114: NOT in database (UNSOLVED)
+k116-k119: NOT in database (UNSOLVED)
+k121-k124: NOT in database (UNSOLVED)
+k126-k129: NOT in database (UNSOLVED)
+k131-k160: NOT in database (UNSOLVED)
 ```
 
 ### Quick DB Query
@@ -644,8 +660,8 @@ If you cannot verify a claim against the database, **DO NOT MAKE THE CLAIM**.
 
 | Category | Count | Source |
 |----------|-------|--------|
-| Known keys | 74 | DB: k1-k70, k75, k80, k85, k90 |
-| Unsolved (targets) | 86 | All remaining puzzles |
+| Known keys | 82 | DB: k1-k70, k75, k80, k85, k90, k95, k100, k105, k110, k115, k120, k125, k130 |
+| Unsolved (targets) | 78 | All remaining puzzles |
 | Total puzzles | 160 | Bitcoin Puzzle Challenge |
 
 **Use `puzzle_config.py` for all data access - no hardcoded values.**
