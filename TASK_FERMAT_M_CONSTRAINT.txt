@@ -1,0 +1,65 @@
+# TASK: Fermat Prime Constraint on m-sequence
+
+## Context
+We discovered the Fermat Prime Exclusion Rule:
+- k[F] ≢ 0 (mod F) for Fermat primes F ∈ {3, 5, 17, 257, ...}
+- The sign flip at n=17 REMOVES factor 17 from k[17]
+
+## Your Task
+Investigate how this constraint affects the m-sequence generation.
+
+## Key Equations
+k[n] = 2*k[n-1] + adj[n]
+adj[n] = 2^n - m[n]*k[d[n]]
+m[n] = (2^n - adj[n]) / k[d[n]]
+
+## Specific Questions
+
+### 1. What constraint does k[17] ≢ 0 (mod 17) place on m[17]?
+Given:
+- k[16] = 51510 (divisible by 17)
+- k[17] = 95823 (NOT divisible by 17)
+- adj[17] = k[17] - 2*k[16] = 95823 - 103020 = -7197
+
+For k[17] ≢ 0 (mod 17):
+  2*k[16] + adj[17] ≢ 0 (mod 17)
+  0 + adj[17] ≢ 0 (mod 17)  [since k[16] ≡ 0 mod 17]
+  adj[17] ≢ 0 (mod 17)
+
+What does this tell us about m[17]?
+
+### 2. Pattern in adj[n] at Fermat primes
+- adj[3] = k[3] - 2*k[2] = 7 - 6 = 1
+- adj[5] = k[5] - 2*k[4] = 21 - 16 = 5
+- adj[17] = k[17] - 2*k[16] = 95823 - 103020 = -7197
+
+Notice: adj[3] = 1, adj[5] = 5 = F_1!
+Is adj[17] related to 17 somehow? -7197 mod 17 = ?
+
+### 3. Derive m[17] constraint
+If d[17] = 4:
+  m[17] = (2^17 - adj[17]) / k[4]
+       = (131072 - (-7197)) / 8
+       = 138269 / 8
+       = 17283.625 (NOT INTEGER!)
+
+So d[17] ≠ 4. What is d[17]?
+
+### 4. Find the Fermat constraint formula
+Express the constraint k[F] ≢ 0 (mod F) in terms of m[F].
+
+## Data
+k[1] = 1, k[2] = 3, k[3] = 7, k[4] = 8, k[5] = 21
+k[6] = 49, k[7] = 76, k[8] = 224, k[9] = 467, k[10] = 514
+k[11] = 1155, k[12] = 2683, k[13] = 5216, k[14] = 10544, k[15] = 26867
+k[16] = 51510, k[17] = 95823
+
+m[2] = 1, m[3] = 1, m[4] = 22, m[5] = 9, m[6] = 19
+m[7] = 50, m[8] = 23, m[9] = 493, m[10] = 19, m[11] = 1921
+m[12] = 1241, m[13] = 8342, m[14] = 4033, m[15] = 6127
+m[16] = 8470, m[17] = ?
+
+## Expected Output
+1. Formula relating m[F] to Fermat constraint
+2. Prediction for m[17] based on constraint
+3. General rule for m at Fermat primes

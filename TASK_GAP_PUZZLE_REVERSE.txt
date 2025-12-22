@@ -1,0 +1,82 @@
+# TASK: Reverse Engineer Gap Puzzles (75, 80, 85, 90)
+
+## Critical Insight
+The creator SKIPPED puzzles 71-74, 76-79, etc. but SOLVED 75, 80, 85, 90.
+This means the creator has a DIRECT formula k[n] = f(n).
+
+## Your Task
+Analyze k[75], k[80], k[85], k[90] to find the pattern.
+
+## Gap Puzzle Data
+
+### k[75]
+Value: 22538323240989823823367
+Hex: 0x4C5CE114686A1C3B87
+Binary bits: 75
+Position in range: 19.3%
+k[75] mod 3 = 0 (divisible by 3)
+k[75] mod 5 = 2
+k[75] mod 17 = 5
+
+### k[80]
+Value: 1105520030589234487939456
+Hex: 0xE9AE4933D6D010E40480
+Binary bits: 80
+Position in range: 82.9%
+k[80] mod 3 = 1
+k[80] mod 5 = 1
+k[80] mod 17 = 12
+
+### k[85]
+Value: 21090315766411506144426920
+Hex: 0x11E0C7BA104D98D43BA7A8
+Binary bits: 85
+Position in range: 9.0%
+k[85] mod 85 = 0 (divisible by 85 = 5×17!)
+k[85] mod 3 = 2
+k[85] mod 5 = 0
+k[85] mod 17 = 0
+
+### k[90]
+Value: 868012190417726402719548863
+Hex: 0x2CE552CC2C2B7A19227B9BF
+Binary bits: 90
+Position in range: 40.2%
+k[90] mod 3 = 2
+k[90] mod 5 = 3
+k[90] mod 17 = 10
+
+## Questions to Answer
+
+### 1. Gap Pattern
+Why 75, 80, 85, 90? All multiples of 5!
+- 75 = 3 × 5²
+- 80 = 2⁴ × 5
+- 85 = 5 × 17 (Fermat prime product!)
+- 90 = 2 × 3² × 5
+
+### 2. Position Oscillation (from MEMORY.md)
+Position alternates: 19.3% → 82.9% → 9.0% → 40.2%
+Low → High → Low → Mid
+
+### 3. Offset Pattern
+k[80] - 32×k[75] = ?
+k[85] - 32×k[80] = ?
+k[90] - 32×k[85] = ?
+
+Signs alternate: -, +, -, +
+
+### 4. Constant Approximation
+k[n]/2^n for gap puzzles:
+- k[75]/2^75 = ?
+- k[80]/2^80 = ?
+- k[85]/2^85 = ?
+- k[90]/2^90 ≈ 1/√2 (0.8% error)
+
+### 5. Factorization Patterns
+Factor each gap puzzle key and look for patterns.
+
+## Expected Output
+1. Pattern connecting gap puzzles
+2. Formula that generates k[75], k[80], k[85], k[90]
+3. Use that formula to predict k[71-74], k[76-79], etc.

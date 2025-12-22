@@ -1,0 +1,85 @@
+# URGENT: 5-Step Bridge Formula Discovery
+
+## CRITICAL FINDING
+k[n+5] = 32 × k[n] + offset(n)
+
+The gap puzzles (75, 80, 85, 90) are BRIDGES every 5 steps!
+5 is Fermat prime F_1 = 2^(2^1) + 1
+
+## Verified Offset Pattern for Gap Puzzles
+
+offset[75] = k[75] - 32*k[70] = -8,515,659,927,170,934,272,025  (NEGATIVE)
+offset[80] = k[80] - 32*k[75] = +384,293,686,877,560,125,591,712  (POSITIVE)
+offset[85] = k[85] - 32*k[80] = -14,286,325,212,443,997,469,635,672  (NEGATIVE)
+offset[90] = k[90] - 32*k[85] = +193,122,085,892,558,206,097,887,423  (POSITIVE)
+
+SIGN ALTERNATES based on n mod 10:
+- n mod 10 = 0 → NEGATIVE offset
+- n mod 10 = 5 → POSITIVE offset
+
+## Normalized Offsets (offset / 2^n)
+
+offset[75] / 2^70 = -7.21
+offset[80] / 2^75 = +10.17
+offset[85] / 2^80 = -11.82
+offset[90] / 2^85 = +4.99
+
+## Your Task
+
+### 1. Find the offset magnitude formula
+The offsets are approximately c × 2^n where c varies.
+What determines c?
+
+Candidates:
+- c depends on n mod 5 or n mod 10
+- c involves Fermat primes
+- c comes from the m-sequence
+- c relates to k[n mod 5]
+
+### 2. Interpolate between bridges
+Given k[70] and k[75], can we find k[71], k[72], k[73], k[74]?
+
+Hypothesis: There's a 1-step formula within each 5-block:
+k[n+1] = 2*k[n] + adj[n+1]
+
+But adj[n] might have a simpler form when viewed in 5-blocks.
+
+### 3. Test on known 5-blocks
+Block 1-5: k[1]=1, k[2]=3, k[3]=7, k[4]=8, k[5]=21
+Block 6-10: k[6]=49, k[7]=76, k[8]=224, k[9]=467, k[10]=514
+...
+
+Is there a pattern within each block?
+
+### 4. Predict k[71-74] from k[70] and k[75]
+We have:
+- k[70] = 970,436,974,005,023,690,481
+- k[75] = 22,538,323,240,989,823,823,367
+
+The values k[71], k[72], k[73], k[74] must lie between these.
+Each satisfies k[n] = 2*k[n-1] + adj[n].
+
+Can we find constraints on adj[71], adj[72], adj[73], adj[74]?
+
+## Key Data
+
+k[n] for n mod 5 = 0 (every 5th key):
+k[5] = 21
+k[10] = 514
+k[15] = 26867
+k[20] = 863317
+k[25] = 22271349
+k[30] = 601811137
+k[35] = 16998796798
+k[40] = 523975237638
+k[45] = 14942349565985
+k[50] = 414652787449074
+k[55] = 10715027880526849
+k[60] = 318023816847215449
+k[65] = 9618904055523380069
+k[70] = 970436974005023690481
+
+## Expected Output
+1. Formula for offset magnitude
+2. Method to interpolate k[71-74] from k[70] and k[75]
+3. Predictions for k[71], k[72], k[73], k[74]

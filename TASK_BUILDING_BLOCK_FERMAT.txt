@@ -1,0 +1,73 @@
+# TASK: Building Blocks and Fermat Prime Connection
+
+## Context
+We discovered two major patterns:
+1. **Fermat Prime Exclusion**: k[F] ≢ 0 (mod F) for F ∈ {3, 5, 17, ...}
+2. **Building Block Propagation**: m-values after n=10 are divisible by m[4]=22, m[6]=19, m[7]=50, m[8]=23
+
+## Your Task
+Find the CONNECTION between these two patterns.
+
+## Key Observations
+
+### Building Blocks from Constants
+- m[4] = 22 (π convergent: 22/7 ≈ π)
+- m[6] = 19 (e or √3 convergent)
+- m[7] = 50 = m[3]² + 1 = 49 + 1
+- m[8] = 23 = m[4] + 1 = 22 + 1
+
+### 17-Network (m divisible by 17)
+m[9] = 17 × 29 = 493
+m[11] = 17 × 113 = 1921
+m[12] = 17 × 73 = 1241
+m[24] = 17 × ...
+m[48] = 17 × ...
+m[67] = 17 × ...
+
+Notice: 17 is a FERMAT PRIME! And it appears as a factor in many m-values.
+
+### k-values divisible by 17
+k[16], k[47], k[66], k[85] are divisible by 17
+But k[17] is NOT (Fermat exclusion!)
+
+## Questions to Answer
+
+### 1. Why does 17 appear in m-sequence but not k[17]?
+- m[9], m[11], m[12] are divisible by 17
+- But k[17] mod 17 ≠ 0
+- Is there a conservation law?
+
+### 2. Do other Fermat primes appear in m-sequence?
+Check if m-values are divisible by:
+- 3 (F_0)
+- 5 (F_1)
+- 17 (F_2)
+
+### 3. Building Block Selection Rule
+When is m[n] divisible by:
+- 22 (π connection)
+- 19 (e/√3 connection)
+- 17 (Fermat prime)
+- 50 or 23 (derived building blocks)
+
+### 4. Fermat Prime Pattern in m-sequence
+Hypothesis: m[n] is divisible by Fermat prime F when:
+- n is NOT F itself
+- n satisfies some modular condition
+
+## Data
+
+m-sequence (n=2 to n=31):
+m = [1, 1, 22, 9, 19, 50, 23, 493, 19, 1921, 1241, 8342, 4033, 6127,
+     8470, 37813, 42899, 563891, 95635, 201453, 5091505, 5130499,
+     16172561, 29229451, 35286683, 100849825, 223805939, 355453921,
+     453571973, 1024772285]
+
+k-sequence (n=1 to n=20):
+k = [1, 3, 7, 8, 21, 49, 76, 224, 467, 514, 1155, 2683, 5216, 10544,
+     26867, 51510, 95823, 198669, 357535, 863317]
+
+## Expected Output
+1. Pattern connecting Fermat primes to building block selection
+2. Rule for when 17 (or other Fermat primes) divide m[n]
+3. Explanation of why k[F] avoids F but m-sequence doesn't

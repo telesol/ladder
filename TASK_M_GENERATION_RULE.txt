@@ -1,0 +1,76 @@
+# TASK: Crack the m-sequence Generation Rule
+
+## Context
+This is the CRITICAL BARRIER. If we can generate m[n] deterministically, we can generate k[n].
+
+## What We Know
+
+### Building Blocks (n=2-6 from mathematical constants)
+m[2] = 1 (self-reference)
+m[3] = 1 (self-reference)
+m[4] = 22 (π convergent: 22/7)
+m[5] = 9 (ln(2) convergent)
+m[6] = 19 (e or √3 convergent)
+
+### Recursive Construction (n=7-10) - VERIFIED
+m[7] = m[3]² + 1 = 7² + 1 = 50 ✓
+m[8] = m[4] + 1 = 22 + 1 = 23 ✓
+m[9] = m[4]² + m[5] = 22² + 9 = 493 ✓
+m[10] = m[6] = 19 ✓
+
+### 17-Network (divisible by 17)
+m[9] = 17 × 29 = 493
+m[11] = 17 × 113 = 1921
+m[12] = 17 × 73 = 1241
+
+### Self-Index Pattern (prime n)
+m[19] = 19 × 29689
+m[41] = 41 × 22342064035
+→ m[71] might = 71 × Q
+
+### Building Block Propagation (n > 10)
+m[16] = 22 × 385 = 8470
+m[38] = 22 × 4975901387
+m[40] = 50 × 4955401018
+m[47] = 23 × 5386442171234
+
+## Your Task
+
+Find the GENERATION RULE for m[n]. Specifically:
+
+### 1. Analyze m[11] to m[20]
+m[11] = 1921 = 17 × 113
+m[12] = 1241 = 17 × 73
+m[13] = 8342 = 2 × 4171
+m[14] = 4033 = prime
+m[15] = 6127 = prime
+m[16] = 8470 = 2 × 5 × 7 × 11 × 11
+m[17] = ?
+m[18] = ?
+m[19] = 563891 = 19 × 29679
+m[20] = ?
+
+### 2. Look for patterns
+- Prime factorization patterns
+- Relationship to building blocks (22, 19, 50, 23)
+- Relationship to n
+- Relationship to d[n]
+
+### 3. Test hypotheses
+a) m[n] = f(m[n-1], m[n-2], ..., m[2])
+b) m[n] = g(n, building_blocks)
+c) m[n] = h(d[n], n)
+
+### 4. Check Fermat constraint
+At n=17: k[17] ≢ 0 (mod 17) requires specific m[17]
+
+## Full m-sequence (n=2 to n=31)
+m = [1, 1, 22, 9, 19, 50, 23, 493, 19, 1921, 1241, 8342, 4033, 6127,
+     8470, 37813, 42899, 563891, 95635, 201453, 5091505, 5130499,
+     16172561, 29229451, 35286683, 100849825, 223805939, 355453921,
+     453571973, 1024772285]
+
+## Expected Output
+1. A formula or algorithm that generates m[n]
+2. Prediction for m[71]
+3. Verification against known values

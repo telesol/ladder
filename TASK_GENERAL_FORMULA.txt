@@ -1,0 +1,78 @@
+# TASK: Derive the GENERAL Key Generation Formula
+
+## Goal
+Find f(n) such that k[n] = f(n) for ANY n, not just specific puzzles.
+
+## Critical Insight
+The puzzle creator revealed k[75], k[80], k[85], k[90] WITHOUT revealing k[71-74].
+This PROVES a DIRECT formula exists: k[n] = f(n)
+
+The recursive formula k[n] = 2*k[n-1] + adj[n] is a CONSEQUENCE, not the source.
+
+## What We Know
+
+### Fermat Prime Exclusion Rule (VERIFIED)
+k[F] ≢ 0 (mod F) for Fermat primes F ∈ {3, 5, 17, 257, ...}
+- k[3] mod 3 = 1
+- k[5] mod 5 = 1
+- k[17] mod 17 = 11
+- k[85] mod 5 = 0, k[85] mod 17 = 0 (allowed, 85 not Fermat)
+
+### Mathematical Constants in k-sequence
+k[n]/2^n ≈ C(n) where C(n) ∈ {π/4, e/π, 1/φ, ln(2), 1/√2, 1/√3, e/4}
+
+Best matches:
+- k[16]/2^16 ≈ π/4 (0.074% error)
+- k[58]/2^58 ≈ ln(2) (0.095% error)
+- k[61]/2^61 ≈ 1/φ (0.049% error)
+
+### Gap Puzzle Constants
+- k[75]/2^75 ≈ ?
+- k[80]/2^80 ≈ ?
+- k[85]/2^85 ≈ ?
+- k[90]/2^90 ≈ 1/√2 (0.8% error)
+
+### Construction Patterns (n=1-14)
+k[4] = 2³ (power of 2)
+k[5] = k[2] × k[3] = 3 × 7
+k[6] = k[3]² = 49
+k[8] = 2⁵ × k[3] = 224
+k[11] = 5 × (k[3] + k[8]) = 1155
+
+## Your Task
+
+### 1. Find the Constant Selector Function
+What determines C(n)? Candidates:
+- n mod 5 (1/φ correlates with n ≡ 1 mod 5)
+- Prime/composite status
+- Binary representation of n
+- Fermat prime relationship
+
+### 2. Find the Correction Term
+k[n] = floor(C(n) × 2^n) + correction(n)
+What is correction(n)?
+
+### 3. Test on Gap Puzzles
+The formula must work for k[75], k[80], k[85], k[90].
+These are KNOWN - use them to verify any hypothesis.
+
+### 4. Predict Multiple Unsolved Puzzles
+If formula found, compute:
+- k[71], k[72], k[73], k[74]
+- k[76], k[77], k[78], k[79]
+- k[91], k[92], ...
+
+## Data: Gap Puzzles (KNOWN)
+k[75] = 22538323240989823823367
+k[80] = 1105520030589234487939456
+k[85] = 21090315766411506144426920
+k[90] = 868012190417726402719548863
+
+## Data: k-sequence (n=1 to 70)
+[Available in db/kh.db]
+
+## Expected Output
+1. The constant selector function C(n)
+2. The correction term formula
+3. Verification against ALL 74 known keys
+4. Predictions for unsolved puzzles

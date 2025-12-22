@@ -881,3 +881,166 @@ def compute_adj(n, k_prev):
 
 The algorithm deliberately flips the sign to maintain the Fermat Prime Exclusion Rule. This is sophisticated number theory embedded in the key generation.
 
+---
+
+## SESSION 2025-12-22 (Continued) - FERMAT INVESTIGATION
+
+### Prime Divisibility Analysis (Extended)
+
+Tested k[p] mod p for ALL prime p from 2 to 90:
+
+| Type | Primes | k[p] mod p = 0? |
+|------|--------|-----------------|
+| **Fermat primes** | 3, 5, 17 | NEVER (all ≠ 0) |
+| **Non-Fermat primes** | 2,7,13,19,23,29,31,37,41,43,47,53,59,61,67 | Only k[11] |
+
+**Key Finding:** Only 1 out of 18 non-Fermat primes has k[p] divisible by p.
+- k[11] = 1155 = 3 × 5 × 7 × 11 (divisible by 11)
+- All other non-Fermat primes: k[p] NOT divisible by p
+
+### Gap Puzzle Divisibility by Fermat Primes
+
+| n | k[n] mod 3 | k[n] mod 5 | k[n] mod 17 |
+|---|------------|------------|-------------|
+| 75 | 0 | 2 | 5 |
+| 80 | 1 | 1 | 12 |
+| **85** | 2 | **0** | **0** |
+| 90 | 2 | 3 | 10 |
+
+**k[85] is divisible by 85 = 5 × 17** (product of TWO Fermat primes!)
+This is ALLOWED because 85 itself is not a Fermat prime.
+
+### Divisibility by Fermat Primes (n=1 to 90)
+
+- **Divisible by 3**: 23 values (but NOT k[3])
+- **Divisible by 5**: 15 values (but NOT k[5])
+- **Divisible by 17**: k[16], k[47], k[66], k[85] (but NOT k[17])
+
+### Current Investigation Tasks (Dispatched 2025-12-22 12:33)
+
+1. **Fermat Constraint on m-sequence** → Box211/deepseek-r1:70b
+   - How does k[17] ≢ 0 (mod 17) constrain m[17]?
+   - Derive general formula for m at Fermat primes
+
+2. **d[71] Prediction** → Spark2/qwen3:32b
+   - Use 17-periodicity, transition patterns, prime n patterns
+   - Compute probability distribution for d[71]
+
+3. **m-sequence Generation Rule** → Spark1/qwq:32b
+   - CRITICAL BARRIER: Find the deterministic rule
+   - Test recursive, modular, and building block patterns
+
+Monitor: `/home/solo/LA/monitor_fermat.sh`
+
+
+---
+
+## SESSION 2025-12-22 (Opus 4.5) - 5-STEP PATTERN ANALYSIS
+
+### 🔥 CRITICAL DISCOVERY: 5-Step is DERIVED, Not Fundamental!
+
+The "5-step bridge" pattern is NOT a separate formula - it's a mathematical CONSEQUENCE of the 1-step recurrence!
+
+```
+k[n+5] = 32 × k[n] + offset5[n]
+
+Where:
+offset5[n] = 16×adj[n+1] + 8×adj[n+2] + 4×adj[n+3] + 2×adj[n+4] + adj[n+5]
+           = Σ 2^(5-i) × adj[n+i] for i=1 to 5
+
+VERIFIED: 100% match for ALL n (1-80)
+```
+
+### 10-Step Formula (Also Derived)
+
+```
+offset10[n] = 32×offset5[n] + offset5[n+5]
+k[n+10] = 1024×k[n] + offset10[n]
+
+VERIFIED: 100% match for all available pairs
+```
+
+### Gap Puzzle Offsets
+
+| n | offset5[n] | offset5/2^n |
+|---|------------|-------------|
+| 70 | -8.5×10^24 | -7.21 |
+| 75 | +3.8×10^26 | +10.17 |
+| 80 | -1.4×10^28 | -11.82 |
+| 85 | +1.9×10^29 | +4.99 |
+
+Sign alternates, but NOT simply by n mod 10 - depends on sum of adj values!
+
+### Formula Chain (Complete Picture)
+
+```
+d[n] → (unknown rule, minimizes m)
+m[n] → (unknown rule)
+adj[n] = 2^n - m[n]×k[d[n]]
+k[n] = 2×k[n-1] + adj[n]
+offset5[n] = Σ 2^(5-i) × adj[n+i]
+k[n+5] = 32×k[n] + offset5[n]
+```
+
+### d[n] Pattern Analysis
+
+```
+Distribution:
+  d=1: 43.5% (most common)
+  d=2: 29.0%
+  d=3-8: 27.5%
+
+Powers of 2:
+  d[2]=2, d[4]=1, d[8]=4, d[16]=4, d[32]=8, d[64]=2
+
+When n is prime (n>17):
+  Mostly d=1 or d=2
+```
+
+### m/2^n Ratio for d=1 Cases
+
+```
+Min: 0.72
+Max: 1.375
+Average: 1.01
+
+If d[71]=1, m[71] range: [1.94×10^21, 3.12×10^21]
+This corresponds to m[71]/2^71 ∈ [0.82, 1.32] - within observed range!
+```
+
+### Position Oscillation (Why Interpolation Fails)
+
+```
+Position in range oscillates wildly:
+k[65]: 65.71%
+k[66]: 25.62%
+k[67]: 79.78%
+k[68]: 49.01%
+k[69]: 0.72%  ← Anomaly!
+k[70]: 64.40%
+```
+
+Linear interpolation between k[70] and k[75] is WRONG!
+
+### Key Insight
+
+The TRUE unknowns are only:
+1. **m[n]**: The mysterious m-sequence
+2. **d[n]**: The divisor index sequence
+
+If we find the generation rules for m[n] and d[n], we can compute ANY k[n]!
+
+### Cluster Task Findings (Spark2/qwen3:32b)
+
+Proposed selector function based on n mod 5:
+- n ≡ 0 mod 5: C = 1/√2 (≈0.707)
+- n ≡ 3 mod 5: C = ln(2) (≈0.693)
+- n ≡ 1 mod 5 (power of 2): C = π/4 (≈0.785)
+- n ≡ 1 mod 5 (prime): C = 1/φ (≈0.618)
+
+### Next Steps
+
+1. Find d[n] generation rule (related to minimizing m[n])
+2. Find m[n] generation rule (may involve mathematical constants)
+3. These are the ONLY unknowns for ANY puzzle!
+
