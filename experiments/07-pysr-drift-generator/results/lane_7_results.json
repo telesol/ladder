@@ -1,0 +1,11 @@
+{
+  "lane": 7,
+  "niterations": 100,
+  "best_formula": "complexity                         1\nloss                             0.0\nequation                          x1\nscore                            0.0\nsympy_format                      x1\nlambda_format    PySRFunction(X=>x1)\nName: 0, dtype: object",
+  "r2_train": 1.0,
+  "r2_val": 0.4076163610719322,
+  "r2_test": -0.06485901762522595,
+  "accuracy_train": 1.0,
+  "accuracy_val": 0.6,
+  "accuracy_test": 0.0
+}

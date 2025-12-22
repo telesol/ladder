@@ -1,0 +1,11 @@
+{
+  "lane": 6,
+  "niterations": 150,
+  "best_formula": "complexity                                            7\nloss                                           0.024287\nequation                    x1 * square(x0 + -47.81381)\nscore                                          1.510548\nsympy_format                      x1*(x0 - 47.81381)**2\nlambda_format    PySRFunction(X=>x1*(x0 - 47.81381)**2)\nName: 4, dtype: object",
+  "r2_train": 0.9533305302590998,
+  "r2_val": -26474.404483271224,
+  "r2_test": -503552.970661464,
+  "accuracy_train": 0.96,
+  "accuracy_val": 0.0,
+  "accuracy_test": 0.0
+}
