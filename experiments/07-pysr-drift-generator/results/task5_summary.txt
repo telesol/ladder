@@ -1,0 +1,44 @@
+Task 5 Results - Regime-Specific PySR for Lanes 0-6
+
+## Summary
+
+Lane   | Stable  | Moderate | Complex | Overall | H4      | Improvement
+-------|---------|----------|---------|---------|---------|-------------
+Lane 0 |   0.0%  |    0.0%  |   0.0%  |   0.0%  |  6.0%   |      -6.0%
+Lane 1 |  22.2%  |   22.2%  |  22.2%  |  22.2%  | 71.0%   |     -48.8%
+Lane 2 |  20.0%  |   20.0%  |  20.0%  |  20.0%  |  7.0%   |     +13.0%
+Lane 3 |   0.0%  |    0.0%  |   0.0%  |   0.0%  | 21.0%   |     -21.0%
+Lane 4 |  42.9%  |   42.9%  |  42.9%  |  42.9%  | 23.0%   |     +19.9%
+Lane 5 |  40.0%  |   40.0%  |  40.0%  |  40.0%  | 10.0%   |     +30.0%
+Lane 6 | 100.0%  |  100.0%  | 100.0%  | 100.0%  | 50.0%   |     +50.0%
+
+Average improvement: +3.9%
+
+## Conclusion: REGIME-SPECIFIC DOES NOT HELP
+
+Key findings:
+1. Regime separation provides ZERO improvement over global baseline (all three regime accuracies equal overall)
+2. Simple mode-based baseline performs comparably to H4 recursive approach for lanes 2, 4-6
+3. Lanes 0-3 remain very difficult (0-22% accuracy)
+4. Lanes 4-6 show clear k=32 boundary (stable=0 before k32, chaos after)
+
+## Regime Statistics
+
+Stable (k<32):
+- Lanes 0-3: Chaotic (81-100% transition rates)
+- Lanes 4-6: Perfect (0% transition rate, 100% zeros)
+
+Moderate (32≤k<64):
+- All lanes: 45-100% transition rates
+- Best: Lane 6 (45.8%)
+
+Complex (k≥64):
+- All lanes: 100% transition rate (complete chaos)
+
+## Verdict
+
+❌ REGIME-SPECIFIC HELPS: NO (0/7 lanes improved by regime separation)
+✅ K=32 BOUNDARY DISCOVERED: YES (clear transition point for lanes 4-6)
+✅ LANE 6 IS BEST: YES (100% test accuracy, lowest transition rates)
+
+Recommendation: Focus on lanes 7-8 (82-92% in H4), use ensemble methods, accept that lanes 0-6 may be fundamentally unpredictable due to cryptographic drift properties.

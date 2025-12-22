@@ -1,211 +1,170 @@
-# Last Status - 2025-12-22 (PROOF CONFIRMED!)
+# TASK 3 COMPLETE - Ready for PySR Training
 
-**Session**: Major Breakthroughs + Theory Proven
-**Date**: 2025-12-22
-**Status**: 🎉 **8/16 LANES SOLVED (100% ACCURACY!)**
-
----
-
-## 🏆 WHAT WE PROVED TODAY
-
-### ✅ PROVEN: 8 Lanes = 100% Accuracy (k<64)
-- **Lanes 8-15**: 504/504 correct = **100.00%** ✅
-- **Lane 8**: drift = 0 always (k<64)
-- **Lanes 9-15**: drift = 0 always
-- **Lane 7**: 87.3% with k-based formula
-
-**This is NOT theory - this is MATHEMATICAL PROOF!**
-
-### ✅ PROVEN: k=64 Regime Boundary
-- k<64: 72.82% accuracy (STABLE)
-- k≥64: 48.96% accuracy (COMPLEX)
-- **9/16 lanes** transition at k=64
-- Performance **crashes** across boundary
-
-### ✅ PROVEN: Lane Independence
-- Cross-lane dependencies: 0-5.6% (REJECTED)
-- Each lane is independent
+**Date**: 2025-12-23  
+**Session**: TASK 3 COMPLETE  
+**Next**: TASK 4 - Run PySR Training (2-8 hours)  
+**Location**: `/home/solo/LadderV3/kh-assist`
 
 ---
 
-## 📊 Complete Results
+## ✅ TASK 3 COMPLETE: PySR Training Script Ready
 
-| Lane | k<64 Accuracy | Method | Status |
-|------|---------------|--------|--------|
-| **8-15** | **100%** | drift=0 | ✅ SOLVED |
-| **7** | **87.3%** | k-formula: `((k/30)-0.9)^32*0.6` | ✅ SOLVED |
-| 0-6 | 6-76% | H4 affine (needs refinement) | ⚠️ PARTIAL |
+### What Was Done
 
-**Overall (k<64)**: 72.82% (734/1008)
+1. **Discovered Critical Data Error** ✅
+   - LLM claim: ">95% multiples of 16" → **FALSE!**
+   - Reality: Only 6.3% of evolution drift are multiples of 16
+   - LLM analyzed all values including 763 inactive zeros
+   - Removed quantization assumptions from training
 
----
+2. **Created Training Infrastructure** ✅
+   - `train_drift_evolution.py` - Main PySR training script (executable)
+   - `test_data_loading.py` - Data verification (passed ✅)
+   - `README.md` - Complete documentation
+   - `TASK_3_COMPLETE_2025-12-23.md` - Session summary
 
-## 🔍 Key Discoveries
+3. **Verified Data Extraction** ✅
+   - 332 evolution values (k > lane×8)
+   - 216 training samples (puzzles 1-55)
+   - 116 validation samples (puzzles 56-69)
+   - Per-lane statistics confirmed
 
-### 1. Byte Order Error (Fixed)
-- **Problem**: Sequential byte reading
-- **Solution**: REVERSED byte extraction
-- **Result**: 87.5% → **100% verification**
+### Key Statistics
 
-### 2. Regime Structure
 ```
-k < 64:  STABLE   (formulas work!)
-k = 64:  BOUNDARY (9/16 lanes transition)
-k > 64:  COMPLEX  (need bridges)
-```
-
-### 3. Lane Types
-- **Trivial (9-15)**: Always 0 - SOLVED
-- **Learnable (7-8)**: Formula-based - SOLVED for k<64
-- **Complex (0-6)**: Recursive - needs work
-
----
-
-## 📁 Key Files Created
-
-### Proof Scripts
-```
-PROOF_k64_split.py                    - Regime split proof (72.82% vs 48.96%)
-PROOF_hybrid_on_known_data.py         - Full test on 1-70
-hybrid_drift_generator.py             - Hybrid generator code
+Evolution drift values: 332
+Drift range: [0, 254]
+Drift mean: 112.93 ± 78.90
+Multiples of 16: 6.3% (NOT 95%!)
 ```
 
-### Documentation
+Per-lane distribution:
+- Lane 0: 68 values (most data)
+- Lane 8: 5 values (least data)
+- High variance in means (10.2 to 128.0)
+
+### Files Created
+
 ```
-SYNTHESIS_ALL_FINDINGS.md             - Complete overview ⭐
-LANE_8_BREAKTHROUGH_K64.md            - k=64 discovery
-LANES_0_6_ANALYSIS.md                 - Lane complexity analysis
-QUICK_SUMMARY.md                      - Quick reference
+experiments/01-pysr-symbolic-regression/drift_formula/
+├── README.md
+├── train_drift_evolution.py (executable)
+├── test_data_loading.py
+└── results/ (will be created during training)
 ```
 
-### Research
+Documentation:
 ```
-investigate_k64_transition.py         - k=64 boundary analysis
-experiments/07-pysr-drift-generator/  - PySR experiments
-  ├── results/lane_8_results.json     - 100% for k<64!
-  ├── results/lane_7_results.json     - 91.67% for k<64!
-  ├── results/task3_*.json            - Cross-lane: negative
-  └── results/task4_*.json            - Index-based: negative for 0-6
+TASK_3_COMPLETE_2025-12-23.md
 ```
 
 ---
 
-## 🎯 What's Next (When Resume)
+## 📍 Current Status
 
-### IMMEDIATE: Bridge Interpolation (1 hour)
-We have bridges at: 70, 75, 80, 85, 90, 95
+**Completed**:
+- ✅ TASK 1: LLM Analysis (Nemotron + GPT-OSS)
+- ✅ TASK 2: Data Validation (69 transitions verified)
+- ✅ TASK 3: PySR Training Script (ready to run!)
 
-**Approach**:
-```python
-def generate_71_to_95():
-    # For k>=64, use bridge interpolation
-    # For lanes 8-15: drift=0 (100%)
-    # For lane 7: Use formula or bridge
-    # For lanes 0-6: H4 + bridge fill
-    pass
-```
-
-**Expected**: >90% overall accuracy
-
-### STRATEGY:
-1. Use **formulas for k<64** (72.82%)
-2. Use **bridges for k≥64** (known values)
-3. Interpolate between bridges (cubic spline or linear)
-4. Validate cryptographically
+**Next**:
+- 📝 TASK 4: Run PySR Training (2-8 hours)
+- ⏳ TASK 5: Integrate findings
+- ⏳ TASK 6: Validate on X_75
+- ⏳ TASK 7: Generate puzzles 71-95
 
 ---
 
-## 🚀 Quick Resume Commands
+## 🚀 Ready to Run TASK 4
+
+### Quick Start (if user wants to run now)
 
 ```bash
 cd /home/solo/LadderV3/kh-assist
-
-# Read complete findings
-cat SYNTHESIS_ALL_FINDINGS.md
-
-# See proof results
-python3 PROOF_k64_split.py
-
-# Check git status
-git log --oneline -10
-git status
-
-# Next: Build bridge interpolation
-# (code ready to write)
+source experiments/01-pysr-symbolic-regression/.venv/bin/activate
+python3 experiments/01-pysr-symbolic-regression/drift_formula/train_drift_evolution.py
 ```
 
----
+### Background Training (recommended)
 
-## 📈 Session Progress
+```bash
+cd /home/solo/LadderV3/kh-assist
+source experiments/01-pysr-symbolic-regression/.venv/bin/activate
+nohup python3 experiments/01-pysr-symbolic-regression/drift_formula/train_drift_evolution.py > pysr_training.log 2>&1 &
 
-### Completed Research
-- ✅ Byte order discovery (100% verification)
-- ✅ k=64 regime boundary (proven)
-- ✅ Lane classification (3 types)
-- ✅ PySR on lanes 7-8 (87-100%)
-- ✅ Cross-lane test (negative)
-- ✅ Index-based test (negative for 0-6)
-- ✅ Proof on known data (8 lanes solved!)
-
-### What We Know (100% Certain)
-1. **Lanes 8-15 = 100% for k<64** (504/504 proven!)
-2. **k=64 is universal boundary** (9/16 lanes transition)
-3. **Lanes are independent** (no cross-lane deps)
-4. **Regime-aware needed** (can't use single formula)
-
-### What We Need
-1. **Bridge interpolation** for k≥64
-2. **Refine H4** for lanes 0-6
-3. **Cryptographic validation** on generated keys
-
----
-
-## 💾 Git Status
-
-**Latest Commits**:
-```
-c1a65a7 - Quick session summary
-605fc6e - Complete synthesis
-7da92c1 - k=64 regime change breakthrough
-c363d8c - Multi-Claude organization
-25d8dd2 - Byte order discovery
+# Monitor progress
+tail -f pysr_training.log
 ```
 
-**Uncommitted** (to be committed):
-- PROOF_k64_split.py
-- PROOF_hybrid_on_known_data.py
-- hybrid_drift_generator.py
-- last_status.md (this file)
+**Estimated time**: 2-8 hours on CPU
 
 ---
 
-## 🎉 Bottom Line
+## 📊 What to Expect from Training
 
-**We proved 8/16 lanes work with 100% accuracy!**
+**Success Levels**:
+- **100% match**: ✅ Formula found! → Proceed to TASK 6
+- **90-99%**: 🔥 Excellent, refine and test
+- **70-90%**: 👍 Good, try per-lane models
+- **<70%**: 🔬 Need different approach
 
-**We proved k=64 regime boundary exists!**
-
-**We're ready to generate puzzles 71-95!**
-
-**This is MAJOR PROGRESS - not failure!**
-
----
-
-## 📋 Next Session TODO
-
-1. **Commit proof scripts** (5 min)
-2. **Build bridge interpolation** (30 min)
-3. **Generate puzzles 71-74** (test with bridge 75)
-4. **Validate cryptographically** (15 min)
-5. **If successful → generate 75-95** (1 hour)
+**Output**:
+- `results/drift_model_unified.pkl` - Trained model
+- `results/drift_equations_unified.csv` - Discovered equations
 
 ---
 
-**Timeline**: 2 hours to generating puzzles 71-95
-**Confidence**: HIGH (8 lanes proven at 100%!)
+## 🔍 Critical Insights from TASK 3
+
+1. **Drift is NOT quantized** (6.3% multiples of 16, not 95%)
+2. **High per-lane variance** (mean drift: 10.2 to 128.0)
+3. **Unbalanced data** (68 samples for Lane 0, only 5 for Lane 8)
+4. **Complex pattern** (no obvious modular structure)
+
+These suggest:
+- Formula may be lane-specific (per-lane models may work better)
+- Formula may involve non-trivial arithmetic
+- Unified model may struggle → prepare for per-lane fallback
 
 ---
 
-*Updated: 2025-12-22 12:30 UTC*
-*Breakthrough: 8 lanes solved, k=64 proven*
-*Next: Bridge interpolation for k≥64*
+## 📝 Updated File Index
+
+**Critical files** (read first when resuming):
+- `CRITICAL_NOTE_READ_FIRST.md` ⚠️
+- `last_status.md` (this file)
+- `RESUME_TASK_LIST.md`
+
+**Session summaries**:
+- `TASK_2_VALIDATION_COMPLETE_2025-12-22.md`
+- `TASK_3_COMPLETE_2025-12-23.md` ← **NEW**
+
+**Training files**:
+- `experiments/01-pysr-symbolic-regression/drift_formula/README.md`
+- `experiments/01-pysr-symbolic-regression/drift_formula/train_drift_evolution.py`
+
+**Analysis results**:
+- `LLM_ANALYSIS_CONSOLIDATED_2025-12-22.md`
+
+---
+
+## ⏭️ Next Steps
+
+**User decides**:
+1. **Run training now** → Use commands above, wait 2-8 hours
+2. **Review script first** → Read `train_drift_evolution.py`, adjust if needed
+3. **Wait for better time** → Training can run overnight
+
+**After training completes**:
+1. Check `results/drift_equations_unified.csv`
+2. Analyze validation accuracy
+3. If ≥90%, proceed to TASK 6 (validation on X_75)
+4. If <90%, try per-lane models (TASK 4 variant)
+
+---
+
+**Checkpoint set!** Ready for TASK 4 whenever user is ready.
+
+*Updated: 2025-12-23*  
+*Status: TASK 3 complete, TASK 4 ready*  
+*Goal: Discover drift formula → Generate unknown puzzles!*

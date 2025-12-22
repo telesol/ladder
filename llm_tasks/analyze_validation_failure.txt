@@ -1,0 +1,63 @@
+You are analyzing a cryptographic puzzle calculation failure.
+
+## Background
+
+We have a formula discovered via symbolic regression:
+```
+X_{k+1}[lane] = (X_k[lane])^n mod 256
+where n = [3, 2, 3, 2, 2, 3, 0, 2, 2, 3, 3, 2, 2, 2, 2, 3]
+```
+
+This formula works 100% for VERIFYING known puzzles 1-70 (backward calculation).
+
+BUT it FAILS when trying to GENERATE forward:
+- X_70 = `00000000000000349b84b6431a6c4ef1`
+- X_75_actual = `00000000000004c5ce114686a1336e07`
+- X_75_calculated = `000000000000000081000081000000d1`
+- **10/16 lanes mismatch!**
+
+## Our Discovery
+
+We found that drift has CONDITIONAL LOGIC:
+```
+drift[k][lane] = 0 if k < lane * 8
+```
+
+This explains lane activation:
+- Lane 6: activates at k=48
+- Lane 7: activates at k=56
+- Lane 8: activates at k=64
+- Lanes 9-15: Never activate (always 0)
+
+## The Problem
+
+For k=70→75, we're in a regime where:
+- Lanes 0-5: Always active
+- Lane 6: Active (k≥48)
+- Lane 7: Active (k≥56)
+- Lane 8: Active (k≥64)
+- Lanes 9-15: Should be 0, but calculated values are wrong!
+
+## Your Task
+
+Analyze the step-by-step calculation and propose:
+
+1. Why does lane activation breakdown happen after k=70?
+2. Looking at the pattern in lanes 9-15 going to 0 during calculation - is this related to the exponent being applied incorrectly?
+3. Could the formula need DIFFERENT exponents after k=64 (the regime boundary we discovered)?
+4. Should we apply drift correction AFTER each step, not just rely on pure exponentiation?
+
+**Step-by-step trace**:
+```
+X_70 = [0, 0, 0, 0, 0, 0, 0, 52, 155, 132, 182, 67, 26, 108, 78, 241]
+X_71 = [0, 0, 0, 0, 0, 0, 0, 144, 217, 64, 24, 137, 164, 144, 196, 209]
+X_72 = [0, 0, 0, 0, 0, 0, 0, 0, 241, 0, 0, 81, 16, 0, 16, 113]
+X_73 = [0, 0, 0, 0, 0, 0, 0, 0, 225, 0, 0, 161, 0, 0, 0, 81]
+X_74 = [0, 0, 0, 0, 0, 0, 0, 0, 193, 0, 0, 65, 0, 0, 0, 241]
+X_75_calc = [0, 0, 0, 0, 0, 0, 0, 0, 129, 0, 0, 129, 0, 0, 0, 209]
+X_75_actual = [0, 0, 0, 0, 0, 0, 4, 197, 206, 17, 70, 134, 161, 51, 110, 7]
+```
+
+Notice lanes 9, 10, 12, 13, 14 all decay to ZERO during calculation but should have non-zero values!
+
+Provide your mathematical reasoning.

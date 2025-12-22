@@ -1,0 +1,14 @@
+{
+  "train_puzzles": "1-60",
+  "val_puzzles": "61-70",
+  "test_puzzles": "bridge rows (75, 80, 85, 90, 95)",
+  "train_pairs": 59,
+  "val_pairs": 9,
+  "input_dim": 16,
+  "output_dim": 16,
+  "byte_range": [
+    0,
+    255
+  ],
+  "data_format": "uint8"
+}

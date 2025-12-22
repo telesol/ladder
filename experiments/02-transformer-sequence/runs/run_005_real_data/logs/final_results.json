@@ -1,0 +1,15 @@
+{
+  "best_epoch": 2,
+  "best_val_acc": 45.83333333333333,
+  "final_train_acc": 76.90677966101694,
+  "pysr_baseline": 100.0,
+  "gap": 54.16666666666667,
+  "training_time_seconds": 23.78381061553955,
+  "config": {
+    "epochs": 100,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "hidden_size": 128,
+    "device": "cpu"
+  }
+}

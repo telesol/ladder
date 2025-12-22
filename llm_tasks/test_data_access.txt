@@ -1,0 +1,18 @@
+SIMPLE DATA ACCESS TEST
+
+Can you access local files?
+
+Read this file and answer:
+  llm_tasks/memory/master_keys_70_160.json
+
+Questions:
+1. What is the value of k90 (puzzle 90)?
+2. What is the value of k95 (puzzle 95)?
+3. Write them in this exact format:
+
+k90 = 0x...
+k95 = 0x...
+
+If you CANNOT read the file, say "I CANNOT ACCESS FILES"
+
+This is a test to verify you can read local JSON data.

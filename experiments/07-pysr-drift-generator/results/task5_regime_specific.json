@@ -1,0 +1,549 @@
+{
+  "task": "task5_regime_analysis",
+  "timestamp": "2025-12-22T15:50:59.831655",
+  "regimes": {
+    "stable": "k < 32",
+    "moderate": "32 <= k < 64",
+    "complex": "k >= 64"
+  },
+  "results": {
+    "lane_0": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 24,
+            "unique_count": 24,
+            "mean": 111.91666666666667,
+            "std": 90.00783144939234,
+            "min": 1,
+            "max": 248,
+            "median": 99.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 3,
+            "mean": 179.66666666666666,
+            "std": 47.786562499886465,
+            "min": 115,
+            "max": 229,
+            "median": 195.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 27,
+            "unique_count": 26,
+            "mean": 97.85185185185185,
+            "std": 78.36415644342229,
+            "min": 2,
+            "max": 254,
+            "median": 69.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 1,
+            "unique_count": 1,
+            "mean": 118.0,
+            "std": 0.0,
+            "min": 118,
+            "max": 118,
+            "median": 118.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 4,
+            "unique_count": 4,
+            "mean": 198.75,
+            "std": 33.30446666740063,
+            "min": 147,
+            "max": 229,
+            "median": 209.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 1,
+            "unique_count": 1,
+            "mean": 135.0,
+            "std": 0.0,
+            "min": 135,
+            "max": 135,
+            "median": 135.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        }
+      },
+      "simple_baseline": 0.0,
+      "regime_baseline": 0.0,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 1,
+        "moderate": 61,
+        "complex": 147
+      }
+    },
+    "lane_1": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 27,
+            "unique_count": 22,
+            "mean": 117.33333333333333,
+            "std": 90.9151008114469,
+            "min": 0,
+            "max": 248,
+            "median": 143.0,
+            "zero_ratio": 0.18518518518518517,
+            "transition_rate": 0.8148148148148148
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 2,
+            "mean": 70.66666666666667,
+            "std": 99.93775840769871,
+            "min": 0,
+            "max": 212,
+            "median": 0.0,
+            "zero_ratio": 0.6666666666666666,
+            "transition_rate": 0.3333333333333333
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 25,
+            "unique_count": 24,
+            "mean": 99.36,
+            "std": 73.51673550967834,
+            "min": 0,
+            "max": 226,
+            "median": 96.0,
+            "zero_ratio": 0.04,
+            "transition_rate": 0.96
+          },
+          "test": {
+            "count": 5,
+            "unique_count": 5,
+            "mean": 133.0,
+            "std": 69.56435869035235,
+            "min": 42,
+            "max": 242,
+            "median": 105.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 4,
+            "unique_count": 4,
+            "mean": 128.5,
+            "std": 54.78366544874485,
+            "min": 77,
+            "max": 220,
+            "median": 108.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 1,
+            "unique_count": 1,
+            "mean": 176.0,
+            "std": 0.0,
+            "min": 176,
+            "max": 176,
+            "median": 176.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        }
+      },
+      "simple_baseline": 0.2222222222222222,
+      "regime_baseline": 0.2222222222222222,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 36,
+        "complex": 77
+      }
+    },
+    "lane_2": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 24,
+            "unique_count": 13,
+            "mean": 42.458333333333336,
+            "std": 69.17006768746788,
+            "min": 0,
+            "max": 229,
+            "median": 1.0,
+            "zero_ratio": 0.5,
+            "transition_rate": 0.5
+          },
+          "test": {
+            "count": 4,
+            "unique_count": 3,
+            "mean": 0.75,
+            "std": 0.82915619758885,
+            "min": 0,
+            "max": 2,
+            "median": 0.5,
+            "zero_ratio": 0.5,
+            "transition_rate": 0.5
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 22,
+            "unique_count": 19,
+            "mean": 128.63636363636363,
+            "std": 65.37899680432926,
+            "min": 43,
+            "max": 243,
+            "median": 115.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 6,
+            "unique_count": 6,
+            "mean": 106.66666666666667,
+            "std": 61.00455356410336,
+            "min": 25,
+            "max": 186,
+            "median": 103.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 6,
+            "unique_count": 6,
+            "mean": 164.5,
+            "std": 61.55146897786708,
+            "min": 33,
+            "max": 228,
+            "median": 181.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": null
+        }
+      },
+      "simple_baseline": 0.2,
+      "regime_baseline": 0.2,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 45,
+        "complex": 33
+      }
+    },
+    "lane_3": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 25,
+            "unique_count": 9,
+            "mean": 7.36,
+            "std": 17.69718621702332,
+            "min": 0,
+            "max": 64,
+            "median": 0.0,
+            "zero_ratio": 0.68,
+            "transition_rate": 0.32
+          },
+          "test": null
+        },
+        "moderate": {
+          "train": {
+            "count": 28,
+            "unique_count": 28,
+            "mean": 136.42857142857142,
+            "std": 70.4802041971607,
+            "min": 4,
+            "max": 246,
+            "median": 151.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 1,
+            "unique_count": 1,
+            "mean": 241.0,
+            "std": 0.0,
+            "min": 241,
+            "max": 241,
+            "median": 241.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 5,
+            "unique_count": 5,
+            "mean": 138.2,
+            "std": 79.63516811057788,
+            "min": 38,
+            "max": 238,
+            "median": 104.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 1,
+            "unique_count": 1,
+            "mean": 183.0,
+            "std": 0.0,
+            "min": 183,
+            "max": 183,
+            "median": 183.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        }
+      },
+      "simple_baseline": 0.0,
+      "regime_baseline": 0.0,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 4,
+        "complex": 38
+      }
+    },
+    "lane_4": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 27,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 26,
+            "unique_count": 25,
+            "mean": 79.6923076923077,
+            "std": 75.71595159174709,
+            "min": 1,
+            "max": 239,
+            "median": 47.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": {
+            "count": 4,
+            "unique_count": 4,
+            "mean": 74.25,
+            "std": 53.335611930491616,
+            "min": 19,
+            "max": 146,
+            "median": 66.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 5,
+            "unique_count": 5,
+            "mean": 72.8,
+            "std": 81.74937308628121,
+            "min": 13,
+            "max": 228,
+            "median": 26.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": null
+        }
+      },
+      "simple_baseline": 0.42857142857142855,
+      "regime_baseline": 0.42857142857142855,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 1,
+        "complex": 13
+      }
+    },
+    "lane_5": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 27,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          },
+          "test": {
+            "count": 2,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 27,
+            "unique_count": 18,
+            "mean": 85.25925925925925,
+            "std": 78.6876584951624,
+            "min": 0,
+            "max": 225,
+            "median": 72.0,
+            "zero_ratio": 0.2962962962962963,
+            "transition_rate": 0.7037037037037037
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 3,
+            "mean": 126.33333333333333,
+            "std": 80.83865961833416,
+            "min": 13,
+            "max": 196,
+            "median": 170.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 6,
+            "unique_count": 6,
+            "mean": 83.83333333333333,
+            "std": 73.58762728128207,
+            "min": 6,
+            "max": 178,
+            "median": 63.5,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": null
+        }
+      },
+      "simple_baseline": 0.4,
+      "regime_baseline": 0.4,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 0,
+        "complex": 6
+      }
+    },
+    "lane_6": {
+      "regime_stats": {
+        "stable": {
+          "train": {
+            "count": 25,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          }
+        },
+        "moderate": {
+          "train": {
+            "count": 24,
+            "unique_count": 11,
+            "mean": 26.5,
+            "std": 55.34287066400995,
+            "min": 0,
+            "max": 219,
+            "median": 0.0,
+            "zero_ratio": 0.5416666666666666,
+            "transition_rate": 0.4583333333333333
+          },
+          "test": {
+            "count": 3,
+            "unique_count": 1,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0,
+            "max": 0,
+            "median": 0.0,
+            "zero_ratio": 1.0,
+            "transition_rate": 0.0
+          }
+        },
+        "complex": {
+          "train": {
+            "count": 5,
+            "unique_count": 5,
+            "mean": 129.8,
+            "std": 86.66117931346193,
+            "min": 1,
+            "max": 208,
+            "median": 183.0,
+            "zero_ratio": 0.0,
+            "transition_rate": 1.0
+          },
+          "test": null
+        }
+      },
+      "simple_baseline": 1.0,
+      "regime_baseline": 1.0,
+      "improvement": 0.0,
+      "regime_values": {
+        "stable": 0,
+        "moderate": 0,
+        "complex": 1
+      }
+    }
+  }
+}

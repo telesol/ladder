@@ -1,0 +1,51 @@
+[1/7] Loading data from drift_data_export.json
+  ✓ Loaded 69 transitions (1104 drift values)
+
+[2/7] Testing Standard Hash Functions
+
+  Testing SHA256...
+    ❌ Best: 0.3% with bytes_concat
+
+  Testing MD5...
+    ❌ Best: 0.5% with str_concat
+
+  Testing SHA1...
+    ❌ Best: 0.4% with packed_little
+
+  Testing SHA512...
+    ❌ Best: 0.8% with str_concat
+
+  Testing RIPEMD160...
+    ❌ Best: 0.5% with str_concat
+
+[3/7] Testing Bitcoin-Specific Hashes
+
+  Testing HASH256...
+    ❌ Best: 0.7% with packed_little
+
+  Testing HASH160...
+    ❌ Best: 0.5% with bytes_concat
+
+[4/7] Testing Salted/Seeded Hashes
+  ❌ No salts found with >80% accuracy
+
+[5/7] Testing XOR Combinations
+  ❌ 0.1% accuracy
+
+[6/7] Testing N-th Byte Extraction from Hash
+  ❌ No byte positions found with >80% accuracy
+
+[7/7] Generating Report
+  ✓ Report saved to: H2_results.json
+
+============================================================
+H2 HYPOTHESIS SUMMARY
+============================================================
+Best approach:  SHA512 (str_concat)
+Accuracy:       0.82%
+Conclusion:     FAILED
+============================================================
+
+🤔 Hypothesis unlikely. Try other approaches.
+
+✅ H2 research complete!

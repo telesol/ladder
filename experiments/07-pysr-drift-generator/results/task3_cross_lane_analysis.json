@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "description": "Cross-lane dependency analysis for lanes 0-6",
+    "train_size": 50,
+    "test_size": 19,
+    "approach": "Linear regression with multiple lane dependencies"
+  },
+  "lanes": {
+    "0": {
+      "num_dependent_lanes": 1,
+      "train_accuracy": 0.0,
+      "test_accuracy": 0.0,
+      "train_mae": 74.55102040816327,
+      "test_mae": 71.38888888888889,
+      "train_r2": 0.015516735128019321,
+      "test_r2": -0.035706625835979944,
+      "intercept": 107.23973403068109,
+      "coefficients": {
+        "lane_0": 0.12575987723534027
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 0,
+          "weight": 0.12575987723534027
+        }
+      ],
+      "formula": "drift[k][0] = 0.126*drift[k-1][0] + 107.240"
+    },
+    "1": {
+      "num_dependent_lanes": 2,
+      "train_accuracy": 0.0,
+      "test_accuracy": 0.0,
+      "train_mae": 72.14285714285714,
+      "test_mae": 76.77777777777777,
+      "train_r2": 0.02583988510743296,
+      "test_r2": -0.27678279663031446,
+      "intercept": 129.90394569904367,
+      "coefficients": {
+        "lane_0": 0.10751970114849056,
+        "lane_1": -0.17783573517423662
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 1,
+          "weight": 0.17783573517423662
+        },
+        {
+          "lane": 0,
+          "weight": 0.10751970114849056
+        }
+      ],
+      "formula": "drift[k][1] = 0.108*drift[k-1][0] + -0.178*drift[k-1][1] + 129.904"
+    },
+    "2": {
+      "num_dependent_lanes": 3,
+      "train_accuracy": 0.0,
+      "test_accuracy": 0.0,
+      "train_mae": 55.183673469387756,
+      "test_mae": 87.22222222222223,
+      "train_r2": 0.19864643176094166,
+      "test_r2": -0.1829070511109172,
+      "intercept": 110.79639058226691,
+      "coefficients": {
+        "lane_0": -0.15567466199622734,
+        "lane_1": -0.2546432999716368,
+        "lane_2": 0.21285947756718993
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 1,
+          "weight": 0.2546432999716368
+        },
+        {
+          "lane": 2,
+          "weight": 0.21285947756718993
+        },
+        {
+          "lane": 0,
+          "weight": 0.15567466199622734
+        }
+      ],
+      "formula": "drift[k][2] = -0.156*drift[k-1][0] + -0.255*drift[k-1][1] + 0.213*drift[k-1][2] + 110.796"
+    },
+    "3": {
+      "num_dependent_lanes": 4,
+      "train_accuracy": 0.0,
+      "test_accuracy": 0.0,
+      "train_mae": 68.3265306122449,
+      "test_mae": 80.55555555555556,
+      "train_r2": -0.3589042138550951,
+      "test_r2": -0.22974042349881696,
+      "intercept": 61.13534437006721,
+      "coefficients": {
+        "lane_0": 0.02979698537086521,
+        "lane_1": -0.30233513411614127,
+        "lane_2": 0.13901389800156744,
+        "lane_3": 0.5029015129504676
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 3,
+          "weight": 0.5029015129504676
+        },
+        {
+          "lane": 1,
+          "weight": 0.30233513411614127
+        },
+        {
+          "lane": 2,
+          "weight": 0.13901389800156744
+        },
+        {
+          "lane": 0,
+          "weight": 0.02979698537086521
+        }
+      ],
+      "formula": "drift[k][3] = 0.030*drift[k-1][0] + -0.302*drift[k-1][1] + 0.139*drift[k-1][2] + 0.503*drift[k-1][3] + 61.135"
+    },
+    "4": {
+      "num_dependent_lanes": 5,
+      "train_accuracy": 0.0,
+      "test_accuracy": 0.0,
+      "train_mae": 35.734693877551024,
+      "test_mae": 76.33333333333333,
+      "train_r2": 0.1855735478643007,
+      "test_r2": -0.19269902380532922,
+      "intercept": 33.79853620033741,
+      "coefficients": {
+        "lane_0": -0.016275536823593825,
+        "lane_1": -0.10571400003364563,
+        "lane_2": -0.032115214717736436,
+        "lane_3": 0.151557109991397,
+        "lane_4": 0.24012031280410304
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 4,
+          "weight": 0.24012031280410304
+        },
+        {
+          "lane": 3,
+          "weight": 0.151557109991397
+        },
+        {
+          "lane": 1,
+          "weight": 0.10571400003364563
+        },
+        {
+          "lane": 2,
+          "weight": 0.032115214717736436
+        },
+        {
+          "lane": 0,
+          "weight": 0.016275536823593825
+        }
+      ],
+      "formula": "drift[k][4] = -0.016*drift[k-1][0] + -0.106*drift[k-1][1] + -0.032*drift[k-1][2] + 0.152*drift[k-1][3] + 0.240*drift[k-1][4] + 33.799"
+    },
+    "5": {
+      "num_dependent_lanes": 6,
+      "train_accuracy": 2.0408163265306123,
+      "test_accuracy": 0.0,
+      "train_mae": 31.93877551020408,
+      "test_mae": 89.16666666666667,
+      "train_r2": 0.48072375496625197,
+      "test_r2": -0.8701620344906349,
+      "intercept": 13.547817641830598,
+      "coefficients": {
+        "lane_0": -0.04096826086715239,
+        "lane_1": 0.021419859418312953,
+        "lane_2": -0.03404771413365624,
+        "lane_3": 0.0890147357853631,
+        "lane_4": 0.24860880630804685,
+        "lane_5": 0.5192321656340715
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 5,
+          "weight": 0.5192321656340715
+        },
+        {
+          "lane": 4,
+          "weight": 0.24860880630804685
+        },
+        {
+          "lane": 3,
+          "weight": 0.0890147357853631
+        },
+        {
+          "lane": 0,
+          "weight": 0.04096826086715239
+        },
+        {
+          "lane": 2,
+          "weight": 0.03404771413365624
+        },
+        {
+          "lane": 1,
+          "weight": 0.021419859418312953
+        }
+      ],
+      "formula": "drift[k][5] = -0.041*drift[k-1][0] + 0.021*drift[k-1][1] + -0.034*drift[k-1][2] + 0.089*drift[k-1][3] + 0.249*drift[k-1][4] + 0.519*drift[k-1][5] + 13.548"
+    },
+    "6": {
+      "num_dependent_lanes": 7,
+      "train_accuracy": 8.16326530612245,
+      "test_accuracy": 0.0,
+      "train_mae": 80.73469387755102,
+      "test_mae": 71.11111111111111,
+      "train_r2": -146.23816789731904,
+      "test_r2": -0.3529870130574255,
+      "intercept": 0.7730104638054343,
+      "coefficients": {
+        "lane_0": 0.030006128942767673,
+        "lane_1": -0.03892127708906596,
+        "lane_2": -0.0061027141429906605,
+        "lane_3": 0.037417123816660985,
+        "lane_4": -0.04247772393844012,
+        "lane_5": 0.025255710884886214,
+        "lane_6": 0.7564000298438696
+      },
+      "strongest_dependencies": [
+        {
+          "lane": 6,
+          "weight": 0.7564000298438696
+        },
+        {
+          "lane": 4,
+          "weight": 0.04247772393844012
+        },
+        {
+          "lane": 1,
+          "weight": 0.03892127708906596
+        },
+        {
+          "lane": 3,
+          "weight": 0.037417123816660985
+        },
+        {
+          "lane": 0,
+          "weight": 0.030006128942767673
+        },
+        {
+          "lane": 5,
+          "weight": 0.025255710884886214
+        },
+        {
+          "lane": 2,
+          "weight": 0.0061027141429906605
+        }
+      ],
+      "formula": "drift[k][6] = 0.030*drift[k-1][0] + -0.039*drift[k-1][1] + -0.006*drift[k-1][2] + 0.037*drift[k-1][3] + -0.042*drift[k-1][4] + 0.025*drift[k-1][5] + 0.756*drift[k-1][6] + 0.773"
+    }
+  },
+  "summary": {
+    "best_lane": 0,
+    "best_accuracy": 0.0,
+    "average_test_accuracy": 0.0,
+    "high_performers_80_percent": [],
+    "conclusion": "INDEPENDENT - No significant cross-lane dependencies found"
+  }
+}

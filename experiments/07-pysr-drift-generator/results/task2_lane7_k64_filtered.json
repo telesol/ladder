@@ -1,0 +1,31 @@
+{
+  "task": "task2_lane7_k64_filtered",
+  "lane": 7,
+  "filter": "k < 64",
+  "formula": "complexity                                                      12\nloss                                                      2.329679\nequation         square(square(square(square(square((k * 0.0333...\nscore                                                     0.623494\nsympy_format           (k*0.033334613 - 0.90507096)**32*0.59550494\nlambda_format    PySRFunction(X=>(k*0.033334613 - 0.90507096)**...\nName: 8, dtype: object",
+  "train_accuracy": 89.58333333333334,
+  "val_accuracy": 66.66666666666666,
+  "test_accuracy": 91.66666666666666,
+  "train_size": 48,
+  "val_size": 3,
+  "test_size": 12,
+  "contains_A23": true,
+  "contains_drift_prev": false,
+  "contains_k": true,
+  "h4_baseline": 82.4,
+  "improvement": 9.266666666666652,
+  "pysr_settings": {
+    "niterations": 100,
+    "binary_operators": [
+      "+",
+      "*",
+      "-",
+      "%"
+    ],
+    "unary_operators": [
+      "square"
+    ],
+    "maxsize": 12,
+    "timeout_seconds": 3600
+  }
+}

@@ -1,0 +1,178 @@
+TASK: COMPUTE DRIFT GENERATOR FORMULA FROM DATA
+
+STATUS: Ready for parallel analysis
+PRIORITY: CRITICAL
+DATA AVAILABLE: 1,104 drift values (puzzles 1→70, 16 lanes, 69 transitions)
+
+=== PROBLEM STATEMENT ===
+
+We need to discover the mathematical formula that COMPUTES drift[k][lane].
+
+NOT prediction, NOT approximation - EXACT mathematical calculation.
+
+=== WHAT WE KNOW ===
+
+1. COMPLETE FORMULA (verified):
+   X_{k+1}[lane] = ((X_k[lane])^n + drift[k][lane]) mod 256
+   Exponents n = [3, 2, 3, 2, 2, 3, 0, 2, 2, 3, 3, 2, 2, 2, 2, 3]
+
+2. CONDITIONAL ZERO (100% accurate):
+   drift[k][lane] = 0 if k < lane * 8
+
+3. WHEN ACTIVE, DRIFT IS ALWAYS PRESENT:
+   Lane 0: 100.0% non-zero when active
+   Lane 1:  98.4% non-zero when active
+   Lane 2: 100.0% non-zero when active
+   Lane 3: 100.0% non-zero when active
+   Lane 4: 100.0% non-zero when active
+   Lane 5: 100.0% non-zero when active
+   Lane 6: 100.0% non-zero when active
+   Lane 7: 100.0% non-zero when active
+   Lane 8: 100.0% non-zero when active
+
+4. DATA STATISTICS:
+   - Total drift values: 1,104
+   - Non-zero values: 340 (30.8%)
+   - Zero values: 764 (69.2%)
+   - The zeros are from INACTIVE lanes (k < lane*8)
+
+=== DATA LOCATION ===
+
+File: /home/solo/LadderV3/kh-assist/drift_data_CORRECT_BYTE_ORDER.json
+Format:
+```json
+{
+  "transitions": [
+    {
+      "from_puzzle": 1,
+      "to_puzzle": 2,
+      "drifts": [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    ...
+  ]
+}
+```
+
+=== VALIDATION TEST ===
+
+Can the formula correctly compute drift for X_70→X_75?
+
+Individual step drifts needed (unknown from data):
+- k=70→71: drift[70] = ?
+- k=71→72: drift[71] = ?
+- k=72→73: drift[72] = ? (Lane 9 activates here!)
+- k=73→74: drift[73] = ?
+- k=74→75: drift[74] = ?
+
+Total accumulated drift required (from hard proof):
+[0, 0, 0, 0, 0, 0, 4, 197, 77, 17, 70, 5, 161, 51, 110, 54]
+
+=== ANALYSIS QUESTIONS ===
+
+Q1: Is drift a function of ONLY (k, lane)?
+    Or does it depend on X_k values too?
+
+Q2: Can we find drift[k][lane] = f(k, lane) for some function f?
+
+Q3: Is there a pattern in the drift VALUES themselves?
+    - Modular arithmetic pattern?
+    - Polynomial in k?
+    - Related to lane activation boundaries?
+
+Q4: Do different lanes have different drift generators?
+    Or is there ONE universal formula?
+
+Q5: Is there a RECURSIVE pattern?
+    drift[k+1] = g(drift[k]) for some function g?
+
+=== SPECIFIC TASKS FOR ANALYSIS ===
+
+TASK A: Statistical Analysis of Drift Values
+- For each lane, analyze drift value distribution
+- Check for modular patterns (drift mod 2, mod 4, mod 8, etc.)
+- Look for arithmetic/geometric progressions
+- Identify any constants or repeating values
+
+TASK B: Relationship to k (Transition Index)
+- Plot drift[k][lane] vs k for each lane
+- Check if drift is polynomial in k
+- Check if drift follows modular arithmetic: (a*k + b) mod 256
+- Test for periodicity
+
+TASK C: Relationship to X_k (Current State)
+- Does drift depend on X_k[lane] value?
+- Does drift depend on OTHER lanes' values?
+- Is there cross-lane correlation?
+
+TASK D: Initialization Analysis
+- When lane first activates (k = lane*8), what is first drift value?
+- Is there a special initialization formula?
+- How does drift evolve after activation?
+
+TASK E: Mathematical Hypothesis Testing
+Test these concrete hypotheses:
+- H_poly: drift[k][lane] = (a*k^2 + b*k + c) mod 256
+- H_lin:  drift[k][lane] = (a*k + b) mod 256
+- H_const: drift[k][lane] = constant (per lane)
+- H_xor:  drift[k][lane] = X_k[lane] XOR constant
+- H_hash: drift[k][lane] = hash(k || lane) mod 256
+
+=== METHODOLOGY ===
+
+1. Extract ACTIVE drift values only (where k >= lane*8)
+2. Perform statistical analysis
+3. Test mathematical hypotheses
+4. Build candidate formulas
+5. Verify on held-out data (use puzzles 60-70 as test set)
+6. If formula works, validate on X_70→X_75 calculation
+
+=== SUCCESS CRITERIA ===
+
+LEVEL 1: 80%+ accuracy on active drift values (good start)
+LEVEL 2: 95%+ accuracy on active drift values (very good)
+LEVEL 3: 100% accuracy on puzzles 1-70 (breakthrough!)
+LEVEL 4: Correctly computes X_70→X_75 (PROOF!)
+
+=== MODELS TO USE ===
+
+Priority order (use best available):
+1. nemotron-3-nano:30b-cloud (best reasoning)
+2. gpt-oss:120b-cloud (largest context)
+3. qwen2.5-coder:7b (good for code generation)
+4. qwen2.5:3b-instruct (fast iteration)
+
+=== OUTPUT FORMAT ===
+
+Please create:
+1. Analysis report (Markdown)
+2. Candidate formulas (Python code)
+3. Validation results (JSON)
+4. Recommendation for next steps
+
+Save results to:
+/home/solo/LadderV3/kh-assist/llm_tasks/results/drift_formula_analysis_<model>_<timestamp>.txt
+
+=== COLLABORATION ===
+
+Multiple Claude instances can work in parallel:
+- Each can tackle different TASK (A, B, C, D, E)
+- Share findings in llm_tasks/results/
+- Coordinate via ORCHESTRATION_STATUS.json
+
+POST YOUR QUESTIONS OR FINDINGS HERE:
+- If you discover a pattern, document it
+- If you need more data, specify what
+- If you need code to be run, provide the script
+
+=== START HERE ===
+
+Begin with TASK A (Statistical Analysis) or TASK B (Relationship to k).
+
+Use the drift data at: drift_data_CORRECT_BYTE_ORDER.json
+
+Good luck!
+
+---
+
+CREATED: 2025-12-22
+CREATED_BY: Claude Sonnet 4.5 (Main Orchestrator)

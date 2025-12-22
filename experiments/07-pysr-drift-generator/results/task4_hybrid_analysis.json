@@ -1,0 +1,303 @@
+{
+  "lane_0": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(2*k + 3*drift[k-1]) mod 256",
+      "accuracy": 0.07142857142857142
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.07142857142857142,
+    "best_description": "(2*k + 3*drift[k-1]) mod 256"
+  },
+  "lane_1": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.14285714285714285
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.14285714285714285,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  },
+  "lane_2": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.2857142857142857
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.2857142857142857,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  },
+  "lane_3": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.2857142857142857
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.2857142857142857,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  },
+  "lane_4": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.07142857142857142,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.07142857142857142,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.2857142857142857
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.2857142857142857,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  },
+  "lane_5": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.2857142857142857
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.2857142857142857,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  },
+  "lane_6": {
+    "recursive_with_k": {
+      "degree_1": {
+        "train_accuracy": 0.018518518518518517,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.12962962962962962,
+        "test_accuracy": 0.14285714285714285,
+        "features": "k, drift[k-1] (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.12962962962962962,
+        "test_accuracy": 0.0,
+        "features": "k, drift[k-1] (polynomial degree 3)"
+      }
+    },
+    "pure_recursive": {
+      "degree_1": {
+        "train_accuracy": 0.037037037037037035,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 1)"
+      },
+      "degree_2": {
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "features": "drift[k-1] only (polynomial degree 2)"
+      },
+      "degree_3": {
+        "train_accuracy": 0.7592592592592593,
+        "test_accuracy": 0.21428571428571427,
+        "features": "drift[k-1] only (polynomial degree 3)"
+      }
+    },
+    "modular_recursive": {
+      "best_pattern": "(0*k + 0*drift[k-1]) mod 256",
+      "accuracy": 0.2857142857142857
+    },
+    "best_method": "Modular recursive",
+    "best_accuracy": 0.2857142857142857,
+    "best_description": "(0*k + 0*drift[k-1]) mod 256"
+  }
+}

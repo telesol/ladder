@@ -1,0 +1,10 @@
+Lane 7 - Discovered Formula
+========================================
+
+Best equation: square(x0)
+SymPy form: x0**2
+
+Complexity: 2
+Loss: 0.000000
+Accuracy: 100.00%
+Mean modular loss: 0.0000

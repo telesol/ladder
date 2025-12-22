@@ -1,0 +1,138 @@
+TASK 21 RETESTED: DEEP ANALYSIS WITH **REAL DATA**
+
+CRITICAL: This is CRYPTOGRAPHY. We need 100% accuracy or FAILURE.
+Take your time. Reason deeply. This is MATH ONLY, no prediction.
+
+================================================================================
+REAL DATA (from CSV - NOT hallucinated)
+================================================================================
+
+k90 = 0x000000000000000000000000000000000000000002ce00bb2136a445c71e85bf
+k95 = 0x0000000000000000000000000000000000000000527a792b183c7f64a0e8b1f4
+
+In decimal:
+k90 = 3,515,562,334,679,626,047,450,203,580,607
+k95 = 6,578,125,506,315,412,872,902,170,856,948
+
+Range for k95: [2^94, 2^95) = [19807040628566084398385987584, 39614081257132168796771975168]
+k95 must be in this range.
+
+================================================================================
+PREVIOUS ATTEMPT (Task 21 original)
+================================================================================
+
+Used hallucinated k90 = 0x0E0149FA... (WRONG!)
+Found that binary search needed upper-bound check.
+Fix worked on fake data, FAILED on real data (m=0, negative values).
+
+Result with real data:
+- m=0 for most bridges
+- Even m=0 causes k_n >= 2^n (out of range)
+- Formula appears fundamentally broken
+
+================================================================================
+YOUR MISSION
+================================================================================
+
+Analyze WHY the formula fails on REAL data.
+
+Master Formula (hypothesis):
+  k_n = 2×k_{n-5} + (2^n - m×k_d)
+
+For k95:
+  n = 95
+  k_{n-5} = k90 = 3,515,562,334,679,626,047,450,203,580,607
+  d = 1 (from proven d-selection algorithm)
+  k_d = 1
+
+Calculate:
+  2×k90 = 7,031,124,669,359,252,094,900,407,161,214
+  2^95 = 39,614,081,257,132,168,796,771,975,168
+
+Notice: 2×k90 ≈ 7.0×10^30
+        2^95 ≈ 3.96×10^28
+
+Problem: 2×k90 is MUCH LARGER than 2^95!
+
+  k95_calc = 2×k90 + (2^95 - m×1)
+           = 7.0×10^30 + 3.96×10^28 - m
+
+Even with m = 0:
+  k95_calc ≈ 7.0×10^30 >> 2^95
+
+This is OUT OF RANGE by 100x!
+
+================================================================================
+QUESTIONS
+================================================================================
+
+1. **Is the formula structure wrong?**
+   - Maybe it's not k_n = 2×k_{n-5} + (2^n - m×k_d)
+   - Maybe it's k_n = something_else?
+   - What formula WOULD work for this data?
+
+2. **Work backwards from real data**:
+   Given k90 and k95 (both known), what relationship do they have?
+
+   Try:
+   - k95 - 2×k90 = ?
+   - k95 - k90 = ?
+   - k95 / k90 = ?
+   - k95 mod k90 = ?
+
+   Look for mathematical patterns.
+
+3. **Check if formula needs different structure**:
+   - Maybe: k_n = k_{n-5} + something?
+   - Maybe: k_n = (k_{n-5} * factor) + offset?
+   - Maybe: k_n has no simple recurrence?
+
+4. **Analyze the gap**:
+   k95 - k90 = 6,578,125,506,315,412,872,902,170,856,948
+                - 3,515,562,334,679,626,047,450,203,580,607
+              = 3,062,563,171,635,786,825,451,967,276,341
+
+   What is 3,062,563,171,635,786,825,451,967,276,341 in terms of 2^n?
+
+   Is it close to:
+   - 2^91? (≈ 2.48×10^27)
+   - 2^92? (≈ 4.95×10^27)
+   - 2^93? (≈ 9.90×10^27)
+   - 2^94? (≈ 1.98×10^28)
+   - 2^95? (≈ 3.96×10^28)
+
+5. **Alternative hypothesis**:
+   Maybe bridges are NOT calculated from previous bridges.
+   Maybe they're generated independently (hash function? PRNG? construction algorithm?).
+
+================================================================================
+OUTPUT REQUIRED
+================================================================================
+
+PART 1: NUMERICAL ANALYSIS
+- Calculate k95 - k90
+- Calculate (k95 - k90) / 2^90
+- Calculate (k95 - k90) / 2^91
+- Find which power of 2 is closest to the gap
+
+PART 2: FORMULA INVESTIGATION
+- Test if k_n = k_{n-5} + 2^{something} works
+- Test if k_n = k_{n-5} * ratio works
+- Propose alternative formula structures
+
+PART 3: VERDICT
+Based on REAL data (not hallucinated):
+- Is Master Formula salvageable? (YES/NO)
+- If YES: provide corrected formula with proof
+- If NO: explain why and suggest alternative approach
+
+================================================================================
+REMEMBER
+================================================================================
+
+- Use the REAL values above (k90 and k95)
+- Show ALL calculations with actual numbers
+- MATH ONLY - no prediction, no guessing
+- 100% or FAILURE - cryptography has zero tolerance
+
+Begin your deep analysis.

@@ -1,0 +1,10 @@
+{
+  "source": "Real Bitcoin puzzle keys from CSV",
+  "train_range": "1-60",
+  "val_range": "61-70",
+  "train_pairs": 59,
+  "val_pairs": 9,
+  "data_format": "uint8 (0-255)",
+  "bytes_per_puzzle": 16,
+  "note": "First 16 bytes of each 64-char hex key"
+}

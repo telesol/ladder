@@ -1,0 +1,150 @@
+TASK FOR NEMOTRON-3-NANO:30B - DRIFT EVOLUTION ANALYSIS
+
+MISSION: Discover the mathematical formula for drift evolution (k > lane×8)
+
+==================================================
+
+WHAT WE KNOW (100% PROVEN):
+
+1. drift[k][lane] = 0  if k < lane × 8
+2. drift[k][lane] = 1  if k == lane × 8 (for lane > 0)
+3. drift[k][lane] = ?  if k > lane × 8  ← YOUR JOB!
+
+DATA AVAILABLE: 340 evolution drift values from puzzles 1-70
+
+==================================================
+
+YOUR ANALYSIS TASK:
+
+You have access to these drift values for evolution phase:
+- Lane 0: 69 values (k=1 to k=69, always active)
+- Lane 1: 62 values (k=9 to k=70)
+- Lane 2: 54 values (k=17 to k=70)
+- Lane 3: 46 values (k=25 to k=70)
+- Lane 4: 38 values (k=33 to k=70)
+- Lane 5: 30 values (k=41 to k=70)
+- Lane 6: 22 values (k=49 to k=70)
+- Lane 7: 14 values (k=57 to k=70)
+- Lane 8: 6 values (k=65 to k=70)
+
+FILE: drift_data_CORRECT_BYTE_ORDER.json
+
+==================================================
+
+MATHEMATICAL PATTERNS TO FIND:
+
+1. SEQUENTIAL PATTERNS
+   - Does drift[k+1] relate to drift[k]?
+   - Is there a recurrence: drift[k+1] = f(drift[k])?
+   - Check differences: drift[k+1] - drift[k]
+
+2. INDEX PATTERNS
+   - Does drift relate to k itself?
+   - Linear: drift = a*k + b (mod 256)?
+   - Polynomial: drift = a*k^2 + b*k + c (mod 256)?
+   - Exponential: drift = a^k (mod 256)?
+
+3. LANE PATTERNS
+   - Does drift relate to lane number?
+   - Cross-lane: drift[k][L] = f(drift[k][L-1])?
+   - Lane offset: drift = f(k - lane×8)?
+
+4. MODULAR PATTERNS
+   - Check drift mod 2, 4, 8, 16, 32
+   - Check for bit patterns
+   - Check for XOR relationships
+
+5. COMBINED PATTERNS
+   - drift = f(k, lane)?
+   - drift = f(k mod M, lane)?
+   - drift = hash(k || lane) mod 256?
+
+==================================================
+
+FOCUS AREAS:
+
+LANE 0 (most data - 69 values):
+Analyze the sequence deeply. This lane has data from k=1 to k=69.
+
+Sample values:
+k=1: drift=2
+k=2: drift=4
+k=3: drift=1
+k=4: drift=13
+k=5: drift=28
+...
+
+Look for:
+- Is this a PRNG sequence?
+- Is this a hash chain?
+- Is this modular arithmetic?
+
+ACTIVATION BOUNDARIES:
+When a lane FIRST activates (k = lane×8), drift=1.
+After that (k > lane×8), how does it evolve?
+
+Check transitions:
+- Lane 1: k=8 (drift=1) → k=9 (drift=?) → k=10 (drift=?)
+- Lane 2: k=16 (drift=1) → k=17 (drift=?) → k=18 (drift=?)
+
+Is there a pattern in the FIRST FEW steps after activation?
+
+==================================================
+
+OUTPUT FORMAT:
+
+Please provide:
+
+1. PATTERN HYPOTHESES
+   List 3-5 concrete mathematical formulas that might work
+
+2. EVIDENCE
+   For each hypothesis, show:
+   - How many values it matches
+   - Accuracy percentage
+   - Which lanes/k values it works for
+
+3. BEST CANDIDATE
+   Your top recommendation with:
+   - The formula
+   - Accuracy on test data
+   - Why you think it's correct
+
+4. NEXT STEPS
+   What additional analysis would help?
+
+==================================================
+
+CONSTRAINTS:
+
+- Look for EXACT formulas, not approximations
+- We need 100% accuracy eventually
+- Even 50-70% accuracy is valuable progress
+- Document what DOESN'T work (helps others)
+
+==================================================
+
+REASONING APPROACH:
+
+1. Start with SIMPLE patterns (linear, constant offsets)
+2. Move to MODERATE complexity (polynomials, modular)
+3. Consider COMPLEX patterns (hash, PRNG) only if simple fails
+4. Use LANE 0 as primary test case (most data)
+5. Validate on other lanes
+
+==================================================
+
+SAVE RESULTS TO:
+/home/solo/LadderV3/kh-assist/llm_tasks/results/nemotron_drift_evolution_analysis.txt
+
+Include:
+- Your reasoning process
+- Formulas tested
+- Results and accuracy
+- Recommendations
+
+==================================================
+
+TIME BUDGET: Take your time - thorough analysis is more important than speed.
+
+GOOD LUCK! This is the KEY to unlocking the drift generator!

@@ -1,0 +1,12 @@
+{
+  "lane": 3,
+  "equation": "square(x0)",
+  "sympy": "x0**2",
+  "complexity": 2,
+  "loss": 0.0,
+  "accuracy": 100.0,
+  "mean_modular_loss": 0.0,
+  "exact_matches": 59,
+  "total_samples": 59,
+  "iterations": 1000
+}

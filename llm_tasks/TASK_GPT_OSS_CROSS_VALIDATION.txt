@@ -1,0 +1,147 @@
+TASK FOR GPT-OSS:120B - CROSS-LANE DRIFT VALIDATION
+
+MISSION: Analyze cross-lane relationships in drift values
+
+==================================================
+
+WHAT WE KNOW:
+
+The formula: X_{k+1}[lane] = ((X_k[lane])^n + drift[k][lane]) mod 256
+
+Exponents: [3, 2, 3, 2, 2, 3, 0, 2, 2, 3, 3, 2, 2, 2, 2, 3]
+
+Proven rules:
+1. drift = 0 if k < lane × 8
+2. drift = 1 if k == lane × 8 (initialization)
+3. drift = ??? if k > lane × 8 (evolution)
+
+==================================================
+
+YOUR TASK: CROSS-LANE ANALYSIS
+
+At any given step k, we have drift values for MULTIPLE lanes.
+
+Example at k=50:
+- Lanes 0-6 are active (k >= lane×8)
+- Each has a drift value
+
+QUESTION: Are these drift values RELATED?
+
+==================================================
+
+HYPOTHESES TO TEST:
+
+H1: SEQUENTIAL RELATIONSHIP
+   drift[k][lane+1] = f(drift[k][lane])
+
+   Check: Is there a formula connecting lanes at the same k?
+
+H2: SUM/XOR RELATIONSHIP
+   drift[k][lane] = (drift[k][lane-1] + C) mod 256
+   drift[k][lane] = drift[k][lane-1] XOR C
+
+   Check: Simple arithmetic relationships
+
+H3: EXPONENT INFLUENCE
+   The exponent for each lane is different.
+   Does drift depend on the exponent?
+
+   drift[k][lane] = f(exponent[lane], k)?
+
+H4: PARITY PATTERNS
+   Lanes with exponent=2 vs exponent=3
+
+   Check: Do odd/even exponents have different drift patterns?
+
+H5: LANE 6 SPECIAL CASE
+   Lane 6 has exponent=0 (always zero X values)
+   Does this create a reference point?
+
+   drift[k][6] = ??? (check if it follows a simple pattern)
+
+==================================================
+
+DATA TO ANALYZE:
+
+File: drift_data_CORRECT_BYTE_ORDER.json
+
+Focus on k values where MANY lanes are active:
+- k=40: Lanes 0-5 active (6 drift values)
+- k=50: Lanes 0-6 active (7 drift values)
+- k=60: Lanes 0-7 active (8 drift values)
+- k=68: Lanes 0-8 active (9 drift values)
+
+Check if drift[k] forms a VECTOR with internal structure.
+
+==================================================
+
+SPECIFIC TESTS:
+
+TEST 1: Correlation Matrix
+For each k with multiple active lanes, compute:
+- Correlation between drift[k][i] and drift[k][i+1]
+- Check for positive/negative correlation
+
+TEST 2: Difference Patterns
+For k=40 to k=70, compute:
+- diff[k][lane] = drift[k][lane+1] - drift[k][lane]
+- Is diff constant? Periodic? Random?
+
+TEST 3: Lane 0 as Generator
+Lane 0 is always active.
+Check: Can we generate other lanes' drift from Lane 0?
+
+drift[k][lane] = f(drift[k][0], lane)?
+
+TEST 4: Bit Analysis
+Look at drift values in binary.
+Are certain bits correlated across lanes?
+
+==================================================
+
+OUTPUT FORMAT:
+
+1. CORRELATION RESULTS
+   - Matrix of correlations between lanes
+   - Strength of relationships (weak/moderate/strong)
+
+2. PATTERN DISCOVERIES
+   - Any formulas that work
+   - Accuracy percentages
+   - Which k ranges they apply to
+
+3. SPECIAL CASES
+   - Lane 6 behavior
+   - Exponent influence
+   - Boundary effects
+
+4. RECOMMENDATIONS
+   - Should we treat lanes independently?
+   - Or is there cross-lane structure to exploit?
+
+==================================================
+
+CONSTRAINTS:
+
+- Use your 120B capacity for deep analysis
+- Consider multiple hypotheses simultaneously
+- Look for subtle patterns
+- Document negative results (what doesn't work)
+
+==================================================
+
+SAVE RESULTS TO:
+/home/solo/LadderV3/kh-assist/llm_tasks/results/gptoss_cross_lane_analysis.txt
+
+==================================================
+
+WHY THIS MATTERS:
+
+If lanes are INDEPENDENT, we need 16 separate formulas.
+If lanes are RELATED, we might need only 1-2 formulas!
+
+This could dramatically simplify the drift generator.
+
+==================================================
+
+BEGIN ANALYSIS!

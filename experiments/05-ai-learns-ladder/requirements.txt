@@ -1,0 +1,14 @@
+# Experiment 05: AI Learns Ladder - Requirements
+
+# Core AI/ML
+pysr>=0.16.0          # Symbolic regression to discover equations
+numpy>=1.24.0         # Numerical computations
+pandas>=2.0.0         # Data handling
+
+# Cryptography
+ecdsa>=0.18.0         # ECDSA for Bitcoin public key derivation
+# hashlib is built-in Python module
+
+# Utilities
+tqdm>=4.65.0          # Progress bars
+matplotlib>=3.7.0     # Plotting (optional)

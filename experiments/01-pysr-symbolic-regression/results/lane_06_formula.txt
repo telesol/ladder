@@ -1,0 +1,9 @@
+Lane 6 - Discovered Formula
+========================================
+
+Best equation: 0.0
+
+Complexity: 1
+Loss: 0.000000
+Accuracy: 100.00%
+Mean modular loss: 0.0000

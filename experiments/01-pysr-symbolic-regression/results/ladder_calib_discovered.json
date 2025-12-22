@@ -1,0 +1,123 @@
+{
+  "discovered_pattern": "pure_polynomial",
+  "formula_type": [
+    "x^3",
+    "x^2",
+    "x^3",
+    "x^2",
+    "x^2",
+    "x^3",
+    "0",
+    "x^2",
+    "x^2",
+    "x^3",
+    "x^3",
+    "x^2",
+    "x^2",
+    "x^2",
+    "x^2",
+    "x^3"
+  ],
+  "exponents": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    0,
+    2,
+    2,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3
+  ],
+  "note": "All lanes follow X_{k+1} = X_k^n (mod 256) where n is the exponent",
+  "accuracy": "100% on all 16 lanes",
+  "lanes": {
+    "0": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    },
+    "1": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "2": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    },
+    "3": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "4": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "5": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    },
+    "6": {
+      "formula": "0",
+      "exponent": 0,
+      "accuracy": 100.0
+    },
+    "7": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "8": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "9": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    },
+    "10": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    },
+    "11": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "12": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "13": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "14": {
+      "formula": "x^2",
+      "exponent": 2,
+      "accuracy": 100.0
+    },
+    "15": {
+      "formula": "x^3",
+      "exponent": 3,
+      "accuracy": 100.0
+    }
+  }
+}

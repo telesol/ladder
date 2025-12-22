@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-19T22:37:48.951236",
+    "approach": "piecewise_by_d",
+    "groups_trained": [
+      1,
+      2,
+      4
+    ]
+  },
+  "results": {
+    "d_1": {
+      "formula": "(1.285403 - 0.10102005*prev_d)*(-n_squared**2 + power_of_2)",
+      "training_samples": 12,
+      "validation_samples": 3,
+      "accuracy_percent": 0.0,
+      "duration_seconds": 114.972359,
+      "n_values": [
+        4,
+        9,
+        11,
+        13,
+        15,
+        17,
+        18,
+        19,
+        20,
+        23,
+        25,
+        26,
+        28,
+        29,
+        31
+      ]
+    },
+    "d_2": {
+      "formula": "-(-0.49472615)*power_of_2 + prev_m*(-0.40745318)",
+      "training_samples": 6,
+      "validation_samples": 2,
+      "accuracy_percent": 0.0,
+      "duration_seconds": 92.036975,
+      "n_values": [
+        2,
+        5,
+        6,
+        7,
+        12,
+        21,
+        22,
+        27
+      ]
+    },
+    "d_4": {
+      "formula": "(0.21201749 + n*(-0.0046253176))*(-n_cubed/(prev_d**2) + power_of_2)",
+      "training_samples": 4,
+      "validation_samples": 1,
+      "accuracy_percent": 0.0,
+      "duration_seconds": 93.289156,
+      "n_values": [
+        8,
+        14,
+        16,
+        24,
+        30
+      ]
+    }
+  }
+}

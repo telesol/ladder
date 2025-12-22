@@ -1,0 +1,224 @@
+{
+  "metadata": {
+    "description": "Enhanced cross-lane dependency analysis with multiple approaches",
+    "approaches": [
+      "linear",
+      "polynomial",
+      "random_forest",
+      "xor_bitwise",
+      "index_modulated"
+    ]
+  },
+  "lanes": {
+    "0": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 71.38888888888889
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 85.88888888888889
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 88.11111111111111
+        },
+        "xor_bitwise": {
+          "accuracy": 0.0,
+          "mae": 71.38888888888889
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 81.44444444444444
+        }
+      },
+      "best_approach": {
+        "name": "linear",
+        "accuracy": 0.0,
+        "mae": 71.38888888888889
+      }
+    },
+    "1": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 76.77777777777777
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 80.33333333333333
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 93.11111111111111
+        },
+        "xor_bitwise": {
+          "accuracy": 0.0,
+          "mae": 74.66666666666667
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 83.0
+        }
+      },
+      "best_approach": {
+        "name": "linear",
+        "accuracy": 0.0,
+        "mae": 76.77777777777777
+      }
+    },
+    "2": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 87.22222222222223
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 90.27777777777777
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 96.66666666666667
+        },
+        "xor_bitwise": {
+          "accuracy": 0.0,
+          "mae": 89.61111111111111
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 95.44444444444444
+        }
+      },
+      "best_approach": {
+        "name": "linear",
+        "accuracy": 0.0,
+        "mae": 87.22222222222223
+      }
+    },
+    "3": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 80.55555555555556
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 94.44444444444444
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 78.22222222222223
+        },
+        "xor_bitwise": {
+          "accuracy": 5.555555555555555,
+          "mae": 67.72222222222223
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 103.22222222222223
+        }
+      },
+      "best_approach": {
+        "name": "xor_bitwise",
+        "accuracy": 5.555555555555555,
+        "mae": 67.72222222222223
+      }
+    },
+    "4": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 76.33333333333333
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 256.0
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 83.11111111111111
+        },
+        "xor_bitwise": {
+          "accuracy": 0.0,
+          "mae": 117.11111111111111
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 90.27777777777777
+        }
+      },
+      "best_approach": {
+        "name": "linear",
+        "accuracy": 0.0,
+        "mae": 76.33333333333333
+      }
+    },
+    "5": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 89.16666666666667
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 256.0
+        },
+        "random_forest": {
+          "accuracy": 0.0,
+          "mae": 71.55555555555556
+        },
+        "xor_bitwise": {
+          "accuracy": 0.0,
+          "mae": 95.83333333333333
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 108.38888888888889
+        }
+      },
+      "best_approach": {
+        "name": "linear",
+        "accuracy": 0.0,
+        "mae": 89.16666666666667
+      }
+    },
+    "6": {
+      "approaches": {
+        "linear": {
+          "accuracy": 0.0,
+          "mae": 71.11111111111111
+        },
+        "polynomial": {
+          "accuracy": 0.0,
+          "mae": 256.0
+        },
+        "random_forest": {
+          "accuracy": 5.555555555555555,
+          "mae": 69.94444444444444
+        },
+        "xor_bitwise": {
+          "accuracy": 5.555555555555555,
+          "mae": 82.11111111111111
+        },
+        "index_modulated": {
+          "accuracy": 0.0,
+          "mae": 67.66666666666667
+        }
+      },
+      "best_approach": {
+        "name": "random_forest",
+        "accuracy": 5.555555555555555,
+        "mae": 69.94444444444444
+      }
+    }
+  },
+  "summary": {
+    "overall_best_lane": 3,
+    "overall_best_approach": "xor_bitwise",
+    "overall_best_accuracy": 5.555555555555555,
+    "high_accuracy_lanes": [],
+    "conclusion": "INDEPENDENT - Drift appears random/unpredictable from previous values"
+  }
+}

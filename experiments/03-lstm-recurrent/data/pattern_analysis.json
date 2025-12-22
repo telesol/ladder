@@ -1,0 +1,262 @@
+{
+  "byte_diffs": {},
+  "lane_patterns": {
+    "0": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "2": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "3": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "4": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "5": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "6": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "7": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "8": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "9": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "10": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "11": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "12": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "13": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "14": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0,
+      "unique_values": 1,
+      "most_common": 0
+    },
+    "15": {
+      "mean": 0.037037037037037035,
+      "std": 0.33126932999996883,
+      "min": 0,
+      "max": 3,
+      "unique_values": 2,
+      "most_common": 0
+    },
+    "16": {
+      "mean": 0.7654320987654321,
+      "std": 4.833707788657705,
+      "min": 0,
+      "max": 34,
+      "unique_values": 3,
+      "most_common": 0
+    },
+    "17": {
+      "mean": 4.617283950617284,
+      "std": 26.06239801234606,
+      "min": 0,
+      "max": 171,
+      "unique_values": 5,
+      "most_common": 0
+    },
+    "18": {
+      "mean": 4.407407407407407,
+      "std": 25.423707113674837,
+      "min": 0,
+      "max": 218,
+      "unique_values": 6,
+      "most_common": 0
+    },
+    "19": {
+      "mean": 7.703703703703703,
+      "std": 31.94495437059457,
+      "min": 0,
+      "max": 213,
+      "unique_values": 8,
+      "most_common": 0
+    },
+    "20": {
+      "mean": 10.506172839506172,
+      "std": 35.975685704320526,
+      "min": 0,
+      "max": 195,
+      "unique_values": 10,
+      "most_common": 0
+    },
+    "21": {
+      "mean": 16.901234567901234,
+      "std": 51.947410477000346,
+      "min": 0,
+      "max": 229,
+      "unique_values": 11,
+      "most_common": 0
+    },
+    "22": {
+      "mean": 15.604938271604938,
+      "std": 47.225144749393074,
+      "min": 0,
+      "max": 250,
+      "unique_values": 13,
+      "most_common": 0
+    },
+    "23": {
+      "mean": 19.938271604938272,
+      "std": 53.11653753752793,
+      "min": 0,
+      "max": 242,
+      "unique_values": 16,
+      "most_common": 0
+    },
+    "24": {
+      "mean": 32.098765432098766,
+      "std": 66.06199948725151,
+      "min": 0,
+      "max": 247,
+      "unique_values": 26,
+      "most_common": 0
+    },
+    "25": {
+      "mean": 33.876543209876544,
+      "std": 61.18952196191064,
+      "min": 0,
+      "max": 246,
+      "unique_values": 32,
+      "most_common": 0
+    },
+    "26": {
+      "mean": 49.135802469135804,
+      "std": 73.01576915532492,
+      "min": 0,
+      "max": 247,
+      "unique_values": 38,
+      "most_common": 0
+    },
+    "27": {
+      "mean": 56.79012345679013,
+      "std": 74.1068158091243,
+      "min": 0,
+      "max": 244,
+      "unique_values": 47,
+      "most_common": 0
+    },
+    "28": {
+      "mean": 87.19753086419753,
+      "std": 86.99289310451454,
+      "min": 0,
+      "max": 246,
+      "unique_values": 56,
+      "most_common": 0
+    },
+    "29": {
+      "mean": 94.09876543209876,
+      "std": 80.56231464950419,
+      "min": 0,
+      "max": 249,
+      "unique_values": 54,
+      "most_common": 0
+    },
+    "30": {
+      "mean": 110.65432098765432,
+      "std": 79.44283766732975,
+      "min": 0,
+      "max": 255,
+      "unique_values": 63,
+      "most_common": 0
+    },
+    "31": {
+      "mean": 116.24691358024691,
+      "std": 80.12976063771019,
+      "min": 1,
+      "max": 254,
+      "unique_values": 69,
+      "most_common": 2
+    }
+  },
+  "statistics": {}
+}

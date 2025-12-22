@@ -1,0 +1,81 @@
+/home/solo/.pyenv/versions/3.12.0/lib/python3.12/site-packages/pysr/sr.py:1036: FutureWarning: `ncyclesperiteration` has been renamed to `ncycles_per_iteration` in PySRRegressor. Please use that instead.
+  warnings.warn(
+[1/6] Loading data from drift_data_export.json
+  ✓ Loaded 69 transitions (1104 drift values)
+
+[2/6] Statistical Analysis: Correlation with (k, lane)
+  Lane  0: varying (59 values), range=(1, 254), corr=0.138
+  Lane  1: varying (57 values), range=(0, 248), corr=0.219
+  Lane  2: varying (43 values), range=(0, 249), corr=0.640
+  Lane  3: varying (45 values), range=(0, 246), corr=0.687
+  Lane  4: varying (37 values), range=(0, 239), corr=0.634
+  Lane  5: varying (28 values), range=(0, 225), corr=0.632
+  Lane  6: varying (20 values), range=(0, 246), corr=0.617
+  Lane  7: varying (14 values), range=(0, 219), corr=0.533
+  Lane  8: varying (5 values), range=(0, 36), corr=0.287
+  Lane  9: CONSTANT = 0
+  Lane 10: CONSTANT = 0
+  Lane 11: CONSTANT = 0
+  Lane 12: CONSTANT = 0
+  Lane 13: CONSTANT = 0
+  Lane 14: CONSTANT = 0
+  Lane 15: CONSTANT = 0
+
+[3/6] Polynomial Fits (per lane)
+  Lane  0: degree=2, accuracy=1.4%
+  Lane  1: degree=0, accuracy=0.0%
+  Lane  2: degree=1, accuracy=1.4%
+  Lane  3: degree=1, accuracy=1.4%
+  Lane  4: degree=2, accuracy=1.4%
+  Lane  5: degree=3, accuracy=1.4%
+  Lane  6: degree=3, accuracy=5.8%
+  Lane  7: degree=4, accuracy=7.2%
+  Lane  8: degree=3, accuracy=26.1%
+
+  Overall polynomial accuracy: 46.65%
+
+[4/6] Modular Arithmetic Patterns
+  Lane  8: 91.3% match, mult=0, offset=0
+  Lane  9: 100% match! drift = (0*k + 0) mod 256
+  Lane 10: 100% match! drift = (0*k + 0) mod 256
+  Lane 11: 100% match! drift = (0*k + 0) mod 256
+  Lane 12: 100% match! drift = (0*k + 0) mod 256
+  Lane 13: 100% match! drift = (0*k + 0) mod 256
+  Lane 14: 100% match! drift = (0*k + 0) mod 256
+  Lane 15: 100% match! drift = (0*k + 0) mod 256
+
+  Overall modular accuracy: 69.57%
+
+[5/6] PySR Symbolic Regression (Optional)
+  ✓ PySR available, starting symbolic regression...
+  Training on 1104 samples...
+
+  PySR accuracy: 0.00%
+  Best equation: \frac{0.895 x_{1} + 1.90}{0.570}
+
+[6/6] Generating Report
+Traceback (most recent call last):
+  File "/home/solo/LadderV3/kh-assist/research_H1_index_based.py", line 348, in <module>
+    main()
+  File "/home/solo/LadderV3/kh-assist/research_H1_index_based.py", line 343, in main
+    report = generate_report(data, stats, poly_results, poly_acc, mod_results, mod_acc, pysr_result)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/solo/LadderV3/kh-assist/research_H1_index_based.py", line 301, in generate_report
+    json.dump(report, f, indent=2)
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/home/solo/.pyenv/versions/3.12.0/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

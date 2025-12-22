@@ -1,0 +1,23 @@
+{
+  "task": "Task 1 - Lane 8 (k<64)",
+  "timestamp": "2025-12-22T15:37:45.074706",
+  "train_time_seconds": 47.648469,
+  "best_formula": "PySRRegressor.equations_ = [\n\t   pick  score       equation          loss  complexity\n\t0          0.0  2.1827873e-11  4.764560e-22           1\n\t1  >>>>    inf       A + -1.0  0.000000e+00           3\n]",
+  "data_stats": {
+    "train_samples": 46,
+    "val_samples": 8,
+    "test_samples": 9,
+    "train_zeros_percent": 100.0,
+    "val_zeros_percent": 100.0,
+    "test_zeros_percent": 100.0
+  },
+  "accuracy": {
+    "train_exact_match_percent": 100.0,
+    "val_exact_match_percent": 100.0,
+    "test_exact_match_percent": 100.0,
+    "train_mse": 0.0,
+    "val_mse": 0.0,
+    "test_mse": 0.0
+  },
+  "hypothesis_confirmed": true
+}

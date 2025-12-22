@@ -1,0 +1,1251 @@
+{
+  "summary": {
+    "task": "Task 4: Index-Based Pattern Analysis (Lanes 0-6)",
+    "goal": "Find drift[k][lane] = f(k, lane)",
+    "lanes_analyzed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "results_by_lane": {
+      "lane_0": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.14285714285714285,
+        "best_formula": "(1*k + 160) mod 256",
+        "correlation": 0.13752707302308284,
+        "polynomial_best": 0.0,
+        "modular_best": 0.14285714285714285,
+        "bit_xor_best": 0.14285714285714285
+      },
+      "lane_1": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.14285714285714285,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.2185069284086034,
+        "polynomial_best": 0.0,
+        "modular_best": 0.14285714285714285,
+        "bit_xor_best": 0.07142857142857142
+      },
+      "lane_2": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6401256117205223,
+        "polynomial_best": 0.0,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.07142857142857142
+      },
+      "lane_3": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6866862855257686,
+        "polynomial_best": 0.07142857142857142,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.07142857142857142
+      },
+      "lane_4": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6344297469787752,
+        "polynomial_best": 0.0,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.07142857142857142
+      },
+      "lane_5": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6319055611578221,
+        "polynomial_best": 0.0,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.07142857142857142
+      },
+      "lane_6": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6166124095518772,
+        "polynomial_best": 0.07142857142857142,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.14285714285714285
+      }
+    },
+    "best_overall": {
+      "lane": "lane_2",
+      "accuracy": 0.2857142857142857,
+      "details": {
+        "best_method": "Modular (Linear)",
+        "best_accuracy": 0.2857142857142857,
+        "best_formula": "(0*k + 0) mod 256",
+        "correlation": 0.6401256117205223,
+        "polynomial_best": 0.0,
+        "modular_best": 0.2857142857142857,
+        "bit_xor_best": 0.07142857142857142
+      }
+    }
+  },
+  "polynomial_regression": {
+    "lane_0": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.05454545454545454,
+        "test_accuracy": 0.0,
+        "mae": 70.07142857142857,
+        "coefficients": [
+          0.0,
+          0.14156824546450764
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.05454545454545454,
+        "test_accuracy": 0.0,
+        "mae": 70.07142857142857,
+        "coefficients": [
+          0.0,
+          0.14155876569814518
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 105.21428571428571,
+        "coefficients": [
+          0.0,
+          5.009556625432221,
+          -0.07925572563682781
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 105.21428571428571,
+        "coefficients": [
+          0.0,
+          5.0041491750546205,
+          -0.07917314290284701
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 78.78571428571429,
+        "coefficients": [
+          0.0,
+          18.262340661795193,
+          -0.6273199494304308,
+          0.0060905490264850926
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 78.57142857142857,
+        "coefficients": [
+          0.0,
+          18.14494929052253,
+          -0.6229768195701745,
+          0.006045613196079379
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 71.5,
+        "coefficients": [
+          0.0,
+          46.56687059776147,
+          -2.73867454741196,
+          0.06060024983817158,
+          -0.00045368832674341775
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 69.28571428571429,
+        "coefficients": [
+          0.0,
+          45.286090695534924,
+          -2.654160368174797,
+          0.05858616815749966,
+          -0.00043785934845521956
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 77.92857142857143,
+        "coefficients": [
+          0.0,
+          31.96519663648301,
+          -1.1063014922385874,
+          -0.009841465945363425,
+          0.0008425634182427366,
+          -8.542405431910538e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 85.21428571428571,
+        "coefficients": [
+          0.0,
+          28.766773941661345,
+          -0.7859363394405455,
+          -0.02263104161661148,
+          0.0010644560707075061,
+          -9.938587626472193e-06
+        ]
+      },
+      "best": {
+        "degree": 0,
+        "accuracy": 0.0,
+        "predictions": []
+      }
+    },
+    "lane_1": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 64.28571428571429,
+        "coefficients": [
+          0.0,
+          0.386302203823207
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 64.28571428571429,
+        "coefficients": [
+          0.0,
+          0.38627633605444656
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 91.64285714285714,
+        "coefficients": [
+          0.0,
+          8.13262712313021,
+          -0.1261179268678525
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 91.78571428571429,
+        "coefficients": [
+          0.0,
+          8.123848588309192,
+          -0.1259838608800165
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 62.357142857142854,
+        "coefficients": [
+          0.0,
+          21.54004027811169,
+          -0.6805767834903003,
+          0.006161611546275481
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 62.0,
+        "coefficients": [
+          0.0,
+          21.401593760061395,
+          -0.6754547134007497,
+          0.0061086167295122925
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 81.42857142857143,
+        "coefficients": [
+          0.0,
+          34.60290144088927,
+          -1.654990845167489,
+          0.03131845588676818,
+          -0.00020938230159828208
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 80.78571428571429,
+        "coefficients": [
+          0.0,
+          33.651867282866014,
+          -1.5922383399298916,
+          0.029823027251631343,
+          -0.00019762974235500844
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 70.92857142857143,
+        "coefficients": [
+          0.0,
+          0.7544291955556064,
+          2.1290502449473743,
+          -0.13197408701158753,
+          0.002795488339473691,
+          -1.980234423459848e-05
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 71.0,
+        "coefficients": [
+          0.0,
+          0.7005152179302775,
+          2.134338771230573,
+          -0.1321822731413727,
+          0.002799063463966888,
+          -1.982466374290611e-05
+        ]
+      },
+      "best": {
+        "degree": 0,
+        "accuracy": 0.0,
+        "predictions": []
+      }
+    },
+    "lane_2": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 37.57142857142857,
+        "coefficients": [
+          0.0,
+          2.6023499330329973
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 37.57142857142857,
+        "coefficients": [
+          0.0,
+          2.602175673125506
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 95.5,
+        "coefficients": [
+          0.0,
+          6.496389962660892,
+          -0.06339887117994003
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 95.5,
+        "coefficients": [
+          0.0,
+          6.489378233336235,
+          -0.06329178850838202
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 108.85714285714286,
+        "coefficients": [
+          0.0,
+          4.083734463921995,
+          0.03637564861667984,
+          -0.0011087780921164025
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 108.85714285714286,
+        "coefficients": [
+          0.0,
+          4.057525945559066,
+          0.03734517450640658,
+          -0.0011188084555517899
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 133.35714285714286,
+        "coefficients": [
+          0.0,
+          -26.598270428416306,
+          2.325076158837936,
+          -0.06019709048636113,
+          0.0004917964542379138
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 127.5,
+        "coefficients": [
+          0.0,
+          -25.865332744187523,
+          2.2767063491477026,
+          -0.05904428690654632,
+          0.0004827359031919845
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 126.85714285714286,
+        "coefficients": [
+          0.0,
+          -15.412103929187952,
+          1.0745348266390975,
+          -0.006232540633758677,
+          -0.000501246391647836,
+          6.544233887240125e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 129.14285714285714,
+        "coefficients": [
+          0.0,
+          -13.864567955005043,
+          0.9195002687520729,
+          -4.2534845326781e-05,
+          -0.0006086490646703436,
+          7.220071763198348e-06
+        ]
+      },
+      "best": {
+        "degree": 0,
+        "accuracy": 0.0,
+        "predictions": []
+      }
+    },
+    "lane_3": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 134.71428571428572,
+        "coefficients": [
+          0.0,
+          3.7399671252891773
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 134.71428571428572,
+        "coefficients": [
+          0.0,
+          3.7397166876685466
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 138.14285714285714,
+        "coefficients": [
+          0.0,
+          3.0516810227870352,
+          0.011205986999482054
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 138.14285714285714,
+        "coefficients": [
+          0.0,
+          3.0483879364617272,
+          0.011256278116048015
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 139.07142857142858,
+        "coefficients": [
+          0.0,
+          -9.242722463539819,
+          0.5196367201382653,
+          -0.005650108458674197
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.07142857142857142,
+        "mae": 138.92857142857142,
+        "coefficients": [
+          0.0,
+          -9.183261699607215,
+          0.5174367226364176,
+          -0.005627345504068256
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 108.42857142857143,
+        "coefficients": [
+          0.0,
+          -3.0158966423156666,
+          0.05515144662240994,
+          0.006341696856876883,
+          -9.980869473391607e-05
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 108.71428571428571,
+        "coefficients": [
+          0.0,
+          -2.9331684610080013,
+          0.04969344043446908,
+          0.00647175388222276,
+          -0.00010083075403498028
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 149.85714285714286,
+        "coefficients": [
+          0.0,
+          1.6097027364650172,
+          -0.4619607586441995,
+          0.028656614946426944,
+          -0.0005104425242780028,
+          2.7061106511183652e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 149.92857142857142,
+        "coefficients": [
+          0.0,
+          1.4445682219879594,
+          -0.44539924314922547,
+          0.02799489335682174,
+          -0.0004989550480289727,
+          2.633796559374915e-06
+        ]
+      },
+      "best": {
+        "degree": 3,
+        "accuracy": 0.07142857142857142,
+        "predictions": [
+          124.0,
+          116.0,
+          106.0,
+          96.0,
+          84.0,
+          72.0,
+          58.0,
+          43.0,
+          26.0,
+          9.0,
+          246.0,
+          243.0,
+          240.0,
+          239.0
+        ]
+      }
+    },
+    "lane_4": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 130.0,
+        "coefficients": [
+          0.0,
+          2.4011993181541467
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 130.0,
+        "coefficients": [
+          0.0,
+          2.4010385277985757
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 141.5,
+        "coefficients": [
+          0.0,
+          -1.045921161117271,
+          0.056122573354219774
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 141.5,
+        "coefficients": [
+          0.0,
+          -1.04479151340922,
+          0.05610532068391365
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 134.92857142857142,
+        "coefficients": [
+          0.0,
+          -5.3838172198971534,
+          0.23551473954581215,
+          -0.0019935561120822953
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 135.14285714285714,
+        "coefficients": [
+          0.0,
+          -5.349197722035148,
+          0.2342338898389363,
+          -0.0019803036913653245
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 75.0,
+        "coefficients": [
+          0.0,
+          7.727347656866035,
+          -0.7425025004779227,
+          0.02325631295006436,
+          -0.00021015655332767835
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 74.92857142857143,
+        "coefficients": [
+          0.0,
+          7.51429271902869,
+          -0.7284415471158389,
+          0.022921188711957172,
+          -0.00020752257465280963
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 90.28571428571429,
+        "coefficients": [
+          0.0,
+          0.8688641873827727,
+          0.024231757860800122,
+          -0.009830533570865977,
+          0.0003986997481128379,
+          -4.012413015841432e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 90.42857142857143,
+        "coefficients": [
+          0.0,
+          0.7824721214999578,
+          0.032882252458513866,
+          -0.010175802754288981,
+          0.0004046890581517466,
+          -4.050094195242128e-06
+        ]
+      },
+      "best": {
+        "degree": 0,
+        "accuracy": 0.0,
+        "predictions": []
+      }
+    },
+    "lane_5": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 117.5,
+        "coefficients": [
+          0.0,
+          3.0900827955680032
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 117.5,
+        "coefficients": [
+          0.0,
+          3.0898758758393137
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 154.85714285714286,
+        "coefficients": [
+          0.0,
+          -1.6333684511683015,
+          0.07690251636811629
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.0,
+        "mae": 154.85714285714286,
+        "coefficients": [
+          0.0,
+          -1.6316045077313948,
+          0.07687557652442784
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 121.64285714285714,
+        "coefficients": [
+          0.0,
+          -7.829864292541871,
+          0.3331564230359183,
+          -0.0028477081955564643
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 121.64285714285714,
+        "coefficients": [
+          0.0,
+          -7.779518229561122,
+          0.33129372887340114,
+          -0.0028284357115592475
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 56.857142857142854,
+        "coefficients": [
+          0.0,
+          13.489422549588935,
+          -1.2571393495047878,
+          0.0382096048900058,
+          -0.0003417230951079375
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 58.07142857142857,
+        "coefficients": [
+          0.0,
+          13.117568928526158,
+          -1.232598482432973,
+          0.037624710306843216,
+          -0.0003371260195402921
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.05454545454545454,
+        "test_accuracy": 0.0,
+        "mae": 88.71428571428571,
+        "coefficients": [
+          0.0,
+          4.925152238491516,
+          -0.29970911452279947,
+          -0.00310633591961516,
+          0.00041856304747031614,
+          -5.010348102629791e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.05454545454545454,
+        "test_accuracy": 0.0,
+        "mae": 88.5,
+        "coefficients": [
+          0.0,
+          4.431053741844813,
+          -0.25021182325605673,
+          -0.0050825357998865684,
+          0.00045285130810448343,
+          -5.226105512582451e-06
+        ]
+      },
+      "best": {
+        "degree": 0,
+        "accuracy": 0.0,
+        "predictions": []
+      }
+    },
+    "lane_6": {
+      "degree_1_Linear": {
+        "degree": 1,
+        "regression": "Linear",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.07142857142857142,
+        "mae": 132.28571428571428,
+        "coefficients": [
+          0.0,
+          1.181565810300743
+        ]
+      },
+      "degree_1_Ridge": {
+        "degree": 1,
+        "regression": "Ridge",
+        "train_accuracy": 0.01818181818181818,
+        "test_accuracy": 0.07142857142857142,
+        "mae": 132.28571428571428,
+        "coefficients": [
+          0.0,
+          1.181486689677423
+        ]
+      },
+      "degree_2_Linear": {
+        "degree": 2,
+        "regression": "Linear",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 53.214285714285715,
+        "coefficients": [
+          0.0,
+          -3.541371543042065,
+          0.0768941496690565
+        ]
+      },
+      "degree_2_Ridge": {
+        "degree": 2,
+        "regression": "Ridge",
+        "train_accuracy": 0.0,
+        "test_accuracy": 0.0,
+        "mae": 53.142857142857146,
+        "coefficients": [
+          0.0,
+          -3.5375485472993775,
+          0.07683576442338692
+        ]
+      },
+      "degree_3_Linear": {
+        "degree": 3,
+        "regression": "Linear",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 69.64285714285714,
+        "coefficients": [
+          0.0,
+          5.8094187023039074,
+          -0.3098044929414132,
+          0.00429731943638334
+        ]
+      },
+      "degree_3_Ridge": {
+        "degree": 3,
+        "regression": "Ridge",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 69.64285714285714,
+        "coefficients": [
+          0.0,
+          5.772049237046417,
+          -0.3084218651681414,
+          0.004283013722199686
+        ]
+      },
+      "degree_4_Linear": {
+        "degree": 4,
+        "regression": "Linear",
+        "train_accuracy": 0.05454545454545454,
+        "test_accuracy": 0.0,
+        "mae": 122.35714285714286,
+        "coefficients": [
+          0.0,
+          -6.8514409942777,
+          0.6346225791900189,
+          -0.02008533859273004,
+          0.0002029386908803943
+        ]
+      },
+      "degree_4_Ridge": {
+        "degree": 4,
+        "regression": "Ridge",
+        "train_accuracy": 0.03636363636363636,
+        "test_accuracy": 0.0,
+        "mae": 121.92857142857143,
+        "coefficients": [
+          0.0,
+          -6.662579047480231,
+          0.6221584677532948,
+          -0.01978827572944245,
+          0.00020060387872781826
+        ]
+      },
+      "degree_5_Linear": {
+        "degree": 5,
+        "regression": "Linear",
+        "train_accuracy": 0.12727272727272726,
+        "test_accuracy": 0.0,
+        "mae": 65.35714285714286,
+        "coefficients": [
+          0.0,
+          3.7182071709819007,
+          -0.5469959797658891,
+          0.03090499017833894,
+          -0.0007353732442108296,
+          6.183552690774974e-06
+        ]
+      },
+      "degree_5_Ridge": {
+        "degree": 5,
+        "regression": "Ridge",
+        "train_accuracy": 0.14545454545454545,
+        "test_accuracy": 0.0,
+        "mae": 65.64285714285714,
+        "coefficients": [
+          0.0,
+          3.3419750931499084,
+          -0.5092895649212468,
+          0.02939910801301609,
+          -0.0007092398013258672,
+          6.019082960384648e-06
+        ]
+      },
+      "best": {
+        "degree": 1,
+        "accuracy": 0.07142857142857142,
+        "predictions": [
+          46.0,
+          47.0,
+          49.0,
+          50.0,
+          51.0,
+          52.0,
+          53.0,
+          55.0,
+          56.0,
+          57.0,
+          239.0,
+          240.0,
+          241.0,
+          242.0
+        ]
+      }
+    }
+  },
+  "modular_arithmetic": {
+    "lane_0": {
+      "linear_mod": {
+        "best_pattern": "(1*k + 160) mod 256",
+        "accuracy": 0.14285714285714285
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 1*k + 160) mod 256",
+        "accuracy": 0.14285714285714285
+      },
+      "modular_mult": {
+        "best_pattern": "(6*k) mod 16",
+        "accuracy": 0.07142857142857142
+      }
+    },
+    "lane_1": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.14285714285714285
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.14285714285714285
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.14285714285714285
+      }
+    },
+    "lane_2": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.2857142857142857
+      }
+    },
+    "lane_3": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.2857142857142857
+      }
+    },
+    "lane_4": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.2857142857142857
+      }
+    },
+    "lane_5": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.2857142857142857
+      }
+    },
+    "lane_6": {
+      "linear_mod": {
+        "best_pattern": "(0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "quadratic_mod": {
+        "best_pattern": "(0*k^2 + 0*k + 0) mod 256",
+        "accuracy": 0.2857142857142857
+      },
+      "modular_mult": {
+        "best_pattern": "(16*k) mod 16",
+        "accuracy": 0.2857142857142857
+      }
+    }
+  },
+  "bit_patterns": {
+    "lane_0": {
+      "xor_constant": 160,
+      "accuracy": 0.14285714285714285
+    },
+    "lane_1": {
+      "xor_constant": 6,
+      "accuracy": 0.07142857142857142
+    },
+    "lane_2": {
+      "xor_constant": 6,
+      "accuracy": 0.07142857142857142
+    },
+    "lane_3": {
+      "xor_constant": 6,
+      "accuracy": 0.07142857142857142
+    },
+    "lane_4": {
+      "xor_constant": 6,
+      "accuracy": 0.07142857142857142
+    },
+    "lane_5": {
+      "xor_constant": 6,
+      "accuracy": 0.07142857142857142
+    },
+    "lane_6": {
+      "xor_constant": 8,
+      "accuracy": 0.14285714285714285
+    }
+  },
+  "correlations": {
+    "lane_0": {
+      "pearson": 0.13752707302308284,
+      "spearman": 0.1410066690819791,
+      "p_value": 0.24781359089546867
+    },
+    "lane_1": {
+      "pearson": 0.2185069284086034,
+      "spearman": 0.24042205212932785,
+      "p_value": 0.04660166176378896
+    },
+    "lane_2": {
+      "pearson": 0.6401256117205223,
+      "spearman": 0.7259356421756965,
+      "p_value": 1.695457485533616e-12
+    },
+    "lane_3": {
+      "pearson": 0.6866862855257686,
+      "spearman": 0.7949558393273548,
+      "p_value": 3.4756406049458e-16
+    },
+    "lane_4": {
+      "pearson": 0.6344297469787752,
+      "spearman": 0.8498838535292527,
+      "p_value": 2.6013103297701585e-20
+    },
+    "lane_5": {
+      "pearson": 0.6319055611578221,
+      "spearman": 0.7941440759176202,
+      "p_value": 3.911673501727759e-16
+    },
+    "lane_6": {
+      "pearson": 0.6166124095518772,
+      "spearman": 0.810175841074966,
+      "p_value": 3.418902142955925e-17
+    }
+  }
+}

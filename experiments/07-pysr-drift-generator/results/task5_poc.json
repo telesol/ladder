@@ -1,0 +1,32 @@
+{
+  "task": "task5_proof_of_concept",
+  "lane": 0,
+  "timestamp": "2025-12-22 15:49:17",
+  "results": {
+    "stable": {
+      "formula": "(x0 + 14.697726) * 3.7181287",
+      "train_acc": 0.0,
+      "test_acc": 0.0,
+      "train_samples": 24,
+      "test_samples": 3,
+      "training_time_sec": 29.270693063735962
+    },
+    "moderate": {
+      "formula": "x0 * 2.031944",
+      "train_acc": 0.037037037037037035,
+      "test_acc": 0.0,
+      "train_samples": 27,
+      "test_samples": 1,
+      "training_time_sec": 4.045538425445557
+    },
+    "complex": {
+      "formula": "(x0 * 17.116356) + -939.48773",
+      "train_acc": 0.0,
+      "test_acc": 0.0,
+      "train_samples": 4,
+      "test_samples": 1,
+      "training_time_sec": 3.7338650226593018
+    },
+    "overall_accuracy": 0.0
+  }
+}

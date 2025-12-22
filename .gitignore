@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+*/venv/
+*/.venv/
+julia_env/
+**/02-train/
+**/lib/python*/site-packages/nvidia/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database files (contains sensitive puzzle data)
+*.db
+*.sqlite
+*.sqlite3
+db/
+
+# Large data files
+*.tar.gz
+*.zip
+*.7z
+
+# Logs
+*.log
+*.out
+nohup.out
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Large model files (optional - uncomment if models are too big)
+# *.pth
+# *.pt
+# *.h5
+# *.onnx
+
+# Results that can be regenerated
+# Uncomment if you want to track these:
+# H*_results.json
+# *_output.log
