@@ -1,0 +1,50 @@
+======================================================================
+🔥 PARALLEL SWARM ATTACK - FULL POWER UNLEASHED! 🔥
+Launching 6 tasks across cloud + local models
+======================================================================
+
+[16:53:23] 🚀 Launching kimi_direct_formula (kimi-k2:1t-cloud)...
+[16:53:24] 🚀 Launching nemotron_fermat (nemotron-3-nano:30b-cloud)...
+[16:53:25] 🚀 Launching qwen_cf (qwen2.5-coder:32b)...
+[16:53:26] 🚀 Launching qwen3_prng (qwen3:8b)...
+[16:53:27] 🚀 Launching mistral_isogeny (mistral:7b)...
+[16:53:28] 🚀 Launching phi_phase (phi3:3.8b)...
+
+🚀 All 6 tasks launched! Waiting for completion...
+
+[16:53:39] Progress: 0/6 done, 6 running
+[16:53:45] ✅ nemotron_fermat done (21.3s) -> /home/rkh/ladder/swarm_outputs/nemotron_fermat_165324.txt
+[16:53:49] Progress: 1/6 done, 5 running
+[16:53:54] ✅ kimi_direct_formula done (31.0s) -> /home/rkh/ladder/swarm_outputs/kimi_direct_formula_165323.txt
+[16:53:59] Progress: 2/6 done, 4 running
+[16:54:09] Progress: 2/6 done, 4 running
+[16:54:14] ✅ mistral_isogeny done (47.0s) -> /home/rkh/ladder/swarm_outputs/mistral_isogeny_165327.txt
+[16:54:19] Progress: 3/6 done, 3 running
+[16:54:29] Progress: 3/6 done, 3 running
+[16:54:39] Progress: 3/6 done, 3 running
+[16:54:49] Progress: 3/6 done, 3 running
+[16:54:59] Progress: 3/6 done, 3 running
+[16:55:09] Progress: 3/6 done, 3 running
+[16:55:19] Progress: 3/6 done, 3 running
+[16:55:29] Progress: 3/6 done, 3 running
+[16:55:39] Progress: 3/6 done, 3 running
+[16:55:49] Progress: 3/6 done, 3 running
+[16:55:59] Progress: 3/6 done, 3 running
+[16:56:09] Progress: 3/6 done, 3 running
+[16:56:19] Progress: 3/6 done, 3 running
+[16:56:29] Progress: 3/6 done, 3 running
+[16:56:39] Progress: 3/6 done, 3 running
+[16:56:49] Progress: 3/6 done, 3 running
+[16:56:59] Progress: 3/6 done, 3 running
+[16:57:05] ✅ qwen_cf done (220.5s) -> /home/rkh/ladder/swarm_outputs/qwen_cf_165325.txt
+[16:57:09] Progress: 4/6 done, 2 running
+[16:57:19] Progress: 4/6 done, 2 running
+[16:57:29] Progress: 4/6 done, 2 running
+[16:57:39] Progress: 4/6 done, 2 running
+[16:57:40] ✅ qwen3_prng done (254.4s) -> /home/rkh/ladder/swarm_outputs/qwen3_prng_165326.txt
+[16:57:47] ✅ phi_phase done (258.8s) -> /home/rkh/ladder/swarm_outputs/phi_phase_165328.txt
+[16:57:49] Progress: 6/6 done, 0 running
+
+======================================================================
+🏁 SWARM COMPLETE! Check swarm_outputs/ for results.
+======================================================================

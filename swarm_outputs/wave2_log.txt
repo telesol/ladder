@@ -1,0 +1,58 @@
+======================================================================
+🌊 WAVE 2 SWARM ATTACK - Refined Hypotheses! 🌊
+Launching 6 tasks based on Wave 1 discoveries
+======================================================================
+
+[17:02:09] 🚀 Launching qwen_prime_indices (qwen2.5-coder:32b)...
+[17:02:10] 🚀 Launching mistral_self_ref (mistral:7b)...
+[17:02:11] 🚀 Launching phi_phase_transition (phi3:3.8b)...
+[17:02:12] 🚀 Launching qwen3_building (qwen3:8b)...
+[17:02:13] 🚀 Launching nemotron_bootstrap (nemotron-3-nano:30b-cloud)...
+[17:02:14] 🚀 Launching deepseek_cm (deepseek-r1:14b)...
+
+🚀 All 6 tasks launched! Waiting for completion...
+
+[17:02:25] Progress: 0/6 done, 6 running
+[17:02:30] ✅ phi_phase_transition done (18.4s) -> /home/rkh/ladder/swarm_outputs/wave2/phi_phase_transition_170211.txt
+[17:02:32] ✅ nemotron_bootstrap done (18.5s) -> /home/rkh/ladder/swarm_outputs/wave2/nemotron_bootstrap_170213.txt
+[17:02:35] Progress: 2/6 done, 4 running
+[17:02:45] Progress: 2/6 done, 4 running
+[17:02:53] ✅ mistral_self_ref done (43.1s) -> /home/rkh/ladder/swarm_outputs/wave2/mistral_self_ref_170210.txt
+[17:02:55] Progress: 3/6 done, 3 running
+[17:03:05] Progress: 3/6 done, 3 running
+[17:03:15] Progress: 3/6 done, 3 running
+[17:03:25] Progress: 3/6 done, 3 running
+[17:03:35] Progress: 3/6 done, 3 running
+[17:03:45] Progress: 3/6 done, 3 running
+[17:03:55] Progress: 3/6 done, 3 running
+[17:04:05] Progress: 3/6 done, 3 running
+[17:04:15] Progress: 3/6 done, 3 running
+[17:04:25] Progress: 3/6 done, 3 running
+[17:04:35] Progress: 3/6 done, 3 running
+[17:04:45] Progress: 3/6 done, 3 running
+[17:04:55] Progress: 3/6 done, 3 running
+[17:05:05] Progress: 3/6 done, 3 running
+[17:05:15] Progress: 3/6 done, 3 running
+[17:05:25] Progress: 3/6 done, 3 running
+[17:05:35] Progress: 3/6 done, 3 running
+[17:05:45] Progress: 3/6 done, 3 running
+[17:05:55] Progress: 3/6 done, 3 running
+[17:06:05] Progress: 3/6 done, 3 running
+[17:06:15] Progress: 3/6 done, 3 running
+[17:06:25] Progress: 3/6 done, 3 running
+[17:06:35] Progress: 3/6 done, 3 running
+[17:06:45] Progress: 3/6 done, 3 running
+[17:06:55] Progress: 3/6 done, 3 running
+[17:07:03] ✅ deepseek_cm done (288.8s) -> /home/rkh/ladder/swarm_outputs/wave2/deepseek_cm_170214.txt
+[17:07:05] Progress: 4/6 done, 2 running
+[17:07:06] ✅ qwen3_building done (294.3s) -> /home/rkh/ladder/swarm_outputs/wave2/qwen3_building_170212.txt
+[17:07:15] Progress: 5/6 done, 1 running
+[17:07:25] Progress: 5/6 done, 1 running
+[17:07:35] Progress: 5/6 done, 1 running
+[17:07:45] Progress: 5/6 done, 1 running
+[17:07:51] ✅ qwen_prime_indices done (342.1s) -> /home/rkh/ladder/swarm_outputs/wave2/qwen_prime_indices_170209.txt
+[17:07:55] Progress: 6/6 done, 0 running
+
+======================================================================
+🏁 WAVE 2 COMPLETE! Check swarm_outputs/wave2/ for results.
+======================================================================

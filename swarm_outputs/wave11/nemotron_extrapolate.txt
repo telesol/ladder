@@ -1,0 +1,21 @@
+=== NEMOTRON_EXTRAPOLATE ===
+Model: nemotron-mini:4b
+Time: 97.0s
+
+ Based on the data provided, here is a complete prediction framework for extrapolation to n=71-160:
+
+=== D[N] VALUES WHERE d >= 5 ===
+d=7 appears at n=10, and d=8 appears at n=60. There are no other known high d events (d>=5). Therefore, it is likely that the highest observed value of d for extrapolation to n=160 will be either 7 or 8.
+
+=== C[N] VALUES AT KEY MARKERS ===
+c=0.9845 at n=60 and c=0.9145 at n=80 are the highest observed values of c in the given data set. It is likely that these two values will hold for extrapolation to n=160, unless there is a significant jump (higher than 0.97) or significant decrease (lower than 0.53).
+
+=== D[N] FULL DISTRIBUTION ===
+The distribution of d value at the given data points suggests that most likely values of d will be either 1 or 2, with some percentage scattered among other values for higher n. However, since there are no high-d events (d>=5) observed past n=90, extrapolation to n>160 is expected to continue without any new patterns or breaks in the sign pattern and d distribution.
+
+=== ADJ[N] SIGN PATTERN ===
+The adj[n] sign pattern extends indefinitely. There are no known Fermat primes that might cause breaks beyond 70. Therefore, extrapolation for n>160 will likely continue with a periodicity of at least 20 steps (or even longer if not broken by higher d events). This periodicity is represented as: ++-++-++-++-++--+-++--++-++-++-.
+
+=== PERIOD-6 HYPOTHESIS CHECK ===
+The period-6 analysis suggests that the direction pattern will continue with a 6 step sequence for extrapolation. Therefore, extrapolation to n=160 is expected to follow: DD | UU | DD | DU | DU.
+
