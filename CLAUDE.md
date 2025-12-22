@@ -371,6 +371,60 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
         verify d-minimization rule
     ```
 
+### WAVE 13 - GAP SOLVER IMPLEMENTATION (2025-12-22) ★★★★★
+
+58. **BIDIRECTIONAL SOLVER IMPLEMENTED**:
+    - Created `/home/rkh/ladder/gap_solver_bounded.py`
+    - Uses Phi's c-interpolation insight to bound search space
+    - Linear interpolation: c[n] = c_low + (n-n_low) * (c_high-c_low) / (n_high-n_low)
+    - Found ~26,300 mathematical candidates for Gap A (k[71]-k[74])
+
+59. **ADDRESS MISMATCH CONFIRMED** ★★★★★:
+    - Tested candidate k[71] = 0x60761235deb45c0000
+    - Generated address: 1PVWQ3o3YVJCSCG6NhwYpMT5yi95ZkPKbb
+    - Expected address: 1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU
+    - **MISMATCH** - confirms puzzle 71+ generated differently
+    - Mathematical solutions exist but don't match actual puzzle keys!
+
+60. **TRAILING ZEROS ARTIFACT**:
+    - All first-solution k values end in trailing zeros (0x...0000)
+    - Example: k[71] = 0x5e78ea3f50e0240000
+    - Real k-values end organically (e.g., 0x...4ef1)
+    - Cause: c-interpolation produces artificial multiples
+
+### WAVE 14 - ALL-GAPS SOLVER & RULE INVESTIGATION (2025-12-22) ★★★★★
+
+61. **ALL 4 GAPS SOLVED MATHEMATICALLY**:
+    - Gap A (71-74): 5,773 verified solutions
+    - Gap B (76-79): 5,677 verified solutions
+    - Gap C (81-84): 5,844 verified solutions
+    - Gap D (86-89): 5,773 verified solutions
+    - ALL solutions have trailing zeros - NOT actual puzzle keys!
+
+62. **LLM CONSENSUS ON MISMATCH CAUSE**:
+    - QWQ:32b: Option B - Additional constraint (c[n] oscillation enforcement)
+    - Deepseek-r1:14b: Option D - Cryptographic twist (hashing/transformation)
+    - Nemotron: Options B or D - Additional constraint or crypto twist
+    - Qwen3:8b: Options E or B - d-minimization rule change, or constraint
+    - **CONSENSUS**: There's an UNKNOWN constraint beyond the recurrence!
+
+63. **KEY INSIGHT: SYSTEM IS UNDERDETERMINED**:
+    - Recurrence relation alone yields ~5,700+ solutions per gap
+    - Only ONE is the actual puzzle key
+    - Missing constraint options identified:
+      a) c[n] oscillation DIRECTION must be enforced
+      b) Cryptographic transformation (hash, mod curve order)
+      c) d[n] selection rule changes at n>70
+      d) Gap puzzles use different generation method
+    - The correct solution satisfies a hidden constraint we haven't found
+
+64. **TESTABLE HYPOTHESES**:
+    - Check if actual k[71] satisfies k[71] ≡ 0 (mod curve_order)
+    - Check if k[71] = hash(some_seed) or k[71] % N
+    - Check if d-minimization uses different metric for n>70
+    - Check if c[n] monotonicity is strictly enforced
+    - Bitcoin address derivation may involve unaccounted steps
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
