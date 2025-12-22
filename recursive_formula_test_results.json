@@ -1,0 +1,60 @@
+{
+  "formulas_tested": 10,
+  "results": {
+    "F1: m[n] = d[n] \u00d7 m[n-1] + m[n-2]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F2: m[n] = m[n-1] + m[n-d[n]]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F3: m[n] = m[n-d[n]] (repeat pattern)": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F4: m[n] = d[n] \u00d7 m[n-d[n]] + m[2]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F5: m[n] = 17 \u00d7 f(n)": {
+      "matches": 0,
+      "total": 0,
+      "accuracy": 0
+    },
+    "F6: m[n] = 2^d[n] \u00d7 m[n-d[n]]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F7: m[n] = 2\u00d7m[n-1] - m[n-2] + d[n]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F8: m[n] = m[n-1] + m[n-2]": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F9: m[n] = (m[n-1] \u00d7 d[n]) mod 256 + offset": {
+      "matches": 0,
+      "total": 67,
+      "accuracy": 0.0
+    },
+    "F10: m[n] = 17 \u00d7 p[n + m[k]] (self-ref prime index)": {
+      "matches": 0,
+      "total": 3,
+      "accuracy": 0.0
+    }
+  },
+  "prime_index_discoveries": [
+    {
+      "n": 9,
+      "k": 2,
+      "quotient": 29,
+      "index": 

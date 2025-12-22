@@ -1,0 +1,9 @@
+{
+  "hypothesis": "H1: Pure Index-Based Generator",
+  "theory": "drift[k][lane] = f(k, lane)",
+  "results": {
+    "statistical_analysis": {
+      "0": {
+        "is_constant": false,
+        "constant_value": null,
+        "is_monotonic": 
