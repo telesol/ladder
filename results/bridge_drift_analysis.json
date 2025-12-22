@@ -1,0 +1,35 @@
+{
+  "bridge_drift_analysis": {
+    "70\u219275": {
+      "X_start": "00000000000000349b84b6431a6c4ef1",
+      "X_end": "00000000000004c5ce114686a1336e07",
+      "steps": 5
+    },
+    "75\u219280": {
+      "X_start": "00000000000004c5ce114686a1336e07",
+      "X_end": "000000000000ea1a5c66dcc11b5ad180",
+      "steps": 5
+    },
+    "80\u219285": {
+      "X_start": "000000000000ea1a5c66dcc11b5ad180",
+      "X_end": "000000000011720c4f018d51b8cebba8",
+      "steps": 5
+    },
+    "85\u219290": {
+      "X_start": "000000000011720c4f018d51b8cebba8",
+      "X_end": "0000000002ce00bb2136a445c71e85bf",
+      "steps": 5
+    },
+    "90\u219295": {
+      "X_start": "0000000002ce00bb2136a445c71e85bf",
+      "X_end": "00000000527a792b183c7f64a0e8b1f4",
+      "steps": 5
+    }
+  },
+  "observations": [
+    {
+      "finding": "Lanes 9-15 transition from zero to non-zero at higher puzzles",
+      "impact": "Drift pattern changes - cannot extrapolate from puzzles 1-70"
+    }
+  ]
+}

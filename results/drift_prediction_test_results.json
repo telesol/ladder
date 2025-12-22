@@ -1,0 +1,98 @@
+{
+  "X_70": "00000000000000349b84b6431a6c4ef1",
+  "X_71_actual": null,
+  "predictions_tested": {
+    "last_value": {
+      "X_71_calculated": "e5b0b068e4af01b2bf00b6431ac04ef1",
+      "drift_used": [
+        229,
+        176,
+        176,
+        104,
+        228,
+        175,
+        1,
+        126,
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": null,
+      "matches": null
+    },
+    "mean": {
+      "X_71_calculated": "7a71564e2d331b459b00b6431ac04ef1",
+      "drift_used": [
+        122,
+        113,
+        86,
+        78,
+        45,
+        51,
+        27,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": null,
+      "matches": null
+    },
+    "linear_extrap": {
+      "X_71_calculated": "8e90b2b47a875e729d00b6431ac04ef1",
+      "drift_used": [
+        142,
+        144,
+        178,
+        180,
+        122,
+        135,
+        94,
+        62,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": null,
+      "matches": null
+    },
+    "moving_avg_5": {
+      "X_71_calculated": "b594be9d6941a8cba500b6431ac04ef1",
+      "drift_used": [
+        181,
+        148,
+        190,
+        157,
+        105,
+        65,
+        168,
+        151,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": null,
+      "matches": null
+    }
+  }
+}

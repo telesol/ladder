@@ -1,0 +1,91 @@
+{
+  "validation_passed": false,
+  "all_lanes_match": false,
+  "mismatches": 10,
+  "mismatch_details": [
+    {
+      "lane": 6,
+      "exponent": 0,
+      "X_70_value": 0,
+      "calculated": 0,
+      "actual": 4,
+      "diff": -4
+    },
+    {
+      "lane": 7,
+      "exponent": 2,
+      "X_70_value": 52,
+      "calculated": 0,
+      "actual": 197,
+      "diff": -197
+    },
+    {
+      "lane": 8,
+      "exponent": 2,
+      "X_70_value": 155,
+      "calculated": 129,
+      "actual": 206,
+      "diff": -77
+    },
+    {
+      "lane": 9,
+      "exponent": 3,
+      "X_70_value": 132,
+      "calculated": 0,
+      "actual": 17,
+      "diff": -17
+    },
+    {
+      "lane": 10,
+      "exponent": 3,
+      "X_70_value": 182,
+      "calculated": 0,
+      "actual": 70,
+      "diff": -70
+    },
+    {
+      "lane": 11,
+      "exponent": 2,
+      "X_70_value": 67,
+      "calculated": 129,
+      "actual": 134,
+      "diff": -5
+    },
+    {
+      "lane": 12,
+      "exponent": 2,
+      "X_70_value": 26,
+      "calculated": 0,
+      "actual": 161,
+      "diff": -161
+    },
+    {
+      "lane": 13,
+      "exponent": 2,
+      "X_70_value": 108,
+      "calculated": 0,
+      "actual": 51,
+      "diff": -51
+    },
+    {
+      "lane": 14,
+      "exponent": 2,
+      "X_70_value": 78,
+      "calculated": 0,
+      "actual": 110,
+      "diff": -110
+    },
+    {
+      "lane": 15,
+      "exponent": 3,
+      "X_70_value": 241,
+      "calculated": 209,
+      "actual": 7,
+      "diff": 202
+    }
+  ],
+  "X_70": "00000000000000349b84b6431a6c4ef1",
+  "X_75_calculated": "000000000000000081000081000000d1",
+  "X_75_actual": "00000000000004c5ce114686a1336e07",
+  "conclusion": "Formula does NOT work forward - STOP all generation work!"
+}

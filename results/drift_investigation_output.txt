@@ -1,0 +1,24 @@
+Loading calibration data...
+  Found calibration: out/ladder_calib_CORRECTED.json
+Extracting drift sequences...
+  Found calibration: out/ladder_calib_CORRECTED.json
+Found drift data for 0 lanes
+
+================================================================================
+DRIFT PATTERN ANALYSIS
+================================================================================
+
+================================================================================
+PREDICTING DRIFT[70→71]
+================================================================================
+
+
+Predictions saved to: results/predicted_drift_70_71.json
+
+================================================================================
+NEXT STEP:
+================================================================================
+
+Run: python3 local_model_tasks/test_drift_predictions.py
+This will test if predicted drift values can generate X_71 from X_70
+

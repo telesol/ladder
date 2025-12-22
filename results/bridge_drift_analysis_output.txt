@@ -1,0 +1,181 @@
+================================================================================
+EXTRACTING ACTUAL DRIFT FROM BRIDGES
+================================================================================
+
+A values: [1, 91, 1, 1, 1, 169, 1, 1, 1, 32, 1, 1, 1, 182, 1, 1]
+
+Loading bridge puzzles...
+  X_70: 00000000000000349b84b6431a6c4ef1
+  X_75: 00000000000004c5ce114686a1336e07
+  X_80: 000000000000ea1a5c66dcc11b5ad180
+  X_85: 000000000011720c4f018d51b8cebba8
+  X_90: 0000000002ce00bb2136a445c71e85bf
+  X_95: 00000000527a792b183c7f64a0e8b1f4
+
+================================================================================
+SINGLE-STEP DRIFT EXTRACTION
+================================================================================
+
+Note: For bridges (5-step gaps), we can only compute AVERAGE drift
+      To get actual per-step drift, we need intermediate values.
+
+================================================================================
+BRIDGE 70→75
+================================================================================
+
+X_70: 00000000000000349b84b6431a6c4ef1
+X_75:  00000000000004c5ce114686a1336e07
+
+Lane | X_start | X_end | Delta | Notes
+----------------------------------------------------------------------
+   0 |       0 |     0 |     0 | ✓ No drift needed
+   1 |       0 |     0 |     0 | ✓ No drift needed
+   2 |       0 |     0 |     0 | ✓ No drift needed
+   3 |       0 |     0 |     0 | ✓ No drift needed
+   4 |       0 |     0 |     0 | ✓ No drift needed
+   5 |       0 |     0 |     0 | ✓ No drift needed
+   6 |       0 |     4 |     4 | Needs drift (Δ=4)
+   7 |      52 |   197 |   145 | Needs drift (Δ=145)
+   8 |     155 |   206 |    51 | Needs drift (Δ=51)
+   9 |     132 |    17 |   141 | Needs drift (Δ=17)
+  10 |     182 |    70 |   144 | Needs drift (Δ=144)
+  11 |      67 |   134 |    67 | Needs drift (Δ=67)
+  12 |      26 |   161 |   135 | Needs drift (Δ=135)
+  13 |     108 |    51 |   199 | Needs drift (Δ=51)
+  14 |      78 |   110 |    32 | Needs drift (Δ=32)
+  15 |     241 |     7 |    22 | Needs drift (Δ=22)
+
+================================================================================
+BRIDGE 75→80
+================================================================================
+
+X_75: 00000000000004c5ce114686a1336e07
+X_80:  000000000000ea1a5c66dcc11b5ad180
+
+Lane | X_start | X_end | Delta | Notes
+----------------------------------------------------------------------
+   0 |       0 |     0 |     0 | ✓ No drift needed
+   1 |       0 |     0 |     0 | ✓ No drift needed
+   2 |       0 |     0 |     0 | ✓ No drift needed
+   3 |       0 |     0 |     0 | ✓ No drift needed
+   4 |       0 |     0 |     0 | ✓ No drift needed
+   5 |       0 |     0 |     0 | ✓ No drift needed
+   6 |       4 |   234 |   230 | Needs drift (Δ=230)
+   7 |     197 |    26 |    85 | Needs drift (Δ=85)
+   8 |     206 |    92 |   142 | Needs drift (Δ=142)
+   9 |      17 |   102 |    85 | Needs drift (Δ=102)
+  10 |      70 |   220 |   150 | Needs drift (Δ=150)
+  11 |     134 |   193 |    59 | Needs drift (Δ=59)
+  12 |     161 |    27 |   122 | Needs drift (Δ=122)
+  13 |      51 |    90 |    39 | Needs drift (Δ=90)
+  14 |     110 |   209 |    99 | Needs drift (Δ=99)
+  15 |       7 |   128 |   121 | Needs drift (Δ=121)
+
+================================================================================
+BRIDGE 80→85
+================================================================================
+
+X_80: 000000000000ea1a5c66dcc11b5ad180
+X_85:  000000000011720c4f018d51b8cebba8
+
+Lane | X_start | X_end | Delta | Notes
+----------------------------------------------------------------------
+   0 |       0 |     0 |     0 | ✓ No drift needed
+   1 |       0 |     0 |     0 | ✓ No drift needed
+   2 |       0 |     0 |     0 | ✓ No drift needed
+   3 |       0 |     0 |     0 | ✓ No drift needed
+   4 |       0 |     0 |     0 | ✓ No drift needed
+   5 |       0 |    17 |    17 | Needs drift (Δ=17)
+   6 |     234 |   114 |   136 | Needs drift (Δ=136)
+   7 |      26 |    12 |   242 | Needs drift (Δ=242)
+   8 |      92 |    79 |   243 | Needs drift (Δ=243)
+   9 |     102 |     1 |   155 | Needs drift (Δ=1)
+  10 |     220 |   141 |   177 | Needs drift (Δ=177)
+  11 |     193 |    81 |   144 | Needs drift (Δ=144)
+  12 |      27 |   184 |   157 | Needs drift (Δ=157)
+  13 |      90 |   206 |   116 | Needs drift (Δ=206)
+  14 |     209 |   187 |   234 | Needs drift (Δ=234)
+  15 |     128 |   168 |    40 | Needs drift (Δ=40)
+
+================================================================================
+BRIDGE 85→90
+================================================================================
+
+X_85: 000000000011720c4f018d51b8cebba8
+X_90:  0000000002ce00bb2136a445c71e85bf
+
+Lane | X_start | X_end | Delta | Notes
+----------------------------------------------------------------------
+   0 |       0 |     0 |     0 | ✓ No drift needed
+   1 |       0 |     0 |     0 | ✓ No drift needed
+   2 |       0 |     0 |     0 | ✓ No drift needed
+   3 |       0 |     0 |     0 | ✓ No drift needed
+   4 |       0 |     2 |     2 | Needs drift (Δ=2)
+   5 |      17 |   206 |   189 | Needs drift (Δ=29)
+   6 |     114 |     0 |   142 | Needs drift (Δ=142)
+   7 |      12 |   187 |   175 | Needs drift (Δ=175)
+   8 |      79 |    33 |   210 | Needs drift (Δ=210)
+   9 |       1 |    54 |    53 | Needs drift (Δ=54)
+  10 |     141 |   164 |    23 | Needs drift (Δ=23)
+  11 |      81 |    69 |   244 | Needs drift (Δ=244)
+  12 |     184 |   199 |    15 | Needs drift (Δ=15)
+  13 |     206 |    30 |    80 | Needs drift (Δ=30)
+  14 |     187 |   133 |   202 | Needs drift (Δ=202)
+  15 |     168 |   191 |    23 | Needs drift (Δ=23)
+
+================================================================================
+BRIDGE 90→95
+================================================================================
+
+X_90: 0000000002ce00bb2136a445c71e85bf
+X_95:  00000000527a792b183c7f64a0e8b1f4
+
+Lane | X_start | X_end | Delta | Notes
+----------------------------------------------------------------------
+   0 |       0 |     0 |     0 | ✓ No drift needed
+   1 |       0 |     0 |     0 | ✓ No drift needed
+   2 |       0 |     0 |     0 | ✓ No drift needed
+   3 |       0 |     0 |     0 | ✓ No drift needed
+   4 |       2 |    82 |    80 | Needs drift (Δ=80)
+   5 |     206 |   122 |   172 | Needs drift (Δ=236)
+   6 |       0 |   121 |   121 | Needs drift (Δ=121)
+   7 |     187 |    43 |   112 | Needs drift (Δ=112)
+   8 |      33 |    24 |   247 | Needs drift (Δ=247)
+   9 |      54 |    60 |     6 | Needs drift (Δ=60)
+  10 |     164 |   127 |   219 | Needs drift (Δ=219)
+  11 |      69 |   100 |    31 | Needs drift (Δ=31)
+  12 |     199 |   160 |   217 | Needs drift (Δ=217)
+  13 |      30 |   232 |   202 | Needs drift (Δ=232)
+  14 |     133 |   177 |    44 | Needs drift (Δ=44)
+  15 |     191 |   244 |    53 | Needs drift (Δ=53)
+
+================================================================================
+KEY OBSERVATIONS
+================================================================================
+
+Lanes 9-15 (zero-drift in puzzles 1-70):
+
+  X_70 lanes 9-15: [132, 182, 67, 26, 108, 78, 241] (NON-ZERO!)
+  X_75 lanes 9-15: [17, 70, 134, 161, 51, 110, 7] (NON-ZERO!)
+  X_80 lanes 9-15: [102, 220, 193, 27, 90, 209, 128] (NON-ZERO!)
+  X_85 lanes 9-15: [1, 141, 81, 184, 206, 187, 168] (NON-ZERO!)
+  X_90 lanes 9-15: [54, 164, 69, 199, 30, 133, 191] (NON-ZERO!)
+  X_95 lanes 9-15: [60, 127, 100, 160, 232, 177, 244] (NON-ZERO!)
+
+CONCLUSION:
+  - Lanes 9-15 are ZERO in puzzles ≤70
+  - Lanes 9-15 are NON-ZERO in puzzles ≥75
+  - This means drift pattern CHANGES around puzzle 70-75
+  - Cannot use drift from 1-70 to predict 71+
+
+Results saved to: results/bridge_drift_analysis.json
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+To get actual per-step drift for bridges, we need:
+  1. Find intermediate values (puzzles 71-74, 76-79, etc.) OR
+  2. Discover the drift generator function OR
+  3. Use ML to predict drift based on puzzle index and patterns
+

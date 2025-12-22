@@ -1,0 +1,101 @@
+{
+  "bridge": "75\u219280",
+  "X_75": "00000000000004c5ce114686a1336e07",
+  "X_80_actual": "000000000000ea1a5c66dcc11b5ad180",
+  "drift_methods_tested": {
+    "last_value": {
+      "X_80_calculated": "79707008742b093b82004686a1006e07",
+      "drift_used": [
+        229,
+        176,
+        176,
+        104,
+        228,
+        175,
+        1,
+        126,
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": 0.0,
+      "matches": 0
+    },
+    "mean": {
+      "X_80_calculated": "6295ae86e1bf8b1ace004686a1006e07",
+      "drift_used": [
+        122,
+        113,
+        86,
+        78,
+        45,
+        51,
+        27,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": 6.25,
+      "matches": 1
+    },
+    "linear_extrap": {
+      "X_80_calculated": "c6d07a846263dafbd8004686a1006e07",
+      "drift_used": [
+        142,
+        144,
+        178,
+        180,
+        122,
+        135,
+        94,
+        62,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": 0.0,
+      "matches": 0
+    },
+    "moving_avg_5": {
+      "X_80_calculated": "8964b6110d854cb800004686a1006e07",
+      "drift_used": [
+        181,
+        148,
+        190,
+        157,
+        105,
+        65,
+        168,
+        151,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accuracy": 0.0,
+      "matches": 0
+    }
+  },
+  "best_method": "mean",
+  "best_accuracy": 6.25
+}

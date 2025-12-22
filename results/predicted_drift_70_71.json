@@ -1,0 +1,98 @@
+{
+  "0": {
+    "last_value": 229,
+    "mean": 122,
+    "linear_extrap": 142,
+    "moving_avg_5": 181
+  },
+  "1": {
+    "last_value": 176,
+    "mean": 113,
+    "linear_extrap": 144,
+    "moving_avg_5": 148
+  },
+  "2": {
+    "last_value": 176,
+    "mean": 86,
+    "linear_extrap": 178,
+    "moving_avg_5": 190
+  },
+  "3": {
+    "last_value": 104,
+    "mean": 78,
+    "linear_extrap": 180,
+    "moving_avg_5": 157
+  },
+  "4": {
+    "last_value": 228,
+    "mean": 45,
+    "linear_extrap": 122,
+    "moving_avg_5": 105
+  },
+  "5": {
+    "last_value": 175,
+    "mean": 51,
+    "linear_extrap": 135,
+    "moving_avg_5": 65
+  },
+  "6": {
+    "last_value": 1,
+    "mean": 27,
+    "linear_extrap": 94,
+    "moving_avg_5": 168
+  },
+  "7": {
+    "last_value": 126,
+    "mean": 17,
+    "linear_extrap": 62,
+    "moving_avg_5": 151
+  },
+  "8": {
+    "last_value": 36,
+    "mean": 0,
+    "linear_extrap": 2,
+    "moving_avg_5": 10
+  },
+  "9": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "10": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "11": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "12": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "13": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "14": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  },
+  "15": {
+    "last_value": 0,
+    "mean": 0,
+    "linear_extrap": 0,
+    "moving_avg_5": 0
+  }
+}
