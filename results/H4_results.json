@@ -1,0 +1,492 @@
+{
+  "hypothesis": "H4: Recursive Pattern (Drift Ladder)",
+  "theory": "drift[k+1][lane] = g(drift[k][lane], k, lane)",
+  "results": {
+    "sequence_analysis": {
+      "0": {
+        "unique_values": 59,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "1": {
+        "unique_values": 57,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "2": {
+        "unique_values": 43,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "3": {
+        "unique_values": 45,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "4": {
+        "unique_values": 37,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "5": {
+        "unique_values": 28,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "6": {
+        "unique_values": 20,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "7": {
+        "unique_values": 14,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "8": {
+        "unique_values": 5,
+        "is_constant": false,
+        "has_cycle": false,
+        "cycle_length": null,
+        "is_arithmetic": false,
+        "common_difference": null
+      },
+      "9": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "10": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "11": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "12": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "13": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "14": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      },
+      "15": {
+        "unique_values": 1,
+        "is_constant": true,
+        "has_cycle": true,
+        "cycle_length": 2,
+        "is_arithmetic": true,
+        "common_difference": 0
+      }
+    },
+    "affine_recurrence": {
+      "overall_accuracy": 0.7049632352941176,
+      "per_lane": {
+        "0": {
+          "accuracy": 0.058823529411764705,
+          "A": 10,
+          "C": 163,
+          "formula": "drift_next = (10 * drift + 163) mod 256"
+        },
+        "1": {
+          "accuracy": 0.11764705882352941,
+          "A": 120,
+          "C": 0,
+          "formula": "drift_next = (120 * drift + 0) mod 256"
+        },
+        "2": {
+          "accuracy": 0.23529411764705882,
+          "A": 2,
+          "C": 0,
+          "formula": "drift_next = (2 * drift + 0) mod 256"
+        },
+        "3": {
+          "accuracy": 0.35294117647058826,
+          "A": 7,
+          "C": 0,
+          "formula": "drift_next = (7 * drift + 0) mod 256"
+        },
+        "4": {
+          "accuracy": 0.47058823529411764,
+          "A": 31,
+          "C": 0,
+          "formula": "drift_next = (31 * drift + 0) mod 256"
+        },
+        "5": {
+          "accuracy": 0.5882352941176471,
+          "A": 178,
+          "C": 0,
+          "formula": "drift_next = (178 * drift + 0) mod 256"
+        },
+        "6": {
+          "accuracy": 0.7058823529411765,
+          "A": 5,
+          "C": 0,
+          "formula": "drift_next = (5 * drift + 0) mod 256"
+        },
+        "7": {
+          "accuracy": 0.8235294117647058,
+          "A": 23,
+          "C": 0,
+          "formula": "drift_next = (23 * drift + 0) mod 256"
+        },
+        "8": {
+          "accuracy": 0.9264705882352942,
+          "A": 1,
+          "C": 0,
+          "formula": "drift_next = (1 * drift + 0) mod 256"
+        },
+        "9": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "10": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "11": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "12": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "13": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "14": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        },
+        "15": {
+          "accuracy": 1.0,
+          "A": 1,
+          "C": 0,
+          "formula": "constant"
+        }
+      }
+    },
+    "polynomial_recurrence": {
+      "overall_accuracy": 0.6930147058823529,
+      "per_lane": {
+        "0": {
+          "accuracy": 0.014705882352941176,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "1": {
+          "accuracy": 0.08823529411764706,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "2": {
+          "accuracy": 0.23529411764705882,
+          "degree": 3,
+          "formula": "drift_next = drift^3 mod 256"
+        },
+        "3": {
+          "accuracy": 0.3235294117647059,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "4": {
+          "accuracy": 0.4411764705882353,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "5": {
+          "accuracy": 0.5588235294117647,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "6": {
+          "accuracy": 0.6911764705882353,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "7": {
+          "accuracy": 0.8088235294117647,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "8": {
+          "accuracy": 0.9264705882352942,
+          "degree": 2,
+          "formula": "drift_next = drift^2 mod 256"
+        },
+        "9": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "10": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "11": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "12": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "13": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "14": {
+          "accuracy": 1.0,
+          "degree": 0
+        },
+        "15": {
+          "accuracy": 1.0,
+          "degree": 0
+        }
+      }
+    },
+    "bridge_spacing": {
+      "overall_accuracy": 0.6763791454081632,
+      "per_lane": {
+        "0": {
+          "accuracy": 0.046875,
+          "spacing": 5,
+          "offset": 194
+        },
+        "1": {
+          "accuracy": 0.04081632653061224,
+          "spacing": 20,
+          "offset": 37
+        },
+        "2": {
+          "accuracy": 0.171875,
+          "spacing": 5,
+          "offset": 0
+        },
+        "3": {
+          "accuracy": 0.28125,
+          "spacing": 5,
+          "offset": 0
+        },
+        "4": {
+          "accuracy": 0.40625,
+          "spacing": 5,
+          "offset": 0
+        },
+        "5": {
+          "accuracy": 0.53125,
+          "spacing": 5,
+          "offset": 0
+        },
+        "6": {
+          "accuracy": 0.65625,
+          "spacing": 5,
+          "offset": 0
+        },
+        "7": {
+          "accuracy": 0.78125,
+          "spacing": 5,
+          "offset": 0
+        },
+        "8": {
+          "accuracy": 0.90625,
+          "spacing": 5,
+          "offset": 0
+        },
+        "9": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "10": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "11": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "12": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "13": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "14": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        },
+        "15": {
+          "accuracy": 1.0,
+          "spacing": 5,
+          "offset": 0
+        }
+      }
+    },
+    "multi_step": {
+      "overall_accuracy": 0.6949626865671642,
+      "per_lane": {
+        "0": {
+          "accuracy": 0.014925373134328358,
+          "formula": "linear",
+          "fib_accuracy": 0.0,
+          "linear_accuracy": 0.014925373134328358
+        },
+        "1": {
+          "accuracy": 0.07462686567164178,
+          "formula": "linear",
+          "fib_accuracy": 0.07462686567164178,
+          "linear_accuracy": 0.07462686567164178
+        },
+        "2": {
+          "accuracy": 0.23880597014925373,
+          "formula": "linear",
+          "fib_accuracy": 0.208955223880597,
+          "linear_accuracy": 0.23880597014925373
+        },
+        "3": {
+          "accuracy": 0.3582089552238806,
+          "formula": "fibonacci",
+          "fib_accuracy": 0.3582089552238806,
+          "linear_accuracy": 0.34328358208955223
+        },
+        "4": {
+          "accuracy": 0.4626865671641791,
+          "formula": "linear",
+          "fib_accuracy": 0.44776119402985076,
+          "linear_accuracy": 0.4626865671641791
+        },
+        "5": {
+          "accuracy": 0.5522388059701493,
+          "formula": "linear",
+          "fib_accuracy": 0.5522388059701493,
+          "linear_accuracy": 0.5522388059701493
+        },
+        "6": {
+          "accuracy": 0.6865671641791045,
+          "formula": "fibonacci",
+          "fib_accuracy": 0.6865671641791045,
+          "linear_accuracy": 0.6716417910447762
+        },
+        "7": {
+          "accuracy": 0.8059701492537313,
+          "formula": "fibonacci",
+          "fib_accuracy": 0.8059701492537313,
+          "linear_accuracy": 0.7910447761194029
+        },
+        "8": {
+          "accuracy": 0.9253731343283582,
+          "formula": "fibonacci",
+          "fib_accuracy": 0.9253731343283582,
+          "linear_accuracy": 0.9104477611940298
+        },
+        "9": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "10": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "11": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "12": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "13": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "14": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        },
+        "15": {
+          "accuracy": 1.0,
+          "formula": "constant"
+        }
+      }
+    }
+  },
+  "best_approach": {
+    "name": "Affine Recurrence",
+    "accuracy": 0.7049632352941176
+  },
+  "conclusion": "PARTIAL"
+}
