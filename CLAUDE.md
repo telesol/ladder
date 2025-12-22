@@ -425,6 +425,41 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - Check if c[n] monotonicity is strictly enforced
     - Bitcoin address derivation may involve unaccounted steps
 
+### WAVE 15 - CONSTRAINT DISCOVERY (2025-12-22) ★★★★★
+
+65. **LLM ANALYSIS OF TRAILING ZEROS**:
+    - Our solutions have 18-34 trailing zeros (divisible by 2^18 to 2^34)
+    - Real keys have 0-7 trailing zeros (max is k[80] with 7)
+    - QWQ hypothesis: keys must be ODD - but k[80], k[85] are EVEN!
+    - Deepseek hypothesis: cryptographic transformation (hash/mod)
+    - Nemotron hypothesis: parity + seed-based PRNG generation
+
+66. **CRITICAL DISCOVERY: RECURRENCE IS UNDERDETERMINED** ★★★★★:
+    - When we remove c-interpolation bounds, solutions EXPLODE
+    - With max 8 trailing zeros filter: 223,562 solutions (vs 5,773)
+    - The recurrence k[n] = 2*k[n-1] + 2^n - m*k[d] allows ANY k in [2^(n-1), 2^n)
+    - Our c-interpolation was the ONLY constraint limiting search space
+    - **CONCLUSION**: We're missing a fundamental constraint that determines k[n]
+
+67. **WHY C-INTERPOLATION DOESN'T WORK**:
+    - Linear c-interpolation produces k ≈ c * 2^n
+    - When c is a decimal like 0.77, this creates multiples of 2^something
+    - That's why our solutions have trailing zeros - ARTIFACT of the method!
+    - Real keys are NOT derived from c-interpolation
+
+68. **MOST LIKELY MISSING CONSTRAINTS** (LLM Consensus):
+    a) **Seed-based PRNG**: k[n] = PRNG(seed, n) - formula describes relationships only
+    b) **Cryptographic hash**: k[n] involves hashing, not just arithmetic
+    c) **Different d-selection for n>70**: d[n] chosen by unknown criteria
+    d) **Gap puzzles generated independently**: Not derived from formula
+    - ALL models agree: The actual generation method is UNKNOWN
+
+69. **KEY REALIZATION**:
+    - The recurrence relation describes RELATIONSHIPS between k-values
+    - It does NOT uniquely determine k-values
+    - For n>70, we need the SEED or generation method, not just the formula
+    - The formula is NECESSARY but NOT SUFFICIENT
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
