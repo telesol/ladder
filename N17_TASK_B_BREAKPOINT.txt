@@ -1,0 +1,148 @@
+================================================================================
+TASK B: THE BREAK POINT (n=17 exactly)
+================================================================================
+Agent: Spark1 (qwq:32b)
+Goal: Understand EXACTLY what changes at n=17 and WHY
+Time: Deep reasoning allowed (60+ minutes)
+
+================================================================================
+CONTEXT
+================================================================================
+
+The Bitcoin puzzle has a CRITICAL transition at n=17:
+
+BEFORE (n=2-16): Sign pattern ++- works PERFECTLY (15/15 = 100%)
+AT n=17: Pattern BREAKS (expected +, actual -)
+AFTER: Pattern partially recovers but not fully
+
+This is THE inflection point. Understanding it may reveal the entire algorithm.
+
+================================================================================
+THE BREAK IN DETAIL
+================================================================================
+
+n=16 (last "normal" value):
+- k[16] = 51510 = 2 × 3 × 5 × 17 × 101
+- adj[16] = -2224 (sign = -, matches ++- pattern)
+- m[16] = 8470
+- d[16] = 4
+
+n=17 (THE BREAK):
+- k[17] = 95823 = 3^4 × 7 × 13^2 = 81 × 7 × 169
+- adj[17] = k[17] - 2*k[16] = 95823 - 103020 = -7197
+- Expected sign: + (pattern would be ++-)
+- Actual sign: - (BREAK!)
+- m[17] = 138269
+- d[17] = 1
+
+n=18 (after break):
+- k[18] = 198669 = 3 × 47 × 1409
+- adj[18] = 7023 (sign = +, matches pattern again!)
+
+================================================================================
+WHAT IF PATTERN CONTINUED?
+================================================================================
+
+If n=17 followed ++- pattern:
+- adj[17] would be POSITIVE
+- k[17] would be = 2*k[16] + |adj[17]| = 103020 + X
+
+But actual:
+- adj[17] = -7197 (NEGATIVE)
+- k[17] = 103020 - 7197 = 95823
+
+The difference: adj[17] flipped sign from expected + to actual -
+
+================================================================================
+QUESTIONS TO ANSWER
+================================================================================
+
+1. WHY DID THE SIGN FLIP?
+   - What constraint forced adj[17] to be negative?
+   - Did a mathematical constraint override the pattern?
+   - Is there a ceiling/floor that k[17] couldn't exceed?
+
+2. IS 17 SPECIAL?
+   - 17 = 2^4 + 1 (Fermat prime F₂)
+   - 17 appears in k[16] = 2×3×5×17×101
+   - Is the break related to 17 being special?
+
+3. IS IT BIT-LENGTH RELATED?
+   - k[17].bit_length() = 17 bits
+   - k[16].bit_length() = 16 bits
+   - Does something happen when bit_length equals n?
+
+4. THE STRUCTURE OF k[17]:
+   - k[17] = 3^4 × 7 × 13^2 = 81 × 7 × 169
+   - This is HIGHLY structured (only primes 3, 7, 13)
+   - Compare: k[16] = 2×3×5×17×101 (more diverse primes)
+   - Was k[17] CHOSEN for this structure?
+
+5. M[17] ANALYSIS:
+   - m[17] = 138269
+   - Factorization: 138269 = ?
+   - Is this a convergent combination?
+   - Does it follow a new pattern?
+
+6. COULD THE PATTERN HAVE CONTINUED?
+   - If adj[17] was positive, what would k[17] be?
+   - Would that k[17] violate some constraint?
+   - What is the constraint?
+
+================================================================================
+HYPOTHESES TO TEST
+================================================================================
+
+H1: OVERFLOW HYPOTHESIS
+    - Some internal state overflowed at n=17
+    - The algorithm had to "reset" or "adjust"
+
+H2: CONSTRAINT HYPOTHESIS
+    - k[17] had to satisfy some constraint (divisibility, range, etc.)
+    - The only way to satisfy it was with negative adj
+
+H3: PRNG STATE CHANGE
+    - A PRNG generating the pattern changed state at n=17
+    - The seed or parameters changed
+
+H4: DELIBERATE MARKER
+    - The creator intentionally broke the pattern at n=17
+    - 17 is a marker or "signature"
+
+H5: PHASE TRANSITION
+    - n=2-16 is "Phase 1" of the algorithm
+    - n=17+ is "Phase 2" with different rules
+
+================================================================================
+DATA TO ANALYZE
+================================================================================
+
+Full sequence around n=17:
+
+n  | k[n]     | adj[n]  | sign | expected | m[n]    | d[n]
+---|----------|---------|------|----------|---------|-----
+14 | 10544    | 112     | +    | +        | 2034    | 4
+15 | 26867    | 5779    | +    | +        | 26989   | 1
+16 | 51510    | -2224   | -    | -        | 8470    | 4
+17 | 95823    | -7197   | -    | + ← BREAK| 138269  | 1
+18 | 198669   | 7023    | +    | +        | 255121  | 1
+19 | 357535   | -39803  | -    | -        | 564091  | 1
+20 | 863317   | 148247  | +    | +        | 900329  | 1
+
+Note: n=18-20 matches the pattern again! Only n=17 breaks it.
+
+================================================================================
+OUTPUT FORMAT
+================================================================================
+
+Provide:
+1. Your analysis of WHY the sign flipped at n=17
+2. What constraint (if any) forced this
+3. Whether 17 being a Fermat prime is relevant
+4. Whether bit-length == n is relevant
+5. What the k[17] structure (3^4 × 7 × 13^2) tells us
+6. Your best hypothesis for the transition mechanism
+
+Think deeply. This is the KEY to the puzzle.
+
+================================================================================

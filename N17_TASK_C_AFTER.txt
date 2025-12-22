@@ -1,0 +1,135 @@
+================================================================================
+TASK C: THE PATTERN AFTER n=17 (n=17-70)
+================================================================================
+Agent: Spark2 (phi4:14b)
+Goal: Find the NEW pattern that governs n≥17
+Time: Deep reasoning allowed (45+ minutes)
+
+================================================================================
+CONTEXT
+================================================================================
+
+The Bitcoin puzzle has a sign pattern break at n=17:
+- n=2-16: ++- pattern works 100%
+- n=17: Pattern BREAKS
+- n=18+: New pattern?
+
+YOUR MISSION: Find what pattern (if any) governs n≥17.
+
+================================================================================
+SIGN DATA FOR n=17-30
+================================================================================
+
+n  | adj[n]      | sign | ++- expected | match?
+---|-------------|------|--------------|-------
+17 | -7197       | -    | +            | ✗
+18 | 7023        | +    | +            | ✓
+19 | -39803      | -    | -            | ✓
+20 | 148247      | +    | +            | ✓
+21 | 85130       | +    | +            | ✓
+22 | -616025     | -    | -            | ✓
+23 | -416204     | -    | +            | ✗
+24 | 3231072     | +    | +            | ✓
+25 | 4328157     | +    | -            | ✗
+
+Pattern match rate for n=17-25: 6/9 = 67%
+
+================================================================================
+QUESTIONS TO ANSWER
+================================================================================
+
+1. IS THERE A NEW SIGN PATTERN?
+   - Does a different repeating pattern emerge?
+   - Try: +--, -+-, --+, ++--, etc.
+   - Or is it now state-dependent?
+
+2. SUB-PHASES WITHIN n=17-70?
+   - Are there multiple phases? (e.g., n=17-30, n=31-50, n=51-70)
+   - Do different rules apply in different ranges?
+   - Look for other transition points
+
+3. WHAT PATTERNS DO HOLD?
+   - Even if sign pattern breaks, what IS consistent?
+   - Does d[n] follow a pattern?
+   - Does m[n] follow convergent rules?
+   - Any modular patterns (mod 3, mod 5, mod 7)?
+
+4. CORRELATION ANALYSIS:
+   - Does sign[n] correlate with n mod k for some k?
+   - Does sign[n] correlate with previous signs?
+   - Does sign[n] correlate with m[n] or d[n]?
+
+5. OTHER TRANSITION POINTS?
+   - Is there another break after n=17?
+   - Check n=34 (2×17), n=51 (3×17), n=68 (4×17)
+   - Check Fibonacci numbers: n=21, 34, 55
+
+================================================================================
+EXTENDED DATA (n=17-50)
+================================================================================
+
+From data_for_csolver.json, m-values for n=17-50:
+
+n  | m[n]        | d[n] | Notable
+---|-------------|------|------------------
+17 | 138269      | 1    | BREAK POINT
+18 | 255121      | 1    |
+19 | 564091      | 1    | = 19 × 29689
+20 | 900329      | 1    |
+21 | 670674      | 2    | Fibonacci index!
+22 | 1603443     | 2    |
+23 | 8804812     | 1    |
+24 | 1693268     | 4    | = 17 × 99604
+25 | 29226275    | 1    | = 19 × 1538225
+26 | 78941020    | 1    |
+27 | 46329541    | 2    |
+28 | 128764568   | 4    |
+29 | 299598561   | 1    |
+30 | 564063128   | 1    |
+...
+
+D-VALUE DISTRIBUTION (n=17-70):
+- d=1: Most common (~45%)
+- d=2: Second most common (~25%)
+- d=4: Occasional (~10%)
+- Other: Rare
+
+================================================================================
+ANALYSIS APPROACHES
+================================================================================
+
+1. FREQUENCY ANALYSIS:
+   - Count sign occurrences (+/-) in blocks of 10
+   - Look for drift or periodicity
+
+2. AUTOCORRELATION:
+   - Does sign[n] correlate with sign[n-k] for any k?
+   - Check k=3, 6, 9, 17, etc.
+
+3. STATE MACHINE HYPOTHESIS:
+   - If it's a state machine, what are the states?
+   - Can you infer transition rules?
+
+4. MODULAR PATTERNS:
+   - sign[n] as function of n mod 3, 5, 7, 17
+   - Look for conditional rules
+
+5. EXTERNAL DEPENDENCY:
+   - Does sign depend on m[n-1], d[n-1], k[n-1]?
+   - Look for recurrence with memory
+
+================================================================================
+OUTPUT FORMAT
+================================================================================
+
+Provide:
+1. Whether a simple repeating pattern exists for n≥17
+2. Any sub-phases you identify
+3. What patterns DO hold (even if sign doesn't)
+4. Any correlations you find
+5. Your best model for the n≥17 behavior
+6. Any other transition points you identify
+
+Focus on finding STRUCTURE, even if it's more complex than ++-.
+
+================================================================================
