@@ -9,14 +9,16 @@
 
 ### 🖥️ ZBOOK (Local-Work Branch)
 **Latest Commit**: `6cca62b` - Phase Change Discovery
-**Status**: ✅ VERIFIED
-**Key Finding**: Drift = 0 after puzzle 70 (99.3% pure exponential)
+**Status**: ⚠️ VERIFIED (but generated puzzles show all zeros - needs investigation)
+**Key Finding**: Byte-level drift = 0 after puzzle 70 (152/153 lanes pure exponential)
+**Formula**: X_{k+1}[lane] = X_k[lane]^n mod 256 (for k > 70)
 **Files**:
 - `PHASE_CHANGE_DISCOVERY.md` - Main report
-- `generated_intermediate_puzzles.json` - 48 puzzles (71-129)
+- `generated_intermediate_puzzles.json` - 48 puzzles (⚠️ all X_k_hex = 0x00...00)
 - `verify_drift_zero_hypothesis.py` - Verification script
 
-**Impact**: Generated 48 puzzles with 100% mathematical certainty
+**Approach**: Byte-level structural analysis (16 lanes per private key)
+**Exception**: Lane 0 at puzzles 126-130 requires drift=171
 
 ---
 
@@ -30,22 +32,26 @@
 
 ---
 
-### 🔬 LA (This Session - Claude Opus 4.5)
+### 🔬 LA (This Session - Claude Sonnet 4.5)
 **Branch**: `main`
-**Latest Commit**: `4a9e905` - PySR parallel jobs
-**Status**: ✅ COMPLETED
+**Latest Commit**: `b157447` - Multi-machine coordination system
+**Status**: ✅ INTEGRATION PHASE
 **Key Findings**:
 1. **Box 211**: c[n] oscillation uses sin(mod(...)) - loss 0.0078
-2. **Box 212**: d_gap = ceil(0.096*n + 3*log10(m)) - loss 0.1126
-3. **Box 213**: adj[n] uses nested mod() chains - loss 0.1088
-4. **Box 214**: Seed constants with repeated values - loss 0.1088
+2. **Box 212**: d_gap ≈ 0.986*n - 1.824 (correlation 0.9956) - loss 0.1126
+3. **Box 213**: adj[n] uses nested mod() chains, breaks at n=17 - loss 0.1088
+4. **Box 214**: Constants -0.336≈-1/π, -0.971≈-cos(π/2) - loss 0.1088
+5. **QWQ:32b Analysis**: c[n] period ~5-6 steps, Fermat prime breaks, φ/π constants
+
 **Files**:
 - `outputs/20251223_081805_*/hall_of_fame.csv` - PySR results
 - `cluster/box2*.py` - Discovery scripts
-- `FINDINGS_DASHBOARD.md` - Created tracking system
-- `ORCHESTRATOR_PROTOCOL.md` - Created workflow protocol
+- `/tmp/pysr_analysis_qwq.txt` - QWQ deep reasoning (124 lines)
+- `FINDINGS_DASHBOARD.md` - Tracking system
+- `ORCHESTRATOR_PROTOCOL.md` - Workflow protocol
+- `findings/2025-12-23/ANALYSIS_INTEGRATION.md` - Integration analysis
 
-**AI Analysis**: QWQ:32b analyzing results (in progress)
+**Approach**: Integer-level k[n] recurrence analysis with symbolic regression
 
 ---
 
@@ -58,13 +64,50 @@
 
 ---
 
+## 🔬 CRITICAL INTEGRATION FINDINGS
+
+### Two Parallel Analysis Approaches Discovered
+
+**LA Approach: Integer-Level Recurrence**
+- Analyzes k[n] as full integers with recurrence: k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]]
+- PySR discovered patterns: c[n] oscillation, d_gap linearity, adj[n] Fermat breaks
+- Mathematical constants: φ, π, e embedded in formula components
+
+**Zbook Approach: Byte-Level Structural**
+- Analyzes private keys as 16 bytes, each byte follows: X_{k+1}[lane] = X_k[lane]^n mod 256
+- Discovered phase change at puzzle 70: drift → 0 for 99.3% of lanes
+- Generated 48 intermediate puzzles (but showing all zeros - needs investigation)
+
+### Compatibility: YES - Different Abstraction Levels
+- LA = "analyzing the car as a whole" (speed, trajectory, acceleration)
+- Zbook = "analyzing engine cylinders individually" (firing patterns, compression)
+- Both necessary for complete understanding!
+
+### **⚠️ CRITICAL ISSUE**: Zbook's generated puzzles show `X_k_hex = "0x00...00"` for all 48 puzzles
+- Likely: Bug in generation script or data export
+- **Action Required**: Re-run Zbook's generation with diagnostics
+- **Impact**: Cannot validate k[71]-k[74] until this is resolved
+
+### Integration Opportunities
+1. Cross-validate Fermat prime breaks (n=17) at byte level
+2. Test if phase change at n=70 affects c[n] oscillation
+3. Run PySR separately on puzzles 1-70 vs 71-90
+
+**See**: `findings/2025-12-23/ANALYSIS_INTEGRATION.md` for full analysis
+
+---
+
 ## 🔗 INTEGRATION STATUS
 
 | Discovery | Machine | Status | Validated By | Integrated |
 |-----------|---------|--------|--------------|------------|
-| Phase Change (drift=0) | Zbook | ✅ Complete | Math proof | ⏳ Pending |
-| 48 Generated Puzzles | Zbook | ✅ Complete | 100% verified | ⏳ Pending |
-| PySR Pattern Analysis | LA | ✅ Complete | Loss metrics | ⏳ Pending |
+| Phase Change (drift=0) | Zbook | ⚠️ Needs fix | Math proof | ❌ Blocked |
+| 48 Generated Puzzles | Zbook | ❌ All zeros | N/A | ❌ Blocked |
+| PySR c[n] Oscillation | LA | ✅ Complete | Loss 0.0078 | ⏳ Pending |
+| PySR d_gap Linear | LA | ✅ Complete | Corr 0.9956 | ⏳ Pending |
+| PySR adj[n] Pattern | LA | ✅ Complete | Loss 0.1088 | ⏳ Pending |
+| QWQ Mathematical Analysis | LA | ✅ Complete | Deep reasoning | ⏳ Pending |
+| Integration Framework | LA | ✅ Complete | Documentation | ✅ This commit |
 | 82-key Dataset | Victus | ✅ Complete | Database | ✅ Merged |
 | Wave 17 Analysis | Victus | ✅ Complete | Manual review | ✅ Merged |
 
@@ -72,17 +115,26 @@
 
 ## 📋 NEXT ACTIONS
 
+### **URGENT** (Blocking Progress)
+- [ ] **FIX: Zbook's all-zero puzzle generation** - Re-run generation script with diagnostics
+- [ ] **INVESTIGATE: Byte-level vs integer-level compatibility** - Do approaches align?
+
 ### Immediate (Today)
-- [ ] **Merge Zbook's findings** from `local-work` branch
-- [ ] **Validate 48 generated puzzles** with LA's AI models
-- [ ] **Integrate PySR + Phase Change** findings
-- [ ] **Run QWQ analysis** on phase change discovery
+- [x] ~~Merge Zbook's findings~~ - BLOCKED by all-zero issue
+- [x] ~~Validate 48 generated puzzles~~ - BLOCKED by all-zero issue
+- [x] ~~Integrate PySR + Phase Change findings~~ - ✅ COMPLETE (see ANALYSIS_INTEGRATION.md)
+- [x] ~~Run QWQ analysis~~ - ✅ COMPLETE (124 lines, mathematical insights)
 
 ### This Week
-- [ ] Re-run PySR on puzzles 71-130 (simple phase)
-- [ ] Verify pure exponential formula
-- [ ] Update CLAUDE.md with Wave 18 findings
-- [ ] Cross-validate all discoveries
+- [ ] **Cross-validate Fermat prime breaks** (n=17) at byte level vs integer level
+- [ ] **Test phase change hypothesis** - Run PySR separately on puzzles 1-70 vs 71-90
+- [ ] **Re-run Zbook generation** with proper diagnostics and verification
+- [ ] Update CLAUDE.md with Wave 18 findings (once integration complete)
+
+### Delegated to Zbook
+- [ ] Debug generation script for intermediate puzzles
+- [ ] Verify X_k_hex values are computed correctly
+- [ ] Convert byte representation to full k[n] integers for validation
 
 ---
 
