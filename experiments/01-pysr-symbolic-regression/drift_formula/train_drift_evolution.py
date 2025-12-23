@@ -144,12 +144,6 @@ model = PySRRegressor(
     ncyclesperiteration=500,  # Cycles per iteration
     fraction_replaced_hof=0.035,  # Fraction of population replaced
 
-    # Constraints
-    constraints={
-        'mod': 5,  # Penalize mod (expensive operation)
-        '/': 5,    # Penalize division (can cause NaN)
-    },
-
     # Batching
     batching=True,
     batch_size=50,
@@ -160,9 +154,6 @@ model = PySRRegressor(
 
     # Random seed
     random_state=42,
-
-    # Feature names
-    feature_names_in=['k', 'lane', 'steps_since_activation', 'exponent'],
 
     # Output
     temp_equation_file=True,
