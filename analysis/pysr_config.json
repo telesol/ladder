@@ -1,0 +1,104 @@
+{
+  "operators": {
+    "minimal": {
+      "binary": [
+        "+",
+        "-",
+        "*",
+        "/"
+      ],
+      "unary": [
+        "square",
+        "abs"
+      ]
+    },
+    "standard": {
+      "binary": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "mod"
+      ],
+      "unary": [
+        "square",
+        "abs",
+        "exp",
+        "log",
+        "log2",
+        "log10",
+        "sqrt"
+      ]
+    },
+    "full": {
+      "binary": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "mod",
+        "pow"
+      ],
+      "unary": [
+        "square",
+        "abs",
+        "exp",
+        "log",
+        "log2",
+        "log10",
+        "sqrt",
+        "sin",
+        "cos",
+        "cosh",
+        "sinh"
+      ]
+    },
+    "custom": {
+      "binary": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "mod"
+      ],
+      "unary": [
+        "square",
+        "abs",
+        "exp",
+        "log",
+        "log2",
+        "log10",
+        "sqrt",
+        "cosh"
+      ]
+    }
+  },
+  "test_results": {
+    "test1_c_n": "Oscillation pattern discovery",
+    "test2_d_gap": "Linear relationship (0.9956 correlation)"
+  },
+  "recommended_config": {
+    "binary_operators": [
+      "+",
+      "-",
+      "*",
+      "/",
+      "mod"
+    ],
+    "unary_operators": [
+      "square",
+      "abs",
+      "exp",
+      "log",
+      "log2",
+      "log10",
+      "sqrt",
+      "cosh"
+    ],
+    "niterations": 100,
+    "populations": 5,
+    "population_size": 50,
+    "maxsize": 20,
+    "parsimony": 0.01
+  }
+}
