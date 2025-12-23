@@ -514,6 +514,60 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - The same seed for k[71..160], or different seeds per puzzle tier?
     - Construction algorithm may be SIMPLE but seed is HIDDEN
 
+### WAVE 17 - DATABASE FIX & REVISED ANALYSIS (2025-12-23) ★★★★★
+
+77. **CRITICAL DATABASE FIX - 8 MISSING SOLVED PUZZLES**:
+    - Database was MISSING: k[95], k[100], k[105], k[110], k[115], k[120], k[125], k[130]
+    - All 8 puzzles were solved 2019-2024 but not in our DB!
+    - Now have 82 solved puzzles (was 74)
+    - Sources: privatekeys.pw, secretscan.org, btcpuzzle.info
+
+78. **NEW ANCHOR KEYS ADDED**:
+    | Puzzle | Private Key (Hex) | c[n] |
+    |--------|-------------------|------|
+    | 95 | 0x527a792b183c7f64a0e8b1f4 | 0.6444 |
+    | 100 | 0xaf55fc59c335c8ec67ed24826 | 0.6849 |
+    | 105 | 0x16f14fc2054cd87ee6396b33df3 | 0.7170 |
+    | 110 | 0x35c0d7234df7deb0f20cf7062444 | 0.8399 |
+    | 115 | 0x60f4d11574f5deee49961d9609ac6 | 0.7575 |
+    | 120 | 0xb10f22572c497a836ea187f2e1fc23 | 0.6916 |
+    | 125 | 0x1c533b6bb7f0804e09960225e44877ac | 0.8852 |
+    | 130 | 0x33e7665705359f04f28b88cf897c603c9 | 0.8110 |
+
+79. **OSCILLATION PATTERN REVISED** ★★★★★:
+    - Full 5-step direction sequence (70→130): **DUDUDUUUDDUD**
+    - n=70-100: Perfect alternation DUDUDU (what we thought)
+    - n=100-130: Irregular UUDDUD (BREAKS at n=100!)
+    - Pattern break at n=100 is analogous to break at n=17
+    - **Our c-interpolation assumption was WRONG for gaps after n=100!**
+
+80. **12 BOUNDED GAPS NOW AVAILABLE**:
+    - Gap A: k[70]→k[75] (71-74) - 4 unknowns
+    - Gap B: k[75]→k[80] (76-79) - 4 unknowns
+    - Gap C: k[80]→k[85] (81-84) - 4 unknowns
+    - Gap D: k[85]→k[90] (86-89) - 4 unknowns
+    - Gap E: k[90]→k[95] (91-94) - 4 unknowns
+    - Gap F: k[95]→k[100] (96-99) - 4 unknowns
+    - Gap G: k[100]→k[105] (101-104) - 4 unknowns
+    - Gap H: k[105]→k[110] (106-109) - 4 unknowns
+    - Gap I: k[110]→k[115] (111-114) - 4 unknowns
+    - Gap J: k[115]→k[120] (116-119) - 4 unknowns
+    - Gap K: k[120]→k[125] (121-124) - 4 unknowns
+    - Gap L: k[125]→k[130] (126-129) - 4 unknowns
+    - Unbounded: k[131]-k[160] (30 unknowns, no upper anchor)
+
+81. **REVISED SOLVER CONFIRMS UNDERDETERMINATION**:
+    - Without c-interpolation: 81,246 candidates for k[71] alone!
+    - Recurrence allows ANY k in valid bit range
+    - Only constraint is Bitcoin address verification (brute force)
+    - OR: Discover the actual construction seed/algorithm
+
+82. **PREVIOUS ANALYSIS AFFECTED**:
+    - Waves 6-16 oscillation findings were based on incomplete data
+    - c-interpolation approach only valid for Gaps A-F (70-100)
+    - Gaps G-L (100-130) have different c[n] behavior
+    - All JSON data files updated with correct values
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
