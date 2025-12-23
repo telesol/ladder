@@ -1,0 +1,12 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   🤖 CLAUDE INSTANCES: READ README_FIRST.md IMMEDIATELY!    ║
+║                                                              ║
+║   This ensures you don't duplicate work!                    ║
+║                                                              ║
+║   Quick start:                                               ║
+║   1. cat README_FIRST.md                                     ║
+║   2. cat ORCHESTRATOR_PROTOCOL.md                            ║
+║   3. ./check_findings.sh                                     ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
