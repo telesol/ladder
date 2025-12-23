@@ -136,7 +136,7 @@ git push
 - Use puzzles 1-70 per-step drift data
 - Test hypotheses H1-H4
 - Validate against multi-step bridge drift (should match 90.8% constant)
-- **If successful**: Can predict drift for puzzles 71+
+- **If successful**: Can generate puzzles 71+
 
 **Option B: Multi-Step Drift Decomposition**
 - Investigate if multi-step drift can be factored into per-step components

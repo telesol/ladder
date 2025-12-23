@@ -167,11 +167,11 @@ Complex drift: 8.5% (13/153)
 **Option B: Find Drift Generator Function**
 - Continue 4xH research (H1-H4 hypotheses)
 - Use drift_data_export.json (puzzles 1-70)
-- Try to predict drift for puzzles 71+
+- Try to calculate drift for puzzles 71+
 
 **Option C: Accept Limits**
-- Document: "We can predict bridges, not intermediate puzzles"
-- Focus: Improve bridge prediction accuracy
+- Document: "We can verify bridges, not intermediate puzzles"
+- Focus: Improve bridge calculation accuracy
 - Publish: Validated findings on puzzles 1-70 + bridge structure
 
 ### Long-term:

@@ -134,7 +134,7 @@ Complex drift:               13/153 =  8.5%  ← Needs further study
 ### ✅ What We CAN Do
 
 1. **Understand multi-step structure**: We know the drift values for 5-step jumps
-2. **Verify bridge predictions**: Can test if a prediction reaches the correct bridge
+2. **Verify bridge calculations**: Can test if a calculation reaches the correct bridge
 3. **Analyze drift patterns**: 90.8% constant drift is a strong structural finding
 4. **Identify complex lanes**: 13 lane-bridge pairs need deeper analysis
 
@@ -146,7 +146,7 @@ Complex drift:               13/153 =  8.5%  ← Needs further study
    - But we need: drift for 70→71 (d₁), 71→72 (d₂), 72→73 (d₃), 73→74 (d₄), 74→75 (d₅)
    - Multi-step drift ≠ sum of per-step drifts (due to modular exponentiation)
 
-2. **Predict drift for puzzles 131+**
+2. **Calculate drift for puzzles 131+**
    - No data beyond puzzle 130
    - Cannot extrapolate without more bridges
 
@@ -185,12 +185,12 @@ X_{k+5} = ((((X_k^n + d₁)^n + d₂)^n + d₃)^n + d₄)^n + d₅) mod 256
 
 The drift generator research (H1-H4 hypotheses) is **STILL RELEVANT** because:
 1. We have per-step drift for puzzles 1-70 (from calibration)
-2. If we find the drift generator function, we can predict puzzles 71+
+2. If we find the drift generator function, we can generate puzzles 71+
 3. The constant drift structure (90.8%) provides constraints for hypothesis testing
 
 **Next Steps**:
 - Continue H1-H4 research using puzzles 1-70 drift data
-- Test if discovered generator predicts multi-step drift for bridges
+- Test if discovered generator computes multi-step drift for bridges
 - Use 90.8% constant drift as validation metric
 
 ### Complex Drift Lanes (8.5%)
@@ -255,7 +255,7 @@ The drift generator research (H1-H4 hypotheses) is **STILL RELEVANT** because:
 **A. Drift Generator Discovery (H1-H4)**
 - Use puzzles 1-70 per-step drift data
 - Test hypotheses against multi-step bridge drift
-- Validation: Predicted multi-step drift should match 90.8% constant drift pattern
+- Validation: Computed multi-step drift should match 90.8% constant drift pattern
 
 **B. Multi-Step Drift Decomposition**
 - Investigate if multi-step drift can be factored
