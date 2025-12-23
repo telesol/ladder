@@ -24,7 +24,7 @@ def halfblock_to_bytes(hex_str):
     """Convert hex to 16 bytes (REVERSED)"""
     if hex_str.startswith('0x'):
         hex_str = hex_str[2:]
-    hex_str = hex_str[:32].zfill(32)
+    hex_str = hex_str[-32:].zfill(32)
     return bytes.fromhex(hex_str)[::-1]
 
 def bytes_to_halfblock(data):

@@ -18,7 +18,7 @@ def halfblock_to_bytes(hex_str):
     if hex_str.startswith('0x'):
         hex_str = hex_str[2:]
     # Take first 32 hex chars, pad if needed
-    hex_str = hex_str[:32].zfill(32)
+    hex_str = hex_str[-32:].zfill(32)
     # Convert to bytes and REVERSE
     return bytes.fromhex(hex_str)[::-1]
 

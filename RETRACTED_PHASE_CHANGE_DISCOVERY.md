@@ -1,9 +1,29 @@
+# ❌ RETRACTED: False Discovery Based on All-Zeros Bug
+
+**⚠️ THIS DOCUMENT IS RETRACTED - DO NOT USE ⚠️**
+
+**Original Title**: "MAJOR DISCOVERY: Phase Change at Puzzle 70"
+**Original Claim**: Drift becomes zero after puzzle 70 (99.3% pure exponential)
+**Retraction Date**: 2025-12-23
+**Reason**: All-zeros bug in `halfblock_to_bytes()` function
+**See**: `CRITICAL_CORRECTION_2025-12-23.md` for corrected findings
+
+**What was wrong**: The halfblock extraction function extracted the wrong 32 hex characters (all zeros instead of actual values). ALL analysis in this document is based on comparing zeros to zeros.
+
+**Correct findings**: See `CONSTANT_DRIFT_STRUCTURE_DISCOVERY.md` for TRUE findings (90.8% constant drift, NOT 0.7% drift=0)
+
+---
+
+# ARCHIVED DOCUMENT BELOW (FOR HISTORICAL RECORD)
+
+---
+
 # 🎉 MAJOR DISCOVERY: Phase Change at Puzzle 70
 
 **Date**: 2025-12-23
-**Discovery**: Drift becomes zero after puzzle 70 (99.3% pure exponential)
-**Impact**: Can generate puzzles 71-130 with mathematical certainty
-**Status**: ✅ **100% MATHEMATICALLY VERIFIED**
+**Discovery**: Drift becomes zero after puzzle 70 (99.3% pure exponential) ❌ FALSE
+**Impact**: Can generate puzzles 71-130 with mathematical certainty ❌ FALSE
+**Status**: ❌ **RETRACTED - BASED ON BUGGY DATA**
 
 ---
 
