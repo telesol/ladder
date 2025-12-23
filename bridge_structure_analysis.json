@@ -1,0 +1,1638 @@
+{
+  "single_step_stats": {
+    "0": {
+      "samples": 69,
+      "min": 1,
+      "max": 254,
+      "mean": 122.20289855072464,
+      "std": 82.35141731401706
+    },
+    "1": {
+      "samples": 62,
+      "min": 0,
+      "max": 248,
+      "mean": 125.90322580645162,
+      "std": 76.62491586637897
+    },
+    "2": {
+      "samples": 54,
+      "min": 1,
+      "max": 249,
+      "mean": 111.03703703703704,
+      "std": 75.996823267663
+    },
+    "3": {
+      "samples": 46,
+      "min": 1,
+      "max": 246,
+      "mean": 117.43478260869566,
+      "std": 79.10302917684469
+    },
+    "4": {
+      "samples": 38,
+      "min": 1,
+      "max": 239,
+      "mean": 82.60526315789474,
+      "std": 75.4988809515131
+    },
+    "5": {
+      "samples": 30,
+      "min": 1,
+      "max": 225,
+      "mean": 119.13333333333334,
+      "std": 72.07946232380546
+    },
+    "6": {
+      "samples": 22,
+      "min": 1,
+      "max": 246,
+      "mean": 87.45454545454545,
+      "std": 81.16690283423706
+    },
+    "7": {
+      "samples": 14,
+      "min": 1,
+      "max": 219,
+      "mean": 84.21428571428571,
+      "std": 77.75251816907704
+    },
+    "8": {
+      "samples": 6,
+      "min": 1,
+      "max": 36,
+      "mean": 8.666666666666666,
+      "std": 12.337837015547832
+    }
+  },
+  "bridge_analysis": [
+    {
+      "start_k": 70,
+      "end_k": 75,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 75,
+      "end_k": 80,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 80,
+      "end_k": 85,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "activation",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 85,
+      "end_k": 90,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 90,
+      "end_k": 95,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 95,
+      "end_k": 100,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 100,
+      "end_k": 105,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 105,
+      "end_k": 110,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 104,
+          "constant_drift_solution": 0
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 110,
+      "end_k": 115,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 104,
+          "constant_drift_solution": 0
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "dormant",
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 115,
+      "end_k": 120,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 104,
+          "constant_drift_solution": 0
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 112,
+          "constant_drift_solution": 0
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "dormant",
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 120,
+      "end_k": 125,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 0
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 104,
+          "constant_drift_solution": 0
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 112,
+          "constant_drift_solution": 0
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "activation",
+          "activation_k": 120,
+          "constant_drift_solution": 0
+        }
+      }
+    },
+    {
+      "start_k": 125,
+      "end_k": 130,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 3,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 1,
+          "constant_drift_solution": 171
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 8,
+          "constant_drift_solution": 0
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 16,
+          "constant_drift_solution": 0
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 24,
+          "constant_drift_solution": 0
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 32,
+          "constant_drift_solution": 0
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 40,
+          "constant_drift_solution": 0
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "phase": "evolution",
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 56,
+          "constant_drift_solution": 0
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 64,
+          "constant_drift_solution": 0
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 72,
+          "constant_drift_solution": 0
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 80,
+          "constant_drift_solution": 0
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 88,
+          "constant_drift_solution": 0
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 96,
+          "constant_drift_solution": 0
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 104,
+          "constant_drift_solution": 0
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "phase": "evolution",
+          "activation_k": 112,
+          "constant_drift_solution": 0
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "phase": "evolution",
+          "activation_k": 120,
+          "constant_drift_solution": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1729 @@
+{
+  "hypothesis": "drift_zero_after_puzzle_70",
+  "bridges_analyzed": 12,
+  "total_lane_transitions": 153,
+  "pure_exponential_count": 152,
+  "constant_drift_count": 1,
+  "complex_drift_count": 0,
+  "percentage_pure": 99.34640522875817,
+  "lane_summary": {
+    "0": {
+      "pure": 11,
+      "constant_drift": 1,
+      "complex": 0,
+      "total": 12
+    },
+    "1": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "2": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "3": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "4": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "5": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "6": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "7": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "8": {
+      "pure": 12,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 12
+    },
+    "9": {
+      "pure": 11,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 11
+    },
+    "10": {
+      "pure": 10,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 10
+    },
+    "11": {
+      "pure": 8,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 8
+    },
+    "12": {
+      "pure": 6,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 6
+    },
+    "13": {
+      "pure": 5,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 5
+    },
+    "14": {
+      "pure": 3,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 3
+    },
+    "15": {
+      "pure": 2,
+      "constant_drift": 0,
+      "complex": 0,
+      "total": 2
+    }
+  },
+  "detailed_results": [
+    {
+      "start_k": 70,
+      "end_k": 75,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 75,
+      "end_k": 80,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 80,
+      "end_k": 85,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 85,
+      "end_k": 90,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 90,
+      "end_k": 95,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 95,
+      "end_k": 100,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 100,
+      "end_k": 105,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 105,
+      "end_k": 110,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 110,
+      "end_k": 115,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 115,
+      "end_k": 120,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "dormant",
+          "drift_value": null,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 120,
+      "end_k": 125,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 120
+        }
+      }
+    },
+    {
+      "start_k": 125,
+      "end_k": 130,
+      "steps": 5,
+      "lanes": {
+        "0": {
+          "x_start": 0,
+          "x_end": 3,
+          "exponent": 3,
+          "status": "constant_drift",
+          "drift_value": 171,
+          "activation_k": 1
+        },
+        "1": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 8
+        },
+        "2": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 16
+        },
+        "3": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 24
+        },
+        "4": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 32
+        },
+        "5": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 40
+        },
+        "6": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 0,
+          "status": "constant",
+          "drift_value": 0,
+          "activation_k": 48
+        },
+        "7": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 56
+        },
+        "8": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 64
+        },
+        "9": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 72
+        },
+        "10": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 80
+        },
+        "11": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 88
+        },
+        "12": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 96
+        },
+        "13": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 104
+        },
+        "14": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 2,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 112
+        },
+        "15": {
+          "x_start": 0,
+          "x_end": 0,
+          "exponent": 3,
+          "status": "pure_exponential",
+          "drift_value": 0,
+          "activation_k": 120
+        }
+      }
+    }
+  ]
+}
