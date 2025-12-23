@@ -2,7 +2,7 @@
 """
 PROPER STRUCTURAL ANALYSIS: Explore drift patterns in bridges
 
-NOT prediction - STRUCTURAL EXPLORATION!
+NOT calculation - STRUCTURAL EXPLORATION!
 
 What we're analyzing:
 1. Extract "effective drift" from multi-step transitions (70→75, 75→80, etc.)
@@ -157,7 +157,7 @@ def main():
     print("="*70)
     print("STRUCTURAL EXPLORATION OF DRIFT ACROSS ALL 82 PUZZLES")
     print("="*70)
-    print("\nApproach: ANALYZE structure, NOT predict unknowns")
+    print("\nApproach: ANALYZE structure, NOT guess unknowns")
     print("Goal: Understand drift evolution patterns\n")
 
     # Load data

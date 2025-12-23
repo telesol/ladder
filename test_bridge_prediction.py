@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Test Bridge Prediction: Can we predict drift to reach bridges?
+Test Bridge Calculation: Can we calculate drift to reach bridges?
 
 Challenge: We have X_70, X_75, X_80, etc., but NOT X_71-74, X_76-79, etc.
-Goal: Test if drift patterns from 1-70 can predict bridges 75-130
+Goal: Test if drift patterns from 1-70 can verify bridges 75-130
 
 Methods to test:
 1. Average drift per lane
@@ -75,23 +75,23 @@ def test_bridge(X_start, X_target, steps, drift_per_step, method_name):
     """Test if drift pattern can reach target in N steps"""
     # Apply drift for each step
     drifts = [drift_per_step for _ in range(steps)]
-    X_predicted = multi_step(X_start, drifts)
+    X_calculated = multi_step(X_start, drifts)
 
     # Compare
-    matches = sum(1 for i in range(16) if X_predicted[i] == X_target[i])
+    matches = sum(1 for i in range(16) if X_calculated[i] == X_target[i])
     accuracy = matches / 16
 
     return {
         'method': method_name,
         'matches': matches,
         'accuracy': accuracy,
-        'predicted': X_predicted,
+        'calculated': X_calculated,
         'expected': X_target
     }
 
 def main():
     print("="*70)
-    print("BRIDGE PREDICTION TEST")
+    print("BRIDGE CALCULATION TEST")
     print("="*70)
 
     # Load data
@@ -118,7 +118,7 @@ def main():
                (115, 120), (120, 125), (125, 130)]
 
     print(f"\n{'='*70}")
-    print(f"Testing {len(bridges)} bridge predictions")
+    print(f"Testing {len(bridges)} bridge calculations")
     print(f"{'='*70}\n")
 
     # Method 1: Average drift
@@ -149,7 +149,7 @@ def main():
         if start_k == 70:
             print(f"\n  Lane-by-lane comparison:")
             for lane in range(8):  # First 8 lanes
-                pred = result['predicted'][lane]
+                pred = result['calculated'][lane]
                 exp = result['expected'][lane]
                 match = "✓" if pred == exp else "✗"
                 print(f"    Lane {lane}: pred={pred:3d}, exp={exp:3d} {match}")
@@ -170,21 +170,21 @@ def main():
         print(f"  {start_k}→{end_k}: {r['matches']}/16 = {r['accuracy']*100:.1f}%")
 
     if avg_accuracy >= 0.99:
-        print(f"\n🎉 SUCCESS! Average drift predicts bridges with {avg_accuracy*100:.1f}% accuracy!")
+        print(f"\n🎉 SUCCESS! Average drift calculates bridges with {avg_accuracy*100:.1f}% accuracy!")
         print(f"   This validates our X_k formula!")
     elif avg_accuracy >= 0.70:
         print(f"\n👍 PARTIAL SUCCESS! {avg_accuracy*100:.1f}% accuracy")
-        print(f"   Formula is correct, but drift prediction needs refinement")
+        print(f"   Formula is correct, but drift calculation needs refinement")
     else:
         print(f"\n❌ FAILED: Only {avg_accuracy*100:.1f}% accuracy")
-        print(f"   Average drift does not work for bridge prediction")
+        print(f"   Average drift does not work for bridge calculation")
         print(f"   Need better drift model or more data")
 
     print(f"\n{'='*70}")
     print("Next steps:")
-    print("1. Try H4 affine recurrence for drift prediction")
+    print("1. Try H4 affine recurrence for drift calculation")
     print("2. Try pattern extrapolation based on lane statistics")
-    print("3. If all fail: Accept that bridges cannot be predicted")
+    print("3. If all fail: Accept that bridges cannot be calculated")
     print("   (which is fine - it means drift is cryptographically secure)")
     print(f"{'='*70}\n")
 
