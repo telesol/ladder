@@ -568,6 +568,39 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - Gaps G-L (100-130) have different c[n] behavior
     - All JSON data files updated with correct values
 
+### WAVE 21 - MULTI-AGENT COLLABORATION (2025-12-23) ★★★★★
+
+83. **QWQ CRITICAL INSIGHT - INTEGER m CONSTRAINT**:
+    - m[n] = (2^n - adj[n]) / k[d[n]] **MUST BE AN INTEGER**
+    - Only d values where k[d] divides (2^n - adj[n]) are valid
+    - Example n=4: d=1 gives m=22 (INTEGER ✓), d=3 gives m≈3.14 (INVALID ✗)
+    - **100% verified for n=2-30**: d[n] minimizes |m[n]| among INTEGER options
+
+84. **d-MINIMIZATION IS LOCAL, NOT GLOBAL**:
+    - Given k[n], d[n] minimizes |m[n]| among valid d choices
+    - But k[n] itself is NOT chosen to minimize |m| globally
+    - Each n has a candidate with |m|=3 (using d=n-1), but actual k[n] has larger |m|
+    - Example: n=10 has candidate k=557 with |m|=3, actual k[10]=514 has |m|=19
+
+85. **k[n] SELECTION MYSTERY DEEPENS**:
+    - Given k[1..n-1], infinitely many k[n] satisfy recurrence with some (d,m)
+    - What property SELECTS the actual k[n]?
+    - **RULED OUT**: Smallest k[n] in range (fails n≥5)
+    - **RULED OUT**: k[n] with globally smallest |m| (fails all n≥4)
+    - **RULED OUT**: Predictable from n alone (55% max accuracy)
+
+86. **c[n] DISTRIBUTION ANALYSIS**:
+    - c[n] = k[n]/2^n is fairly uniform across [0.5, 1.0)
+    - Min: 0.50 (k[4], k[10]), Max: 0.99 (k[25]), Mean: 0.754
+    - Growth ratio adj>0 (faster): 39 times, adj≤0 (slower): 30 times
+
+87. **PHASE 3 IN PROGRESS** (Local Models):
+    - QWQ: Analyzing adj[n] sequence patterns
+    - Nemotron: Testing statistical hypotheses
+    - Deepseek-r1: Construction algorithm reasoning
+    - Qwen-coder: Generating test code
+    - See: `/home/rkh/ladder/swarm_outputs/wave21_collab/`
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
