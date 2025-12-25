@@ -646,6 +646,45 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - The actual selection avoids obvious minima
     - Suggests: hidden state, PRNG, or cryptographic transformation
 
+### WAVE 22 - CONSTRUCTION ANALYSIS (2025-12-25) ★★★★★
+
+93. **CONSTRUCTION PHASES IDENTIFIED**:
+    | Phase | Range | Pattern | Example |
+    |-------|-------|---------|---------|
+    | Bootstrap | n=1,2,3 | Mersenne 2^n-1 | k[3]=7 |
+    | Multiplicative | n=4,5,6,8 | Products/powers | k[5]=k[2]×k[3]=21 |
+    | Exception | n=7 | Introduces new prime 19 | k[7]=76=4×19 |
+    | Prime Reset | n=9,12 | Pure primes | k[9]=467, k[12]=2683 |
+    | Primorial | n=11 | First 4 odd primes | k[11]=3×5×7×11=1155 |
+    | New Primes | n=10,13+ | Introduces new factors | k[15]=67×401 |
+
+94. **COPRIME RESET PATTERN** ★★★★★:
+    - Positions coprime with ALL previous: 2,3,4,9,12,15,44,45,54,59,90
+    - Strong tendency for n ≡ 0 (mod 3): 3,9,12,15,45,54,90
+    - k[9]=467, k[12]=2683 are PRIME
+    - k[15]=67×401 is NOT prime but introduces ALL new factors
+
+95. **MULTIPLICATIVE RELATIONSHIPS (Verified)**:
+    ```
+    k[4] = 2³ = 8
+    k[5] = k[2] × k[3] = 3 × 7 = 21
+    k[6] = k[3]² = 7² = 49
+    k[8] = 2⁵ × k[3] = 32 × 7 = 224
+    k[11] = 3 × 5 × 7 × 11 = 1155 (odd primorial P#5)
+    ```
+
+96. **ACTUAL k[n] NEVER EQUALS MIN|m| CANDIDATE**:
+    - Every n has a candidate with m=3 (using d=n-1)
+    - This candidate is NEVER chosen
+    - Puzzle PREFERS primes at reset positions over lower-m composites
+    - Example: k[9]=467(m=493) chosen over k=288(m=3)
+
+97. **OPEN QUESTION FOR INVESTIGATION**:
+    - Why k[9]=467 among ~50 primes in [256,511]?
+    - Why k[12]=2683 among ~150 primes in [2048,4095]?
+    - What property SELECTS the specific prime?
+    - Wave 22 local models investigating...
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
