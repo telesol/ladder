@@ -1,0 +1,117 @@
+=== PHASE1_CODER ===
+Time: 2025-12-23 18:31:34.842063
+
+Certainly! Below is a Python script that includes functions to test the hypotheses mentioned:
+
+1. **Predicting `d[n]` from properties of `n` alone**:
+   - We will check if there's any simple pattern in `d[n]` based on the values of `n`.
+
+2. **Expressing `k[n]` as combinations of earlier `k-values`**:
+   - We'll try to identify if `k[n]` can be expressed using a combination of previously computed `k`-values and other known patterns.
+
+3. **Binary representation patterns**:
+   - Analyze the binary representation of `k[n]` values for any patterns or insights.
+
+```python
+# Load data
+k = {1: 1, 2: 3, 3: 7, 4: 8, 5: 21, 6: 49, 7: 76, 8: 224, 9: 467, 10: 514,
+     11: 1155, 12: 2683, 13: 5216, 14: 10544, 15: 26867, 16: 51510,
+     17: 95823, 18: 198669, 19: 357535, 20: 863317}
+
+# d[n] values for n=2-20
+d = {2: 1, 3: 1, 4: 2, 5: 2, 6: 2, 7: 4, 8: 1, 9: 7, 10: 1,
+     11: 2, 12: 1, 13: 4, 14: 1, 15: 4, 16: 1, 17: 1, 18: 1, 19: 1,
+     20: 2}
+
+# Hypothesis testing
+
+def predict_d(n):
+    """
+    Try to predict d[n] based on n alone.
+    This function will attempt some simple patterns and check their validity.
+    """
+    # Simple pattern: d[n] = (n % 4) + 1
+    predicted = ((n % 4) == 0) + 1 if n > 3 else 1
+    return predicted
+
+def find_k_combinations(n):
+    """
+    Try to express k[n] as a combination of earlier k-values.
+    This function will use the given recurrence relation and try different combinations.
+    """
+    possible_values = []
+    for i in range(1, n):
+        for j in range(1, n):
+            for d_val in [1, 2, 4, 7]:  # Based on observed values of d[n]
+                if k.get(d_val) is not None:
+                    m_val = (2 * k[i] + 2**n - k[d_val]) / k[j]
+                    if m_val.is_integer():
+                        possible_values.append((i, j, d_val, int(m_val)))
+    return possible_values
+
+def binary_representation_patterns(k):
+    """
+    Analyze the binary representation of k[n] values for patterns.
+    """
+    binary_representations = {n: bin(k_value)[2:] for n, k_value in k.items()}
+    
+    # Check if there are any repeating patterns or properties
+    pattern_length = len(binary_representations[1])
+    patterns = {}
+    
+    for length in range(1, pattern_length + 1):
+        pattern_dict = {}
+        for n, binary_str in binary_representations.items():
+            pattern = binary_str[-length:]
+            if pattern not in pattern_dict:
+                pattern_dict[pattern] = []
+            pattern_dict[pattern].append(n)
+        
+        patterns[length] = {pattern: ns for pattern, ns in pattern_dict.items() if len(ns) > 1}
+    
+    return patterns
+
+# Testing the hypotheses
+if __name__ == "__main__":
+    # Test predicting d[n]
+    print("Testing prediction of d[n]:")
+    for n in range(2, 21):
+        predicted = predict_d(n)
+        actual = d.get(n)
+        print(f"n={n}, Predicted: {predicted}, Actual: {actual}")
+
+    # Test finding k[n] combinations
+    print("\nTesting k[n] combinations:")
+    for n in range(4, 21):  # Start from 4 since we have d[4]
+        combinations = find_k_combinations(n)
+        if combinations:
+            print(f"n={n}:")
+            for comb in combinations:
+                i, j, d_val, m_val = comb
+                print(f"  k[{n}] = 2*k[{i}] + 2^{n} - {m_val}*k[{d_val}]")
+        else:
+            print(f"n={n}: No valid combination found")
+
+    # Test binary representation patterns
+    print("\nBinary Representation Patterns:")
+    patterns = binary_representation_patterns(k)
+    for length, pattern_dict in patterns.items():
+        if pattern_dict:
+            print(f"\nLength {length} patterns:")
+            for pattern, ns in pattern_dict.items():
+                print(f"  Pattern: {pattern}, Found at n-values: {ns}")
+```
+
+### Explanation of the Code:
+
+1. **Predicting `d[n]`**:
+   - The function `predict_d(n)` tries a simple pattern to predict `d[n]`. In this case, it checks if `d[n]` can be derived based on `(n % 4) + 1`.
+
+2. **Finding `k[n]` Combinations**:
+   - The function `find_k_combinations(n)` attempts to express `k[n]` using earlier `k`-values by iterating over possible combinations of indices and checking if the recurrence relation holds true.
+
+3. **Binary Representation Patterns**:
+   - The function `binary_representation_patterns(k)` checks for repeating binary patterns in the `k[n]` values across different lengths. It prints out any patterns found along with the corresponding `n`-values.
+
+### Running the Code:
+You can run this code to test the hypotheses and see if there are any patterns or insights that align with the given data. Adjust the range of `n` in the main section as needed for more extensive testing.

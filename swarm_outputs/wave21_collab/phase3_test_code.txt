@@ -1,0 +1,89 @@
+=== PHASE3_TEST_CODE ===
+Time: 2025-12-23 19:24:20.371630
+
+Certainly! Below is the complete, runnable Python code that tests the hypotheses you've outlined. This code connects to a SQLite database to load the `k` values and then performs the specified tests.
+
+```python
+import sqlite3
+import numpy as np
+from fractions import Fraction
+from scipy.optimize import curve_fit
+
+# Connect to the SQLite database
+conn = sqlite3.connect('/home/rkh/ladder/db/kh.db')
+cursor = conn.cursor()
+
+# Load k values from the database
+cursor.execute("SELECT n, k FROM wave_21_breakthroughs ORDER BY n")
+data = cursor.fetchall()
+n_values = [row[0] for row in data]
+k_values = [row[1] for row in data]
+
+# Calculate adj[n]
+adj_values = [k_values[i] - 2 * k_values[i-1] if i > 0 else None for i in range(len(k_values))]
+
+# Hypothesis 1: Continued Fraction Hypothesis
+def continued_fraction_hypothesis(adj_values):
+    # Try to find a pattern or convergence in adj[n]
+    fractions = [Fraction(adj).limit_denominator() for adj in adj_values if adj is not None]
+    print("Continued Fraction Hypothesis - Fractions of adj[n]:")
+    print(fractions)
+
+# Hypothesis 2: Eigenvalue Hypothesis
+def eigenvalue_hypothesis(n_values, k_values):
+    # Fit k[n] = A*λ1^n + B*λ2^n using curve fitting
+    def func(n, A, lambda1, B, lambda2):
+        return A * (lambda1 ** n) + B * (lambda2 ** n)
+    
+    popt, pcov = curve_fit(func, n_values[2:], k_values[2:])
+    print("Eigenvalue Hypothesis - Fitted parameters (A, λ1, B, λ2):")
+    print(popt)
+
+# Hypothesis 3: Multiplicative Build Hypothesis
+def multiplicative_build_hypothesis(k_values):
+    # Check if k[n] can be written as a product/power of earlier k values
+    def is_product_of_earlier_k(n, k_values):
+        for i in range(1, n):
+            if k_values[i-1] == 0:
+                continue
+            quotient = k_values[n-1] // k_values[i-1]
+            remainder = k_values[n-1] % k_values[i-1]
+            if remainder == 0 and (quotient in k_values or int(np.log2(quotient)).is_integer()):
+                return True
+        return False
+    
+    count = sum(is_product_of_earlier_k(n, k_values) for n in range(3, len(k_values)+1))
+    print("Multiplicative Build Hypothesis - Number of times k[n] is a product/power of earlier k values:")
+    print(count)
+
+# Hypothesis 4: Binary Pattern Hypothesis
+def binary_pattern_hypothesis(k_values):
+    # Analyze Hamming weight of k[n]
+    hamming_weights = [bin(k).count('1') for k in k_values]
+    print("Binary Pattern Hypothesis - Hamming weights of k[n]:")
+    print(hamming_weights)
+
+# Run the tests
+continued_fraction_hypothesis(adj_values)
+eigenvalue_hypothesis(n_values, k_values)
+multiplicative_build_hypothesis(k_values)
+binary_pattern_hypothesis(k_values)
+
+# Close the database connection
+conn.close()
+```
+
+### Explanation:
+1. **Continued Fraction Hypothesis**:
+   - Converts `adj[n]` values to fractions and checks for patterns.
+   
+2. **Eigenvalue Hypothesis**:
+   - Uses curve fitting to fit the sequence to a form of `A*λ1^n + B*λ2^n`.
+   
+3. **Multiplicative Build Hypothesis**:
+   - Checks if each `k[n]` can be expressed as a product or power of earlier `k` values.
+   
+4. **Binary Pattern Hypothesis**:
+   - Computes the Hamming weight (number of 1s in binary representation) for each `k[n]`.
+
+This code assumes that your SQLite database has a table named `wave_21_breakthroughs` with columns `n` and `k`. Adjust the SQL query if your table or column names differ.

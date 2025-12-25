@@ -1,0 +1,65 @@
+=== PHASE3_STATS_HYPOTHESIS ===
+Time: 2025-12-23 19:18:35.069959
+
+### Statistical Hypothesis Testing for WAVE 21 Breakthroughs
+
+#### H1: **Maximization of Entropy Measure**
+
+* **Mathematical Formulation**: Let \(E(k[n])\) represent an entropy measure (e.g., Shannon entropy) of the distribution of valid \(k[n]\) candidates. The hypothesis suggests that the actual \(k[n]\) is chosen such that \(E(k[n]) \geq E(k'[n])\) for all other valid \(k'[n]\).
+* **Testing Approach**:
+	1. Calculate the entropy of the distribution of valid \(k[n]\) for each \(n\), assuming a discrete uniform distribution over the set of valid candidates.
+	2. Compare the observed \(k[n]\)'s entropy with the maximum, minimum, and average entropies of all possible distributions (given by permutations of valid \(k[n]\) values).
+	3. **Statistical Test**: Use a permutation test to determine if the observed entropy is significantly higher than expected by chance.
+* **Supporting/Refuting Data**:
+	+ **Supports**: If the observed \(k[n]\) consistently yields entropies significantly higher than the null distribution's mean.
+	+ **Refutes**: Failure to reject the null hypothesis or observing that actual \(k[n]\) entropies are not consistently among the highest.
+
+#### H2: **Median of Valid Candidates**
+
+* **Mathematical Formulation**: The actual \(k[n]\) is the median value when all valid candidates for \(k[n]\) are ordered.
+* **Testing Approach**:
+	1. For each \(n\), list all valid \(k[n]\) in ascending order and identify the median(s).
+	2. Compare the actual \(k[n]\) with the identified median(s).
+	3. **Statistical Test**: Since this is more of a direct comparison, use a simple proportion test to see if the actual \(k[n]\) matches the median significantly more often than expected by chance (50% for continuous distributions, but since we're dealing with discrete values, it might slightly vary).
+* **Supporting/Refuting Data**:
+	+ **Supports**: If the proportion of matches is significantly higher than 0.5.
+	+ **Refutes**: If the proportion is not significantly different from 0.5 or lower.
+
+#### H3: **Minimization of Deviation from Target Ratio**
+
+* **Mathematical Formulation**: Let \(r = k[n]/k[n-1]\) and \(T\) be a target ratio. The hypothesis posits that \(k[n]\) minimizes \(|r - T|\).
+* **Testing Approach**:
+	1. Estimate \(T\) from the data (e.g., mean or median of observed ratios for various \(n\)).
+	2. For each \(n\), calculate the absolute deviation of \(r\) from \(T\) for all valid \(k[n]\) candidates.
+	3. **Statistical Test**: Use a one-sample t-test to see if the mean deviation for actual \(k[n]\) values is significantly lower than for non-selected candidates.
+* **Supporting/Refuting Data**:
+	+ **Supports**: If the mean deviation for actual \(k[n]\) is significantly lower.
+	+ **Refutes**: Failure to reject the null hypothesis or observing no significant difference.
+
+#### H4: **Relation to Previous Key's Position (\(c[n-1]\))**
+
+* **Mathematical Formulation**: There exists a functional relationship between \(k[n]\) and \(c[n-1] = k[n-1]/2^{n-1}\), e.g., \(k[n] = f(c[n-1])\).
+* **Testing Approach**:
+	1. Explore visualizations (e.g., scatter plots) of \(k[n]\) vs. \(c[n-1]\) for patterns.
+	2. Fit various regression models to the data and evaluate their goodness of fit.
+	3. **Statistical Test**: Use cross-validation to assess the predictive power of the model, comparing it against a baseline (e.g., random prediction).
+* **Supporting/Refuting Data**:
+	+ **Supports**: Strong, significant correlations or high predictive accuracy.
+	+ **Refutes**: Lack of correlation or poor predictive performance.
+
+### Additional Analyses
+
+#### Autocorrelation of adj[n] Sequence
+
+* **Method**: Calculate the autocorrelation function (ACF) for the \(adj[n]\) sequence to identify any patterns or periodicity.
+* **Insight**: Significant autocorrelation at specific lags might suggest underlying mechanisms influencing the sequence.
+
+#### Distribution of k[n]/k[n-1] Ratios
+
+* **Method**: Plot a histogram or density plot of these ratios and assess their distribution (e.g., normality tests).
+* **Insight**: Understanding this distribution can provide clues about the growth rate of \(k[n]\) and potential support for H3.
+
+#### Clustering in c[n] Values
+
+* **Method**: Apply clustering algorithms (e.g., k-means, hierarchical clustering) to the sequence of \(c[n]\) values.
+* **Insight**: Identifying clusters could imply that certain ranges of positions are more favorable or have distinct characteristics.
