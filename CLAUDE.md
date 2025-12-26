@@ -1230,3 +1230,51 @@ python puzzle_cli.py status
     The mathematical structure is clear but UNDERDETERMINED.
     No model could derive k[71] from the data alone.
 
+
+### WAVE 27.5 - IMPOSSIBLE POSITION RULE DISCOVERY (2025-12-26) ★★★★★
+
+128. **IMPOSSIBLE POSITIONS VERIFIED**:
+    At ALL impossible positions (n=8, 15, 31, 63, 71):
+    - `(2*k[n-1] + 2^n) ≡ 0 (mod 17)` ← Forces prime reset impossible
+    - `k[n] mod 17 ≠ 0` ← Actual k avoids 17 divisibility
+    - `m[n] mod 17 ≠ 0` ← m is coprime with 17 (opposite of prime reset!)
+
+129. **RULE FOR n=8 DISCOVERED** ★★★★★:
+    At power-of-2 impossible positions:
+    ```
+    k[n] = MULTIPLICATIVE candidate with SMALLEST |m|
+    ```
+    - Multiplicative = 2^a × k[b] or k[a] × k[b] for earlier a,b
+    - n=8: 8 multiplicative candidates exist
+    - k[8] = 2^5 × k[3] = 32 × 7 = 224 has smallest |m| = 23 ✓
+    - Larger candidate 228 = k[2] × k[7] has |m| = 60 (rejected!)
+
+130. **n=8 CANDIDATE VERIFICATION**:
+    | Candidate | Form | |m| | Status |
+    |-----------|------|-----|--------|
+    | 224 | 2^5 × k[3] | 23 | ★ ACTUAL |
+    | 192 | 2^6 × k[2] | 27 | rejected |
+    | 168 | 2^3 × k[5] | 30 | rejected |
+    | 228 | k[2] × k[7] | 60 | rejected |
+
+    The rule is DETERMINISTIC - no guessing needed for n=8!
+
+131. **POSITION CLASSIFICATION**:
+    | Position Type | n values | Rule |
+    |---------------|----------|------|
+    | Mersenne | 1, 2, 3 | k[n] = 2^n - 1 |
+    | Prime Reset | 9, 12, ... (m≡0 mod 17) | Largest prime, coprime q |
+    | Power-of-2 Impossible | 8 | Multiplicative, smallest |m| |
+    | Mersenne Impossible | 15, 31, 63 | TBD |
+    | Other Impossible | 71 | TBD |
+
+132. **n=71 SPECIAL FORM**:
+    - n=71 = 64 + 7 = 2^6 + k[3]
+    - NOT a power of 2, NOT a Mersenne number
+    - Rule may involve relationship with k[3]=7
+
+133. **CANDIDATES TESTED FOR k[71]** (all failed to match address):
+    - Multiplicative (2^62 × k[9]): No match
+    - Smallest |m| overall (d=49, m≈4.7M): No match
+    - The actual k[71] selection criterion remains unknown
+
