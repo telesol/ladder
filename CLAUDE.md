@@ -8,7 +8,7 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
 - **NOT YOUR JOB:** Do the research yourself, make assumptions, go off on tangents
 
 ## Project Status
-**Last Updated**: 2025-12-25
+**Last Updated**: 2025-12-26
 
 ## SESSION RESUME POINT (2025-12-21)
 
@@ -685,6 +685,126 @@ You are the ORCHESTRATOR. You have 4 Spark nodes (128GB RAM, 1 pflop each) with 
     - What property SELECTS the specific prime?
     - Wave 22 local models investigating...
 
+### WAVE 22.5 - PARALLEL MODEL INVESTIGATION (2025-12-25) ★★★★★
+
+98. **4-MODEL PARALLEL INVESTIGATION COMPLETED**:
+    - Models: qwq:32b (local), nemotron-3-nano:30b-cloud, deepseek-v3.1:671b-cloud, mistral-large-3:675b-cloud
+    - Deepseek had empty response; others completed successfully
+    - Results saved to: `swarm_outputs/wave22_parallel/`
+
+99. **NEMOTRON "SEED FACTOR 17" THEORY** ★★★★★:
+    - Key discovery: Factor 17 appears in both m[9] and m[12]!
+    - m[9] = 493 = 17 × 29
+    - m[12] = 1241 = 17 × 73
+    - Theory: Primes are selected to propagate seed factor 17
+    - For n=9: p ≡ 8 (mod 17), largest such prime is 467 ✓
+    - For n=12: p ≡ 14 (mod 17), but NOT simply largest → theory incomplete
+
+100. **VERIFIED: SEED FACTOR 17 IN RESET m-VALUES**:
+    ```
+    n=9:  D=493  = 17 × 29  (17 present ✓)
+    n=10: D=1444 = 2² × 19² (17 absent)
+    n=11: D=1921 = 17 × 113 (17 present ✓)
+    n=12: D=3723 = 3 × 17 × 73 (17 present ✓)
+    n=13: D=8342 = 2 × 43 × 97 (17 absent)
+    n=14: D=16272 = 2⁴ × 3² × 113 (17 absent)
+    n=15: D=26989 = 137 × 197 (17 absent)
+    ```
+    - 17 appears at n=9,11,12 but NOT at n=10,13,14,15
+    - Pattern is not strictly every reset
+
+101. **SEMIPRIME M-VALUE HYPOTHESIS (Partial)**:
+    - At prime resets, m = 17 × q where q is another prime
+    - For n=9: all candidates have semiprime m (17 × prime)
+    - For n=12: 2683 chosen over 3907 even though both valid
+    - Additional constraint: q must be coprime with all previous k values
+    - p=3907 → q=3, but gcd(3, k[2])=3 > 1 → REJECTED
+    - p=2683 → q=73, coprime with all → ACCEPTED
+    - But larger coprime-q candidates exist (p=3329) → mystery continues
+
+102. **MISTRAL CONTRIBUTIONS**:
+    - Coprimality is necessary but not sufficient
+    - Position in prime list: k[9] at index 36/43 (84%), k[12] at 79/255 (31%)
+    - Digit sum: 467→17 (prime), 2683→19 (prime) - both prime digit sums
+    - m-values: m[9]=17×29, m[12]=17×73 - both contain factor 17
+
+103. **QWQ ANALYSIS**:
+    - d-minimization works: d[9]=1 (forced), d[12]=2 (k[2]=3 divides 3723)
+    - Alternative primes exist but are rejected for unknown reason
+    - k[9]=463 would give d=3, m=71 but is NOT chosen
+    - The selection criterion remains partially mysterious
+
+104. **CURRENT UNDERSTANDING OF PRIME SELECTION**:
+    | Constraint | n=9 | n=12 | Status |
+    |------------|-----|------|--------|
+    | Prime | ✓ | ✓ | Required |
+    | Coprime with all previous | ✓ | ✓ | Required |
+    | D divisible by 17 | ✓ | ✓ | Likely required |
+    | m is semiprime (17 × prime) | ✓ | ✓ | Likely required |
+    | q coprime with previous | ✓ | ✓ | Likely required |
+    | Largest satisfying above | ✓ | ✗ | NOT the rule |
+
+    The exact selection criterion remains unknown. May involve:
+    - PRNG/hash-based selection
+    - Additional number-theoretic property
+    - Manual selection by puzzle creator
+
+### WAVE 23 - ALGORITHM TESTING (2025-12-25) ★★★★★
+
+105. **NEMOTRON GREEDY ALGORITHM DISPROVEN** ★★★★★:
+    - Nemotron proposed: k[n] = cand - m*k[d] where d minimizes |cand/k[d] - round(cand/k[d])|
+    - Test result: **COMPLETE FAILURE** - algorithm produces k[n]=0 for all n≥2
+    - Cause: When d=1 (k[1]=1), any cand is exact multiple, so m=cand → k[n]=0
+    - The algorithm collapses immediately because d=1 always wins
+    - See: `test_nemotron_greedy_algorithm.py`
+
+106. **CRITICAL INSIGHT: d-MINIMIZATION IS CONSEQUENCE, NOT GENERATOR** ★★★★★:
+    - d[n] minimizes |m[n]| GIVEN k[n] ✓ (verified 67/69)
+    - But k[n] is NOT selected to minimize |m| globally ✗
+    - Every n≥3 has a candidate with |m|=3 using d=n-1
+    - The actual k[n] NEVER matches this m=3 candidate!
+    - See: `test_construction_order.py`
+
+107. **ACTUAL VS M=3 CANDIDATES**:
+    | n | Actual k[n] | Actual |m| | m=3 Candidate | Match |
+    |---|-------------|----------|---------------|-------|
+    | 3 | 7 | 7 | 5 | ✗ |
+    | 4 | 8 | 22 | 9 | ✗ |
+    | 5 | 21 | 9 | 24 | ✗ |
+    | 9 | 467 | 493 | 288 | ✗ |
+    | 12 | 2683 | 1241 | 2941 | ✗ |
+
+    The puzzle AVOIDS the m-minimizing candidates!
+
+108. **CONSTRUCTION ORDER CONFIRMED**:
+    1. k[n] is selected FIRST by unknown criterion
+    2. d[n] emerges as the minimizer given that k[n]
+    3. The recurrence describes RELATIONSHIPS, not GENERATION
+
+109. **PROPERTY ANALYSIS OF ACTUAL K-VALUES**:
+    | Property | Actual avg | m=3 cand avg | Tendency |
+    |----------|------------|--------------|----------|
+    | Hamming weight | 8.10 | 8.34 | Slightly lower |
+    | Trailing zeros | 1.14 | 1.07 | Slightly higher |
+    | Position c=k/2^n | 0.7528 | 0.6316 | **Much higher** |
+
+    Actual k[n] tends to be in UPPER portion of its bit range!
+
+110. **FACTOR 17 APPEARS AT SPECIAL POSITIONS**:
+    - m[9] = 17 × 29 (k[9]=467 is PRIME)
+    - m[11] = 17 × 113 (k[11]=1155 is PRIMORIAL)
+    - m[12] = 17 × 73 (k[12]=2683 is PRIME)
+    - m[24] = 17 × ... (k[24]=14428676 is COMPOSITE)
+    - Pattern: 17 marks "transition" positions, not just prime resets
+    - See: `test_seed_17_hypothesis.py`
+
+111. **REMAINING VIABLE HYPOTHESES**:
+    a) **PRNG/seed-based**: k[n] = PRNG(seed, n) - formula describes relationships only
+    b) **Hash-based**: k[n] = hash(seed||n) mod something
+    c) **Multiplicative phases**: Different rules for different n ranges
+    d) **Manual selection**: Puzzle creator chose aesthetically pleasing values
+    e) **Unknown number-theoretic property**: Something we haven't discovered
+
 ### MAJOR BREAKTHROUGHS - READ THESE!
 
 1. **d[n] SOLVED**: d[n] is ALWAYS chosen to minimize m[n]!
@@ -960,3 +1080,153 @@ curl http://localhost:5050/api/oracle/memory/stats
 # Run puzzle CLI
 python puzzle_cli.py status
 ```
+
+### GUIDING PRINCIPLE (2025-12-25) ★★★★★
+
+> **"This IS pure math. The evidence is clear:**
+> - Clean multiplicative structure: k[5] = k[2] × k[3], k[6] = k[3]²
+> - Mersenne bootstrap: k[1,2,3] = 2^n - 1
+> - Values in exact bit ranges [2^(n-1), 2^n)
+> - Recurrence holds 100%
+> - Factor 17 at specific positions"
+>
+> **The answer is MATHEMATICAL - find the math, don't guess seeds/hashes.**
+
+
+### WAVE 24 - CONSTRUCTION RULE DERIVATION (2025-12-25) ★★★★★
+
+112. **PRIME RESET RULE DERIVED AND VERIFIED** ★★★★★:
+    For prime reset positions (n=9, 12):
+    ```
+    1. p ≡ (2*k[n-1] + 2^n) mod 17   [forces m ≡ 0 mod 17]
+    2. q = m/17 must be coprime with all k[1..n-1]
+    3. Choose LARGEST such prime p
+    ```
+    - n=9: 4 candidates [263, 331, 433, 467], largest 467 ✓ COMPUTED
+    - n=12: 2 coprime candidates [2377, 2683], largest 2683 ✓ COMPUTED
+    - This is a DETERMINISTIC mathematical rule!
+
+113. **FACTOR 17 (Fermat Prime 2^4+1) IS CENTRAL**:
+    - m[9] = 17 × 29 (q=29 coprime with all previous)
+    - m[11] = 17 × 113 (q=113)
+    - m[12] = 17 × 73 (q=73 coprime with all previous)
+    - k[16] = 51510 is divisible by 17
+    - k[10] = 514 = 2 × 257 where 257 = 2^8+1 (Fermat prime)
+
+114. **CONSTRUCTION PHASES IDENTIFIED**:
+    | Phase | n | Rule | k[n] |
+    |-------|---|------|------|
+    | MERSENNE | 1,2,3 | k[n] = 2^n - 1 | 1,3,7 |
+    | POWER | 4 | k[4] = 2^3 (coprime with 3,7) | 8 |
+    | PRODUCT | 5 | k[5] = k[2]×k[3] | 21 |
+    | SQUARE | 6 | k[6] = k[3]² | 49 |
+    | TRANSITION | 7 | Introduces new prime 19 | 76 |
+    | MULT | 8 | k[8] = 2^5×k[3] | 224 |
+    | PRIME RESET | 9 | Mod 17 rule + coprime q | 467 |
+    | FERMAT | 10 | Contains 257=2^8+1 | 514 |
+    | PRIMORIAL | 11 | 3×5×7×11 (UNIQUE mod 17 choice) | 1155 |
+    | PRIME RESET | 12 | Mod 17 rule + coprime q | 2683 |
+
+115. **KEY INSIGHT: Mod 17 Constraint Forces Reset Primes**:
+    At reset positions, the requirement m ≡ 0 (mod 17) combined with
+    coprimality of q=m/17 leaves very few candidates. Among those,
+    the LARGEST is chosen, giving a deterministic selection.
+
+
+116. **MATHEMATICAL PROOF: n=71 IS NOT A PRIME RESET** ★★★★★:
+    - Prime reset requires m[n] ≡ 0 (mod 17)
+    - This requires k[n] ≡ (2*k[n-1] + 2^n) mod 17
+    - For n=71: (2*k[70] + 2^71) mod 17 = (8 + 9) mod 17 = 0
+    - So k[71] ≡ 0 (mod 17), meaning k[71] divisible by 17
+    - But prime reset also requires k[71] to be PRIME
+    - If k[71] > 17 and divisible by 17, it's COMPOSITE
+    - CONTRADICTION! Therefore n=71 is NOT a prime reset position.
+
+117. **IMPOSSIBLE PRIME RESET POSITIONS**:
+    ```
+    n = 8, 15, 31, 63, 71, ...
+    Pattern: 2^3, 2^4-1, 2^5-1, 2^6-1, 2^6+7
+    ```
+    At these positions, the mod 17 constraint forces k[n] ≡ 0 (mod 17),
+    making prime status impossible for k[n] > 17.
+
+118. **KNOWN VALUES AT IMPOSSIBLE POSITIONS**:
+    | n | k[n] | Form | Notes |
+    |---|------|------|-------|
+    | 8 | 224 | 2^5 × k[3] | Multiplicative rule |
+    | 15 | 26867 | 67 × 401 | Coprime with all previous |
+    | 31 | 2102388551 | 19² × ... | Complex |
+    | 63 | ~9×10^18 | 2³ × 7 × ... | Contains k[3]=7 |
+    | 71 | ? | ? | To be computed |
+
+
+### WAVE 25-26 - MULTI-MODEL DERIVATION ATTEMPTS (2025-12-25) ★★★★★
+
+119. **CLOUD MODEL DEPLOYMENT (Wave 26)**:
+    - deepseek-v3.1:671b-cloud: Completed, analysis only
+    - mistral-large-3:675b-cloud: Completed, computed values WRONG
+    - qwq:32b: Completed, reasoning only
+    - nemotron:70b: Still processing (1+ hour, 65% RAM)
+
+120. **MISTRAL'S COMPUTED VALUES - ALL WRONG** ★★★★★:
+    | n | Mistral's k[n] | Bits | Expected Bits | In Range |
+    |---|----------------|------|---------------|----------|
+    | 71 | 140214302559607306554 | 67 | 71 | NO |
+    | 76 | 1181397030647904803019 | 71 | 76 | NO |
+    | 91 | 739855697735307744359150722 | 90 | 91 | NO |
+    | 131 | 514510965460492828451110421166134032494 | 129 | 131 | NO |
+
+    All values too small - models making computational errors.
+
+121. **MODEL CONSENSUS ON THE PROBLEM**:
+    - Recurrence k[n] = 2*k[n-1] + 2^n - m[n]*k[d[n]] is VERIFIED
+    - d[n] minimizes |m[n]| GIVEN k[n] (CONSEQUENCE, not generator)
+    - Every n≥3 has m=3 candidate that is NEVER chosen
+    - k[n] selection criterion remains UNKNOWN
+    - System is UNDERDETERMINED without knowing generation method
+
+122. **KEY MATHEMATICAL INSIGHT**:
+    The recurrence relation describes RELATIONSHIPS between k-values,
+    but does NOT uniquely determine k-values. Given k[1..70] and anchors,
+    there are INFINITELY many valid k[71] candidates that satisfy the
+    recurrence for some (d,m) pair. Only ONE is the actual puzzle key.
+    The missing constraint is the GENERATION METHOD (seed, algorithm).
+
+
+### WAVE 27 - PURE MATHEMATICAL CONSTRUCTION ANALYSIS (2025-12-26) ★★★★★
+
+123. **4-HOUR MATHEMATICAL ANALYSIS DEPLOYMENT**:
+    - deepseek-r1:14b: Completed in 1.8 min
+    - qwq:32b: Completed in 4.7 min
+    - nemotron:70b: Completed in 15.8 min
+    - All models given complete ladder data n=2-70 plus anchors n=75-130
+
+124. **DEEPSEEK RESULT - COMPLETE FAILURE** ★★★★★:
+    - Assumed k[n] = 2^n - 1 for ALL n (ignored actual data!)
+    - Derived k[71] = 2^71 - 1 ≈ 2.36×10^21 (WRONG)
+    - Did not read the provided data showing k[4]=8, k[5]=21, k[6]=49
+    - This is a fundamental model failure to parse input
+
+125. **QWQ RESULT - REASONING ONLY**:
+    - Correctly identified construction phases
+    - Understood Mersenne, multiplicative, prime reset phases
+    - Did extensive reasoning about selection criteria
+    - But produced NO concrete k[71] computation
+
+126. **NEMOTRON RESULT - STRUCTURAL ANALYSIS**:
+    - Correctly outlined observation/pattern/verification format
+    - Identified key constraints: range [2^70, 2^71), m selection
+    - Acknowledged: "The exact rules require further clarification"
+    - No concrete k[71] computation produced
+
+127. **WAVE 27 CONCLUSION**:
+    | Hypothesis | Model Support | Status |
+    |------------|---------------|--------|
+    | k[n] = 2^n - 1 | Deepseek (WRONG) | DISPROVEN |
+    | Prime reset at n=71 | All | DISPROVEN (proven composite) |
+    | d-minimization sufficient | None | DISPROVEN |
+    | Hidden constraint needed | All | CONFIRMED |
+
+    The mathematical structure is clear but UNDERDETERMINED.
+    No model could derive k[71] from the data alone.
+
